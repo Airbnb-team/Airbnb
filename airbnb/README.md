@@ -1,24 +1,78 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Structure of DataBase
 
-Things you may want to cover:
+## User
+### association
+```
+has_many : rooms
+has_many : reservations
+has_many : messages
+has_many : photos
+has_many : favarites
+has_many : reviews
+```
+### column
+- name
+- email
+- password
+- avatar
+- profile
 
-* Ruby version
+## Room
+### association
+```
+belongs_to : user
+has_many : reservations
+has_many : reviews
+has_many : photos
+has_many : favarites
+```
+### column
+- name
 
-* System dependencies
+## Reservation
+### association
+```
+belongs_to : user
+belongs_to : room
+```
+### column
+- name
 
-* Configuration
+## Message
+### association
+```
+belongs_to : user
+```
+### column
+- name
 
-* Database creation
+## Photo
+### association
+```
+belongs_to : user
+belongs_to : room
+has_many : favarites
+```
+### column
+- name
 
-* Database initialization
+## Favarite
+### association
+```
+belongs_to : user
+belongs_to : room
+belongs_to : Photo
+```
+### column
+- name
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Review
+### association
+```
+belongs_to : user
+belongs_to : room
+```
+### column
+- name
