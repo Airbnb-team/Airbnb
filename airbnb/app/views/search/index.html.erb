@@ -1,7 +1,7 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ja">
   <head>
-    <title>Hello, world!</title>
+    <title>Airbnb</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,13 +9,133 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   </head>
+
   <body>
-    <h1>Hello, world!</h1>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="btn-group">
+          <button type="button" class="btn btn-danger">Action</button>
+          <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">ホーム</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">宿泊先ホストをする</a>
+            <a class="dropdown-item" href="#">アカウント作成</a>
+            <a class="dropdown-item" href="#">ログイン</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="text-danger font-weight-bold">Airbnb</h1>
+          <h1>ユニークなお家を予約して暮らすような旅をしよう。</h1>
+            <div class="input-group">
+              <input type="text" name="serach" class="form-control form-control-lg" placeholder="エリアを入力">
+              <span class="input-group-btn">
+                <button class="btn btn-default btn-danger" type="submit">Search</button>
+              </span>
+            </div>
+          </div>
+      </div>
+
+      <h2 class="font-weight-bold">Airbnbで探す</h2>
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src="assets/image0.jpeg" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text font-weight-bold">宿泊先</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="font-weight-bold">宿泊先</h3>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="card border-white">
+            <div class="card-body-lg">
+              <img class="card-img-top" src="assets/image1.jpeg" alt="Card image cap">
+              <h4 class="card-title">イメージ①</h4>
+              <p class="card-text">テスト</p>
+              <a href="#" class="btn btn-primary">Go</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card border-white">
+            <div class="card-body-lg">
+              <img class="card-img-top" src="assets/image2.jpeg" alt="Card image cap">
+              <h4 class="card-title">イメージ②</h4>
+              <p class="card-text">テスト</p>
+              <a href="#" class="btn btn-primary">Go</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card border-white">
+            <div class="card-body-lg">
+              <img class="card-img-top" src="assets/image3.jpeg" alt="Card image cap">
+              <h4 class="card-title">イメージ③</h4>
+              <p class="card-text">テスト</p>
+              <a href="#" class="btn btn-primary">Go</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card border-white">
+            <div class="card-body-lg">
+              <img class="card-img-top" src="assets/image4.jpeg" alt="Card image cap">
+              <h4 class="card-title">イメージ④</h4>
+              <p class="card-text">テスト</p>
+              <a href="#" class="btn btn-primary">Go</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <article>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="card mb-3 border-white">
+              <div class="card-body">
+                <h4 class="card-title font-weight-bold">ホスティングで得られる収入をチェック</h4>
+                <h5 class="card-text text-xl">空いているお部屋を活用して収入を得よう。</h5>
+                <a href="#" class="btn btn-success">詳しくはこちら</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+              <img class="card-img-top" src="assets/image5.jpeg" alt="Card image cap">
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+    <footer>
+      <div class="container">
+       <p class=" text-secondary text-center">COPYRIGHT FINAL_TEAM_A ALL RIGHTS RESERVED.</p>
+       <p class="float-right">
+         <a href="#">Back to top</a>
+       </p>
+     </div>
+    </footer>
+
   </body>
+
 </html>
