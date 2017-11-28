@@ -112,8 +112,14 @@ html {
   width: device-width;
 }
 
-article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
+aside, dialog, figcaption, figure, header, footer, hgroup, main, nav, section {
   display: block;
+}
+
+article{
+  display: block;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }
 
 body {
@@ -701,8 +707,8 @@ pre code {
   position: relative;
   width: 100%;
   min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 30px; 
 }
 
 .col {
