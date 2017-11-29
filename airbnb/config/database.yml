@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: airbnb_production
-  username: airbnb
+  username: root
   password: <%= ENV['AIRBNB_DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
