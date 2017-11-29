@@ -1,0 +1,339 @@
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /Users/yamazakihiroki/Airbnb/app/models/application_record.rb:1)
+Started GET "/" for 127.0.0.1 at 2017-11-29 17:35:51 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.6) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.6) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.6) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.6) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.6) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.6) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (1.7ms)
+  Rendering /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (108.7ms)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /Users/yamazakihiroki/Airbnb/app/models/application_record.rb:1)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('136846772350273440', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateReservations (20171129023153)
+  [1m[35m (82.3ms)[0m  [1m[35mCREATE TABLE `reservations` (`id` int AUTO_INCREMENT PRIMARY KEY, `user_id` int NOT NULL, `room_id` int NOT NULL, `check_in` date NOT NULL, `check_out` date NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171129023153')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRooms (20171129030322)
+  [1m[35m (31.1ms)[0m  [1m[35mCREATE TABLE `rooms` (`id` int AUTO_INCREMENT PRIMARY KEY, `user_id` int NOT NULL, `langage` varchar(255) NOT NULL, `title` varchar(255) NOT NULL, `overview` int NOT NULL, `space` text NOT NULL, `guest_access` text NOT NULL, `guest_interraction` int NOT NULL, `other_things_to_note` text NOT NULL, `neighborhood` text NOT NULL, `property_type` int NOT NULL, `home_type` int NOT NULL, `room_type` int NOT NULL, `room_setup` int NOT NULL, `bedrooms` int NOT NULL, `guest_capacity` int NOT NULL, `prepared_beds` int NOT NULL, `bath_room` int NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171129030322')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMessages (20171129035606)
+  [1m[35m (38.5ms)[0m  [1m[35mCREATE TABLE `messages` (`id` int AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171129035606')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFavorites (20171129035819)
+  [1m[35m (37.8ms)[0m  [1m[35mCREATE TABLE `favorites` (`id` int AUTO_INCREMENT PRIMARY KEY, `user_id` int NOT NULL, `photo_id` int NOT NULL, `room_id` int NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171129035819')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateReviews (20171129051351)
+  [1m[35m (43.9ms)[0m  [1m[35mCREATE TABLE `reviews` (`id` int AUTO_INCREMENT PRIMARY KEY, `user_id` int NOT NULL, `room_id` int NOT NULL, `happiness` int NOT NULL, `comment_id` text NOT NULL, `speed` int NOT NULL, `behavior` int NOT NULL, `score` int NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171129051351')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePhotos (20171129052051)
+  [1m[35m (35.9ms)[0m  [1m[35mCREATE TABLE `photos` (`id` int AUTO_INCREMENT PRIMARY KEY, `user_id` int NOT NULL, `room_id` int NOT NULL, `image` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171129052051')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAmenities (20171129052351)
+  [1m[35m (42.9ms)[0m  [1m[35mCREATE TABLE `amenities` (`id` int AUTO_INCREMENT PRIMARY KEY, `pet` tinyint(1), `elevator` tinyint(1), `kid_friendly` tinyint(1), `gym` tinyint(1), `doorman` tinyint(1), `breakfast` tinyint(1), `suitable_for_events` tinyint(1), `free_parking` tinyint(1), `smoking_allowed` tinyint(1), `wheelchair_accessible` tinyint(1), `wireless_internet` tinyint(1), `hot_tub` tinyint(1), `air_conditioning` tinyint(1), `kitchen` tinyint(1), `cable_tv` tinyint(1), `wireless_intercom` tinyint(1), `baby_bath` tinyint(1), `baby_monitor` tinyint(1), `babysitter` tinyint(1), `bathtub` tinyint(1), `changing_table` tinyint(1), `childrend_books_and_toys` tinyint(1), `childrens_dinnerware` tinyint(1), `crib` tinyint(1), `fireplace_guards` tinyint(1), `indoor_fireplace` tinyint(1), `pool` tinyint(1), `shampoo` tinyint(1), `hangers` tinyint(1), `iron` tinyint(1), `dryer` tinyint(1), `hair_dryer` tinyint(1), `Laptop` tinyint(1), `tv` tinyint(1), `washer` tinyint(1), `heating` tinyint(1), `free_parking_on_street` tinyint(1), `private_entrance` tinyint(1), `ethernet_connection` tinyint(1), `game_console` tinyint(1), `high_chair` tinyint(1), `outlet_covers` tinyint(1), `travel_crib` tinyint(1), `room_darkening_shades` tinyint(1), `stair_gates` tinyint(1), `estable_corner_guardssentials` tinyint(1), `table_corner_guards` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171129052351')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRules (20171129054447)
+  [1m[35m (39.8ms)[0m  [1m[35mCREATE TABLE `rules` (`id` int AUTO_INCREMENT PRIMARY KEY, `children_for_2_12` int, `for_infants_under_2` int, `for_pets` int, `smoking` int, `parties` int, `additional_rules` int, `check_in_start_time` tinyint(1), `check_in_end_time` tinyint(1), `check_checkout_time` tinyint(1), `cancellation_policy` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171129054447')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.3ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('136846772350273440')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSHOW CREATE TABLE `amenities`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSHOW CREATE TABLE `favorites`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW CREATE TABLE `messages`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `photos`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'photos'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW CREATE TABLE `reservations`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW CREATE TABLE `reviews`[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'reviews'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW CREATE TABLE `rooms`[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'rooms'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW CREATE TABLE `rules`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `users`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'users'[0m
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /Users/yamazakihiroki/Airbnb/app/models/application_record.rb:1)
+Started GET "/" for 127.0.0.1 at 2017-11-29 17:36:16 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (3.4ms)
+Started GET "/" for 127.0.0.1 at 2017-11-29 17:36:19 +0900
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 3434ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: slick.
+Load paths:
+  /Users/yamazakihiroki/Airbnb/app/assets/config
+  /Users/yamazakihiroki/Airbnb/app/assets/images
+  /Users/yamazakihiroki/Airbnb/app/assets/javascripts
+  /Users/yamazakihiroki/Airbnb/app/assets/stylesheets
+  /Users/yamazakihiroki/Airbnb/vendor/assets/javascripts
+  /Users/yamazakihiroki/Airbnb/vendor/assets/stylesheets
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actioncable-5.0.6/lib/assets/compiled
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/popper_js-1.12.5/assets/javascripts
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bootstrap-4.0.0.beta2.1/assets/stylesheets
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bootstrap-4.0.0.beta2.1/assets/javascripts
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bootstrap-4.0.0.beta2.1/assets/stylesheets):
+    4:     <title>Airbnb</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:     <% if content_for?(:head) %>
+   10:     <%= yield(:head) %>
+  
+app/assets/stylesheets/application.scss:2
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___644992512263651149_70141888137020'
+Completed 500 Internal Server Error in 1712ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: slick.
+Load paths:
+  /Users/yamazakihiroki/Airbnb/app/assets/config
+  /Users/yamazakihiroki/Airbnb/app/assets/images
+  /Users/yamazakihiroki/Airbnb/app/assets/javascripts
+  /Users/yamazakihiroki/Airbnb/app/assets/stylesheets
+  /Users/yamazakihiroki/Airbnb/vendor/assets/javascripts
+  /Users/yamazakihiroki/Airbnb/vendor/assets/stylesheets
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actioncable-5.0.6/lib/assets/compiled
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/popper_js-1.12.5/assets/javascripts
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bootstrap-4.0.0.beta2.1/assets/stylesheets
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bootstrap-4.0.0.beta2.1/assets/javascripts
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bootstrap-4.0.0.beta2.1/assets/stylesheets):
+    4:     <title>Airbnb</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:     <% if content_for?(:head) %>
+   10:     <%= yield(:head) %>
+  
+app/assets/stylesheets/application.scss:2
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___644992512263651149_70141923368700'
+Started GET "/" for 127.0.0.1 at 2017-11-29 17:36:20 +0900
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (0.6ms)
+  Rendering /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.6ms)
+  Rendering /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (177.0ms)
+  Rendering /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.2ms)
+  Rendering /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (216.9ms)
+Completed 500 Internal Server Error in 1507ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: slick.
+Load paths:
+  /Users/yamazakihiroki/Airbnb/app/assets/config
+  /Users/yamazakihiroki/Airbnb/app/assets/images
+  /Users/yamazakihiroki/Airbnb/app/assets/javascripts
+  /Users/yamazakihiroki/Airbnb/app/assets/stylesheets
+  /Users/yamazakihiroki/Airbnb/vendor/assets/javascripts
+  /Users/yamazakihiroki/Airbnb/vendor/assets/stylesheets
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actioncable-5.0.6/lib/assets/compiled
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/popper_js-1.12.5/assets/javascripts
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bootstrap-4.0.0.beta2.1/assets/stylesheets
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bootstrap-4.0.0.beta2.1/assets/javascripts
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bootstrap-4.0.0.beta2.1/assets/stylesheets):
+    4:     <title>Airbnb</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:     <% if content_for?(:head) %>
+   10:     <%= yield(:head) %>
+  
+app/assets/stylesheets/application.scss:2
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___644992512263651149_70141871743620'
+  Rendering /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.2ms)
+  Rendering /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (82.4ms)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /Users/yamazakihiroki/Airbnb/app/models/application_record.rb:1)
+Started GET "/" for 127.0.0.1 at 2017-11-29 17:38:48 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 1282ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: slick-theme.
+Load paths:
+  /Users/yamazakihiroki/Airbnb/app/assets/config
+  /Users/yamazakihiroki/Airbnb/app/assets/images
+  /Users/yamazakihiroki/Airbnb/app/assets/javascripts
+  /Users/yamazakihiroki/Airbnb/app/assets/stylesheets
+  /Users/yamazakihiroki/Airbnb/vendor/assets/javascripts
+  /Users/yamazakihiroki/Airbnb/vendor/assets/stylesheets
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actioncable-5.0.6/lib/assets/compiled
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/popper_js-1.12.5/assets/javascripts
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bootstrap-4.0.0.beta2.1/assets/stylesheets
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bootstrap-4.0.0.beta2.1/assets/javascripts
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bootstrap-4.0.0.beta2.1/assets/stylesheets):
+    4:     <title>Airbnb</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:     <% if content_for?(:head) %>
+   10:     <%= yield(:head) %>
+  
+app/assets/stylesheets/application.scss:3
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3365424012759556316_70093616923980'
+  Rendering /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.5ms)
+  Rendering /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendering /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (108.0ms)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /Users/yamazakihiroki/Airbnb/app/models/application_record.rb:1)
+Started GET "/" for 127.0.0.1 at 2017-11-29 17:39:30 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 2962ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery.slick' with type 'application/javascript'
+Checked in these paths: 
+  /Users/yamazakihiroki/Airbnb/app/assets/config
+  /Users/yamazakihiroki/Airbnb/app/assets/images
+  /Users/yamazakihiroki/Airbnb/app/assets/javascripts
+  /Users/yamazakihiroki/Airbnb/app/assets/stylesheets
+  /Users/yamazakihiroki/Airbnb/vendor/assets/javascripts
+  /Users/yamazakihiroki/Airbnb/vendor/assets/stylesheets
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actioncable-5.0.6/lib/assets/compiled
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/popper_js-1.12.5/assets/javascripts
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bootstrap-4.0.0.beta2.1/assets/stylesheets
+  /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bootstrap-4.0.0.beta2.1/assets/javascripts):
+    4:     <title>Airbnb</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:     <% if content_for?(:head) %>
+   10:     <%= yield(:head) %>
+  
+app/assets/javascripts/application.js:15
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___331127239769175951_70292476887180'
+  Rendering /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.9ms)
+  Rendering /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/yamazakihiroki/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (102.2ms)
+Started GET "/" for 127.0.0.1 at 2017-11-29 17:39:47 +0900
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 622ms (Views: 611.2ms | ActiveRecord: 0.0ms)
+
+
