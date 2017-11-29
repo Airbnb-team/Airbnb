@@ -1,0 +1,52 @@
+{:uriI"Œfile://app/assets/bootstraps/js/tests/visual/popover.html?type=text/html&id=24a25081662012431021d54cde912e2a44598559d585252ed8a292b701776674:ET:load_pathI"app/assets/bootstraps;T:filenameI"7app/assets/bootstraps/js/tests/visual/popover.html;T:	nameI"js/tests/visual/popover;T:logical_pathI"!js/tests/visual/popover.html;T:content_typeI"text/html;T:sourceI"¤<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+    <title>Popover</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Popover <small>Bootstrap Visual Test</small></h1>
+
+      <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="auto" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+        Popover on auto
+      </button>
+
+      <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="Default placement was on top but not enough place">
+        Popover on top
+      </button>
+
+      <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+        Popover on right
+      </button>
+
+      <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+      sagittis lacus vel augue laoreet rutrum faucibus.">
+        Popover on bottom
+      </button>
+
+      <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+        Popover on left
+      </button>
+    </div>
+
+    <script src="../../../assets/js/vendor/jquery-slim.min.js"></script>
+    <script src="../../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/util.js"></script>
+    <script src="../../dist/tooltip.js"></script>
+    <script src="../../dist/popover.js"></script>
+
+    <script>
+      $(function () {
+        $('[data-toggle="popover"]').popover()
+      })
+    </script>
+  </body>
+</html>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Efile-digest://app/assets/bootstraps/js/tests/visual/popover.html;TTF:charsetI"
+utf-8;F:digest"%Bu·T¤ž÷×¿Ou^t·âAèÔwaZ/«×Ýå|£ý<:lengthi¤:dependencies_digest"%F¨Â¨HØˆLçì© ÷J™³iÒÖþ®´WõŽÖì:idI"E24a25081662012431021d54cde912e2a44598559d585252ed8a292b701776674;F:
+mtimel+°èY

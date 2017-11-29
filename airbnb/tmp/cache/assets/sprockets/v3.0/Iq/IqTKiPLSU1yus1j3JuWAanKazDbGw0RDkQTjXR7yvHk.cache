@@ -1,0 +1,22 @@
+{:uriI"†file://app/assets/bootstraps/_data/theme-colors.yml?type=text/yaml&id=e9a2a9482aeb59b14319e44ebb3839ad07f66e900031df3b91ff2ad419b3f913:ET:load_pathI"app/assets/bootstraps;T:filenameI"1app/assets/bootstraps/_data/theme-colors.yml;T:	nameI"_data/theme-colors;T:logical_pathI"_data/theme-colors.yml;T:content_typeI"text/yaml;T:sourceI"- name: primary
+  hex: "#007bff"
+- name: secondary
+  hex: "#868e96"
+- name: success
+  hex: "#28a745"
+- name: danger
+  hex: "#dc3545"
+- name: warning
+  hex: "#ffc107"
+- name: info
+  hex: "#17a2b8"
+- name: light
+  hex: "#f8f9fa"
+- name: dark
+  hex: "#343a40"
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/yaml&file_type=text/yaml;TTI"?file-digest://app/assets/bootstraps/_data/theme-colors.yml;TTF:charsetI"
+utf-8;F:digest"%ϋλ”ςF}ύ!fƒ7πS3‰°©t‡&§1s
+P:lengthi:dependencies_digest"%ÿ&όTΝ$/ήΛ!7ϋU9θ¬±c¥ίς«›O:idI"Ee9a2a9482aeb59b14319e44ebb3839ad07f66e900031df3b91ff2ad419b3f913;F:
+mtimel+°θY

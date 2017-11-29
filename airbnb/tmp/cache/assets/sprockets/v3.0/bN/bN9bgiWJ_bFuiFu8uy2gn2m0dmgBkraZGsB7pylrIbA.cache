@@ -1,0 +1,43 @@
+{:uriI"‚file://app/assets/bootstraps/_layouts/docs.html?type=text/html&id=9427954acdf2a611a3ed15f3634927906515ce6fa09352b99adf7792b363e5a9:ET:load_pathI"app/assets/bootstraps;T:filenameI"-app/assets/bootstraps/_layouts/docs.html;T:	nameI"_layouts/docs;T:logical_pathI"_layouts/docs.html;T:content_typeI"text/html;T:sourceI"ú<!doctype html>
+<html lang="en">
+  <head>
+    {% include header.html %}
+  </head>
+  <body>
+    <a id="skippy" class="sr-only sr-only-focusable" href="#content">
+      <div class="container">
+        <span class="skiplink-text">Skip to main content</span>
+      </div>
+    </a>
+
+    {% include docs-navbar.html %}
+
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+          {% include docs-sidebar.html %}
+        </div>
+
+        {% if page.toc %}
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            {{ content | toc_only }}
+          </div>
+        {% endif %}
+
+        <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+          <h1 class="bd-title" id="content">{{ page.title }}</h1>
+          <p class="bd-lead">{{ page.description }}</p>
+          {% include ads.html %}
+          {{ content }}
+        </main>
+      </div>
+    </div>
+
+    {% include scripts.html %}
+  </body>
+</html>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI";file-digest://app/assets/bootstraps/_layouts/docs.html;TTF:charsetI"
+utf-8;F:digest"%vMXi™Ï©ëNRIèßº¶!¹¬PüÀAÃŒ¼³³:lengthiú:dependencies_digest"%ÖÁÇßJj.¿®,;¦9úØr³ª Âcmàîrn:idI"E9427954acdf2a611a3ed15f3634927906515ce6fa09352b99adf7792b363e5a9;F:
+mtimel+°èY

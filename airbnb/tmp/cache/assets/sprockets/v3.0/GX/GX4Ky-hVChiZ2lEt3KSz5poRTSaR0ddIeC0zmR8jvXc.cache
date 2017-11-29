@@ -1,0 +1,24 @@
+{:uriI"file://app/assets/bootstraps/_data/grays.yml?type=text/yaml&id=2260fda1fd3f3b08baca06615351b5608964131c0397335a7a57625395892349:ET:load_pathI"app/assets/bootstraps;T:filenameI"*app/assets/bootstraps/_data/grays.yml;T:	nameI"_data/grays;T:logical_pathI"_data/grays.yml;T:content_typeI"text/yaml;T:sourceI"- name: 100
+  hex: "#f8f9fa"
+- name: 200
+  hex: "#e9ecef"
+- name: 300
+  hex: "#dee2e6"
+- name: 400
+  hex: "#ced4da"
+- name: 500
+  hex: "#adb5bd"
+- name: 600
+  hex: "#868e96"
+- name: 700
+  hex: "#495057"
+- name: 800
+  hex: "#343a40"
+- name: 900
+  hex: "#212529"
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/yaml&file_type=text/yaml;TTI"8file-digest://app/assets/bootstraps/_data/grays.yml;TTF:charsetI"
+utf-8;F:digest"%=Àì+X ˇ‡Äﬂ‚_Ä~R`‘—ù©Ã≠«≈¸¸"K;;	:lengthi:dependencies_digest"%Yå?]£Kûµ
+rÉ˜q9≥Å∂{%gxv8á('•é+7:idI"E2260fda1fd3f3b08baca06615351b5608964131c0397335a7a57625395892349;F:
+mtimel+∞ËY

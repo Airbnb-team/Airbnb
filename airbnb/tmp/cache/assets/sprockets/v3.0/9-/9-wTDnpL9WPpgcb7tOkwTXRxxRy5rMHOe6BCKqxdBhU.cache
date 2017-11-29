@@ -1,0 +1,32 @@
+{:uriI"…file://app/assets/bootstraps/_layouts/default.html?type=text/html&id=0c17939584bee37b3cd4cf6e0bf7520fe322254889584f656491c56af7682e85:ET:load_pathI"app/assets/bootstraps;T:filenameI"0app/assets/bootstraps/_layouts/default.html;T:	nameI"_layouts/default;T:logical_pathI"_layouts/default.html;T:content_typeI"text/html;T:sourceI"6<!doctype html>
+<html lang="en">
+  <head>
+    {% include header.html %}
+  </head>
+  <body>
+    <a id="skippy" class="sr-only sr-only-focusable" href="#content">
+      <div class="container">
+        <span class="skiplink-text">Skip to main content</span>
+      </div>
+    </a>
+
+    {% include docs-navbar.html %}
+
+    {% if page.layout == "simple" %}
+        {{ content }}
+    {% else %}
+        <main id="content" role="main">
+            {{ content }}
+        </main>
+    {% endif %}
+
+    {% include footer.html %}
+    {% include scripts.html %}
+  </body>
+</html>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI">file-digest://app/assets/bootstraps/_layouts/default.html;TTF:charsetI"
+utf-8;F:digest"%±)+6Oëïcb–©
+¹ÆK ğ`n˜ı*Ó¦èP‘„:lengthi6:dependencies_digest"%§W–nÇ+ô<’ÚÜô.9-’(Ş¥Š[h7nª6u:idI"E0c17939584bee37b3cd4cf6e0bf7520fe322254889584f656491c56af7682e85;F:
+mtimel+°èY

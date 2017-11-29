@@ -1,0 +1,14 @@
+{:uriI"áfile://app/assets/bootstraps/_includes/favicons.html?type=text/html&id=5cde9329d019ceefadb68468d284ebd37ea96f3ae394053a779b4aed5166e1db:ET:load_pathI"app/assets/bootstraps;T:filenameI"2app/assets/bootstraps/_includes/favicons.html;T:	nameI"_includes/favicons;T:logical_pathI"_includes/favicons.html;T:content_typeI"text/html;T:sourceI"Ï<!-- Favicons -->
+<link rel="apple-touch-icon" href="{{ site.baseurl }}/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="{{ site.baseurl }}/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="{{ site.baseurl }}/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="{{ site.baseurl }}/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="{{ site.baseurl }}/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+<link rel="icon" href="{{ site.baseurl }}/favicon.ico">
+<meta name="msapplication-config" content="{{ site.baseurl }}/assets/img/favicons/browserconfig.xml">
+<meta name="theme-color" content="#563d7c">
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"@file-digest://app/assets/bootstraps/_includes/favicons.html;TTF:charsetI"
+utf-8;F:digest"% Œ≠HôIoﬁ¶„:áE±_ﬂÿóú¶≥”È"£∑:lengthiÏ:dependencies_digest"%ı^Ñ¶∏Òƒ°mÚÏêPÑ*∞µ®^U∑√N∏SP2§:idI"E5cde9329d019ceefadb68468d284ebd37ea96f3ae394053a779b4aed5166e1db;F:
+mtimel+∞ËY

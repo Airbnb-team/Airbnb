@@ -1,0 +1,91 @@
+{:uriI"}file://app/assets/bootstraps/_data/nav.yml?type=text/yaml&id=6c9d94e9d2565b2d9f23be8ce7d3a423571f62da2b178827e9e1f0ae0f3b9e5f:ET:load_pathI"app/assets/bootstraps;T:filenameI"(app/assets/bootstraps/_data/nav.yml;T:	nameI"_data/nav;T:logical_pathI"_data/nav.yml;T:content_typeI"text/yaml;T:sourceI"å- title: Getting started
+  pages:
+    - title: Introduction
+    - title: Download
+    - title: Contents
+    - title: Browsers & devices
+    - title: JavaScript
+    - title: Theming
+    - title: Build tools
+    # - title: Best practices # TODO: Write this content
+    - title: Webpack
+    - title: Accessibility
+
+- title: Layout
+  pages:
+    - title: Overview
+    - title: Grid
+    - title: Media object
+    - title: Utilities for layout
+
+- title: Content
+  pages:
+    - title: Reboot
+    - title: Typography
+    - title: Code
+    - title: Images
+    - title: Tables
+    - title: Figures
+
+- title: Components
+  pages:
+    - title: Alerts
+    - title: Badge
+    - title: Breadcrumb
+    - title: Buttons
+    - title: Button group
+    - title: Card
+    - title: Carousel
+    - title: Collapse
+    - title: Dropdowns
+    - title: Forms
+    - title: Input group
+    - title: Jumbotron
+    - title: List group
+    - title: Modal
+    - title: Navs
+    - title: Navbar
+    - title: Pagination
+    - title: Popovers
+    - title: Progress
+    - title: Scrollspy
+    - title: Tooltips
+
+- title: Utilities
+  pages:
+    - title: Borders
+    - title: Clearfix
+    - title: Close icon
+    - title: Colors
+    - title: Display
+    - title: Embed
+    - title: Flex
+    - title: Float
+    - title: Image replacement
+    - title: Position
+    - title: Screenreaders
+    - title: Sizing
+    - title: Spacing
+    - title: Text
+    - title: Vertical align
+    - title: Visibility
+
+- title: Extend
+  pages:
+    # - title: Approach
+    - title: Icons
+
+- title: Migration
+
+- title: About
+  pages:
+    - title: History
+    - title: Team
+    - title: Brand
+    - title: License
+    - title: Translations
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/yaml&file_type=text/yaml;TTI"6file-digest://app/assets/bootstraps/_data/nav.yml;TTF:charsetI"
+utf-8;F:digest"%‰.®¶XTlÇòƒGÖ∞ÉÁG≥î∆M@æ—l9¸ﬁé‹û:lengthiå:dependencies_digest"%Âg#|ÌqåLåê±t{Èå%ªt¯"&/Á˚„£ú1H6£2:idI"E6c9d94e9d2565b2d9f23be8ce7d3a423571f62da2b178827e9e1f0ae0f3b9e5f;F:
+mtimel+∞ËY

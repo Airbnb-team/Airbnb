@@ -1,0 +1,17 @@
+{:uriI"…file://app/assets/bootstraps/_includes/footer.html?type=text/html&id=0e0a1a2cf554c0985dfe6a2ea37e79a1def4e315ccb4bdbb942179fc30f5fea2:ET:load_pathI"app/assets/bootstraps;T:filenameI"0app/assets/bootstraps/_includes/footer.html;T:	nameI"_includes/footer;T:logical_pathI"_includes/footer.html;T:content_typeI"text/html;T:sourceI"{<footer class="bd-footer text-muted">
+  <div class="container-fluid p-3 p-md-5">
+    <ul class="bd-footer-links">
+      <li><a href="{{ site.repo }}">GitHub</a></li>
+      <li><a href="https://twitter.com/getbootstrap">Twitter</a></li>
+      <li><a href="{{ site.baseurl }}/docs/{{ site.docs_version }}/examples/">Examples</a></li>
+      <li><a href="{{ site.baseurl }}/docs/{{ site.docs_version }}/about/history/">About</a></li>
+    </ul>
+    <p>Designed and built with all the love in the world by <a href="https://twitter.com/mdo" target="_blank" rel="noopener">@mdo</a> and <a href="https://twitter.com/fat" target="_blank" rel="noopener">@fat</a>. Maintained by the <a href="https://github.com/orgs/twbs/people">core team</a> with the help of <a href="https://github.com/twbs/bootstrap/graphs/contributors">our contributors</a>.</p>
+    <p>Currently v{{ site.current_version }}. Code licensed <a href="https://github.com/twbs/bootstrap/blob/master/LICENSE" target="_blank" rel="license noopener">MIT</a>, docs <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener">CC BY 3.0</a>.</p>
+  </div>
+</footer>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI">file-digest://app/assets/bootstraps/_includes/footer.html;TTF:charsetI"
+utf-8;F:digest"%i]©cEV¢µ°¸hšàdƒHýü_G­l[ÇCV:lengthi{:dependencies_digest"%óûž‡ËO íÂ½R÷î ê´æt¦|$¦V€ÆÁGÞî¦:idI"E0e0a1a2cf554c0985dfe6a2ea37e79a1def4e315ccb4bdbb942179fc30f5fea2;F:
+mtimel+°èY

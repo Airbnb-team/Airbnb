@@ -1,0 +1,42 @@
+{:uriI"…file://app/assets/bootstraps/_includes/social.html?type=text/html&id=4c70a750449021b6fbfeed80cf5c0b3f14d94e134a726b08500d7d7c442ee240:ET:load_pathI"app/assets/bootstraps;T:filenameI"0app/assets/bootstraps/_includes/social.html;T:	nameI"_includes/social;T:logical_pathI"_includes/social.html;T:content_typeI"text/html;T:sourceI"s<!-- Meta -->
+<meta name="description" content="{{ site.description }}">
+<meta name="author" content="{{ site.authors }}">
+
+<!-- Twitter -->
+<meta name="twitter:site" content="@{{ site.twitter }}">
+<meta name="twitter:creator" content="@{{ site.twitter }}">
+
+{% if page.title %}
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ page.title }}">
+  <meta name="twitter:description" content="{{ page.description }}">
+  <meta name="twitter:image" content="{{ site.url }}{{ site.social_logo_path }}">
+{% else %}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ site.title }}">
+  <meta name="twitter:description" content="{{ site.description }}">
+  <meta name="twitter:image" content="{{ site.url }}{{ site.social_image_path }}">
+{% endif %}
+
+<!-- Facebook -->
+{% if page.title %}
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ page.description }}">
+  <meta property="og:type" content="website">
+{% else %}
+  <meta property="og:url" content="{{ site.url }}">
+  <meta property="og:title" content="{{ site.title }}">
+  <meta property="og:description" content="{{ site.description }}">
+{% endif %}
+<meta property="og:image" content="{{ site.url | replace: 'https://', 'http://' }}{{ site.social_image_path }}">
+<meta property="og:image:secure_url" content="{{ site.url }}{{ site.social_image_path }}">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI">file-digest://app/assets/bootstraps/_includes/social.html;TTF:charsetI"
+utf-8;F:digest"%ô#¦°þ»ßºò)vs‡Ãie[¶Y3û…C‡
+VLÁŸ:lengthis:dependencies_digest"%ÊÀË™(ðqÝÜú×s/`öyüZüw‚¼ž¦„X{Ê:idI"E4c70a750449021b6fbfeed80cf5c0b3f14d94e134a726b08500d7d7c442ee240;F:
+mtimel+°èY
