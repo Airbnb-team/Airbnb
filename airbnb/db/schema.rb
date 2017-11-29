@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171129023153) do
+ActiveRecord::Schema.define(version: 20171129030322) do
 
   create_table "reservations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",    null: false
@@ -19,6 +19,28 @@ ActiveRecord::Schema.define(version: 20171129023153) do
     t.date     "check_out",  null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",                            null: false
+    t.string   "langage",                            null: false
+    t.string   "title",                              null: false
+    t.integer  "overview",                           null: false
+    t.text     "space",                limit: 65535, null: false
+    t.text     "guest_access",         limit: 65535, null: false
+    t.integer  "guest_interraction",                 null: false
+    t.text     "other_things_to_note", limit: 65535, null: false
+    t.text     "neighborhood",         limit: 65535, null: false
+    t.integer  "property_type",                      null: false
+    t.integer  "home_type",                          null: false
+    t.integer  "room_type",                          null: false
+    t.integer  "room_setup",                         null: false
+    t.integer  "bedrooms",                           null: false
+    t.integer  "guest_capacity",                     null: false
+    t.integer  "prepared_beds",                      null: false
+    t.integer  "bath_room",                          null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
