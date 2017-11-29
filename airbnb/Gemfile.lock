@@ -172,6 +172,7 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
+<<<<<<< HEAD
 <<<<<<< d3a29bb8c45a193ec1aa16116827cee7f55f50df
     unicorn (5.3.1)
       kgio (~> 2.6)
@@ -180,6 +181,10 @@ GEM
     warden (1.2.7)
       rack (>= 1.0)
 >>>>>>> deviseのインストール
+=======
+    warden (1.2.7)
+      rack (>= 1.0)
+>>>>>>> origin/install_devise
     web-console (3.5.1)
       actionview (>= 5.0)
       activemodel (>= 5.0)
