@@ -1,56 +1,0 @@
-{:uriI"Šfile://app/assets/bootstraps/js/tests/visual/alert.html?type=text/html&id=3c161f1ae25671602cf70fb97df74df4c785922dd0df4cb5936c051fd353a3aa:ET:load_pathI"app/assets/bootstraps;T:filenameI"5app/assets/bootstraps/js/tests/visual/alert.html;T:	nameI"js/tests/visual/alert;T:logical_pathI"js/tests/visual/alert.html;T:content_typeI"text/html;T:sourceI"<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
-    <title>Alert</title>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Alert <small>Bootstrap Visual Test</small></h1>
-
-      <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-      </div>
-
-      <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <p>
-          <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
-        </p>
-        <p>
-          <button type="button" class="btn btn-danger">Danger</button>
-          <button type="button" class="btn btn-secondary">Secondary</button>
-        </p>
-      </div>
-
-      <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <p>
-          <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.
-        </p>
-        <p>
-          <button type="button" class="btn btn-danger">Take this action</button>
-          <button type="button" class="btn btn-primary">Or do this</button>
-        </p>
-      </div>
-    </div>
-
-    <script src="../../../assets/js/vendor/jquery-slim.min.js"></script>
-    <script src="../../dist/util.js"></script>
-    <script src="../../dist/alert.js"></script>
-  </body>
-</html>
-;T:metadata{	:dependencieso:Set:
-@hash}
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Cfile-digest://app/assets/bootstraps/js/tests/visual/alert.html;TTF:charsetI"
-utf-8;F:digest"%{ú—j?l!.%åýƒ‡êæjÛm)p&h!>:lengthi:dependencies_digest"%ÿci>›‚·EŽéšäg‚.£½ˆ€T É¨|Ï×G:idI"E3c161f1ae25671602cf70fb97df74df4c785922dd0df4cb5936c051fd353a3aa;F:
-mtimel+°èY

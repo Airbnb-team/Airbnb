@@ -1,70 +1,0 @@
-{:uriI"êfile://app/assets/bootstraps/build/sauce_browsers.json?type=application/json&id=1f3ec1016e5f15865e0af4901cae2f9ad3ae0f0dfead6bf4f1f89214bff84681:ET:load_pathI"app/assets/bootstraps;T:filenameI"4app/assets/bootstraps/build/sauce_browsers.json;T:	nameI"build/sauce_browsers;T:logical_pathI"build/sauce_browsers.json;T:content_typeI"application/json;T:sourceI"≈[
-  {
-    "browserName": "safari",
-    "platform": "OS X 10.11",
-    "version": "latest"
-  },
-  {
-    "browserName": "chrome",
-    "platform": "OS X 10.11",
-    "version": "latest"
-  },
-  {
-    "browserName": "firefox",
-    "platform": "OS X 10.11",
-    "version": "latest"
-  },
-  {
-    "browserName": "MicrosoftEdge",
-    "platform": "Windows 10",
-    "version": "latest"
-  },
-  {
-    "browserName": "internet explorer",
-    "version": "11",
-    "platform": "Windows 8.1"
-  },
-  {
-    "browserName": "internet explorer",
-    "version": "10",
-    "platform": "Windows 8"
-  },
-  {
-    "browserName": "chrome",
-    "platform": "Windows 10",
-    "version": "latest"
-  },
-  {
-    "browserName": "firefox",
-    "platform": "Windows 10",
-    "version": "latest"
-  },
-  {
-    "browserName": "iphone",
-    "deviceName": "iPhone Simulator",
-    "platformName": "OS X 10.11",
-    "version": "9.3"
-  },
-  {
-    "browserName": "chrome",
-    "platform": "Linux",
-    "version": "latest"
-  },
-  {
-    "browserName": "firefox",
-    "platform": "Linux",
-    "version": "latest"
-  },
-  {
-    "platform": "Linux",
-    "browserName": "android",
-    "deviceName": "Android Emulator",
-    "version": "latest",
-    "deviceType": "phone"
-  }
-]
-;T:metadata{	:dependencieso:Set:
-@hash}
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"Bfile-digest://app/assets/bootstraps/build/sauce_browsers.json;TTF:charsetI"
-utf-8;F:digest"%ÜY∆óH&ù;kõÂ_ˇ«ØRmA˚é(N£ˆÁ‰iLj~à:lengthi≈:dependencies_digest"%x4Ls˝j“É©ûø¢5\ß¿)úú;HﬁX6õ:¨!:idI"E1f3ec1016e5f15865e0af4901cae2f9ad3ae0f0dfead6bf4f1f89214bff84681;F:
-mtimel+∞ËY

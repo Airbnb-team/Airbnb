@@ -1,43 +1,0 @@
-{:uriI"†file://app/assets/bootstraps/_layouts/redirect.html?type=text/html&id=10a69217ef5d5dda4a9594fee4bcdb96ebc14b4504a1ac329994c955430e1a47:ET:load_pathI"app/assets/bootstraps;T:filenameI"1app/assets/bootstraps/_layouts/redirect.html;T:	nameI"_layouts/redirect;T:logical_pathI"_layouts/redirect.html;T:content_typeI"text/html;T:sourceI"=<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Bootstrap - Content moved</title>
-    <link rel="canonical" href="{{ page.redirect.to }}">
-    <meta http-equiv="refresh" content="0; url={{ page.redirect.to }}">
-    <style>
-      html {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0;
-        width: 100vw;
-        height: 100vh;
-        text-align: center;
-      }
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-      }
-      h1 {
-        margin-top: 0;
-        margin-bottom: .5rem;
-      }
-      a {
-        color: #007bff;
-        text-decoration: none;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Redirectingâ€¦</h1>
-    <a href="{{ page.redirect.to }}">Click here if you are not redirected</a>
-    <script>window.location="{{ page.redirect.to }}";</script>
-  </body>
-</html>
-;T:metadata{	:dependencieso:Set:
-@hash}
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"?file-digest://app/assets/bootstraps/_layouts/redirect.html;TTF:charsetI"
-utf-8;F:digest"%Fw¬M»qó¡bü÷sT!a©.W/Œ19â+<Êƒ£‹:lengthi=:dependencies_digest"%C?8Š
-ElFñ“>ø¦œü´¿	¯®£”¹ÀGwé“:idI"E10a69217ef5d5dda4a9594fee4bcdb96ebc14b4504a1ac329994c955430e1a47;F:
-mtimel+°èY

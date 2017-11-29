@@ -1,41 +1,0 @@
-{:uriI"šfile://app/assets/bootstraps/docs/4.0/examples/sticky-footer/index.html?type=text/html&id=2f39705e0d20b925ae21d6cbffef9f40f5faecd1ee491d2b7e9df502263619b5:ET:load_pathI"app/assets/bootstraps;T:filenameI"Eapp/assets/bootstraps/docs/4.0/examples/sticky-footer/index.html;T:	nameI"*docs/4.0/examples/sticky-footer/index;T:logical_pathI"/docs/4.0/examples/sticky-footer/index.html;T:content_typeI"text/html;T:sourceI"}<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
-
-    <title>Sticky Footer Template for Bootstrap</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="sticky-footer.css" rel="stylesheet">
-  </head>
-
-  <body>
-
-    <!-- Begin page content -->
-    <main role="main" class="container">
-      <div class="mt-1">
-        <h1>Sticky footer</h1>
-      </div>
-      <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS.</p>
-      <p>Use <a href="../sticky-footer-navbar">the sticky footer with a fixed navbar</a> if need be, too.</p>
-    </main>
-
-    <footer class="footer">
-      <div class="container">
-        <span class="text-muted">Place sticky footer content here.</span>
-      </div>
-    </footer>
-  </body>
-</html>
-;T:metadata{	:dependencieso:Set:
-@hash}
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Sfile-digest://app/assets/bootstraps/docs/4.0/examples/sticky-footer/index.html;TTF:charsetI"
-utf-8;F:digest"%\@¯¡ji™20½Ð{øÃ–Tõéj8½ÕM~è	ž\d:lengthi}:dependencies_digest"%Ñ®$Ï²—ŽójÓ*ÌFKõž’ïÍ<C•T¡»–	*R:idI"E2f39705e0d20b925ae21d6cbffef9f40f5faecd1ee491d2b7e9df502263619b5;F:
-mtimel+°èY

@@ -1,13 +1,0 @@
-{:uriI"êfile://app/assets/bootstraps/build/workbox.config.json?type=application/json&id=445b55f7dd215fe312dfc38abca3c11f3be4de966d0322bebf73bc09ef89c8bc:ET:load_pathI"app/assets/bootstraps;T:filenameI"4app/assets/bootstraps/build/workbox.config.json;T:	nameI"build/workbox.config;T:logical_pathI"build/workbox.config.json;T:content_typeI"application/json;T:sourceI"ú{
-  "globDirectory": "./",
-  "globPatterns": [
-    "_gh_pages/**/*.{html,css,js,json,png,jpg}"
-  ],
-  "swSrc": "./sw.js",
-  "swDest": "./_gh_pages/sw.js"
-}
-;T:metadata{	:dependencieso:Set:
-@hash}
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"Bfile-digest://app/assets/bootstraps/build/workbox.config.json;TTF:charsetI"
-utf-8;F:digest"%YoH≤ı˝yjò,<&ZbÉä4,¶j”p•k›:T:lengthiú:dependencies_digest"%iK°9YYßX|8éå §à~º±≠Ááu'Hø*©≥3ﬁ:idI"E445b55f7dd215fe312dfc38abca3c11f3be4de966d0322bebf73bc09ef89c8bc;F:
-mtimel+∞ËY

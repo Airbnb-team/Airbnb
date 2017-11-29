@@ -1,31 +1,0 @@
-{:uriI"€file://app/assets/bootstraps/_data/colors.yml?type=text/yaml&id=2f08d8ae4920dcd9e358255c9c75d6cc87c28ee31daa2658d7ba3a8081d3056d:ET:load_pathI"app/assets/bootstraps;T:filenameI"+app/assets/bootstraps/_data/colors.yml;T:	nameI"_data/colors;T:logical_pathI"_data/colors.yml;T:content_typeI"text/yaml;T:sourceI"‘- name: blue
-  hex: "#007bff"
-- name: indigo
-  hex: "#6610f2"
-- name: purple
-  hex: "#6f42c1"
-- name: pink
-  hex: "#e83e8c"
-- name: red
-  hex: "#dc3545"
-- name: orange
-  hex: "#fd7e14"
-- name: yellow
-  hex: "#ffc107"
-- name: green
-  hex: "#28a745"
-- name: teal
-  hex: "#20c997"
-- name: cyan
-  hex: "#17a2b8"
-- name: white
-  hex: "#fff"
-- name: gray
-  hex: "#868e96"
-- name: gray-dark
-  hex: "#343a40"
-;T:metadata{	:dependencieso:Set:
-@hash}
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/yaml&file_type=text/yaml;TTI"9file-digest://app/assets/bootstraps/_data/colors.yml;TTF:charsetI"
-utf-8;F:digest"%Q‡c1*>„XdÆÓ&˜¢¿·	.yR¤°q¾½ˆ:lengthi‘:dependencies_digest"%®}B3iŞ¨q*"ğ`)Zpl"‡yFnXêF ‚:idI"E2f08d8ae4920dcd9e358255c9c75d6cc87c28ee31daa2658d7ba3a8081d3056d;F:
-mtimel+°èY

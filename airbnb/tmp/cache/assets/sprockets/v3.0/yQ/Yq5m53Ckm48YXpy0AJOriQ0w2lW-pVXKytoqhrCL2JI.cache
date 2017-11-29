@@ -1,20 +1,0 @@
-{:uriI"†file://app/assets/bootstraps/_data/translations.yml?type=text/yaml&id=e57527dfac125ca726786c241fc75579a4e9bdb4ac447d964954c482fa0cf428:ET:load_pathI"app/assets/bootstraps;T:filenameI"1app/assets/bootstraps/_data/translations.yml;T:	nameI"_data/translations;T:logical_pathI"_data/translations.yml;T:content_typeI"text/yaml;T:sourceI"„- name: ä¸­æ–‡(ç¹é«”)
-  code: zh-tw
-  description: Bootstrap 4 ç¹é«”ä¸­æ–‡æ‰‹å†Š
-  url: http://bootstrap.hexschool.com/
-
-- name: Chinese
-  code: zh
-  description: Bootstrap 4 ä¸­æ–‡æ–‡æ¡£æ•™ç¨‹
-  url: http://wiki.jikexueyuan.com/project/bootstrap4/
-
-- name: Brazilian Portuguese
-  code: pt-BR
-  description: Bootstrap 4 PortuguÃªs do Brasil
-  url: https://bootstrapbrasil.github.io/v4/
-;T:metadata{	:dependencieso:Set:
-@hash}
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/yaml&file_type=text/yaml;TTI"?file-digest://app/assets/bootstraps/_data/translations.yml;TTF:charsetI"
-utf-8;F:digest"%_ÂdÑ·_ )¥¾j7ğ_Á'².­ÎƒV`Ø5ü:lengthi„:dependencies_digest"%±Ÿ
-˜g:şÏ#'—¬#gA‘MïA›©A"Ñ¶µÄB:idI"Ee57527dfac125ca726786c241fc75579a4e9bdb4ac447d964954c482fa0cf428;F:
-mtimel+°èY

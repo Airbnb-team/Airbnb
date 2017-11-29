@@ -1,42 +1,0 @@
-{:uriI"…file://app/assets/bootstraps/_includes/header.html?type=text/html&id=5f8b83f2dd8dfa20a6dc9c4adc802ce729fd8eaef669172c6f9286b9bfed5906:ET:load_pathI"app/assets/bootstraps;T:filenameI"0app/assets/bootstraps/_includes/header.html;T:	nameI"_includes/header;T:logical_pathI"_includes/header.html;T:content_typeI"text/html;T:sourceI"<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Jekyll v{{ jekyll.version }}">
-
-<title>
-  {%- if page.title -%}
-    {{ page.title }} &middot; {{ site.title }}
-  {%- else -%}
-    {{ site.title }} &middot; {{ site.description }}
-  {%- endif -%}
-</title>
-
-<!-- Bootstrap core CSS -->
-{% if site.github %}
-  <link href="{{ site.baseurl }}/dist/css/bootstrap.min.css" rel="stylesheet">
-{% else %}
-  <link href="{{ site.baseurl }}/dist/css/bootstrap.css" rel="stylesheet">
-{% endif %}
-
-<!-- Documentation extras -->
-{% if page.layout == "docs" %}
-<link href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" rel="stylesheet">
-{% endif %}
-<link href="{{ site.baseurl }}/assets/css/docs.min.css" rel="stylesheet">
-
-{% include favicons.html %}
-
-{% include social.html %}
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-146052-10', 'getbootstrap.com');
-  ga('send', 'pageview');
-</script>
-;T:metadata{	:dependencieso:Set:
-@hash}
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI">file-digest://app/assets/bootstraps/_includes/header.html;TTF:charsetI"
-utf-8;F:digest"%¬	á› ˆ÷!Š¬1Ó*U¤ÌÀN·fÔS.dîQ:lengthi:dependencies_digest"%(u&ª]s‰ ş&ëä¡b¦âú(›jÚRkâ‘:idI"E5f8b83f2dd8dfa20a6dc9c4adc802ce729fd8eaef669172c6f9286b9bfed5906;F:
-mtimel+°èY

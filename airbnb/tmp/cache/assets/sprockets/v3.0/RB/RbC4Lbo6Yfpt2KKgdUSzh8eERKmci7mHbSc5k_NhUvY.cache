@@ -1,19 +1,0 @@
-{:uriI"„file://app/assets/bootstraps/_layouts/simple.html?type=text/html&id=d18ce68571eb2c8592931be3fe7bb90de1c1880369d069caaf66ad289fa334c5:ET:load_pathI"app/assets/bootstraps;T:filenameI"/app/assets/bootstraps/_layouts/simple.html;T:	nameI"_layouts/simple;T:logical_pathI"_layouts/simple.html;T:content_typeI"text/html;T:sourceI"
----
-layout: default
----
-
-<div class="container my-5">
-  <main class="bd-content" role="main">
-    <h1 class="bd-title" id="content">{{ page.title }}</h1>
-    <p class="bd-lead">{{ page.description }}</p>
-    {% include ads.html %}
-    {{ content }}
-  </main>
-</div>
-;T:metadata{	:dependencieso:Set:
-@hash}
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"=file-digest://app/assets/bootstraps/_layouts/simple.html;TTF:charsetI"
-utf-8;F:digest"%øÀ:¬ð¾É’è”KõaKˆCf†/Ñ2˜ÿkÖUû:lengthi
-:dependencies_digest"%’V—k±;oUþíî*°¿¨âùWTÊ‰k¸—µ'`B:idI"Ed18ce68571eb2c8592931be3fe7bb90de1c1880369d069caaf66ad289fa334c5;F:
-mtimel+°èY
