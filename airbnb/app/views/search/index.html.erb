@@ -5,28 +5,10 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   </head>
 
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="btn-group">
-          <button type="button" class="btn btn-danger">Action</button>
-          <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="sr-only">Toggle Dropdown</span>
-          </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">ホーム</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">宿泊先ホストをする</a>
-            <a class="dropdown-item" href="#">アカウント作成</a>
-            <a class="dropdown-item" href="#">ログイン</a>
-          </div>
-        </div>
-      </nav>
     </header>
 
     <div class="container">
@@ -55,10 +37,72 @@
         </div>
       </div>
 
-      <h3 class="font-weight-bold">宿泊先</h3>
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="card border-white">
+    <% content_for :head do %>
+      <meta name="turbolinks-cache-control" content="no-cache">
+    <% end %>
+    <h3 class="font-weight-bold">宿泊先</h3>
+    <div class="row">
+
+      <div class="scrolloer">
+      	<div><img src="assets/image1.jpeg" width="300px" height="200px"></div>
+      	<div><img src="assets/image2.jpeg" width="300px" height="200px"></div>
+      	<div><img src="assets/image3.jpeg" width="300px" height="200px"></div>
+      </div>
+      
+    </div>
+
+          <!-- <div>
+            <div class="card-body-lg">
+              <img class="card-img-top" src="assets/image1.jpeg" alt="Card image cap">
+              <h4 class="card-title">イメージ①</h4>
+              <p class="card-text">テスト</p>
+              <a href="#" class="btn btn-primary">Go</a>
+            </div>
+          </div>
+          <div>
+            <div class="card-body-lg">
+              <img class="card-img-top" src="assets/image2.jpeg" alt="Card image cap">
+              <h4 class="card-title">イメージ②</h4>
+              <p class="card-text">テスト</p>
+              <a href="#" class="btn btn-primary">Go</a>
+            </div>
+          </div>
+          <div>
+            <div class="card-body-lg">
+              <img class="card-img-top" src="assets/image3.jpeg" alt="Card image cap">
+              <h4 class="card-title">イメージ③</h4>
+              <p class="card-text">テスト</p>
+              <a href="#" class="btn btn-primary">Go</a>
+            </div>
+          </div>
+          <div>
+            <div class="card-body-lg">
+              <img class="card-img-top" src="assets/image4.jpeg" alt="Card image cap">
+              <h4 class="card-title">イメージ④</h4>
+              <p class="card-text">テスト</p>
+              <a href="#" class="btn btn-primary">Go</a>
+            </div>
+          </div>
+          <div>
+            <div class="card-body-lg">
+              <img class="card-img-top" src="assets/image5.jpeg" alt="Card image cap">
+              <h4 class="card-title">イメージ⑤</h4>
+              <p class="card-text">テスト</p>
+              <a href="#" class="btn btn-primary">Go</a>
+            </div>
+          </div>
+          <div>
+            <div class="card-body-lg">
+              <img class="card-img-top" src="assets/image6.jpeg" alt="Card image cap">
+              <h4 class="card-title">イメージ⑥</h4>
+              <p class="card-text">テスト</p>
+              <a href="#" class="btn btn-primary">Go</a>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+          <!-- <div class="card border-white">
             <div class="card-body-lg">
               <img class="card-img-top" src="assets/image1.jpeg" alt="Card image cap">
               <h4 class="card-title">イメージ①</h4>
@@ -96,8 +140,7 @@
               <a href="#" class="btn btn-primary">Go</a>
             </div>
           </div>
-        </div>
-      </div>
+        </div> -->
 
       <article>
         <div class="row">
@@ -111,7 +154,7 @@
             </div>
           </div>
           <div class="col-lg-6">
-              <img class="card-img-top" src="assets/image5.jpeg" alt="Card image cap">
+              <img class="card-img-top" src="assets/image7.jpeg" alt="Card image cap">
               </div>
             </div>
           </div>
@@ -122,20 +165,5 @@
 </div>
 
     <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-
-    <footer>
-      <div class="container">
-       <p class=" text-secondary text-center">COPYRIGHT FINAL_TEAM_A ALL RIGHTS RESERVED.</p>
-       <p class="float-right">
-         <a href="#">Back to top</a>
-       </p>
-     </div>
-    </footer>
-
-  </body>
 
 </html>
