@@ -3033,3 +3033,254 @@
   INFO [977e2e53] Running /usr/bin/env echo "Branch master (at 411e06ae29acdbb817018c50d9fd54e6c60c752f) deployed as release 20171130035524 by yamazakihiroki" >> /var/www/Airbnb/revisions.log as ec2-user@52.68.6.28
  DEBUG [977e2e53] Command: cd /var/www/Airbnb/releases && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env echo "Branch master (at 411e06ae29acdbb817018c50d9fd54e6c60c752f) deployed as release 20171130035524 by yamazakihiroki" >> /var/www/Airbnb/revisions.log )
   INFO [977e2e53] Finished in 0.104 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-11-30 12:57:25 +0900 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [3183b7e9] Running [ -d $HOME/.rbenv/versions/2.3.1 ] as ec2-user@52.68.6.28
+ DEBUG [3183b7e9] Command: [ -d $HOME/.rbenv/versions/2.3.1 ]
+ DEBUG [3183b7e9] Finished in 0.194 seconds with exit status 0 (successful).
+  INFO [fb3169c8] Running /usr/bin/env mkdir -p /tmp as ec2-user@52.68.6.28
+ DEBUG [fb3169c8] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /tmp )
+  INFO [fb3169c8] Finished in 0.067 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Airbnb-production-yamazakihiroki.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Airbnb-production-yamazakihiroki.sh 100.0%
+  INFO [c796ac74] Running /usr/bin/env chmod 700 /tmp/git-ssh-Airbnb-production-yamazakihiroki.sh as ec2-user@52.68.6.28
+ DEBUG [c796ac74] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env chmod 700 /tmp/git-ssh-Airbnb-production-yamazakihiroki.sh )
+  INFO [c796ac74] Finished in 0.067 seconds with exit status 0 (successful).
+  INFO [855f1432] Running /usr/bin/env git ls-remote git@github.com:Airbnb-team/Airbnb.git HEAD as ec2-user@52.68.6.28
+ DEBUG [855f1432] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Airbnb-production-yamazakihiroki.sh" ; /usr/bin/env git ls-remote git@github.com:Airbnb-team/Airbnb.git HEAD )
+ DEBUG [855f1432] 	41d1e3d64247bf9416a7963189c28597aa84e2c0	HEAD
+  INFO [855f1432] Finished in 1.857 seconds with exit status 0 (successful).
+  INFO [5a22ae40] Running /usr/bin/env mkdir -p /var/www/Airbnb/shared /var/www/Airbnb/releases as ec2-user@52.68.6.28
+ DEBUG [5a22ae40] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /var/www/Airbnb/shared /var/www/Airbnb/releases )
+  INFO [5a22ae40] Finished in 0.028 seconds with exit status 0 (successful).
+  INFO [56ecc76c] Running /usr/bin/env mkdir -p /var/www/Airbnb/shared/log /var/www/Airbnb/shared/tmp/pids /var/www/Airbnb/shared/tmp/cache /var/www/Airbnb/shared/tmp/sockets /var/www/Airbnb/shared/vendor/bundle /var/www/Airbnb/shared/public/system /var/www/Airbnb/shared/public/uploads /var/www/Airbnb/shared/public/assets as ec2-user@52.68.6.28
+ DEBUG [56ecc76c] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /var/www/Airbnb/shared/log /var/www/Airbnb/shared/tmp/pids /var/www/Airbnb/shared/tmp/cache /var/www/Airbnb/shared/tmp/sockets /var/www/Airbnb/shared/vendor/bundle /var/www/Airbnb/shared/public/system /var/www/Airbnb/shared/public/uploads /var/www/Airbnb/shared/public/assets )
+  INFO [56ecc76c] Finished in 0.068 seconds with exit status 0 (successful).
+ DEBUG [c7ca8c54] Running [ -f /var/www/Airbnb/current/REVISION ] as ec2-user@52.68.6.28
+ DEBUG [c7ca8c54] Command: [ -f /var/www/Airbnb/current/REVISION ]
+ DEBUG [c7ca8c54] Finished in 0.072 seconds with exit status 0 (successful).
+ DEBUG [a8269b1d] Running /usr/bin/env cat /var/www/Airbnb/current/REVISION 2>/dev/null as ec2-user@52.68.6.28
+ DEBUG [a8269b1d] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env cat /var/www/Airbnb/current/REVISION 2>/dev/null )
+ DEBUG [a8269b1d] 	411e06ae29acdbb817018c50d9fd54e6c60c752f
+ DEBUG [a8269b1d] Finished in 0.069 seconds with exit status 0 (successful).
+ DEBUG [07244b6f] Running [ -f /var/www/Airbnb/repo/HEAD ] as ec2-user@52.68.6.28
+ DEBUG [07244b6f] Command: [ -f /var/www/Airbnb/repo/HEAD ]
+ DEBUG [07244b6f] Finished in 0.064 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/Airbnb/repo
+ DEBUG [a1042e2a] Running if test ! -d /var/www/Airbnb/repo; then echo "Directory does not exist '/var/www/Airbnb/repo'" 1>&2; false; fi as ec2-user@52.68.6.28
+ DEBUG [a1042e2a] Command: if test ! -d /var/www/Airbnb/repo; then echo "Directory does not exist '/var/www/Airbnb/repo'" 1>&2; false; fi
+ DEBUG [a1042e2a] Finished in 0.066 seconds with exit status 0 (successful).
+  INFO [32a8cc90] Running /usr/bin/env git remote set-url origin git@github.com:Airbnb-team/Airbnb.git as ec2-user@52.68.6.28
+ DEBUG [32a8cc90] Command: cd /var/www/Airbnb/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Airbnb-production-yamazakihiroki.sh" ; /usr/bin/env git remote set-url origin git@github.com:Airbnb-team/Airbnb.git )
+  INFO [32a8cc90] Finished in 0.068 seconds with exit status 0 (successful).
+  INFO [6d85ff39] Running /usr/bin/env git remote update --prune as ec2-user@52.68.6.28
+ DEBUG [6d85ff39] Command: cd /var/www/Airbnb/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Airbnb-production-yamazakihiroki.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [6d85ff39] 	Fetching origin
+ DEBUG [6d85ff39] 	From github.com:Airbnb-team/Airbnb
+   411e06a..41d1e3d  master     -> master
+  INFO [6d85ff39] Finished in 2.027 seconds with exit status 0 (successful).
+ DEBUG [aaea58c5] Running if test ! -d /var/www/Airbnb/repo; then echo "Directory does not exist '/var/www/Airbnb/repo'" 1>&2; false; fi as ec2-user@52.68.6.28
+ DEBUG [aaea58c5] Command: if test ! -d /var/www/Airbnb/repo; then echo "Directory does not exist '/var/www/Airbnb/repo'" 1>&2; false; fi
+ DEBUG [aaea58c5] Finished in 0.027 seconds with exit status 0 (successful).
+  INFO [a7414a36] Running /usr/bin/env mkdir -p /var/www/Airbnb/releases/20171130035727 as ec2-user@52.68.6.28
+ DEBUG [a7414a36] Command: cd /var/www/Airbnb/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Airbnb-production-yamazakihiroki.sh" ; /usr/bin/env mkdir -p /var/www/Airbnb/releases/20171130035727 )
+  INFO [a7414a36] Finished in 0.068 seconds with exit status 0 (successful).
+  INFO [a07e5372] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Airbnb/releases/20171130035727 as ec2-user@52.68.6.28
+ DEBUG [a07e5372] Command: cd /var/www/Airbnb/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Airbnb-production-yamazakihiroki.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Airbnb/releases/20171130035727 )
+  INFO [a07e5372] Finished in 0.143 seconds with exit status 0 (successful).
+ DEBUG [6cc79848] Running if test ! -d /var/www/Airbnb/repo; then echo "Directory does not exist '/var/www/Airbnb/repo'" 1>&2; false; fi as ec2-user@52.68.6.28
+ DEBUG [6cc79848] Command: if test ! -d /var/www/Airbnb/repo; then echo "Directory does not exist '/var/www/Airbnb/repo'" 1>&2; false; fi
+ DEBUG [6cc79848] Finished in 0.066 seconds with exit status 0 (successful).
+ DEBUG [5f1e1a13] Running /usr/bin/env git rev-list --max-count=1 master as ec2-user@52.68.6.28
+ DEBUG [5f1e1a13] Command: cd /var/www/Airbnb/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Airbnb-production-yamazakihiroki.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [5f1e1a13] 	41d1e3d64247bf9416a7963189c28597aa84e2c0
+ DEBUG [5f1e1a13] Finished in 0.072 seconds with exit status 0 (successful).
+ DEBUG [00fe2fdf] Running if test ! -d /var/www/Airbnb/releases/20171130035727; then echo "Directory does not exist '/var/www/Airbnb/releases/20171130035727'" 1>&2; false; fi as ec2-user@52.68.6.28
+ DEBUG [00fe2fdf] Command: if test ! -d /var/www/Airbnb/releases/20171130035727; then echo "Directory does not exist '/var/www/Airbnb/releases/20171130035727'" 1>&2; false; fi
+ DEBUG [00fe2fdf] Finished in 0.066 seconds with exit status 0 (successful).
+  INFO [feb4092d] Running /usr/bin/env echo "41d1e3d64247bf9416a7963189c28597aa84e2c0" >> REVISION as ec2-user@52.68.6.28
+ DEBUG [feb4092d] Command: cd /var/www/Airbnb/releases/20171130035727 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env echo "41d1e3d64247bf9416a7963189c28597aa84e2c0" >> REVISION )
+  INFO [feb4092d] Finished in 0.070 seconds with exit status 0 (successful).
+  INFO [1b69da4f] Running /usr/bin/env mkdir -p /var/www/Airbnb/releases/20171130035727 /var/www/Airbnb/releases/20171130035727/tmp /var/www/Airbnb/releases/20171130035727/vendor /var/www/Airbnb/releases/20171130035727/public as ec2-user@52.68.6.28
+ DEBUG [1b69da4f] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /var/www/Airbnb/releases/20171130035727 /var/www/Airbnb/releases/20171130035727/tmp /var/www/Airbnb/releases/20171130035727/vendor /var/www/Airbnb/releases/20171130035727/public )
+  INFO [1b69da4f] Finished in 0.068 seconds with exit status 0 (successful).
+ DEBUG [de5e17b5] Running [ -L /var/www/Airbnb/releases/20171130035727/log ] as ec2-user@52.68.6.28
+ DEBUG [de5e17b5] Command: [ -L /var/www/Airbnb/releases/20171130035727/log ]
+ DEBUG [de5e17b5] Finished in 0.065 seconds with exit status 1 (failed).
+ DEBUG [52aebffb] Running [ -d /var/www/Airbnb/releases/20171130035727/log ] as ec2-user@52.68.6.28
+ DEBUG [52aebffb] Command: [ -d /var/www/Airbnb/releases/20171130035727/log ]
+ DEBUG [52aebffb] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO [fb1c3949] Running /usr/bin/env rm -rf /var/www/Airbnb/releases/20171130035727/log as ec2-user@52.68.6.28
+ DEBUG [fb1c3949] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env rm -rf /var/www/Airbnb/releases/20171130035727/log )
+  INFO [fb1c3949] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO [bd16b2e0] Running /usr/bin/env ln -s /var/www/Airbnb/shared/log /var/www/Airbnb/releases/20171130035727/log as ec2-user@52.68.6.28
+ DEBUG [bd16b2e0] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/Airbnb/shared/log /var/www/Airbnb/releases/20171130035727/log )
+  INFO [bd16b2e0] Finished in 0.065 seconds with exit status 0 (successful).
+ DEBUG [0febd6b6] Running [ -L /var/www/Airbnb/releases/20171130035727/tmp/pids ] as ec2-user@52.68.6.28
+ DEBUG [0febd6b6] Command: [ -L /var/www/Airbnb/releases/20171130035727/tmp/pids ]
+ DEBUG [0febd6b6] Finished in 0.071 seconds with exit status 1 (failed).
+ DEBUG [b6618e7d] Running [ -d /var/www/Airbnb/releases/20171130035727/tmp/pids ] as ec2-user@52.68.6.28
+ DEBUG [b6618e7d] Command: [ -d /var/www/Airbnb/releases/20171130035727/tmp/pids ]
+ DEBUG [b6618e7d] Finished in 0.065 seconds with exit status 0 (successful).
+  INFO [afeecd99] Running /usr/bin/env rm -rf /var/www/Airbnb/releases/20171130035727/tmp/pids as ec2-user@52.68.6.28
+ DEBUG [afeecd99] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env rm -rf /var/www/Airbnb/releases/20171130035727/tmp/pids )
+  INFO [afeecd99] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO [c24600ee] Running /usr/bin/env ln -s /var/www/Airbnb/shared/tmp/pids /var/www/Airbnb/releases/20171130035727/tmp/pids as ec2-user@52.68.6.28
+ DEBUG [c24600ee] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/Airbnb/shared/tmp/pids /var/www/Airbnb/releases/20171130035727/tmp/pids )
+  INFO [c24600ee] Finished in 0.068 seconds with exit status 0 (successful).
+ DEBUG [84e43aa6] Running [ -L /var/www/Airbnb/releases/20171130035727/tmp/cache ] as ec2-user@52.68.6.28
+ DEBUG [84e43aa6] Command: [ -L /var/www/Airbnb/releases/20171130035727/tmp/cache ]
+ DEBUG [84e43aa6] Finished in 0.068 seconds with exit status 1 (failed).
+ DEBUG [8f32f5d8] Running [ -d /var/www/Airbnb/releases/20171130035727/tmp/cache ] as ec2-user@52.68.6.28
+ DEBUG [8f32f5d8] Command: [ -d /var/www/Airbnb/releases/20171130035727/tmp/cache ]
+ DEBUG [8f32f5d8] Finished in 0.073 seconds with exit status 0 (successful).
+  INFO [6d5ab40a] Running /usr/bin/env rm -rf /var/www/Airbnb/releases/20171130035727/tmp/cache as ec2-user@52.68.6.28
+ DEBUG [6d5ab40a] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env rm -rf /var/www/Airbnb/releases/20171130035727/tmp/cache )
+  INFO [6d5ab40a] Finished in 0.088 seconds with exit status 0 (successful).
+  INFO [ba3f0429] Running /usr/bin/env ln -s /var/www/Airbnb/shared/tmp/cache /var/www/Airbnb/releases/20171130035727/tmp/cache as ec2-user@52.68.6.28
+ DEBUG [ba3f0429] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/Airbnb/shared/tmp/cache /var/www/Airbnb/releases/20171130035727/tmp/cache )
+  INFO [ba3f0429] Finished in 0.066 seconds with exit status 0 (successful).
+ DEBUG [526abb9c] Running [ -L /var/www/Airbnb/releases/20171130035727/tmp/sockets ] as ec2-user@52.68.6.28
+ DEBUG [526abb9c] Command: [ -L /var/www/Airbnb/releases/20171130035727/tmp/sockets ]
+ DEBUG [526abb9c] Finished in 0.066 seconds with exit status 1 (failed).
+ DEBUG [e54f1974] Running [ -d /var/www/Airbnb/releases/20171130035727/tmp/sockets ] as ec2-user@52.68.6.28
+ DEBUG [e54f1974] Command: [ -d /var/www/Airbnb/releases/20171130035727/tmp/sockets ]
+ DEBUG [e54f1974] Finished in 0.070 seconds with exit status 1 (failed).
+  INFO [a09fdd7b] Running /usr/bin/env ln -s /var/www/Airbnb/shared/tmp/sockets /var/www/Airbnb/releases/20171130035727/tmp/sockets as ec2-user@52.68.6.28
+ DEBUG [a09fdd7b] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/Airbnb/shared/tmp/sockets /var/www/Airbnb/releases/20171130035727/tmp/sockets )
+  INFO [a09fdd7b] Finished in 0.067 seconds with exit status 0 (successful).
+ DEBUG [09ee5100] Running [ -L /var/www/Airbnb/releases/20171130035727/vendor/bundle ] as ec2-user@52.68.6.28
+ DEBUG [09ee5100] Command: [ -L /var/www/Airbnb/releases/20171130035727/vendor/bundle ]
+ DEBUG [09ee5100] Finished in 0.064 seconds with exit status 1 (failed).
+ DEBUG [fc0badf0] Running [ -d /var/www/Airbnb/releases/20171130035727/vendor/bundle ] as ec2-user@52.68.6.28
+ DEBUG [fc0badf0] Command: [ -d /var/www/Airbnb/releases/20171130035727/vendor/bundle ]
+ DEBUG [fc0badf0] Finished in 0.067 seconds with exit status 1 (failed).
+  INFO [4aa46c4c] Running /usr/bin/env ln -s /var/www/Airbnb/shared/vendor/bundle /var/www/Airbnb/releases/20171130035727/vendor/bundle as ec2-user@52.68.6.28
+ DEBUG [4aa46c4c] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/Airbnb/shared/vendor/bundle /var/www/Airbnb/releases/20171130035727/vendor/bundle )
+  INFO [4aa46c4c] Finished in 0.071 seconds with exit status 0 (successful).
+ DEBUG [eb93fab9] Running [ -L /var/www/Airbnb/releases/20171130035727/public/system ] as ec2-user@52.68.6.28
+ DEBUG [eb93fab9] Command: [ -L /var/www/Airbnb/releases/20171130035727/public/system ]
+ DEBUG [eb93fab9] Finished in 0.067 seconds with exit status 1 (failed).
+ DEBUG [ba0d5f4f] Running [ -d /var/www/Airbnb/releases/20171130035727/public/system ] as ec2-user@52.68.6.28
+ DEBUG [ba0d5f4f] Command: [ -d /var/www/Airbnb/releases/20171130035727/public/system ]
+ DEBUG [ba0d5f4f] Finished in 0.068 seconds with exit status 1 (failed).
+  INFO [b1240e91] Running /usr/bin/env ln -s /var/www/Airbnb/shared/public/system /var/www/Airbnb/releases/20171130035727/public/system as ec2-user@52.68.6.28
+ DEBUG [b1240e91] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/Airbnb/shared/public/system /var/www/Airbnb/releases/20171130035727/public/system )
+  INFO [b1240e91] Finished in 0.071 seconds with exit status 0 (successful).
+ DEBUG [f4c143e7] Running [ -L /var/www/Airbnb/releases/20171130035727/public/uploads ] as ec2-user@52.68.6.28
+ DEBUG [f4c143e7] Command: [ -L /var/www/Airbnb/releases/20171130035727/public/uploads ]
+ DEBUG [f4c143e7] Finished in 0.066 seconds with exit status 1 (failed).
+ DEBUG [ff486225] Running [ -d /var/www/Airbnb/releases/20171130035727/public/uploads ] as ec2-user@52.68.6.28
+ DEBUG [ff486225] Command: [ -d /var/www/Airbnb/releases/20171130035727/public/uploads ]
+ DEBUG [ff486225] Finished in 0.069 seconds with exit status 1 (failed).
+  INFO [c4a2163a] Running /usr/bin/env ln -s /var/www/Airbnb/shared/public/uploads /var/www/Airbnb/releases/20171130035727/public/uploads as ec2-user@52.68.6.28
+ DEBUG [c4a2163a] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/Airbnb/shared/public/uploads /var/www/Airbnb/releases/20171130035727/public/uploads )
+  INFO [c4a2163a] Finished in 0.069 seconds with exit status 0 (successful).
+ DEBUG [443ac553] Running [ -L /var/www/Airbnb/releases/20171130035727/public/assets ] as ec2-user@52.68.6.28
+ DEBUG [443ac553] Command: [ -L /var/www/Airbnb/releases/20171130035727/public/assets ]
+ DEBUG [443ac553] Finished in 0.067 seconds with exit status 1 (failed).
+ DEBUG [99cfabf0] Running [ -d /var/www/Airbnb/releases/20171130035727/public/assets ] as ec2-user@52.68.6.28
+ DEBUG [99cfabf0] Command: [ -d /var/www/Airbnb/releases/20171130035727/public/assets ]
+ DEBUG [99cfabf0] Finished in 0.068 seconds with exit status 1 (failed).
+  INFO [c0ce9625] Running /usr/bin/env ln -s /var/www/Airbnb/shared/public/assets /var/www/Airbnb/releases/20171130035727/public/assets as ec2-user@52.68.6.28
+ DEBUG [c0ce9625] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/Airbnb/shared/public/assets /var/www/Airbnb/releases/20171130035727/public/assets )
+  INFO [c0ce9625] Finished in 0.067 seconds with exit status 0 (successful).
+ DEBUG [abe67d09] Running if test ! -d /var/www/Airbnb/releases/20171130035727; then echo "Directory does not exist '/var/www/Airbnb/releases/20171130035727'" 1>&2; false; fi as ec2-user@52.68.6.28
+ DEBUG [abe67d09] Command: if test ! -d /var/www/Airbnb/releases/20171130035727; then echo "Directory does not exist '/var/www/Airbnb/releases/20171130035727'" 1>&2; false; fi
+ DEBUG [abe67d09] Finished in 0.064 seconds with exit status 0 (successful).
+ DEBUG [9bfd89e9] Running $HOME/.rbenv/bin/rbenv exec bundle check --path /var/www/Airbnb/shared/bundle as ec2-user@52.68.6.28
+ DEBUG [9bfd89e9] Command: cd /var/www/Airbnb/releases/20171130035727 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; $HOME/.rbenv/bin/rbenv exec bundle check --path /var/www/Airbnb/shared/bundle )
+ DEBUG [9bfd89e9] 	The following gems are missing
+ DEBUG [9bfd89e9] 	 * net-ssh (4.2.0)
+ DEBUG [9bfd89e9] 	 * net-scp (1.2.1)
+ DEBUG [9bfd89e9] 	 * sshkit (1.15.1)
+ DEBUG [9bfd89e9] 	 * airbrussh (1.3.0)
+ DEBUG [9bfd89e9] 	 * bindex (0.5.0)
+ DEBUG [9bfd89e9] 	 * byebug (9.1.0)
+ DEBUG [9bfd89e9] 	 * capistrano (3.10.0)
+ DEBUG [9bfd89e9] 	 * capistrano-bundler (1.3.0)
+ DEBUG [9bfd89e9] 	 * capistrano-rails (1.3.1)
+ DEBUG [9bfd89e9] 	 * capistrano-rbenv (2.1.3)
+ DEBUG [9bfd89e9] 	 * capistrano3-unicorn (0.2.1)
+ DEBUG [9bfd89e9] 	 * listen (3.0.8)
+ DEBUG [9bfd89e9] 	 * spring (2.0.2)
+ DEBUG [9bfd89e9] 	 * spring-watcher-listen (2.0.1)
+ DEBUG [9bfd89e9] 	 * web-console (3.5.1)
+ DEBUG [9bfd89e9] 	Install missing gems with `bundle install`
+ DEBUG [9bfd89e9] Finished in 0.277 seconds with exit status 1 (failed).
+  INFO [0241b18c] Running $HOME/.rbenv/bin/rbenv exec bundle install --path /var/www/Airbnb/shared/bundle --without development test --deployment --quiet as ec2-user@52.68.6.28
+ DEBUG [0241b18c] Command: cd /var/www/Airbnb/releases/20171130035727 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; $HOME/.rbenv/bin/rbenv exec bundle install --path /var/www/Airbnb/shared/bundle --without development test --deployment --quiet )
+  INFO [0241b18c] Finished in 0.456 seconds with exit status 0 (successful).
+ DEBUG [08851d0a] Running if test ! -d /var/www/Airbnb/releases/20171130035727; then echo "Directory does not exist '/var/www/Airbnb/releases/20171130035727'" 1>&2; false; fi as ec2-user@52.68.6.28
+ DEBUG [08851d0a] Command: if test ! -d /var/www/Airbnb/releases/20171130035727; then echo "Directory does not exist '/var/www/Airbnb/releases/20171130035727'" 1>&2; false; fi
+ DEBUG [08851d0a] Finished in 0.072 seconds with exit status 0 (successful).
+  INFO [aaadd12d] Running $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile as ec2-user@52.68.6.28
+ DEBUG [aaadd12d] Command: cd /var/www/Airbnb/releases/20171130035727 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" RAILS_ENV="production" RAILS_GROUPS="" ; $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile )
+  INFO [aaadd12d] Finished in 1.708 seconds with exit status 0 (successful).
+ DEBUG [cf842496] Running if test ! -d /var/www/Airbnb/releases/20171130035727; then echo "Directory does not exist '/var/www/Airbnb/releases/20171130035727'" 1>&2; false; fi as ec2-user@52.68.6.28
+ DEBUG [cf842496] Command: if test ! -d /var/www/Airbnb/releases/20171130035727; then echo "Directory does not exist '/var/www/Airbnb/releases/20171130035727'" 1>&2; false; fi
+ DEBUG [cf842496] Finished in 0.068 seconds with exit status 0 (successful).
+  INFO [f2fafd76] Running /usr/bin/env mkdir -p /var/www/Airbnb/releases/20171130035727/assets_manifest_backup as ec2-user@52.68.6.28
+ DEBUG [f2fafd76] Command: cd /var/www/Airbnb/releases/20171130035727 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /var/www/Airbnb/releases/20171130035727/assets_manifest_backup )
+  INFO [f2fafd76] Finished in 0.068 seconds with exit status 0 (successful).
+ DEBUG [91603f41] Running /usr/bin/env ls /var/www/Airbnb/releases/20171130035727/public/assets/.sprockets-manifest* as ec2-user@52.68.6.28
+ DEBUG [91603f41] Command: cd /var/www/Airbnb/releases/20171130035727 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ls /var/www/Airbnb/releases/20171130035727/public/assets/.sprockets-manifest* )
+ DEBUG [91603f41] 	/var/www/Airbnb/releases/20171130035727/public/assets/.sprockets-manifest-08a414199c917ec0e618d9e4cd199499.json
+ DEBUG [91603f41] Finished in 0.068 seconds with exit status 0 (successful).
+ DEBUG [eec9baad] Running /usr/bin/env ls /var/www/Airbnb/releases/20171130035727/public/assets/.sprockets-manifest* as ec2-user@52.68.6.28
+ DEBUG [eec9baad] Command: cd /var/www/Airbnb/releases/20171130035727 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ls /var/www/Airbnb/releases/20171130035727/public/assets/.sprockets-manifest* )
+ DEBUG [eec9baad] 	/var/www/Airbnb/releases/20171130035727/public/assets/.sprockets-manifest-08a414199c917ec0e618d9e4cd199499.json
+ DEBUG [eec9baad] Finished in 0.071 seconds with exit status 0 (successful).
+  INFO [40cb146e] Running /usr/bin/env cp /var/www/Airbnb/releases/20171130035727/public/assets/.sprockets-manifest-08a414199c917ec0e618d9e4cd199499.json /var/www/Airbnb/releases/20171130035727/assets_manifest_backup as ec2-user@52.68.6.28
+ DEBUG [40cb146e] Command: cd /var/www/Airbnb/releases/20171130035727 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env cp /var/www/Airbnb/releases/20171130035727/public/assets/.sprockets-manifest-08a414199c917ec0e618d9e4cd199499.json /var/www/Airbnb/releases/20171130035727/assets_manifest_backup )
+  INFO [40cb146e] Finished in 0.065 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [5819fa2b] Running if test ! -d /var/www/Airbnb/releases/20171130035727; then echo "Directory does not exist '/var/www/Airbnb/releases/20171130035727'" 1>&2; false; fi as ec2-user@52.68.6.28
+ DEBUG [5819fa2b] Command: if test ! -d /var/www/Airbnb/releases/20171130035727; then echo "Directory does not exist '/var/www/Airbnb/releases/20171130035727'" 1>&2; false; fi
+ DEBUG [5819fa2b] Finished in 0.064 seconds with exit status 0 (successful).
+  INFO [7122b843] Running $HOME/.rbenv/bin/rbenv exec bundle exec rake db:migrate as ec2-user@52.68.6.28
+ DEBUG [7122b843] Command: cd /var/www/Airbnb/releases/20171130035727 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" RAILS_ENV="production" ; $HOME/.rbenv/bin/rbenv exec bundle exec rake db:migrate )
+  INFO [7122b843] Finished in 1.563 seconds with exit status 0 (successful).
+  INFO [44809616] Running /usr/bin/env ln -s /var/www/Airbnb/releases/20171130035727 /var/www/Airbnb/releases/current as ec2-user@52.68.6.28
+ DEBUG [44809616] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/Airbnb/releases/20171130035727 /var/www/Airbnb/releases/current )
+  INFO [44809616] Finished in 0.118 seconds with exit status 0 (successful).
+  INFO [8cf4a6ac] Running /usr/bin/env mv /var/www/Airbnb/releases/current /var/www/Airbnb as ec2-user@52.68.6.28
+ DEBUG [8cf4a6ac] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mv /var/www/Airbnb/releases/current /var/www/Airbnb )
+  INFO [8cf4a6ac] Finished in 0.110 seconds with exit status 0 (successful).
+ DEBUG [89404ee8] Running if test ! -d /var/www/Airbnb/current; then echo "Directory does not exist '/var/www/Airbnb/current'" 1>&2; false; fi as ec2-user@52.68.6.28
+ DEBUG [89404ee8] Command: if test ! -d /var/www/Airbnb/current; then echo "Directory does not exist '/var/www/Airbnb/current'" 1>&2; false; fi
+ DEBUG [89404ee8] Finished in 0.108 seconds with exit status 0 (successful).
+ DEBUG [64bfdbfe] Running [ -e /var/www/Airbnb/shared/tmp/pids/unicorn.pid ] && kill -0 `cat /var/www/Airbnb/shared/tmp/pids/unicorn.pid` as ec2-user@52.68.6.28
+ DEBUG [64bfdbfe] Command: [ -e /var/www/Airbnb/shared/tmp/pids/unicorn.pid ] && kill -0 `cat /var/www/Airbnb/shared/tmp/pids/unicorn.pid`
+ DEBUG [64bfdbfe] Finished in 0.100 seconds with exit status 0 (successful).
+  INFO unicorn is running...
+ DEBUG [41bd656c] Running if test ! -d /var/www/Airbnb/current; then echo "Directory does not exist '/var/www/Airbnb/current'" 1>&2; false; fi as ec2-user@52.68.6.28
+ DEBUG [41bd656c] Command: if test ! -d /var/www/Airbnb/current; then echo "Directory does not exist '/var/www/Airbnb/current'" 1>&2; false; fi
+ DEBUG [41bd656c] Finished in 0.109 seconds with exit status 0 (successful).
+  INFO unicorn restarting...
+  INFO [682e6f08] Running /usr/bin/env kill -s USR2 `cat /var/www/Airbnb/shared/tmp/pids/unicorn.pid` as ec2-user@52.68.6.28
+ DEBUG [682e6f08] Command: cd /var/www/Airbnb/current && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env kill -s USR2 `cat /var/www/Airbnb/shared/tmp/pids/unicorn.pid` )
+  INFO [682e6f08] Finished in 0.098 seconds with exit status 0 (successful).
+ DEBUG [d484fe87] Running /usr/bin/env ls -x /var/www/Airbnb/releases as ec2-user@52.68.6.28
+ DEBUG [d484fe87] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ls -x /var/www/Airbnb/releases )
+ DEBUG [d484fe87] 	20171130033511	20171130034343	20171130034632	20171130034811	20171130035524
+20171130035727
+ DEBUG [d484fe87] Finished in 0.139 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 52.68.6.28
+ DEBUG [a68eb791] Running [ -d /var/www/Airbnb/current ] as ec2-user@52.68.6.28
+ DEBUG [a68eb791] Command: [ -d /var/www/Airbnb/current ]
+ DEBUG [a68eb791] Finished in 0.127 seconds with exit status 0 (successful).
+ DEBUG [4f4fe551] Running /usr/bin/env readlink /var/www/Airbnb/current as ec2-user@52.68.6.28
+ DEBUG [4f4fe551] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env readlink /var/www/Airbnb/current )
+ DEBUG [4f4fe551] 	/var/www/Airbnb/releases/20171130035727
+ DEBUG [4f4fe551] Finished in 0.180 seconds with exit status 0 (successful).
+  INFO [b3a447a1] Running /usr/bin/env rm -rf /var/www/Airbnb/releases/20171130033511 as ec2-user@52.68.6.28
+ DEBUG [b3a447a1] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env rm -rf /var/www/Airbnb/releases/20171130033511 )
+  INFO [b3a447a1] Finished in 0.169 seconds with exit status 0 (successful).
+ DEBUG [5f4a7cfc] Running if test ! -d /var/www/Airbnb/releases; then echo "Directory does not exist '/var/www/Airbnb/releases'" 1>&2; false; fi as ec2-user@52.68.6.28
+ DEBUG [5f4a7cfc] Command: if test ! -d /var/www/Airbnb/releases; then echo "Directory does not exist '/var/www/Airbnb/releases'" 1>&2; false; fi
+ DEBUG [5f4a7cfc] Finished in 0.122 seconds with exit status 0 (successful).
+  INFO [3cf12c53] Running /usr/bin/env echo "Branch master (at 41d1e3d64247bf9416a7963189c28597aa84e2c0) deployed as release 20171130035727 by yamazakihiroki" >> /var/www/Airbnb/revisions.log as ec2-user@52.68.6.28
+ DEBUG [3cf12c53] Command: cd /var/www/Airbnb/releases && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env echo "Branch master (at 41d1e3d64247bf9416a7963189c28597aa84e2c0) deployed as release 20171130035727 by yamazakihiroki" >> /var/www/Airbnb/revisions.log )
+  INFO [3cf12c53] Finished in 0.146 seconds with exit status 0 (successful).
