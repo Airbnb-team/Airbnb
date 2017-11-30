@@ -54,8 +54,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pry-rails'
 
 gem "liquid"
-gem 'bootstrap', '~> 4.0.0.beta2.1'
-
+gem 'bootstrap', '~> 4.0.0.beta2'
 
 group :production do
   gem 'unicorn'
