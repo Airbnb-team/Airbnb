@@ -21,3 +21,5 @@ public/
 .woff2
 .eot
 .ttf
+
+config/secrets.yml
