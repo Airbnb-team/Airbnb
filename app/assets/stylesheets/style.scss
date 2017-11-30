@@ -1,0 +1,30 @@
+.navbar-style {
+	border-bottom: 0.1px solid #999;
+}
+
+.nav-item-style {
+	text-decoration: none;
+}
+
+.container-style {
+}
+
+.row-1 {
+	padding-bottom: 30px;
+}
+
+.row-2 {
+	padding-bottom: 15px;
+}
+
+.footer-style {
+	border-top: 0.1px solid #999;
+	padding-bottom: 30px;
+	color: #999;
+}
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}
