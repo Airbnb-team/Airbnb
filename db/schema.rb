@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171129054447) do
+ActiveRecord::Schema.define(version: 20171130090959) do
 
   create_table "amenities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.boolean  "pet"
@@ -157,13 +157,15 @@ ActiveRecord::Schema.define(version: 20171129054447) do
     t.datetime "created_at",                                        null: false
     t.datetime "updated_at",                                        null: false
     t.string   "name"
-    t.string   "image"
     t.string   "sex"
     t.string   "birthday"
     t.string   "langage"
     t.string   "currency"
     t.text     "intro",                  limit: 65535
     t.boolean  "host"
+    t.string   "image"
+    t.string   "provider"
+    t.string   "uid"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
