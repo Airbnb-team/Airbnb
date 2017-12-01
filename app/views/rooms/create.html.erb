@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Airbnb</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="assets/style.scss">
+    <script src="assets/style.js"></script>
+  </head>
+
+  <header class="header">
+    <nav class="navbar fixed-top navbar-white bg-white navbar-style">
+      <h1 class="text-danger font-weight-bold">Airbnb</h1>
+      <ul class="nav justify-content-end">
+        <li class="nav-item nav-item-style">
+          <li class="nav-item nav-item-style">
+            <%= link_to '戻る', "/" %>
+          </li>
+          <li class="nav-item nav-item-style">
+            <%= link_to '保存して閉じる', "/" %>
+          </li>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+ 	<body>
+
+    <div class="container container-style">
+      <div class="row row-3">
+      <h2>下記項目を入力してください</h2>
+        <div class="col-md-12">
+          <form>
+            <div class="form-group form-style">
+              <h5 class="font-weight-bold">所在地を入力してください</h5>
+              <label for="inputAddress" class="text-weight-bold">住所を入力してください</label>
+              <input type="text" class="form-control border border-info rounded-0" id="inputAddress" placeholder="(例) 東京都渋谷区代官山町１７">
+            </div>
+            <div class="form-group form-style">
+              <label for="inputAddress2" class="text-weight-bold">マンション名・部屋番号を入力してください</label>
+              <input type="text" class="form-control border border-info rounded-0" id="inputAddress2" placeholder="(例)代官山アドレス ザ・タワー 2001号室">
+            </div>
+            <div class="form-group form-style">
+              <h5 class="font-weight-bold">部屋情報を入力してください</h5>
+
+              <label>部屋タイプ</label>
+              <div class="col-md-12">
+                <div class="dropdown">
+                  <button class="btn dropdown-toggle btn-style border border-info rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    まるまる貸切
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li class="dropdown-item" input-data="0">まるまる貸切</li>
+                    <li class="dropdown-item" input-data="1">個室</li>
+                    <li class="dropdown-item" input-data="2">シェアルーム</li>
+                  </div>
+                </div>
+                <div class="dropdown">
+                  <button class="btn dropdown-toggle btn-style border border-info rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    最大1名
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li class="dropdown-item" input-data="0">最大1名</li>
+                    <li class="dropdown-item" input-data="1">最大2名</li>
+                    <li class="dropdown-item" input-data="2">最大3名</li>
+                    <li class="dropdown-item" input-data="3">最大4名</li>
+                    <li class="dropdown-item" input-data="4">最大5名</li>
+                  </div>
+                </div>
+              </div>
+          </form>
+        </div>
+      </div>
+
+	</body>
+
+</html>

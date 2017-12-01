@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root 'search#index'
   resource :users, only: [:new, :create]
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+
+  get 'screen' => 'screen#host'
 end
