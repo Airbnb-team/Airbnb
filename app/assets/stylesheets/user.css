@@ -1,0 +1,19 @@
+.form_wrapper{
+  line-height: 50px;
+  display:block;
+  text-align: center;
+}
+.original_css{
+  width:430px;
+  padding: 11px;
+  height:45px;
+  margin:0 auto;
+}
+
+.buttoncss_original{
+background-color: #FF5A5F ;
+border-color: #FF5A5F ;
+width:430px;
+padding: 11px;
+height:45px;
+}
