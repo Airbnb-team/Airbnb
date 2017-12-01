@@ -17,13 +17,12 @@
           <%= link_to 'ルーム登録', "/rooms", method: :post %>
         </li>
         <li class="nav-item nav-item-style">
-          <a class="nav-link active" href="#">ホストをはじめる</a>
+          <%= link_to 'ホストをはじめる', "/" %>
+        <li class="nav-item nav-item-style">
+          <%= link_to 'アカウント作成', "/" %>
         </li>
         <li class="nav-item nav-item-style">
-          <a class="nav-link" href="#">アカウント作成</a>
-        </li>
-        <li class="nav-item nav-item-style">
-          <a class="nav-link" href="#">ログイン</a>
+          <%= link_to 'ログイン', "/" %>
         </li>
       </ul>
     </nav>
@@ -41,12 +40,21 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img class="d-block w-100" src="assets/image1.jpeg" alt="First slide">
+                <div class="carousel-caption d-none d-md-block">
+                  <h1>世界のおすすめ宿泊先</h1>
+                </div>
             </div>
             <div class="carousel-item">
               <img class="d-block w-100" src="assets/image2.jpeg" alt="Second slide">
+              <div class="carousel-caption d-none d-md-block">
+                  <h1>世界のおすすめ宿泊先</h1>
+                </div>
             </div>
             <div class="carousel-item">
               <img class="d-block w-100" src="assets/image3.jpeg" alt="Third slide">
+              <div class="carousel-caption d-none d-md-block">
+                  <h1>世界のおすすめ宿泊先</h1>
+                </div>
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -66,7 +74,8 @@
           <div class="col-md-12">
             <h1>ユニークなお家を予約して暮らすような旅をしよう。</h1>
               <div class="input-group input-group-style">
-                <input type="text" name="serach" class="form-control form-control-lg" placeholder="エリアを入力">
+                <div class="icon-search"></div>
+                <input type="text" name="serach" class="form-control form-control-lg rounded-0" placeholder="エリアを入力">
                 <span class="input-group-btn">
                   <button class="btn btn-default btn-danger" type="submit">Search</button>
                 </span>
@@ -76,9 +85,25 @@
 
         <h2 class="font-weight-bold">お住いの国の宿泊先</h2>
         <div class="row row-2">
-          <div class="col-md-3">
+          <div class="col-md-4">
             <div class="card" style="width: 20rem;">
               <img class="card-img-top" src="assets/image0.jpeg" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text font-weight-bold">宿泊先</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card" style="width: 20rem;">
+              <img class="card-img-top" src="assets/image4.jpeg" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text font-weight-bold">宿泊先</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card" style="width: 20rem;">
+              <img class="card-img-top" src="assets/image5.jpeg" alt="Card image cap">
               <div class="card-body">
                 <p class="card-text font-weight-bold">宿泊先</p>
               </div>
@@ -88,9 +113,25 @@
 
         <h2 class="font-weight-bold">ご興味のある宿泊先</h2>
         <div class="row row-2">
-          <div class="col-md-3">
+          <div class="col-md-4">
             <div class="card" style="width: 20rem;">
               <img class="card-img-top" src="assets/image0.jpeg" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text font-weight-bold">宿泊先</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card" style="width: 20rem;">
+              <img class="card-img-top" src="assets/image4.jpeg" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text font-weight-bold">宿泊先</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card" style="width: 20rem;">
+              <img class="card-img-top" src="assets/image5.jpeg" alt="Card image cap">
               <div class="card-body">
                 <p class="card-text font-weight-bold">宿泊先</p>
               </div>
