@@ -68,5 +68,5 @@ end
 gem 'devise'
 
 # gem 'fog'
-# gem 'omniauth-facebook'
+gem 'omniauth-facebook'
 gem 'dotenv-rails'
