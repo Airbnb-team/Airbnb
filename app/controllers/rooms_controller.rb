@@ -1,10 +1,19 @@
 class RoomsController < ApplicationController
 
+	def index
+	end
+
 	def create
 		@room = Room.create(set_room)
 	end
 
+	def new
+	end
+
 	def edit
+	end
+
+	def show
 	end
 
 	def update
