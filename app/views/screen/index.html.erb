@@ -21,9 +21,15 @@
         <li class="nav-item nav-item-style">
           <%= link_to 'アカウント作成', "/" %>
         </li>
+        <% if user_signed_in? %>
         <li class="nav-item nav-item-style">
-          <%= link_to 'ログイン', "/" %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
         </li>
+        <% else %>
+        <li class="nav-item nav-item-style">
+          <%= link_to "ログイン", new_user_session_path, class: 'post' %>
+        </li>
+        <% end %>
       </ul>
     </nav>
   </header>
