@@ -1,26 +1,6 @@
 @import "bootstrap";
-@import "slick";
 @import "font-awesome";
 @import "style";
 @import "style1";
 @import "./user";
 @import "./form";
-
-.scroller {
-  div {
-    text-align: center;
-    font-size: 30px;
-  }
-}
-
-.slick-prev::before, .slick-next::before {
-  color: #000;
-}
-
-.slick-next {
-  right: -5px;
-}
-
-.slick-prev {
-  left: -5px;
-}
