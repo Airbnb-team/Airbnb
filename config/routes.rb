@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root 'screen#index'
   devise_for :users
   resources :users, only: [:new, :create]
-  resources :rooms, only: [:index, :create, :new, :edit, :show, :update]
+  resources :rooms
   # , controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
 end
