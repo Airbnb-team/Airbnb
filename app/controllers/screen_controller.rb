@@ -6,4 +6,6 @@ class ScreenController < ApplicationController
 	def host
 	end
 
+  def photo
+  end
 end

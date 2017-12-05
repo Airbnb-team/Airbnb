@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :edit, :update, :new, :create]
   resources :rooms
   # , controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+  get 'screen' => 'screen#photo'
 end
