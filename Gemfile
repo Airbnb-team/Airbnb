@@ -70,3 +70,5 @@ gem 'devise'
 # gem 'fog'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
+gem "font-awesome-rails"
+gem "jquery-slick-rails"

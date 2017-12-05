@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171130090959) do
+ActiveRecord::Schema.define(version: 20171205014730) do
 
   create_table "amenities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.boolean  "pet"
@@ -64,12 +64,46 @@ ActiveRecord::Schema.define(version: 20171130090959) do
     t.datetime "updated_at",                    null: false
   end
 
+  create_table "bathrooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "room_id",        null: false
+    t.integer  "batrooms_count", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "bedrooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "room_id",        null: false
+    t.integer  "capacity_count", null: false
+    t.integer  "rooms_count",    null: false
+    t.integer  "beds_count",     null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "favorites", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",    null: false
     t.integer  "photo_id",   null: false
     t.integer  "room_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "locationmaps", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "room_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "locations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "room_id",       null: false
+    t.string   "country"
+    t.integer  "postal_code"
+    t.string   "prefecture"
+    t.string   "city"
+    t.string   "adress"
+    t.string   "building_name"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -141,6 +175,20 @@ ActiveRecord::Schema.define(version: 20171130090959) do
     t.boolean  "cancellation_policy"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+  end
+
+  create_table "spaces", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "room_id",                    null: false
+    t.boolean  "pool"
+    t.boolean  "elevator"
+    t.boolean  "washing_machine"
+    t.boolean  "gym"
+    t.boolean  "kitchen"
+    t.boolean  "parking"
+    t.boolean  "jacuzzi"
+    t.boolean  "washing_and_drying_machine"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

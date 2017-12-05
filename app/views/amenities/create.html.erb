@@ -1,36 +1,134 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Airbnb</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="assets/style.scss">
-    <script src="assets/style.js"></script>
-  </head>
+<div class="main-amenity-content">
 
-  <header class="header">
-    <nav class="navbar fixed-top navbar-white bg-white navbar-style">
-      <h1 class="text-danger font-weight-bold">Airbnb</h1>
-      <ul class="nav justify-content-end">
-        <li class="nav-item nav-item-style">
-          <%= link_to 'ルーム登録', "/rooms", method: :post %>
-        </li>
-        <li class="nav-item nav-item-style">
-          <a class="nav-link active" href="#">ホストをはじめる</a>
-        </li>
-        <li class="nav-item nav-item-style">
-          <a class="nav-link" href="#">アカウント作成</a>
-        </li>
-        <li class="nav-item nav-item-style">
-          <a class="nav-link" href="#">ログイン</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+  <div class="new-header">
+    <button type="button" class="button-style">airbnb</button>
+    <div class="comp-left">
+      <p>ステップ１：最初は基本情報から</p>
+    </div>
+    <div class="comp-right">
+      <a>保存して閉じる</a>
+    </div>
+    <div class="progress" style="height:5px;">
+    <div class="progress-bar bg-info" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
 
- 	<body>
+  <div class="left-amenity-content">
+    <div class="left-content-list">
+      <div class="h3 h3-style">ご用意するアメニティ・設備は?</div>
+      <div class="input-list">
+        <div class="form-check">
+          <label class="form-check-label check-style">
+            <input class="form-check-input" type="checkbox" value="">
+            必需品
+          </label>
+          <span class="comments-style">タオル、シーツ、石鹸、トイレットペーパー</span>
+          <label class="form-check-label check-style">
+            <input class="form-check-input" type="checkbox" value="">
+            Wifi
+          </label><br>
+          <label class="form-check-label check-style">
+            <input class="form-check-input" type="checkbox" value="">
+            シャンプー
+          </label><br>
+          <label class="form-check-label check-style">
+            <input class="form-check-input" type="checkbox" value="">
+            クローゼット/タンス
+          </label><br>
+          <label class="form-check-label check-style">
+            <input class="form-check-input" type="checkbox" value="">
+            テレビ
+          </label><br>
+          <label class="form-check-label check-style">
+            <input class="form-check-input" type="checkbox" value="">
+            暖房
+          </label><br>
+          <label class="form-check-label check-style">
+            <input class="form-check-input" type="checkbox" value="">
+            エアコン
+          </label><br>
+          <label class="form-check-label check-style">
+            <input class="form-check-input" type="checkbox" value="">
+            朝食、コーヒー、お茶
+          </label><br>
+          <label class="form-check-label check-style">
+            <input class="form-check-input" type="checkbox" value="">
+            机・ワークスペース
+          </label><br>
+          <label class="form-check-label check-style">
+            <input class="form-check-input" type="checkbox" value="">
+            暖炉・薪ストーブ・囲炉裏
+          </label><br>
+          <label class="form-check-label check-style">
+            <input class="form-check-input" type="checkbox" value="">
+            アイロン
+          </label><br>
+          <label class="form-check-label check-style">
+            <input class="form-check-input" type="checkbox" value="">
+            ヘアドライヤー
+          </label><br>
+          <label class="form-check-label check-style">
+            <input class="form-check-input" type="checkbox" value="">
+            ペットOK
+          </label><br>
+          <label class="form-check-label check-style">
+            <input class="form-check-input" type="checkbox" value="">
+            専用の玄関
+          </label><br>
+          <div class="h6 h6-style">安全対策のアメニティ</div>
+          <label class="form-check-label check-style">
+            <input class="form-check-input" type="checkbox" value="">
+            煙感知器
+          </label><br>
+          <span class="comments-style">地域の法令をお確かめください。各部屋に煙検知器設置を<br>
+          義務づけている地域もあります。</span>
+          <label class="form-check-label check-style">
+            <input class="form-check-input" type="checkbox" value="">
+            一酸化炭素検知器
+          </label><br>
+          <span class="comments-style">地域の法令をお確かめください。各部屋に一酸化炭素検知器設置を<br>義務づけている地域もあります。</span>
+          <label class="form-check-label check-style">
+            <input class="form-check-input" type="checkbox" value="">
+            応急手当セット
+          </label><br>
+          <label class="form-check-label check-style">
+            <input class="form-check-input" type="checkbox" value="">
+            防災カード
+          </label><br>
+          <span class="comments-style">緊急連絡先と避難情報は掲示しておきましょう。</span>
+          <label class="form-check-label check-style">
+            <input class="form-check-input" type="checkbox" value="">
+            消化器
+          </label><br>
+          <label class="form-check-label check-style">
+            <input class="form-check-input" type="checkbox" value="">
+            寝室は鍵付きドア
+          </label><br>
+          <span class="comments-style">安全性とプライバシーが保たれる鍵付きの個室のことです。</span>
+        </div>
+      </div>
+      <div class="button-content">
+        <div class="button-content-menu">
+          <a class="btn-progress-back" href="/">
+            <h5 class="h5-style"><%= link_to '← 戻る', '/rooms/:room_id/locationmaps', method: :post, method: :post, style: "color:#666666"; %></h5>
+          </a>
+          <button type="button" class="btn next-btn-style"><%= link_to '次へ', '/rooms/:room_id/spaces', method: :post, :style=>"color:#ffffff;" %></button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-	</body>
+  <div class="helper-amenity-content">
+    <div class="helper-content-list">
+      <div class="card card-style rounded-0" style="width: 20rem;">
+        <img class="card-img-top">
+        <div class="card-body">
+          <span class="fa fa-lightbulb-o fa-3x text-info" aria-hidden="true"></span><br>
+          <p class="card-text text-muted">生活必需品を揃えておくと、ゲストも自分の家のようにくつろげます。</p><br>
+          <p class="card-text text-muted">朝食を用意する方もいれば、コーヒーやお茶だけにする方も。どれも義務というわけではないけれど、あると温かいおもてなしの気持ちが伝わるアイテムです。</p><br>
+        </div>
+      </div>
+    </div>
+  </div>
 
-</html>
+</div>
