@@ -9,7 +9,7 @@ has_many : rooms
 has_many : reservations
 has_many : messages
 has_many : photos
-has_many : favarites
+has_many : favorites
 has_many : reviews
 ```
 ### column
@@ -26,7 +26,7 @@ belongs_to : user
 has_many : reservations
 has_many : reviews
 has_many : photos
-has_many : favarites
+has_many : favorites
 ```
 ### column
 - name
@@ -53,12 +53,12 @@ belongs_to : user
 ```
 belongs_to : user
 belongs_to : room
-has_many : favarites
+has_many : favorites
 ```
 ### column
 - name
 
-## Favarite
+## Favorite
 ### association
 ```
 belongs_to : user
