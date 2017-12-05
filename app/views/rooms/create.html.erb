@@ -1,78 +1,93 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Airbnb</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="assets/style.scss">
-    <script src="assets/style.js"></script>
-  </head>
+<div class="main-content">
 
-  <header class="header">
-    <nav class="navbar fixed-top navbar-white bg-white navbar-style">
-      <h1 class="text-danger font-weight-bold">Airbnb</h1>
-      <ul class="nav justify-content-end">
-        <li class="nav-item nav-item-style">
-          <li class="nav-item nav-item-style">
-            <%= link_to '戻る', "/" %>
-          </li>
-          <li class="nav-item nav-item-style">
-            <%= link_to '保存して閉じる', "/" %>
-          </li>
-        </li>
-      </ul>
-    </nav>
-  </header>
+  <div class="new-header">
+    <button type="button" class="button-style">airbnb</button>
+    <div class="comp-left">
+      <p>ステップ１：最初は基本情報から</p>
+    </div>
+    <div class="comp-right">
+      <a>保存して閉じる</a>
+    </div>
+    <div class="progress" style="height:5px;">
+    <div class="progress-bar bg-info" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
 
- 	<body>
-
-    <div class="container container-style">
-      <div class="row row-3">
-      <h2>下記項目を入力してください</h2>
-        <div class="col-md-12">
-          <form>
-            <div class="form-group form-style">
-              <h5 class="font-weight-bold">所在地を入力してください</h5>
-              <label for="inputAddress" class="text-weight-bold">住所を入力してください</label>
-              <input type="text" class="form-control border border-info rounded-0" id="inputAddress" placeholder="(例) 東京都渋谷区代官山町１７">
-            </div>
-            <div class="form-group form-style">
-              <label for="inputAddress2" class="text-weight-bold">マンション名・部屋番号を入力してください</label>
-              <input type="text" class="form-control border border-info rounded-0" id="inputAddress2" placeholder="(例)代官山アドレス ザ・タワー 2001号室">
-            </div>
-            <div class="form-group form-style">
-              <h5 class="font-weight-bold">部屋情報を入力してください</h5>
-
-              <label>部屋タイプ</label>
-              <div class="col-md-12">
-                <div class="dropdown">
-                  <button class="btn dropdown-toggle btn-style border border-info rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    まるまる貸切
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <li class="dropdown-item" input-data="0">まるまる貸切</li>
-                    <li class="dropdown-item" input-data="1">個室</li>
-                    <li class="dropdown-item" input-data="2">シェアルーム</li>
-                  </div>
-                </div>
-                <div class="dropdown">
-                  <button class="btn dropdown-toggle btn-style border border-info rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    最大1名
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <li class="dropdown-item" input-data="0">最大1名</li>
-                    <li class="dropdown-item" input-data="1">最大2名</li>
-                    <li class="dropdown-item" input-data="2">最大3名</li>
-                    <li class="dropdown-item" input-data="3">最大4名</li>
-                    <li class="dropdown-item" input-data="4">最大5名</li>
-                  </div>
-                </div>
-              </div>
-          </form>
+  <div class="left-content">
+    <div class="left-content-list">
+      <div class="h3 h3-style">掲載するのはどんなお部屋ですか?</div>
+      <div class="select-list">
+        <div class="p p-style">住宅、ホテル、その他から１つお選びください</div>
+        <div class="dropdown">
+          <button class="btn btn-lg dropdown-toggle btn-style rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">１つ選択してください</button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">住宅</a>
+            <a class="dropdown-item" href="#">ホテル</a>
+            <a class="dropdown-item" href="#">その他</a>
+          </div>
         </div>
       </div>
+      <div class="select-list">
+        <div class="p p-style">建物タイプは？</div>
+        <div class="dropdown">
+          <button class="btn btn-lg dropdown-toggle btn-style rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">１つ選択してください</button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">アパート</a>
+            <a class="dropdown-item" href="#">コンドミニアム</a>
+            <a class="dropdown-item" href="#">一軒家</a>
+            <a class="dropdown-item" href="#">別荘</a>
+            <a class="dropdown-item" href="#">タウンハウス</a>
+          </div>
+        </div>
+      </div>
+      <div class="select-list">
+        <div class="p p-style">部屋タイプは？</div>
+        <div class="dropdown">
+          <button class="btn btn-lg dropdown-toggle btn-style rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">１つ選択してください</button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">まるまる貸切</a>
+            <a class="dropdown-item" href="#">個室</a>
+            <a class="dropdown-item" href="#">シェアルーム</a>
+          </div>
+        </div>
+      </div>
+      <div class="select-list">
+        <div class="p p-style">こちらはゲスト専用のお部屋ですか？</div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+            <div class="p p-style">はい、主にゲスト専用のお部屋です</div>
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+            <div class="p p-style">いいえ、こちらには私物も置いてます</div>
+          </label>
+        </div>
+      </div>
+      <div class="button-content">
+        <div class="button-content-menu">
+          <a class="btn-progress-back" href="/">
+            <h5 class="h5-style">← トップへ戻る</h5>
+          </a>
+          <button type="button" class="btn next-btn-style"><%= link_to '次へ', '/rooms/:room_id/bedrooms', method: :post, :style=>"color:#ffffff;" %></button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-	</body>
+  <div class="helper-content">
+    <div class="helper-content-list">
+      <div class="card card-style rounded-0" style="width: 20rem;">
+        <img class="card-img-top">
+        <div class="card-body">
+          <span class="fa fa-lightbulb-o fa-3x text-info" aria-hidden="true"></span><dr>
+          <p class="card-title">私物の有無</p>
+          <p class="card-text text-muted">写真や衣類などのプライベートなものはゲストの目に触れる場所に出ていますか？ これも気になるポイント。</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-</html>
+</div>

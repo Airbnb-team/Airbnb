@@ -1,5 +1,5 @@
 .navbar-style {
-	border-bottom: 0.1px solid #999;
+	border-bottom: 0.1px solid #dddddd;
 }
 
 .nav-item-style {
@@ -9,8 +9,13 @@
 	color: #20c997;
 }
 
+.text-style {
+	color: #FA514B;
+	font-weight: bold;
+}
+
 .container-style {
-	border-style: 0.1px solid #999;
+	border-style: 0.1px solid #999999;
 }
 
 .row-1 {
@@ -22,26 +27,345 @@
 }
 
 .row-3 {
-	padding-top: 100px;
+	padding: 50px, 0;
 }
+
 
 .input-group-style {
-	box-shadow: 0px 5px 5px 0px #999;
+	box-shadow: 0px 5px 5px 0px #dddddd;
 }
 
-.footer-style {
-	border-top: 0.1px solid #999;
-	padding-bottom: 30px;
-	color: #999;
+.icon-style {
+	color: #dddddd;
 }
 
-.form-style {
-	padding-top: 5px;
+.icon-style1 {
+	padding-left :10px;
+}
+
+.footer {
+	border-top: 0.1px solid #dddddd;
+}
+
+.footer-content {
+	width: 1100px;
+	height: 300px;
+	margin: 0 auto;
+	display: block;
+	margin-top: 30px;
+}
+
+.footer-role {
+	height: 350px;
+}
+
+.select-content {
+	width: 250px;
+	height: 250px;
+	display: inline-block;
+	margin-top: 15px;
+	margin-left: 15px;
+	float: left;
+}
+
+.laguage-style {
+	height: 48px;
+	width: 250px;
+	color: #666666;
+	font-weight: 100;
+	font-size: 1.2em;
+	background-color: #ffffff;
+	border-color: #f5f5f5;
+	margin-bottom: 10px;
+}
+
+.money-style {
+	height: 48px;
+	width: 250px;
+	color: #666666;
+	font-weight: 100;
+	font-size: 1.2em;
+	background-color: #ffffff;
+	border-color: #f5f5f5;
+	margin-bottom: 10px;
+}
+
+.intoroduction-content1 {
+	width: 250px;
+	height: 250px;
+	margin-left: 15px;
+	display: inline-block;
+}
+
+.intoroduction-content2 {
+	width: 250px;
+	height: 250px;
+	margin-left: 15px;
+	display: inline-block;
+}
+
+.intoroduction-content3 {
+	width: 250px;
+	height: 250px;
+	margin-left: 15px;
+	display: inline-block;
+}
+
+.footer-copyright {
+	width: 1100px;
+  height: 100px;
+  border-top: 0.1px solid #dddddd;
+}
+
+.p-style0 {
+	width: 230px;
+	height: 280px;
+	padding-top :15px;
+	padding-left: 50px;
+	float: left;
+	font-size: 1em;
+	color: #666666;
+}
+
+.copyright-left {
+	float: left;
+	color: #999999;
+	padding-top: 15px;
+}
+
+.copyright-right {
+	float: right;
+	color: #999999;
+	padding-top: 15px;
+}
+
+// -- rooms登録関係 --
+.new-header {
+	width: 100%;
+	height: 64px;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+	background-color: #ffffff;
+}
+
+.button-style {
+	color: #FA514B;
+	width: 130px;
+	height: 64px;
+	display: inline-block;
+	font-size: 1.4em;
+	font-weight: bold;
+	border-style: none;
+}
+
+.comp-left{
+	display: inline-block;
+	line-height: 64px;
+	height:64px;
+	font-size: 1.2em;
+	font-weight: 100;
+	color: #666666;
+	padding: 0 19px;
+	border-left: 0.1px solid #dddddd;
+	background-color: #ffffff;
+}
+
+.comp-right {
+	float: right;
+	line-height: 64px;
+	height: 64px;
+	font-size: 1.2em;
+	font-weight: 100;
+	color: #009999;
+	padding: 0 19px;
+	background-color: #ffffff;
+}
+
+.main-content {
+	width: 100%;
+	height: 140vh;
+}
+
+.left-content {
+	display: inline-block;
+	height: 140vh;
+	width: 55%;
+}
+
+.left-content-list {
+	width: 500px;
+	height: 100%;
+	float: right;
+	padding-top: 112px;
+}
+
+.h3-style {
+	color: #666666;
+	font-weight: bold;
+}
+
+.select-list {
+	padding: 32px 0;
+}
+
+.p-style {
+	color: #666666;
+	font-size: 1.2em;
+	font-weight: 100;
+	padding-bottom: 10px;
 }
 
 .btn-style {
-	width: 250px;
+	height: 48px;
+	width: 320px;
+	color: #666666;
+	font-weight: 100;
+	font-size: 1.2em;
+	background-color: #ffffff;
+	border-color: #f5f5f5;
+	position: relative;
+}
+
+.bottom-content {
+	width: 100%;
+	height: 102px;
+}
+
+.button-content-menu {
+	width: 500px;
+	height: 102px;
+	border-top: 0.1px solid #dddddd;
+}
+
+.h5-style {
+	color: #666666;
+	font-size: 1.2em;
+	font-weight: 100;
+	padding-top: 30px;
+	padding-left: 15px;
+	float:left;
+}
+
+.next-btn-style {
+	color: #ffffff;
+	font-size: 1.2em;
+	background-color: #FA514B;
+	width: 185px;
+	height: 42px;
+	float: right;
+	margin-top: 25px;
 	margin-right: 15px;
+	text-decoration: none;
+}
+
+.helper-content {
+	display: inline-block;
+	background-color: #f7f7f7;
+	height: 140vh;
+	width: 44.6%;
+}
+
+.helper-content-list {
+	width: 350px;
+	height: 100%;
+	padding-top: 112px;
+	position: fixed;
+}
+
+.card-style {
+	margin-top: 70px;
+	margin-left: 30px;
+}
+
+.text-info {
+	padding-bottom: 15px;
+}
+
+// -- location登録関係 --
+.btn-style1 {
+	height: 63px;
+	width: 484px;
+	color: #666666;
+	font-weight: 100;
+	font-size: 1.2em;
+	background-color: #ffffff;
+	border-color: #f5f5f5;
+	position: relative;
+}
+
+.input-list {
+	padding: 15px 0;
+}
+
+.form-style {
+	height: 63px;
+	width: 484px;
+	color: #666666;
+	font-weight: 100;
+	font-size: 1.2em;
+	background-color: #ffffff;
+	border-color: #f5f5f5;
+}
+
+.p-style2 {
+	color: #666666;
+	font-size: 1.2em;
+	font-weight: 100;
+	padding-bottom: 10px;
+	padding-top: 15px;
+	padding-bottom: 40px;
+}
+
+.p-style3 {
+	font-size: 1.2em;
+	font-weight: 100;
+	color: #666666
+}
+
+// -- amenity登録関係 --
+.main-amenity-content {
+	width: 100%;
+	height: 180vh;
+}
+
+.left-amenity-content {
+	display: inline-block;
+	height: 180vh;
+	width: 55%;
+}
+
+.helper-amenity-content {
+	display: inline-block;
+	background-color: #f7f7f7;
+	height: 180vh;
+	width: 44.6%;
+}
+
+.check-style {
+	font-size: 19px;
+	font-weight: 300;
+	color: #484848;
+	padding-top: 20px;
+}
+
+.comments-style {
+	font-size: 15px;
+	font-weight: 300;
+	color: #484848;
+	padding-top: 4px;
+	padding-bottom: 0px;
+	padding-left: 20px;
+	display: block;
+}
+
+.h6-style {
+	font-size: 18px;
+	font-weight: bold;
+	color: #666666;
+	padding-top: 30px;
+	margin-bottom: 0px;
 }
 
 .contents-wrapper {
