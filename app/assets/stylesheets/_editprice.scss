@@ -1,0 +1,143 @@
+.navbar-style {
+    border-bottom: 0.1px solid #999;
+}
+
+.nav-item-style {
+    text-decoration: none;
+    text-align: center;
+    padding-right: 15px;
+    color: #20c997 ;
+}
+
+.nav2{
+ margin-right: auto;
+}
+
+.nav3{
+ margin-right: auto;
+}
+.nav {
+ float: left;
+ display: inline-flex;
+}
+
+.title_1{
+  line-height: 300px;
+  font-size: 48px;
+  width:400px;
+  margin-right:0;
+  float:left;
+  font-weight: 700 !important;
+  height:300px;
+}
+
+
+.calender{
+  float:right;
+  line-height: 300px;
+  height:0px;
+}
+
+ .all_wrapper{
+  margin-right:100px;
+  margin-left:100px;
+  padding-right:24px;
+  padding-left:24px;
+ }
+
+a:link{color:#484848;
+text-decoration:none;
+}
+.show_calender{
+  color:white;
+}
+
+.calender_link{
+padding:18px 35px;
+background-color:#008489;
+border-radius:5px;
+}
+
+.show_calender{
+  font-size:19px;
+}
+
+.listing_menu{
+  height: 100%;
+  overflow-y: auto;
+  white-space: nowrap;
+  overflow-x: scroll;
+  float:left;
+  margin-top: -60px;
+  font-size:20px;
+}
+
+.menu_button{
+display: inline-block;
+text-decoration:none;
+border-radius: 0px;
+border-width:0px;
+border-bottom:2px;
+cursor: pointer;
+color:#484848;
+border: none;
+margin-right:10px;
+}
+
+hr {
+  border: 0.5px solid #DCDCDC;
+  clear:both;
+  display: block;
+}
+
+.price_contents_wrapper{
+float:left;
+width: 66.66666666666666% !important;
+margin-top: 15px;
+}
+.edit_button{
+  float:right;
+  display:block;
+  padding:8px 16px;
+  color:#008489;
+  border-radius:5px;
+  border-color:#008489;
+  font-size:15px;
+}
+.price_title1{
+  float:left;
+  font-size:28px;
+  font-weight: 700 !important;
+}
+
+.price_detail_title{
+float:left;
+font-size:20px;
+color:#484848;
+
+}
+
+.price_detail__button{
+float:right;
+border-style: none;
+font-size:20px;
+color:#484848;
+}
+
+.price1_detail{
+  clear:both;
+  display:block;
+  margin-top:70px;
+}
+
+.price1_detail__1{
+  padding:20px 0 35px 0;
+}
+
+.each_price_wrapper_2{
+  margin-top:80px;
+}
+
+.price_footer{
+  height:100px;
+}

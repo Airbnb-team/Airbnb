@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     resources :spaces, only: [:create, :edit, :update]
     resources :photos, only: [:create, :edit, :update]
 	end
+  resources :messages
+  resources :favorites, only: [:index]
   # , controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   get 'screen' => 'screen#photo'
 end
