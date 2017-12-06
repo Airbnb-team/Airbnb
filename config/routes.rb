@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:index, :edit, :update, :new, :create]
   resources :rooms
+  resources :favorites, only: [:index]
   # , controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   get 'screen' => 'screen#photo'
 end
