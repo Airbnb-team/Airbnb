@@ -15,17 +15,20 @@
       </path></svg></div>
       <h1 class="text-danger font-weight-bold"></h1>
       <ul class="nav justify-content-end">
-        <!-- <li class="nav-item nav-item-style">
-          <%= link_to 'ルーム登録', "/rooms", method: :post %>
-        </li> -->
-        <!-- <li class="nav-item nav-item-style">
-          <a class="nav-link active" href="#">ホストをはじめる</a> -->
+        <li class="nav-item nav-item-style">
+          <%= link_to 'お気に入り', "/favorites" %>
         </li>
         <li class="nav-item nav-item-style">
-          <a class="nav-link" href="#">アカウント作成</a>
+          <%= link_to '旅行', "/" %>
         </li>
         <li class="nav-item nav-item-style">
-          <a class="nav-link" href="#">ログイン</a>
+          <%= link_to 'メッセージ', "/" %>
+        </li>
+        <li class="nav-item nav-item-style">
+          <%= link_to 'プロフィールを編集', "/users/:id/edit", method: :get %>
+        </li>
+        <li class="nav-item nav-item-style">
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
         </li>
       </ul>
     </nav>
@@ -44,7 +47,7 @@
       </div>
     </div>
 
-      <div class="advertise">
+      <div class="rooms-advertise">
         <div class="row">
           <div class="col-sm-4">
           <h2 class="font-weight-bold">なぜAirbnbでホスト？</h2>
@@ -67,7 +70,7 @@
         </div>
       </div>
 
-      <div class="box">
+      <div class="rooms-box">
         <div style="margin-bottom:24px" class="bigtitle">
           <h1 class="title">
             <span>Airbnbホストになる方法</span>
@@ -97,7 +100,7 @@
               </div>
             </div>
           </div>
-          <div class="guest">
+          <div class="rooms-guest">
             <span>
               <div>
                 <img class="image0" src="assets/listing.jpg" style="width: 20rem;">
@@ -179,13 +182,13 @@
 
     <div class="row row-2">
       <div class="col-md-12">
-        <div class="jumbotron1">
+        <div class="rooms-jumbotron">
           <div class="container1">
             <h1>ホスト登録はこちらから</h1>
             <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a> -->
           </div>
           <div class="button">
-            <a href="" class="button1" aria-busy="false">
+            <a href="/rooms" class="rooms-button1" aria-busy="false">
               <span class="button2">
                 <span>始める</span>
               </span>
@@ -194,7 +197,7 @@
         </div>
       </div>
     </div>
-    <footer class="footer1">
+    <footer class="rooms-footer1">
       <div class="footer-content">
         <div class="footer-role">
           <div class="select-content">
