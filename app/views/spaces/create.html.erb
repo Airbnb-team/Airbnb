@@ -3,7 +3,7 @@
   <div class="new-header">
     <button type="button" class="button-style">airbnb</button>
     <div class="comp-left">
-      <p>ステップ１：最初は基本情報から</p>
+      <span class="h5 text-normal">ステップ１：最初は基本情報から</span>
     </div>
     <div class="comp-right">
       <a>保存して閉じる</a>
@@ -57,7 +57,7 @@
           <a class="btn-progress-back" href="/">
             <h5 class="h5-style"><%= link_to '← 戻る', '/rooms/:room_id/amenities', method: :post, method: :post, style: "color:#666666"; %></h5>
           </a>
-          <button type="button" class="btn next-btn-style"><%= link_to '完了', '/', :style=>"color:#ffffff;" %></button>
+          <button type="button" class="btn next-btn-style"><%= link_to '完了', '/rooms/continue', :style=>"color:#ffffff;" %></button>
         </div>
       </div>
     </div>
