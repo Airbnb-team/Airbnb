@@ -3,11 +3,14 @@ class RoomsController < ApplicationController
 	def index
 	end
 
+	def new
+	end
+
 	def create
 		@room = Room.create(set_room)
 	end
 
-	def new
+	def continue
 	end
 
 	def edit

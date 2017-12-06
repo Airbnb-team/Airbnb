@@ -1,82 +1,92 @@
-<div class="main-content">
+<!doctype html>
+<html>
+  <head>
+    <title>お部屋情報登録</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="assets/style.scss">
+  </head>
 
-  <div class="new-header">
-    <button type="button" class="button-style">airbnb</button>
-    <div class="comp-left">
-      <p>ステップ１：最初は基本情報から</p>
-    </div>
-    <div class="comp-right">
-      <a>保存して閉じる</a>
-    </div>
-    <div class="progress" style="height:5px;">
-    <div class="progress-bar bg-info" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
-  </div>
+  <body>
+    <div class="main-content">
+      <div class="new-header">
+        <button type="button" class="button-style">airbnb</button>
+        <div class="comp-left">
+          <span class="h5 text-normal">ステップ１：最初は基本情報から</span>
+        </div>
+        <div class="comp-right">
+          <a>保存して閉じる</a>
+        </div>
+        <div class="progress" style="height:5px;">
+        <div class="progress-bar bg-info" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
 
-  <div class="left-content">
-    <div class="left-content-list">
-      <div class="h3 h3-style">最大何人まで宿泊可能ですか?</div>
-      <div class="select-list">
-        <div class="p p-style">定員</div>
-        <div class="dropdown">
-          <button class="btn btn-lg dropdown-toggle btn-style rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">１つ選択してください</button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">１人</a>
-            <a class="dropdown-item" href="#">２人</a>
-            <a class="dropdown-item" href="#">３人</a>
-            <a class="dropdown-item" href="#">４人</a>
-            <a class="dropdown-item" href="#">５人</a>
+      <div class="left-content">
+        <div class="left-content-list">
+          <div class="h3 h3-style">最大何人まで宿泊可能ですか?</div>
+          <div class="select-list">
+            <div class="p p-style">定員</div>
+            <div class="dropdown">
+              <button class="btn btn-lg dropdown-toggle btn-style rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">１つ選択してください</button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">１人</a>
+                <a class="dropdown-item" href="#">２人</a>
+                <a class="dropdown-item" href="#">３人</a>
+                <a class="dropdown-item" href="#">４人</a>
+                <a class="dropdown-item" href="#">５人</a>
+              </div>
+            </div>
+          </div>
+          <div class="select-list">
+            <div class="p p-style">ゲストが使用できるベッドルーム数は？</div>
+            <div class="dropdown">
+              <button class="btn btn-lg dropdown-toggle btn-style rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">１つ選択してください</button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">１ベッドルーム</a>
+                <a class="dropdown-item" href="#">２ベッドルーム</a>
+                <a class="dropdown-item" href="#">３ベッドルーム</a>
+                <a class="dropdown-item" href="#">４ベッドルーム</a>
+                <a class="dropdown-item" href="#">５ベッドルーム</a>
+              </div>
+            </div>
+          </div>
+          <div class="select-list">
+            <div class="p p-style">ゲスト用のベッド台数は？</div>
+            <div class="dropdown">
+              <button class="btn btn-lg dropdown-toggle btn-style rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">１つ選択してください</button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">１台</a>
+                <a class="dropdown-item" href="#">２台</a>
+                <a class="dropdown-item" href="#">３台</a>
+                <a class="dropdown-item" href="#">４台</a>
+                <a class="dropdown-item" href="#">５台</a>
+              </div>
+            </div>
+          </div>
+          <div class="button-content">
+            <div class="button-content-menu">
+              <a class="btn-progress-back">
+                <h5 class="h5-style"><%= link_to '← 戻る', '/rooms', method: :post,style: "color:#666666"; %></h5>
+              </a>
+              <button type="button" class="btn next-btn-style"><%= link_to '次へ', '/rooms/:room_id/bathrooms', method: :post, style: "color:#ffffff;" %></button>
+            </div>
           </div>
         </div>
       </div>
-      <div class="select-list">
-        <div class="p p-style">ゲストが使用できるベッドルーム数は？</div>
-        <div class="dropdown">
-          <button class="btn btn-lg dropdown-toggle btn-style rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">１つ選択してください</button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">１ベッドルーム</a>
-            <a class="dropdown-item" href="#">２ベッドルーム</a>
-            <a class="dropdown-item" href="#">３ベッドルーム</a>
-            <a class="dropdown-item" href="#">４ベッドルーム</a>
-            <a class="dropdown-item" href="#">５ベッドルーム</a>
+
+      <div class="helper-content">
+        <div class="helper-content-list">
+          <div class="card card-style rounded-0" style="width: 20rem;">
+            <img class="card-img-top">
+            <div class="card-body">
+              <span class="fa fa-lightbulb-o fa-3x text-info" aria-hidden="true"></span><br>
+              <p class="card-text text-muted">ここに入力するベッドの種類と数で、快適に泊まれる最大定員が決まります。</p>
+              <p class="card-text text-muted">夜間の部屋割りの参考になりますので、ベッド情報も登録しておきましょう。</p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="select-list">
-        <div class="p p-style">ゲスト用のベッド台数は？</div>
-        <div class="dropdown">
-          <button class="btn btn-lg dropdown-toggle btn-style rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">１つ選択してください</button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">１台</a>
-            <a class="dropdown-item" href="#">２台</a>
-            <a class="dropdown-item" href="#">３台</a>
-            <a class="dropdown-item" href="#">４台</a>
-            <a class="dropdown-item" href="#">５台</a>
-          </div>
-        </div>
-      </div>
-      <div class="button-content">
-        <div class="button-content-menu">
-          <a class="btn-progress-back">
-            <h5 class="h5-style"><%= link_to '← 戻る', '/rooms', method: :post, method: :post, style: "color:#666666"; %></h5>
-          </a>
-          <button type="button" class="btn next-btn-style"><%= link_to '次へ', '/rooms/:room_id/bathrooms', method: :post, style: "color:#ffffff;" %></button>
-        </div>
-      </div>
     </div>
-  </div>
-
-  <div class="helper-content">
-    <div class="helper-content-list">
-      <div class="card card-style rounded-0" style="width: 20rem;">
-        <img class="card-img-top">
-        <div class="card-body">
-          <span class="fa fa-lightbulb-o fa-3x text-info" aria-hidden="true"></span><br>
-          <p class="card-text text-muted">ここに入力するベッドの種類と数で、快適に泊まれる最大定員が決まります。</p>
-          <p class="card-text text-muted">夜間の部屋割りの参考になりますので、ベッド情報も登録しておきましょう。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div>
+  </body>
+</html>
