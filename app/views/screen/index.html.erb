@@ -12,35 +12,6 @@
       <h1 class="text-style">Airbnb</h1>
       <ul class="nav justify-content-end">
         <li class="nav-item nav-item-style">
-          <!-- <% if current_user.rooms.exists?  %>
-            <ul class="nav justify-content-end">
-            <li class="nav-item nav-item-style">
-              <a class="nav-link active" href="#">ホスト</a>
-            </li>
-            <li class="nav-item nav-item-style">
-              <%= link_to "サインアウト", new_user_session_path %>
-            </li>
-          <% elsif user_signed_in? %>
-            <ul class="nav justify-content-end">
-            <li class="nav-item nav-item-style">
-              <a class="nav-link active" href="#">ホストはじめる</a>
-            </li>
-            <li class="nav-item nav-item-style">
-            <%= link_to "サインアウト", new_user_session_path %>
-            </li>
-          <% else %> -->
-           <ul class="nav justify-content-end">
-           <li class="nav-item nav-item-style">
-             <a class="nav-link active" href="#">ホストをはじめる</a>
-           </li>
-           <li class="nav-item nav-item-style">
-             <a class="nav-link" href="#">アカウント作成</a>
-           </li>
-           <li class="nav-item nav-item-style">
-             <%= link_to "ログイン", new_user_session_path %>
-           </li>
-         </ul>
-         <!-- <% end %> -->
           <%= link_to 'ルーム登録', "/rooms", method: :post %>
         </li>
         <li class="nav-item nav-item-style">
@@ -54,7 +25,7 @@
         </li>
         <% else %>
         <li class="nav-item nav-item-style">
-          <%= link_to "ログイン", new_user_session_path, class: 'post' %>
+          <%= link_to "ログイン", new_user_session_path, method: :post %>
         </li>
         <% end %>
       </ul>
@@ -169,6 +140,40 @@
         </div>
       </div>
     </div>
+
+    <div class="message-container_group1">
+      <div class="message-container_traveling">
+        <span>トラベリング</span>
+      </div>
+      <div class="message-container_hosting">
+        <span>ホスティング</span>
+      </div>
+      <div class="message-container_change-message">
+          <button class="btn btn-lg dropdown-toggle rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ホスティングの全メッセージ（１）</button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">ホスティング１</a>
+            <a class="dropdown-item" href="#">ホスティング２</a>
+          </div>
+      </div>
+    </div>
+
+    <div class="message-container_group2">
+      <div class="message-container_image">
+        <%= image_tag('airbnb.png',:size => "60x60") %>
+      </div>
+      <div class="message-container_date">
+        <span>なまえ</span><br>
+        <span>12月6日</span>
+      </div>
+      <div class="message-container_latest">
+        <span>こんにちわ</span><br>
+        <span>Center of Tokyo （2017年12月4日 - 2017年12月5日）</span>
+      </div>
+      <div class="message-container_status">
+        <span>却下</span>
+      </div>
+    </div>
+
   </body>
 
   <footer class="footer">
