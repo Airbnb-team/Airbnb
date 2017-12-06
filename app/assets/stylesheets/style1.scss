@@ -24,11 +24,11 @@
    }
  }
 
- .jumbotron1 {
+ .rooms-jumbotron {
    background:url(register.jpg) center no-repeat; background-size: cover;
    height: 680px;
    position: absolute;
-   top: 2700px;
+   top: 1600px;
    width: 100%;
    .container1 {
      color: white;
@@ -41,7 +41,7 @@
        left: 30px;
      }
    }
-   .button1 {
+   .rooms-button1 {
      cursor: pointer !important;
     -webkit-transition: background 0.3s, border-color 0.3s !important;
     -moz-transition: background 0.3s, border-color 0.3s !important;
@@ -71,7 +71,7 @@
    }
  }
 
-.advertise {
+.rooms-advertise {
   position: absolute;
   top: 680px;
   width: 100%;
@@ -84,7 +84,7 @@
     }
 }
 
-.box {
+.rooms-box {
   position: absolute;
   top: 1200px;
   left: 200px;
@@ -115,7 +115,7 @@
   }
 }
 
-.footer1 {
+.rooms-footer1 {
   position: absolute;
-  top: 4200px;
+  top: 3050px;
 }

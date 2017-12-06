@@ -30,17 +30,19 @@
       </path></svg></div>
       <h1 class="text-danger font-weight-bold"></h1>
       <ul class="nav justify-content-end">
-        <!-- <li class="nav-item nav-item-style">
-          <%= link_to 'ルーム登録', "/rooms", method: :post %>
-        </li> -->
-        <!-- <li class="nav-item nav-item-style">
-          <a class="nav-link active" href="#">ホストをはじめる</a> -->
+        <li class="nav-item nav-item-style">
+          <%= link_to 'ホストをはじめる', new_room_path, method: :get %>
         </li>
         <li class="nav-item nav-item-style">
-          <a class="nav-link" href="#">アカウント作成</a>
+          <%= link_to 'お気に入り', "/favorites" %>
+        <li class="nav-item nav-item-style">
+          <%= link_to '旅行', "/" %>
         </li>
         <li class="nav-item nav-item-style">
-          <a class="nav-link" href="#">ログイン</a>
+          <%= link_to 'メッセージ', "/" %>
+        </li>
+        <li class="nav-item nav-item-style">
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
         </li>
       </ul>
     </nav>

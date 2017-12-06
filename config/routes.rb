@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root 'screen#index'
   resources :users
   resources :rooms
+  resources :messages
+  resources :favorites, only: [:index]
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" } do
     collection do
       get 'continue'
