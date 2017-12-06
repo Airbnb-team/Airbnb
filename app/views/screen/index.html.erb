@@ -12,6 +12,35 @@
       <h1 class="text-style">Airbnb</h1>
       <ul class="nav justify-content-end">
         <li class="nav-item nav-item-style">
+          <!-- <% if current_user.rooms.exists?  %>
+            <ul class="nav justify-content-end">
+            <li class="nav-item nav-item-style">
+              <a class="nav-link active" href="#">ホスト</a>
+            </li>
+            <li class="nav-item nav-item-style">
+              <%= link_to "サインアウト", new_user_session_path %>
+            </li>
+          <% elsif user_signed_in? %>
+            <ul class="nav justify-content-end">
+            <li class="nav-item nav-item-style">
+              <a class="nav-link active" href="#">ホストはじめる</a>
+            </li>
+            <li class="nav-item nav-item-style">
+            <%= link_to "サインアウト", new_user_session_path %>
+            </li>
+          <% else %> -->
+           <ul class="nav justify-content-end">
+           <li class="nav-item nav-item-style">
+             <a class="nav-link active" href="#">ホストをはじめる</a>
+           </li>
+           <li class="nav-item nav-item-style">
+             <a class="nav-link" href="#">アカウント作成</a>
+           </li>
+           <li class="nav-item nav-item-style">
+             <%= link_to "ログイン", new_user_session_path %>
+           </li>
+         </ul>
+         <!-- <% end %> -->
           <%= link_to 'ルーム登録', "/rooms", method: :post %>
         </li>
         <li class="nav-item nav-item-style">
