@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.slick
 //= require style.js
 //= require popper
 //= require bootstrap
