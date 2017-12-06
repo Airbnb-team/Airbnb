@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <title>Airbnb</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="assets/_rooms_update.scss">
+    <script src="assets/style.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar fixed-top navbar-white bg-white navbar-style nav2">
+        <ul class="nav">
+          <li >
+         <%= image_tag('airbnb.png',:size => "100x60") %>
+          </li>
+        <li>
+         <h1 class="nav3">ホスティング</h1>
+       </li>
+          <li class="nav-item nav-item-style">
+            <a class="nav-link active" href="#">ホストをはじめる</a>
+          </li>
+          <li class="nav-item nav-item-style">
+            <a class="nav-link" href="#">アカウント作成</a>
+          </li>
+          <li class="nav-item nav-item-style login">
+            <%= link_to "ログイン", new_user_session_path %>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="left-contents">
+      <h1>ホスティング用ダッシュボード</h1>
+      <div class="left1">
+        <h2>保留中リクエスト</h2>
+        <span>新着ｎ件・返信率ｎ％</span>
+      </div>
+      <div class="left2">
+        <h3>新着の問い合わせやリクエストはありません。</h3>
+        <span>「すべてのメッセージ」または「リスティング」を見る。</span>
+      </div>
+      <h2>お知らせ</h2>
+      <div class="notice">
+        <h4>友達を補助ホストに誘う</h4>
+        <span>「Center of Tokyo」を任せられそうな人、いませんか？ 補助ホストに誘ってみましょう。</span>
+      </div>
+      <div class="notice">
+        <h4>Airbnbからのお知らせ</h4>
+        <span>住所を追加してください。Airbnbからギフトが届くことがあります。</span>
+      </div>
+      <div class="notice">
+        <h4>NEW：¥3364お得に旅しよう</h4>
+        <span>NEW: ¥ 3364お得に旅しよう。仕事用メールアドレス登録×初出張で¥ 3364の旅行クーポンがもらえます。</span>
+      </div>
+      <div class="notice">
+        <h4>Airbnbからのおしらせ</h4>
+        <span>友達を招待して¥ 1,800獲得しよう。</span>
+      </div>
+    </div>
+
+    <div class="right-contents">
+      <div class="right1">
+        <div calss="display-btn">
+          <button class="dp-btn" type="button" name="aaa" value="aaa">すべての予約を表示</button>
+          <button class="dp-btn" type="button" name="aaa" value="aaa">リスティングを新規作成</button>
+        </div>
+      </div>
+    <div class="right2">
+      <h2>ホスティング概要</h2>
+      <span>最初の予約が入ると、ここにホスティング実績データが出ます。</span>
+      <a href="#"><span>ホスティング基準の詳細はこちら</span></a>
+      <table class="table-main">
+        <tr><hr><td>12月の収入</td><td align="right">０</td></tr>
+        <tr><td>過去30日間のビュー数</td><td align="right">８</td></tr>
+      </table>
+      <table class="table-sub">
+        <tr><hr><td>総合評価</td><td align="right">ビュー未獲得</td></tr>
+        <tr><td>レビュー総数</td><td align="right">０</td></tr>
+        <tr><td>５つ星レビュー</td><td align="right">０％</td></tr>
+      </table>
+      </div>
+      <a href="#"><span>フィードバックを送る</span></a>
+    </div>
+    <div class="foot-title">
+      <h1>リスティング実績サマリー</h1>
+    </div>
+    <div class="footer-contents">
+      <div class="host-copy">
+        <span>ホスティングスタイルは十人十色ですが、ここでは目立つリスティングづくりのヒントを随時紹介しています。</span>
+      </div>
+      <div class="host-overview">
+        <div class="host-image">
+          <%= image_tag('airbnb.png',:size => "400x220") %>
+        </div>
+        <div class="detail">
+          <h4>Center of Tokyo</h4>
+          <h4>港区,日本,公開</h4>
+          <div class="price">
+            <h5>料金</h5>
+            <span>¥20,000</span>
+          </div>
+          <div class="calendar">
+            <h5>カレンダー</h5>
+            <span>今後３ヶ月で１日オープン</span>
+          </div>
+          <div class="appeal">
+            <span>リスティングの予想訴求力</span>
+          </div>
+        </div>
+      </div>
+      <div class="hint-group">
+        <div class="hint1">
+          <h4>料金を調節しよう</h4>
+          <span>現在の料金¥20,000では予約が入る確率はかなり低いです。</span>
+          <div class="adv-link1">
+            <button class="hint-btn" type="button" name="aaa" value="aaa">料金を変更する</button>
+          </div>
+        </div>
+        <div class="hint2">
+          <h4>友達とホスティング</h4>
+          <span>知人や信頼できる人を、お家の補助ホストに招待しよう。</span>
+          <div class="adv-link2">
+            <button class="hint-btn" type="button" name="aaa" value="aaa">友達を招待する</button>
+          </div>
+        </div>
+        <div class="hint3">
+          <h4>写真を増やす</h4>
+          <span>写真は現在１枚。13枚以上あるリスティングの方が予約率は通常高めです。写真で差をつける５つのTipsをチェック。</span>
+          <div class="adv-link3">
+            <button class="hint-btn" type="button" name="aaa" value="aaa">写真を追加</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -14,22 +14,35 @@
       <h1 class="text-danger font-weight-bold">Airbnb</h1>
       <ul class="nav justify-content-end">
         <li class="nav-item nav-item-style">
-          <%= link_to 'ルーム登録', "/rooms", method: :post %>
-        </li>
-        <li class="nav-item nav-item-style">
-          <%= link_to 'ホストをはじめる', "/" %>
-        <li class="nav-item nav-item-style">
-          <%= link_to 'アカウント作成', "/" %>
-        </li>
-        <% if user_signed_in? %>
-        <li class="nav-item nav-item-style">
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-        </li>
-        <% else %>
-        <li class="nav-item nav-item-style">
-          <%= link_to "ログイン", new_user_session_path, class: 'post' %>
-        </li>
-        <% end %>
+          <!-- <% if current_user.rooms.exists?  %>
+            <ul class="nav justify-content-end">
+            <li class="nav-item nav-item-style">
+              <a class="nav-link active" href="#">ホスト</a>
+            </li>
+            <li class="nav-item nav-item-style">
+              <%= link_to "サインアウト", new_user_session_path %>
+            </li>
+          <% elsif user_signed_in? %>
+            <ul class="nav justify-content-end">
+            <li class="nav-item nav-item-style">
+              <a class="nav-link active" href="#">ホストはじめる</a>
+            </li>
+            <li class="nav-item nav-item-style">
+            <%= link_to "サインアウト", new_user_session_path %>
+            </li>
+          <% else %> -->
+           <ul class="nav justify-content-end">
+           <li class="nav-item nav-item-style">
+             <a class="nav-link active" href="#">ホストをはじめる</a>
+           </li>
+           <li class="nav-item nav-item-style">
+             <a class="nav-link" href="#">アカウント作成</a>
+           </li>
+           <li class="nav-item nav-item-style">
+             <%= link_to "ログイン", new_user_session_path %>
+           </li>
+         </ul>
+         <!-- <% end %> -->
       </ul>
     </nav>
   </header>
