@@ -1,7 +1,7 @@
 class BedroomsController < ApplicationController
 
 	def create
-		@bedroom = Bedroom.create(set_bedroom)
+		@bedroom = Bedroom.create
 	end
 
 	def edit
@@ -12,8 +12,8 @@ class BedroomsController < ApplicationController
 
 	private
 
-	def set_bedroom
-		@bedroom = Bedroom.find_by(params[:id])
-	end
+	# def set_bedroom
+	# 	@bedroom = Bedroom.find_by(params[:id])
+	# end
 
 end

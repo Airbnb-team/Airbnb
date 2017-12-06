@@ -4,6 +4,20 @@
     <title>お部屋情報登録</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 450px;
+        width: 484px;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
   </head>
 
   <body>
@@ -23,26 +37,32 @@
 
       <div class="left-content">
         <div class="left-content-list">
-          <div class="h3 h3-style">所在地は?</div>
-          <div class="input-list">
-            <div class="p p-style3">東京都渋谷区</div>
-            <div class="p p-style3">代官山山町１７−１</div>
-            <div class="p p-style3">代官山アドレス・ザ・タワー</div>
+          <div class="rooms-title">
+            <span class="rooms-title-font">所在地は？</span>
           </div>
-          <iframe
-            width=“600”
-            height=“450"
-            frameborder=“0” style=“border:0"
-            src=“https://www.google.com/maps/embed/v1/place?key=AIzaSyCKb6VZsMpwGrlBuuv8J6pSrXKHAZTw5-k
-            &q=Space+Needle,Seattle+WA” allowfullscreen>
-          </iframe>
-          <div class="p p-style2">ピンをドラッグすると場所を変更できます。</div>
-          <div class="button-content">
-            <div class="button-content-menu">
-              <a class="btn-progress-back" href="/">
-                <h5 class="h5-style"><%= link_to '← 戻る', '/rooms/:room_id/locations', method: :post, style: "color:#666666"; %></h5>
-              </a>
-              <button type="button" class="btn next-btn-style"><%= link_to '次へ', '/rooms/:room_id/amenities', method: :post, style: "color:#ffffff"; %></button>
+
+          <div id="map"></div>
+          <script>
+            var map;
+            function initMap() {
+              map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: -34.397, lng: 150.644},
+                zoom: 8
+              });
+            }
+          </script>
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBni7w26AcUziUF-q9RO0NxsvB9OldANiQ&callback=initMap"
+          async defer></script>
+
+          <h5>ピンをドラッグすると場所を変更できます。</h5>
+          <div class="main-panel-action-wrapper">
+            <div class="main-panel-half-content clearfix">
+              <div class="main-panel-half-spacce">
+                <div class="main-panel-half">
+                  <%= link_to '← 戻る', locations_path, method: :post, class: 'h5 rooms-back-font' %>
+                  <%= link_to '次へ', amenities_path, method: :post, class: 'rooms-next-btn' %>
+                </div>
+              </div>
             </div>
           </div>
         </div>

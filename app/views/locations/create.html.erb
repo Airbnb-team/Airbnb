@@ -23,56 +23,52 @@
 
       <div class="left-content">
         <div class="left-content-list">
-          <div class="h3 h3-style">所在地は?</div>
-          <div class="input-list">
-            <div class="p p-style">国</div>
-            <div class="dropdown">
-              <button class="btn btn-lg dropdown-toggle btn-style1 rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">１つ選択してください</button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">日本</a>
-                <a class="dropdown-item" href="#">アメリカ</a>
-                <a class="dropdown-item" href="#">その他</a>
+          <div class="rooms-title">
+            <span class="rooms-title-font">所在地は？</span>
+          </div>
+          <%= form_for @location do |f| %>
+            <div class="rooms-country">
+              <h5>国</h5>
+              <%= f.select :country, { 日本: '日本', アメリカ: 'アメリカ', その他: 'その他' } , {prompt: true}, {class: 'rooms-location-select'}  %>
+            </div>
+
+            <div class="rooms-postal_code">
+              <h5>郵便番号</h5>
+              <%= f.text_field :postal_code, {class: 'rooms-location-text_field'}  %>
+            </div>
+
+            <div class="rooms-prefecture">
+              <h5>都道府県</h5>
+              <%= f.text_field :prefecture, {class: 'rooms-location-text_field'}  %>
+            </div>
+
+            <div class="rooms-city">
+              <h5>市区町村</h5>
+              <%= f.text_field :city, {class: 'rooms-location-text_field'}  %>
+            </div>
+
+            <div class="rooms-adress">
+              <h5>所番地 ※数字は半角</h5>
+              <%= f.text_field :adress, {class: 'rooms-location-text_field_lg'}  %>
+            </div>
+
+            <div class="rooms-building_name">
+              <h5>建物名・部屋番号（任意）</h5>
+              <%= f.text_field :building_name, {class: 'rooms-location-text_field_lg'}  %>
+            </div>
+
+            <div class="main-panel-action-wrapper">
+              <div class="main-panel-half-content clearfix">
+                <div class="main-panel-half-spacce">
+                  <div class="main-panel-half">
+                    <%= link_to '← 戻る', bathrooms_path, method: :post, class: 'h5 rooms-back-font' %>
+                    <%= link_to '次へ', locationmaps_path, method: :post, class: 'rooms-next-btn' %>
+                   <!--  <%= f.submit '保存', class: 'rooms-save-btn' %> -->
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="input-list">
-            <div class="p p-style">郵便番号</div>
-            <div class="form-group">
-              <input type="text" class="form-control form-style rounded-0" id="inputAddress" placeholder="１５０-００３４">
-            </div>
-          </div>
-          <div class="input-list">
-            <div class="p p-style">都道府県</div>
-            <div class="form-group">
-              <input type="text" class="form-control form-style rounded-0" id="inputAddress" placeholder="東京都">
-            </div>
-          </div>
-          <div class="input-list">
-            <div class="p p-style">市区町村</div>
-            <div class="form-group">
-              <input type="text" class="form-control form-style rounded-0" id="inputAddress" placeholder="渋谷区">
-            </div>
-          </div>
-          <div class="input-list">
-            <div class="p p-style">所番地 ※数字は半角</div>
-            <div class="form-group">
-              <input type="text" class="form-control form-style rounded-0" id="inputAddress" placeholder="代官山町１７−１">
-            </div>
-          </div>
-          <div class="input-list">
-            <div class="p p-style">建物名・部屋番号（任意）</div>
-            <div class="form-group">
-              <input type="text" class="form-control form-style rounded-0" id="inputAddress" placeholder="代官山アドレス・ザ・タワー">
-            </div>
-          </div>
-          <div class="button-content">
-            <div class="button-content-menu">
-              <a class="btn-progress-back">
-                <h5 class="h5-style"><%= link_to '← 戻る', '/rooms/:room_id/bathrooms', method: :post, method: :post, style: "color:#666666"; %></h5>
-              </a>
-              <button type="button" class="btn next-btn-style"><%= link_to '次へ', '/rooms/:room_id/locationmaps', method: :post, :style=>"color:#ffffff;" %></button>
-            </div>
-          </div>
+          <% end %>
         </div>
       </div>
 

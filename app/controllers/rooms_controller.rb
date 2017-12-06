@@ -10,12 +10,12 @@ class RoomsController < ApplicationController
 
 	def create
 		# @room = Room.find(params[:id])
-		@room = Room.new(room_params)
-    if @room.save
-      redirect_to :root
+		@room = Room.create
+  #   if @room.save
+  #     redirect_to :root
     # else
     #   render :new
-    end
+    # end
 	end
 
 	def continue
@@ -32,8 +32,8 @@ class RoomsController < ApplicationController
 
 	private
 
-	def room_params
-		params.require(:room).permit(:property_type, :home_type, :room_type, :guest_interraction).merge(user_id: current_user.id)
-	end
+	# def room_params
+	# 	params.require(:room).permit(:property_type, :home_type, :room_type, :guest_interraction).merge(user_id: current_user.id)
+	# end
 
 end

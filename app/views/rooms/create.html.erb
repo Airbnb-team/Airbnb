@@ -58,8 +58,9 @@
               <div class="main-panel-half-content clearfix">
                 <div class="main-panel-half-spacce">
                   <div class="main-panel-half">
-                    <%= link_to '← 戻る', root_path, class: 'h5 rooms-back-font' %>
-                    <%= f.submit '保存', class: 'rooms-save-btn' %>
+                    <%= link_to '← トップへ戻る', root_path, class: 'h5 rooms-back-font' %>
+                    <%= link_to '次へ', bedrooms_path, method: :post, class: 'rooms-next-btn' %>
+                   <!--  <%= f.submit '保存', class: 'rooms-save-btn' %> -->
                   </div>
                 </div>
               </div>

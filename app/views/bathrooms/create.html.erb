@@ -23,33 +23,27 @@
 
       <div class="left-content">
         <div class="left-content-list">
-          <div class="h3 h3-style">バスルーム数は?</div>
-          <div class="select-list">
-            <div class="p p-style">バスルーム数</div>
-            <div class="dropdown">
-              <button class="btn btn-lg dropdown-toggle btn-style rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">１つ選択してください</button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">０.５</a>
-                <a class="dropdown-item" href="#">１</a>
-                <a class="dropdown-item" href="#">１.５</a>
-                <a class="dropdown-item" href="#">２</a>
-                <a class="dropdown-item" href="#">２.５</a>
-                <a class="dropdown-item" href="#">３</a>
-                <a class="dropdown-item" href="#">３.５</a>
-                <a class="dropdown-item" href="#">４</a>
-                <a class="dropdown-item" href="#">４.５</a>
-                <a class="dropdown-item" href="#">５</a>
+          <div class="rooms-title">
+            <span class="rooms-title-font">バスルーム数は?</span>
+          </div>
+          <%= form_for @bathroom do |f| %>
+            <div class="rooms-bathrooms_count">
+              <h5>バスルーム数</h5>
+              <%= f.select :batrooms_count, { ０．５: '０．５', １: '１', １．５: '１．５', ２: '２．５', ３: '３', ３．５: '３．５', ４: '４．５', ５: '５' } , {prompt: true}, {class: 'rooms-select-control'}  %>
+            </div>
+
+          <div class="main-panel-action-wrapper">
+              <div class="main-panel-half-content clearfix">
+                <div class="main-panel-half-spacce">
+                  <div class="main-panel-half">
+                    <%= link_to '← 戻る', bedrooms_path, method: :post, class: 'h5 rooms-back-font' %>
+                    <%= link_to '次へ', locations_path, method: :post, class: 'rooms-next-btn' %>
+                   <!--  <%= f.submit '保存', class: 'rooms-save-btn' %> -->
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="button-content">
-            <div class="button-content-menu">
-              <a class="btn-progress-back">
-                <h5 class="h5-style"><%= link_to '← 戻る', '/rooms/:room_id/bedrooms', method: :post, style: "color:#666666"; %></h5>
-              </a>
-              <button type="button" class="btn next-btn-style"><%= link_to '次へ', '/rooms/:room_id/locations', method: :post, style: "color:#ffffff;" %></button>
-            </div>
-          </div>
+          <% end %>
         </div>
       </div>
 
