@@ -1,0 +1,78 @@
+<div class="main-content">
+
+  <div class="new-header">
+    <button type="button" class="button-style">airbnb</button>
+    <div class="comp-left">
+      <span class="h5 text-normal">ステップ１：最初は基本情報から</span>
+    </div>
+    <div class="comp-right">
+      <a>保存して閉じる</a>
+    </div>
+    <div class="progress" style="height:5px;">
+    <div class="progress-bar bg-info" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
+
+  <div class="left-content">
+    <div class="left-content-list">
+      <div class="h3 h3-style">ゲストが利用可能なスペースは?</div>
+      <div class="input-list">
+        <div class="form-check">
+          <label class="form-check-label check-style">
+            <input class="form-check-input" type="checkbox" value="">
+            プール
+          </label><br>
+          <label class="form-check-label check-style">
+            <input class="form-check-input" type="checkbox" value="">
+            キッチン
+          </label><br>
+          <label class="form-check-label check-style">
+            <input class="form-check-input" type="checkbox" value="">
+            洗濯機
+          </label><br>
+          <label class="form-check-label check-style">
+            <input class="form-check-input" type="checkbox" value="">
+            洗濯乾燥機
+          </label><br>
+          <label class="form-check-label check-style">
+            <input class="form-check-input" type="checkbox" value="">
+            駐車場
+          </label><br>
+          <label class="form-check-label check-style">
+            <input class="form-check-input" type="checkbox" value="">
+            エレベーター
+          </label><br>
+          <label class="form-check-label check-style">
+            <input class="form-check-input" type="checkbox" value="">
+            ジャグジー＆高級風呂
+          </label><br>
+          <label class="form-check-label check-style">
+            <input class="form-check-input" type="checkbox" value="">
+            ジム
+          </label><br>
+        </div>
+      </div>
+      <div class="button-content">
+        <div class="button-content-menu">
+          <a class="btn-progress-back" href="/">
+            <h5 class="h5-style"><%= link_to '← 戻る', '/rooms/:room_id/amenities', method: :post, method: :post, style: "color:#666666"; %></h5>
+          </a>
+          <button type="button" class="btn next-btn-style"><%= link_to '完了', '/rooms/continue', :style=>"color:#ffffff;" %></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="helper-content">
+    <div class="helper-content-list">
+      <div class="card card-style rounded-0" style="width: 20rem;">
+        <img class="card-img-top">
+        <div class="card-body">
+          <span class="fa fa-lightbulb-o fa-3x text-info" aria-hidden="true"></span><br>
+          <p class="card-text text-muted">スペースは敷地内から選び、敷地外のコインランドリーや近所のスポットまで含めないようにしましょう。近隣から許可を得ている場合は、プール、ジャグジーなどの共有スペースも含めてOKです。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

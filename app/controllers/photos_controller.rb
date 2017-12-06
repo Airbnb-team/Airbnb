@@ -15,5 +15,5 @@ class PhotosController < ApplicationController
 	def set_room
 		@photo = Photo.find_by(params[:id])
 	end
-	
+
 end

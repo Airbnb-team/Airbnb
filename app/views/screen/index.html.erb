@@ -5,15 +5,14 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="assets/style.scss">
-    <script src="assets/style.js"></script>
   </head>
 
   <header class="header">
     <nav class="navbar fixed-top navbar-white bg-white navbar-style">
-      <h1 class="text-danger font-weight-bold">Airbnb</h1>
+      <h1 class="text-style">Airbnb</h1>
       <ul class="nav justify-content-end">
         <li class="nav-item nav-item-style">
+<<<<<<< HEAD
           <!-- <% if current_user.rooms.exists?  %>
             <ul class="nav justify-content-end">
             <li class="nav-item nav-item-style">
@@ -43,6 +42,24 @@
            </li>
          </ul>
          <!-- <% end %> -->
+=======
+          <%= link_to 'ルーム登録', "/rooms", method: :post %>
+        </li>
+        <li class="nav-item nav-item-style">
+          <%= link_to 'ホストをはじめる', new_room_path, method: :get %>
+        <li class="nav-item nav-item-style">
+          <%= link_to 'アカウント作成', "/" %>
+        </li>
+        <% if user_signed_in? %>
+        <li class="nav-item nav-item-style">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        </li>
+        <% else %>
+        <li class="nav-item nav-item-style">
+          <%= link_to "ログイン", new_user_session_path, class: 'post' %>
+        </li>
+        <% end %>
+>>>>>>> master
       </ul>
     </nav>
   </header>
@@ -88,82 +105,137 @@
       </div>
     </div>
 
-      <div class="container container-style">
-        <div class="row row-1">
-          <div class="col-md-12">
-            <h1>ユニークなお家を予約して暮らすような旅をしよう。</h1>
-              <div class="input-group input-group-style">
-                <div class="icon-search"></div>
-                <input type="text" name="serach" class="form-control form-control-lg rounded-0" placeholder="エリアを入力">
-                <span class="input-group-btn">
-                  <button class="btn btn-default btn-danger" type="submit">Search</button>
-                </span>
-              </div>
-            </div>
-        </div>
-
-        <h2 class="font-weight-bold">お住いの国の宿泊先</h2>
-        <div class="row row-2">
-          <div class="col-md-4">
-            <div class="card" style="width: 20rem;">
-              <img class="card-img-top" src="assets/image0.jpeg" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text font-weight-bold">宿泊先</p>
-              </div>
+    <div class="container container-style">
+      <div class="row row-1">
+        <div class="col-md-12">
+          <h1>ユニークなお家を予約して暮らすような旅をしよう。</h1>
+            <div class="input-group input-group-style">
+              <button ><span class="fa fa-search fa-lg icon-style"></span></button>
+              <input type="text" name="serach" class="form-control form-control-lg rounded-0" placeholder="エリアを入力">
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card" style="width: 20rem;">
-              <img class="card-img-top" src="assets/image4.jpeg" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text font-weight-bold">宿泊先</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card" style="width: 20rem;">
-              <img class="card-img-top" src="assets/image5.jpeg" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text font-weight-bold">宿泊先</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <h2 class="font-weight-bold">ご興味のある宿泊先</h2>
-        <div class="row row-2">
-          <div class="col-md-4">
-            <div class="card" style="width: 20rem;">
-              <img class="card-img-top" src="assets/image0.jpeg" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text font-weight-bold">宿泊先</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card" style="width: 20rem;">
-              <img class="card-img-top" src="assets/image4.jpeg" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text font-weight-bold">宿泊先</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card" style="width: 20rem;">
-              <img class="card-img-top" src="assets/image5.jpeg" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text font-weight-bold">宿泊先</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
 
-    <footer class="footer footer-style">
-      <p class="text-center">@Airbnb_Team</p>
-    </footer>
+      <h2 class="font-weight-bold">お住いの国の宿泊先</h2>
+      <div class="row row-2">
+        <div class="col-md-4">
+          <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src="assets/image0.jpeg" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text font-weight-bold">宿泊先</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src="assets/image4.jpeg" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text font-weight-bold">宿泊先</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src="assets/image5.jpeg" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text font-weight-bold">宿泊先</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <h2 class="font-weight-bold">ご興味のある宿泊先</h2>
+      <div class="row row-2">
+        <div class="col-md-4">
+          <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src="assets/image0.jpeg" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text font-weight-bold">宿泊先</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src="assets/image4.jpeg" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text font-weight-bold">宿泊先</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src="assets/image5.jpeg" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text font-weight-bold">宿泊先</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-role">
+        <div class="select-content">
+          <div class="dropdown">
+            <button class="btn btn-lg dropdown-toggle laguage-style rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">日本語</button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">English</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="btn btn-lg dropdown-toggle money-style rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">日本円</button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">米ドル</a>
+            </div>
+          </div>
+        </div>
+        <div class="intoroduction-content1">
+          <div class=" p p-style0">Airbnb<br>
+            <br>
+            <a>会社情報</a><br>
+            <a>採用情報</a><br>
+            <a>プレス</a><br>
+            <a>ポリシー</a><br>
+            <a>ヘルプ</a><br>
+            <a>ダイバーシティ＆ビロンギング</a><br>
+          </div>
+        </div>
+        <div class="intoroduction-content2">
+          <div class="p p-style0">スタッフのおすすめ<br>
+            <br>
+            <a>信頼＆安全</a><br>
+            <a>旅行クーポン</a><br>
+            <a>Airbnb Citizen</a><br>
+            <a>出張</a><br>
+            <a>ガイドブック</a><br>
+            <a>Airbnbmag </a><br>
+          </div>
+        </div>
+        <div class="intoroduction-content3">
+          <div class="p p-style0">ホスティング<br>
+            <br>
+            <a>ホストになる理由</a><br>
+            <a>ホストに招待</a><br>
+            <a>おもてなしの心</a><br>
+            <a>ホストの責任</a><br>
+            <a>コミュニティセンター</a><br>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="copyright-left">@Airbnb_Team</div>
+      <div class="copyright-right">
+        <a>利用規約</a>
+        <a>プライバシー</a>
+        <a>サイトマップ</a>
+        <i class="fa fa-facebook icon-style1" aria-hidden="true"></i>
+        <i class="fa fa-twitter icon-style1" aria-hidden="true"></i>
+        <i class="fa fa-instagram icon-style1" aria-hidden="true"></i>
+      </div>
+    </div>
+  </footer>
 
 </html>

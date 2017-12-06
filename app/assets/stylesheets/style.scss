@@ -1,5 +1,5 @@
 .navbar-style {
-	border-bottom: 0.1px solid #999;
+	border-bottom: 0.1px solid #dddddd;
 }
 
 .nav-item-style {
@@ -9,8 +9,13 @@
 	color: #20c997;
 }
 
+.text-style {
+	color: #FF5A5F;
+	font-weight: bold;
+}
+
 .container-style {
-	border-style: 0.1px solid #999;
+	border-style: 0.1px solid #999999;
 }
 
 .row-1 {
@@ -22,28 +27,606 @@
 }
 
 .row-3 {
-	padding-top: 100px;
+	padding: 50px, 0;
 }
+
 
 .input-group-style {
-	box-shadow: 0px 5px 5px 0px #999;
+	box-shadow: 0px 5px 5px 0px #dddddd;
 }
 
-.footer-style {
-	border-top: 0.1px solid #999;
-	padding-bottom: 30px;
-	color: #999;
+.icon-style {
+	color: #dddddd;
 }
 
-.form-style {
-	padding-top: 5px;
+.icon-style1 {
+	padding-left :10px;
+}
+
+.footer {
+	border-top: 0.1px solid #dddddd;
+}
+
+.footer-content {
+	width: 1100px;
+	height: 300px;
+	margin: 0 auto;
+	display: block;
+	margin-top: 30px;
+	position: relative;
+}
+
+.footer-role {
+	height: 350px;
+	position: absolute;
+}
+
+.select-content {
+	width: 250px;
+	height: 250px;
+	display: inline-block;
+	margin-top: 15px;
+	margin-left: 15px;
+	float: left;
+}
+
+.laguage-style {
+	height: 48px;
+	width: 250px;
+	color: #666666;
+	font-weight: 100;
+	font-size: 1.2em;
+	background-color: #ffffff;
+	border-color: #f5f5f5;
+	margin-bottom: 10px;
+}
+
+.money-style {
+	height: 48px;
+	width: 250px;
+	color: #666666;
+	font-weight: 100;
+	font-size: 1.2em;
+	background-color: #ffffff;
+	border-color: #f5f5f5;
+	margin-bottom: 10px;
+}
+
+.intoroduction-content1 {
+	width: 250px;
+	height: 250px;
+	margin-left: 15px;
+	display: inline-block;
+}
+
+.intoroduction-content2 {
+	width: 250px;
+	height: 250px;
+	margin-left: 15px;
+	display: inline-block;
+}
+
+.intoroduction-content3 {
+	width: 250px;
+	height: 250px;
+	margin-left: 15px;
+	display: inline-block;
+}
+
+.footer-copyright {
+	width: 1100px;
+  height: 100px;
+  border-top: 0.1px solid #dddddd;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.p-style0 {
+	width: 220px;
+	height: 280px;
+	padding-top :15px;
+	padding-left: 50px;
+	float: left;
+	font-size: 1em;
+	color: #666666;
+}
+
+.copyright-left {
+	float: left;
+	color: #999999;
+	padding-top: 15px;
+}
+
+.copyright-right {
+	float: right;
+	color: #999999;
+	padding-top: 15px;
+}
+
+// -- rooms登録関係 --
+.new-header {
+	width: 100%;
+	height: 66px;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+	background-color: #ffffff;
+}
+
+.button-style {
+	color: #FF5A5F;
+	width: 130px;
+	height: 64px;
+	display: inline-block;
+	font-size: 24px;
+	font-weight: bold;
+	border-style: none;
+}
+
+.comp-left{
+	display: inline-block;
+	line-height: 64px;
+	height:64px;
+	font-size: 19px;
+	font-weight: normal;
+	color: #666666;
+	padding: 0 19px;
+	border-left: 0.1px solid #dddddd;
+	background-color: #ffffff;
+}
+
+.comp-right {
+	float: right;
+	line-height: 64px;
+	height: 64px;
+	font-size: 19px;
+	font-weight: normal;
+	color: #009999;
+	padding: 0 19px;
+	background-color: #ffffff;
+}
+
+.main-content {
+	width: 100%;
+	height: 140vh;
+}
+
+.left-content {
+	display: inline-block;
+	height: 140vh;
+	width: 55%;
+}
+
+.left-content-list {
+	width: 500px;
+	height: 100%;
+	float: right;
+	padding-top: 112px;
+}
+
+.h3-style {
+	color: #666666;
+	font-weight: bold;
+}
+
+.select-list {
+	padding: 32px 0;
+}
+
+.p-style {
+	color: #666666;
+	font-size: 1.2em;
+	font-weight: 100;
+	padding-bottom: 10px;
 }
 
 .btn-style {
-	width: 250px;
+	height: 48px;
+	width: 320px;
+	color: #666666;
+	font-weight: 100;
+	font-size: 1.2em;
+	background-color: #ffffff;
+	border-color: #f5f5f5;
+	position: relative;
+}
+
+.bottom-content {
+	width: 100%;
+	height: 102px;
+}
+
+.button-content-menu {
+	width: 500px;
+	height: 102px;
+	border-top: 0.1px solid #dddddd;
+}
+
+.h5-style {
+	color: #666666;
+	font-size: 1.2em;
+	font-weight: 100;
+	padding-top: 30px;
+	padding-left: 15px;
+	float:left;
+}
+
+.next-btn-style {
+	color: #ffffff;
+	font-size: 1.2em;
+	font-weight: bold;
+	background-color: #FF5A5F;
+	width: 185px;
+	height: 42px;
+	float: right;
+	margin-top: 25px;
 	margin-right: 15px;
+	text-decoration: none;
+}
+
+.helper-content {
+	display: inline-block;
+	background-color: #f7f7f7;
+	height: 140vh;
+	width: 44.6%;
+}
+
+.helper-content-list {
+	width: 350px;
+	height: 100%;
+	padding-top: 112px;
+	position: fixed;
+}
+
+.card-style {
+	margin-top: 70px;
+	margin-left: 30px;
+	font-size: 16px;
+}
+
+.text-info {
+	padding-bottom: 15px;
+}
+
+// -- location登録関係 --
+.btn-style1 {
+	height: 63px;
+	width: 484px;
+	color: #666666;
+	font-weight: 100;
+	font-size: 1.2em;
+	background-color: #ffffff;
+	border-color: #f5f5f5;
+	position: relative;
+}
+
+.input-list {
+	padding: 15px 0;
+}
+
+.form-style {
+	height: 63px;
+	width: 484px;
+	color: #666666;
+	font-weight: 100;
+	font-size: 1.2em;
+	background-color: #ffffff;
+	border-color: #f5f5f5;
+}
+
+.p-style2 {
+	color: #666666;
+	font-size: 1.2em;
+	font-weight: 100;
+	padding-bottom: 10px;
+	padding-top: 15px;
+	padding-bottom: 40px;
+}
+
+.p-style3 {
+	font-size: 1.2em;
+	font-weight: 100;
+	color: #666666
+}
+
+// -- amenity登録関係 --
+.main-amenity-content {
+	width: 100%;
+	height: 180vh;
+}
+
+.left-amenity-content {
+	display: inline-block;
+	height: 180vh;
+	width: 55%;
+}
+
+.helper-amenity-content {
+	display: inline-block;
+	background-color: #f7f7f7;
+	height: 180vh;
+	width: 44.6%;
+}
+
+.check-style {
+	font-size: 19px;
+	font-weight: 300;
+	color: #484848;
+	padding-top: 20px;
+}
+
+.comments-style {
+	font-size: 15px;
+	font-weight: 300;
+	color: #484848;
+	padding-top: 4px;
+	padding-bottom: 0px;
+	padding-left: 20px;
+	display: block;
+}
+
+.h6-style {
+	font-size: 18px;
+	font-weight: bold;
+	color: #666666;
+	padding-top: 30px;
+	margin-bottom: 0px;
 }
 
 .contents-wrapper {
 	margin-top: 150px;
+}
+
+// -- continueページ関係 --
+.landing-header{
+	width: 100%;
+	height: 80px;
+	border-bottom: 1px solid #dce0e0;
+}
+
+.landing-header-left{
+	width: 82px;
+	height: 79px;
+	text-align: center;
+	line-height: 79px;
+	float: left;
+}
+
+.icon-style0{
+	color: #FF5A5F;
+}
+
+.landing-header-right{
+	width: 708px;
+	height: 79px;
+	float: right;
+}
+
+.landing-style{
+	line-height: 79px;
+	padding: 0 16px;
+	text-decoration: none;
+	color: #484848;
+}
+
+.avator{
+	background-color: #f2f2f2;
+  box-shadow: 0 0 0 2px #dbdbdb;
+  border-radius: 50%;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: middle;
+  width: 28px;
+  height: 28px;
+}
+
+.landing-content{
+	max-width: 1310px;
+	height: 724px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+
+.landing-left-content{
+	width: 470px;
+	height: 556px;
+	margin: 58px 93.5px 100px 100px;
+	position: absolute;
+}
+
+.landing-text-style0{
+	font-size: 16px;
+	color: gray;
+}
+
+.landing-text-style1{
+	font-size: 16px;
+	padding-bottom: 5px;
+	color: #2d2d2d;
+}
+
+.landing-text-style2{
+	font-size: 16px;
+	color:#00a699;
+}
+
+.space{
+	margin-bottom: 30px;
+}
+
+.landing-step-collection{
+	box-sizing: border-box;
+}
+
+.landing-icon-position{
+	float: right;
+}
+
+.fa-check-circle{
+	color: #008489;
+}
+
+.landing-text-style3{
+	font-size: 14px;
+	font-weight: bold;
+	color: #bbbbbb;
+  display: block;
+}
+
+.landing-btn-style{
+	width: 76px;
+	height: 38px;
+	color: #ffffff;
+	font-weight: bold;
+	vertical-align: middle;
+	background-color: #008489;
+	margin-top: 10px;
+	text-decoration: none;
+}
+
+.hr{
+	border: 0;
+	border-top: 1px solid #dce0e0;
+	border-color: #f5f5f5;
+	margin: 30px 0px;
+}
+
+.landing-right-content{
+	min-height: 100vh;
+	width: 41.66667%;
+	float: right;
+	position: relative;
+	display: block;
+	padding-left: 6px;
+	padding-right: 6px;
+}
+
+.landing-helper-content-list {
+	width: 350px;
+	height: 100%;
+}
+
+// -- photo登録関係 --
+.space-content{
+	padding-top: 71px;
+	width: 100%;
+}
+
+.center-content{
+	max-width: 912px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.main-panel-content{
+	width: 100%;
+	padding: 30px 30px 102px 30px;
+	float: left;
+	position: relative;
+}
+
+.photo-title{
+	font-weight: 700;
+  margin: 0px;
+  word-wrap: break-word;
+  font-size: 28px;
+  line-height: 32px;
+  letter-spacing: -0.6px;
+  padding-top: 32px;
+  padding-bottom: 24px;
+  padding-left: 32px;
+  color: #484848;
+}
+
+.photo-card-content{
+	padding: 0 45px;
+	margin-left: -15px;
+	margin-right: -15px;
+	margin-bottom: 24px;
+}
+
+.photo-flame{
+	border: 2px dashed #bbb;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  height: 400px;
+  cursor: pointer;
+  padding: 0 30px;
+}
+
+.upload-photo-ghost{
+	background-image: url(https://a0.muscache.com/airbnb/static/list_your_space/upload-photos-ghosts@2x-702c0f7….png);
+  background-size: 100% 100%;
+}
+
+.main-panel-inner-content{
+	width: 100%;
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 30px;
+}
+
+.main-panel-action-wrapper{
+  position: fixed;
+  z-index: 111;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 102px;
+}
+
+.main-panel-action-content{
+	max-width:912px;
+	height: 102px;
+	margin-right: auto;
+	margin-left: auto;
+	border-top: 0.1px solid #dddddd;
+	background-color: #ffffff;
+}
+
+.main-panel-action-spacce{
+	width: 100%;
+	height: 102px;
+	padding: 30px;
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.main-panel-action{
+	width: 100%;
+	height: 42px;
+	position: relative;
+  min-height: 1px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.photo-btn-style{
+	min-width: 185px;
+	font-size: 16px;
+	border-color: #c4c4c4;
+  background: white;
+  color: #484848;
+  float: right;
+  font-weight: bold;
+  padding: 9px 27px;
+}
+
+.photo-back-style {
+	color: #666666;
+	font-size: 1.2em;
+	font-weight: 100;
+	float: left;
+	line-height: 42px;
+}
+
+.clearfix{
+	content: "";
+	clear: both;
+	display: block;
 }

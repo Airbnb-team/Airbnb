@@ -12,7 +12,7 @@ class AmenitiesController < ApplicationController
 
 	private
 
-	def set_room
+	def set_amenity
 		@amenity = Amenity.find_by(params[:id])
 	end
 

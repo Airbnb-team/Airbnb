@@ -1,0 +1,322 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Airbnb</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="assets/style.scss">
+    <script src="assets/style.js"></script>
+  </head>
+
+<body>
+  <header class="header">
+    <nav class="navbar fixed-top navbar-white bg-white navbar-style">
+      <div class="_iiid5y"><svg viewBox="0 0 1000 1000" role="presentation" aria-hidden="true" focusable="false" style="height:1em;width:1em;display:block;fill:currentColor"><path d="m499.3 736.7c-51-64-81-120.1-91-168.1-10-39-6-70 11-93 18-27 45-40 80-40s62 13 80 40c17 23 21 54 11 93-11 49-41 105-91 168.1zm362.2 43c-7 47-39 86-83 105-85 37-169.1-22-241.1-102 119.1-149.1 141.1-265.1 90-340.2-30-43-73-64-128.1-64-111 0-172.1 94-148.1 203.1 14 59 51 126.1 110 201.1-37 41-72 70-103 88-24 13-47 21-69 23-101 15-180.1-83-144.1-184.1 5-13 15-37 32-74l1-2c55-120.1 122.1-256.1 199.1-407.2l2-5 22-42c17-31 24-45 51-62 13-8 29-12 47-12 36 0 64 21 76 38 6 9 13 21 22 36l21 41 3 6c77 151.1 144.1 287.1 199.1 407.2l1 1 20 46 12 29c9.2 23.1 11.2 46.1 8.2 70.1zm46-90.1c-7-22-19-48-34-79v-1c-71-151.1-137.1-287.1-200.1-409.2l-4-6c-45-92-77-147.1-170.1-147.1-92 0-131.1 64-171.1 147.1l-3 6c-63 122.1-129.1 258.1-200.1 409.2v2l-21 46c-8 19-12 29-13 32-51 140.1 54 263.1 181.1 263.1 1 0 5 0 10-1h14c66-8 134.1-50 203.1-125.1 69 75 137.1 117.1 203.1 125.1h14c5 1 9 1 10 1 127.1.1 232.1-123 181.1-263.1z">
+      </path></svg></div>
+      <ul class="nav justify-content-end">
+        <li class="nav-item nav-item-style">
+          <%= link_to 'ホストをはじめる', new_room_path, method: :get %>
+        </li>
+        <li class="nav-item nav-item-style">
+          <%= link_to 'お気に入り', "/" %>
+        <li class="nav-item nav-item-style">
+          <%= link_to '旅行', "/" %>
+        </li>
+        <li class="nav-item nav-item-style">
+          <%= link_to 'メッセージ', "/" %>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <div class="editleft col-md-3">
+    <div class="edit-profile">
+      <ul class="edit-sidenav">
+        <div>
+          <a href="" class="edit-item">プロフィールを編集</a>
+        </div>
+        <div>
+          <a href="/screen" class="edit-item">写真</a>
+        </div>
+      </ul>
+    </div>
+    <a href="" class="btn btn-block space-top-4">プロフィールを見る</a>
+
+  </div>
+  <div class="editright col-md-9">
+    <div class="required-item-box">
+      <div class="required-item">
+        <div class="panel-header">
+          <h9>必須項目</h9>
+        </div>
+        <div class="panel-body">
+          <div class="row row-condensed space-4">
+            <label class="text-right col-sm-3" for="user_first_name">名 </label>
+            <div class="col-sm-9">
+              <input id="user_first_name" class="user_first_name1" name="user[first_name]" size="30" type="text" value="first-name">
+            </div>
+          </div>
+          <div class="row row-condensed space-4">
+            <label class="text-right col-sm-3" for="user_first_name">姓 </label>
+            <div class="col-sm-9">
+              <input id="user_first_name" class="user_first_name1" name="user[first_name]" size="30" type="text" value="last-name">
+            </div>
+          </div>
+          <div class="row row-condensed space-4">
+            <label class="text-right col-sm-3" for="user_first_name">性別 </label>
+            <select name="gender" class="gender-select">
+              <option value="male">性別</option>
+              <option value="male">男</option>
+              <option value="male">女</option>
+              <option value="male">その他</option>
+            </select>
+          </div>
+          <div class="row row-condensed space-4">
+            <label class="text-right col-sm-3" for="user_first_name">生年月日 </label>
+            <select name="gender" class="gender-select">
+              <option value="male">月</option>
+              <option value="male">１月</option>
+              <option value="male">２月</option>
+              <option value="male">３月</option>
+              <option value="male">４月</option>
+              <option value="male">５月</option>
+              <option value="male">６月</option>
+              <option value="male">７月</option>
+              <option value="male">８月</option>
+              <option value="male">９月</option>
+              <option value="male">１０月</option>
+              <option value="male">１１月</option>
+              <option value="male">１２月</option>
+            </select>
+            <select name="gender" class="gender-select">
+              <option value="male">日</option>
+              <option value="male">1</option>
+              <option value="male">2</option>
+              <option value="male">3</option>
+              <option value="male">4</option>
+              <option value="male">5</option>
+              <option value="male">6</option>
+              <option value="male">7</option>
+              <option value="male">8</option>
+              <option value="male">9</option>
+              <option value="male">10</option>
+              <option value="male">11</option>
+              <option value="male">12</option>
+              <option value="male">13</option>
+              <option value="male">14</option>
+              <option value="male">15</option>
+              <option value="male">16</option>
+              <option value="male">17</option>
+              <option value="male">18</option>
+              <option value="male">19</option>
+              <option value="male">20</option>
+              <option value="male">21</option>
+              <option value="male">22</option>
+              <option value="male">23</option>
+              <option value="male">24</option>
+              <option value="male">25</option>
+              <option value="male">26</option>
+              <option value="male">27</option>
+              <option value="male">28</option>
+              <option value="male">29</option>
+              <option value="male">30</option>
+              <option value="male">31</option>
+            </select>
+            <select name="gender" class="gender-select">
+              <option value="male">年</option>
+              <option value="male">1999</option>
+              <option value="male">1998</option>
+              <option value="male">1997</option>
+              <option value="male">1996</option>
+              <option value="male">1995</option>
+              <option value="male">1994</option>
+              <option value="male">1993</option>
+              <option value="male">1992</option>
+              <option value="male">1991</option>
+              <option value="male">1990</option>
+              <option value="male">1989</option>
+              <option value="male">1988</option>
+              <option value="male">1987</option>
+              <option value="male">1986</option>
+              <option value="male">1985</option>
+              <option value="male">1984</option>
+              <option value="male">1983</option>
+              <option value="male">1982</option>
+              <option value="male">1981</option>
+              <option value="male">1980</option>
+              <option value="male">1979</option>
+              <option value="male">1978</option>
+              <option value="male">1977</option>
+              <option value="male">1976</option>
+              <option value="male">1975</option>
+              <option value="male">1974</option>
+              <option value="male">1973</option>
+              <option value="male">1972</option>
+              <option value="male">1971</option>
+              <option value="male">1970</option>
+              <option value="male">1969</option>
+              <option value="male">1968</option>
+              <option value="male">1967</option>
+              <option value="male">1966</option>
+              <option value="male">1965</option>
+              <option value="male">1964</option>
+              <option value="male">1963</option>
+              <option value="male">1962</option>
+              <option value="male">1961</option>
+              <option value="male">1960</option>
+              <option value="male">1959</option>
+              <option value="male">1958</option>
+              <option value="male">1957</option>
+              <option value="male">1956</option>
+              <option value="male">1955</option>
+              <option value="male">1954</option>
+              <option value="male">1953</option>
+              <option value="male">1952</option>
+              <option value="male">1951</option>
+              <option value="male">1950</option>
+              <option value="male">1949</option>
+              <option value="male">1948</option>
+              <option value="male">1947</option>
+              <option value="male">1946</option>
+              <option value="male">1945</option>
+              <option value="male">1944</option>
+              <option value="male">1943</option>
+              <option value="male">1942</option>
+              <option value="male">1941</option>
+              <option value="male">1940</option>
+              <option value="male">1939</option>
+              <option value="male">1938</option>
+              <option value="male">1937</option>
+              <option value="male">1936</option>
+              <option value="male">1935</option>
+              <option value="male">1934</option>
+              <option value="male">1933</option>
+              <option value="male">1932</option>
+              <option value="male">1931</option>
+              <option value="male">1930</option>
+              <option value="male">1929</option>
+              <option value="male">1928</option>
+              <option value="male">1927</option>
+              <option value="male">1926</option>
+              <option value="male">1925</option>
+              <option value="male">1924</option>
+              <option value="male">1923</option>
+              <option value="male">1922</option>
+              <option value="male">1921</option>
+              <option value="male">1920</option>
+              <option value="male">1919</option>
+              <option value="male">1918</option>
+              <option value="male">1917</option>
+            </select>
+          </div>
+          <div class="row row-condensed space-4">
+            <label class="text-right col-sm-3" for="user_first_name">メールアドレス</label>
+            <div class="col-sm-9">
+              <input id="user_first_name" class="user_first_name1" name="user[first_name]" size="30" type="text" value="123456@gmail.com">
+            </div>
+          </div>
+          <div class="row row-condensed space-4">
+            <label class="text-right col-sm-3" for="user_first_name">電話番号</label>
+            <div class="col-sm-9">
+              <input id="user_first_name" class="user_first_name1" name="user[first_name]" size="30" type="text" value="08012345678">
+            </div>
+          </div>
+          <div class="row row-condensed space-4">
+            <label class="text-right col-sm-3" for="user_first_name">ご希望の言語</label>
+            <div class="col-sm-9">
+              <input id="user_first_name" class="user_first_name1" name="user[first_name]" size="30" type="text" value="日本語">
+            </div>
+          </div>
+          <div class="row row-condensed space-4">
+            <label class="text-right col-sm-3" for="user_first_name">ご希望の通貨</label>
+            <div class="col-sm-9">
+              <input id="user_first_name" class="user_first_name1" name="user[first_name]" size="30" type="text" value="日本円">
+            </div>
+          </div>
+          <div class="row row-condensed space-4">
+            <label class="text-right col-sm-3" for="user_first_name">現住所</label>
+            <div class="col-sm-9">
+              <input id="user_first_name" class="user_first_name1" name="user[first_name]" size="30" type="text" value="例 : フランス パリ">
+            </div>
+          </div>
+          <div class="row row-condensed space-4">
+            <label class="text-right col-sm-3" for="user_first_name">自己紹介</label>
+            <div class="col-sm-9">
+              <input id="user_first_name" class="user_first_name2" name="user[first_name]" size="30" type="text" value="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-large">
+    保存する
+    </button>
+  </div>
+  <footer class="footer-edit">
+    <div class="footer-content">
+      <div class="footer-role">
+        <div class="select-content">
+          <div class="dropdown">
+            <button class="btn btn-lg dropdown-toggle laguage-style rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">日本語</button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">English</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="btn btn-lg dropdown-toggle money-style rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">日本円</button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">米ドル</a>
+            </div>
+          </div>
+        </div>
+        <div class="intoroduction-content1">
+          <div class=" p p-style0">Airbnb<br>
+            <br>
+            <a>会社情報</a><br>
+            <a>採用情報</a><br>
+            <a>プレス</a><br>
+            <a>ポリシー</a><br>
+            <a>ヘルプ</a><br>
+            <a>ダイバーシティ＆ビロンギング</a><br>
+          </div>
+        </div>
+        <div class="intoroduction-content2">
+          <div class="p p-style0">スタッフのおすすめ<br>
+            <br>
+            <a>信頼＆安全</a><br>
+            <a>旅行クーポン</a><br>
+            <a>Airbnb Citizen</a><br>
+            <a>出張</a><br>
+            <a>ガイドブック</a><br>
+            <a>Airbnbmag </a><br>
+          </div>
+        </div>
+        <div class="intoroduction-content3">
+          <div class="p p-style0">ホスティング<br>
+            <br>
+            <a>ホストになる理由</a><br>
+            <a>ホストに招待</a><br>
+            <a>おもてなしの心</a><br>
+            <a>ホストの責任</a><br>
+            <a>コミュニティセンター</a><br>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="copyright-left">@Airbnb_Team</div>
+        <div class="copyright-right">
+          <a>利用規約</a>
+          <a>プライバシー</a>
+          <a>サイトマップ</a>
+          <i class="fa fa-facebook icon-style1" aria-hidden="true"></i>
+          <i class="fa fa-twitter icon-style1" aria-hidden="true"></i>
+          <i class="fa fa-instagram icon-style1" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
