@@ -149,8 +149,19 @@
       </div>
       <div class="messages-right">
         <div class="messages-chat-main">
-          <div class="messages-chat">
-            <form>
+          <%= form_for [@message] do |f| %>
+          <div class="messages-chat1">
+            <%= f.text_area :body, placeholder: '', style: 'height: 80px; width:489px;' %>
+          </div>
+          <div class="messages-chat2">
+            <div class="messages-chat4">
+              <%= button_tag type: "submit", class: "messages-chat5" do %>
+              投稿する
+              <% end %>
+            </div>
+          </div>
+          <% end %>
+            <!-- <form>
               <div class="messages-chat1">
                 <label for="send_message_textarea" class="screen-reader-only">
                   <span>メッセージを書く</span>
@@ -168,7 +179,7 @@
                   </button>
                 </div>
               </div>
-            </form>
+            </form> -->
           </div>
         </div>
         <div class="messages-google">

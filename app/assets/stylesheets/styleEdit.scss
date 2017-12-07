@@ -403,7 +403,12 @@ textarea {
   width: 489px;
   background-color: #edefed;
   position: relative;
-  top: 50px;
+  top: 400px;
+  left: 700px;
+}
+
+.messages-chat6 {
+  border-style: none;
 }
 
 .messages-chat7 {
@@ -415,14 +420,14 @@ textarea {
 
 .messages-chat13 {
   position: absolute;
-  left: 500px;
-  top: 290px;
+  left: 1200px;
+  top: 400px;
 }
 
 .messages-chat100 {
   position: absolute;
-  left: 500px;
-  top: 0px;
+  left: 1200px;
+  top: 80px;
 }
 
 .messages-chat-main2 {
@@ -436,13 +441,15 @@ textarea {
 
 .messages-chat18 {
   position: relative;
-  left: 700px;
-  top: 220px;
+  top: 195px;
 }
 
 .messages-google {
   text-align: center;
   padding-top: 20px;
+  position: absolute;
+    left: 800px;
+    top: 250px;
 }
 
 .footer-messages {
