@@ -10,8 +10,7 @@
 
 
  .jumbotron {
-   background-image: url(<%= asset_path 'travel.jpg' %>);
-    // center no-repeat; background-size: cover;
+   background-image: url(<%= asset_path 'travel.jpg' %>)
    height: 680px;
    .container {
      color: white;
