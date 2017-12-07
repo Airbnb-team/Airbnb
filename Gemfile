@@ -67,7 +67,7 @@ end
 
 gem 'devise'
 
-gem 'fog-aws'
+gem 'fog'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
 gem 'font-awesome-rails'
