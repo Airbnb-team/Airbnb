@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users
   resources :messages
   resources :favorites, only: [:index]
-  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+  # devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   resources :rooms, only: [:index, :new, :create, :edit, :show, :update] do
     collection do
       get 'continue'
