@@ -5,11 +5,8 @@ Rails.application.routes.draw do
   resources :users
   resources :messages
   resources :favorites, only: [:index]
-<<<<<<< HEAD
+
   # devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
-=======
-  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
->>>>>>> master
   resources :rooms, only: [:index, :new, :create, :edit, :show, :update] do
     collection do
       get 'continue'
