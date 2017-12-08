@@ -4,6 +4,9 @@
     <title>お部屋情報登録</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style type="text/css">
+    a:link { color:#ffffff; text-decoration:none }
+    </style>
   </head>
 
   <body>
@@ -46,7 +49,7 @@
 	  					<i class="fa fa-check-circle fa-3x"></i>
 	  				</div>
 	  			</div>
-	  			<%= link_to '変更する', rooms_path, method: :post, class: "landing-text-style2" %>
+	  			<%= link_to '変更する', root_path, class: "landing-text-style2" %>
   			</div>
   			<hr>
   			<div class="landing-step-collection">
@@ -56,7 +59,7 @@
   				</h3>
   				<div class="landing-text-style1">写真、概要、タイトル</div>
   			</div>
-				<%= link_to '続行', '/rooms/:room_id/photos', method: :post, class: "btn landing-btn-style text-large" %>
+				<%= link_to '続行', new_room_photo_path(@room), class: 'landing-btn' %>
   			<hr>
   			<div class="landing-step-collection">
   				<strong class="landing-text-style3">ステップ３</strong>

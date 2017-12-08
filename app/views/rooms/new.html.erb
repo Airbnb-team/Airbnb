@@ -1,265 +1,85 @@
 <!doctype html>
 <html>
   <head>
-    <title>部屋、家、アパートをAirbnbで貸し出そう (2017)</title>
-    <!-- Required meta tags -->
+    <title>お部屋情報登録</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
 
-  <header class="header">
-    <nav class="navbar fixed-top navbar-white bg-white navbar-style">
-      <div class="_iiid5y"><svg viewBox="0 0 1000 1000" role="presentation" aria-hidden="true" focusable="false" style="height:1em;width:1em;display:block;fill:currentColor"><path d="m499.3 736.7c-51-64-81-120.1-91-168.1-10-39-6-70 11-93 18-27 45-40 80-40s62 13 80 40c17 23 21 54 11 93-11 49-41 105-91 168.1zm362.2 43c-7 47-39 86-83 105-85 37-169.1-22-241.1-102 119.1-149.1 141.1-265.1 90-340.2-30-43-73-64-128.1-64-111 0-172.1 94-148.1 203.1 14 59 51 126.1 110 201.1-37 41-72 70-103 88-24 13-47 21-69 23-101 15-180.1-83-144.1-184.1 5-13 15-37 32-74l1-2c55-120.1 122.1-256.1 199.1-407.2l2-5 22-42c17-31 24-45 51-62 13-8 29-12 47-12 36 0 64 21 76 38 6 9 13 21 22 36l21 41 3 6c77 151.1 144.1 287.1 199.1 407.2l1 1 20 46 12 29c9.2 23.1 11.2 46.1 8.2 70.1zm46-90.1c-7-22-19-48-34-79v-1c-71-151.1-137.1-287.1-200.1-409.2l-4-6c-45-92-77-147.1-170.1-147.1-92 0-131.1 64-171.1 147.1l-3 6c-63 122.1-129.1 258.1-200.1 409.2v2l-21 46c-8 19-12 29-13 32-51 140.1 54 263.1 181.1 263.1 1 0 5 0 10-1h14c66-8 134.1-50 203.1-125.1 69 75 137.1 117.1 203.1 125.1h14c5 1 9 1 10 1 127.1.1 232.1-123 181.1-263.1z">
-      </path></svg></div>
-      <h1 class="text-danger font-weight-bold"></h1>
-      <ul class="nav justify-content-end">
-        <li class="nav-item nav-item-style">
-          <%= link_to 'お気に入り', "/favorites" %>
-        </li>
-        <li class="nav-item nav-item-style">
-          <%= link_to '旅行', "/" %>
-        </li>
-        <li class="nav-item nav-item-style">
-          <%= link_to 'メッセージ', "/" %>
-        </li>
-        <li class="nav-item nav-item-style">
-          <%= link_to 'プロフィールを編集', "/users/:id/edit", method: :get %>
-        </li>
-        <li class="nav-item nav-item-style">
-          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-        </li>
-      </ul>
-    </nav>
-  </header>
-
   <body>
-    <div class="row row-1">
-      <div class="col-md-12">
-        <div class="jumbotron">
-          <div class="container">
-            <h1>空き部屋で世界をつなごう</h1>
-            AIRBNBでホスト
-            <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a> -->
+    <div class="main-content">
+      <div class="new-header">
+        <button type="button" class="button-style">airbnb</button>
+        <div class="comp-left">
+          <span class="h5 text-normal">ステップ１：最初は基本情報から</span>
+        </div>
+        <div class="comp-right">
+          <a>保存して閉じる</a>
+        </div>
+        <div class="progress" style="height:5px;">
+        <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+
+      <div class="left-content">
+        <div class="left-content-list">
+          <div class="rooms-title">
+            <span class="rooms-title-font">掲載するのはどんなお部屋ですか?</span>
+          </div>
+          <%= form_for @room do |f| %>
+            <div class="rooms-property_category">
+              <h5>住宅、ホテル、その他から１つお選びください</h5>
+              <%= f.select :property_type, { 住宅: '住宅', ホテル: 'ホテル', その他: 'その他' } , {}, {class: 'rooms-select-control'}  %>
+            </div>
+
+            <div class="rooms-home_category">
+              <h5>建物タイプは？</h5>
+              <%= f.select :home_type, { アパート: 'アパート', コンドミニアム: 'コンドミニアム', 一軒家: '一軒家', 別荘: '別荘', タウンハウス: 'タウンハウス' }, {prompt: true}, {class: 'rooms-select-control'} %>
+            </div>
+
+            <div class="rooms-room_category">
+              <h5>部屋タイプは？</h5>
+              <%= f.select :room_type, { まるまる貸切: 'まるまる貸切', 個室: '個室', シェアルーム: 'シェアルーム' }, {}, {class: 'rooms-select-control'} %>
+            </div>
+
+            <div class="rooms-guest_interraction">
+              <h5>こちらはゲスト専用のお部屋ですか？</h5>
+              <div class="rooms-radio-button">
+                <%= f.radio_button :guest_only, "1" %>
+                  <span>はい、主にゲスト専用のお部屋です</span>
+              </div>
+              <div class="rooms-radio-button">
+                <%= f.radio_button :guest_only, "0" %>
+                  <span>いいえ、こちらに私物も置いてます</span>
+              </div>
+            </div>
+
+            <div class="main-panel-action-wrapper">
+              <div class="main-panel-half-content clearfix">
+                <div class="main-panel-half-spacce">
+                  <div class="main-panel-half">
+                    <%= link_to '← トップへ戻る', root_path, class: 'h5 rooms-back-font' %>
+                    <%= f.submit '次へ', class: 'rooms-save-btn' %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="helper-content">
+        <div class="helper-content-list">
+          <div class="card card-style rounded-0" style="width: 20rem;">
+            <img class="card-img-top">
+            <div class="card-body">
+              <span class="fa fa-lightbulb-o fa-3x text-info" aria-hidden="true"></span><br>
+              <p class="card-title">私物の有無</p>
+              <p class="card-text text-muted">写真や衣類などのプライベートなものはゲストの目に触れる場所に出ていますか？ これも気になるポイント。</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-      <div class="rooms-advertise">
-        <div class="row">
-          <div class="col-sm-4">
-          <h2 class="font-weight-bold">なぜAirbnbでホスト？</h2>
-          <p>どんなお家やお部屋でも、Airbnbに登録すれば簡単かつ安全な方法で収益を得ることができます。世界の何百万人もの旅行者が、あなたのお家のようなユニークなお部屋を探しています。</p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-sm-4">
-          <h2 class="font-weight-bold">決めるのは自分</h2>
-          <p>Airbnbでは予約可能日から料金、ハウスルール、ゲストとの交流頻度まで、すべて自分で決めることができます。チェックインの時間帯と入室方法もお好みで選べます。</p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-sm-4">
-          <h2 class="font-weight-bold">一貫サポート</h2>
-          <p>便利なツール、おもてなしのヒント、24時間365日のサポートも完備。オンラインコミュニティでは先輩に質問したり、成功のコツを教え合ったりできます。</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="rooms-box">
-        <div style="margin-bottom:24px" class="bigtitle">
-          <h1 class="title">
-            <span>Airbnbホストになる方法</span>
-          </h1>
-        </div>
-        <div class="listing">
-          <span></span>
-          <div class="number">1</div>
-          <div class="listing1">
-            <div class="listing2">
-              <div class="listing3">
-                <span>リスティングを作成</span>
-              </div>
-            </div>
-            <div>
-              <div style="margin-bottom:16px">
-                <div class="col-sm-6">
-                  <span>Airbnbのリスティング作成は簡単&無料です。お部屋の説明を書いて、泊められる人数を選び、写真と詳細を加えるだけでおしまい。</span>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div style="margin-bottom:16px">
-                <div class="col-sm-6">
-                  <span>料金設定では競争力ある推奨料金が表示されますが、料金を決めるのは常にホストです。</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="rooms-guest">
-            <span>
-              <div>
-                <img class="image0" src="assets/listing.jpg" style="width: 20rem;">
-              </div>
-            </span>
-          <div class="number">2</div>
-          <div class="guest1">
-            <div class="guest2">
-              <div class="listing3">
-                <span>ゲストがきます!</span>
-              </div>
-            </div>
-            <div>
-              <div style="margin-bottom:16px">
-                <div class="col-sm-6">
-                  <span>ゲストとは到着前にAirbnb経由でメッセージ交換し、詳しく知ることができます。</span>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div style="margin-bottom:16px">
-                <div class="col-sm-6">
-                  <span>ほとんどのホストはゲスト用の室内を清掃し、清潔なシーツとタオル、トイレットペーパーなどの必需品をご用意しています。</span>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div style="margin-bottom:16px">
-                <div class="col-sm-6">
-                  <span>鍵の受け渡しは当日直接手渡しでも、暗証番号を送るだけでもOKです。</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="charge">
-          <span>
-            <div>
-              <img class="image0" src="assets/guest.jpg" style="width: 20rem;">
-            </div>
-          </span>
-          <div class="number">3</div>
-          <div class="charge1">
-            <div class="charge2">
-              <div class="listing3">
-                <span>料金の受け取り</span>
-              </div>
-            </div>
-            <div>
-              <div style="margin-bottom:16px">
-                <div class="col-sm-6">
-                  <span>Airbnbの料金はセキュアな支払いシステムで自動処理です。お金のことには一切触れなくて済みます。</span>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div style="margin-bottom:16px">
-                <div class="col-sm-6">
-                  <span>ゲストは到着前に料金を支払済みです。ホストにはそこから3%のサービス料を差し引いた金額がチェックイン後、自動送金されます。</span>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div style="margin-bottom:16px">
-                <div class="col-sm-6">
-                  <span>料金はPayPal、直接振込、国際送金など、さまざまな方法で受け取ることができます。</span>
-                </div>
-              </div>
-            </div>
-            <span>
-              <div>
-                <img class="image0" src="assets/charge.jpg" style="width: 20rem;">
-              </div>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row row-2">
-      <div class="col-md-12">
-        <div class="rooms-jumbotron">
-          <div class="container1">
-            <h1>ホスト登録はこちらから</h1>
-            <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a> -->
-          </div>
-          <div class="button">
-            <a href="/rooms" class="rooms-button1" aria-busy="false">
-              <span class="button2">
-                <span>始める</span>
-              </span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <footer class="rooms-footer1">
-      <div class="footer-content">
-        <div class="footer-role">
-          <div class="select-content">
-            <div class="dropdown">
-              <button class="btn btn-lg dropdown-toggle laguage-style rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">日本語</button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">English</a>
-              </div>
-            </div>
-            <div class="dropdown">
-              <button class="btn btn-lg dropdown-toggle money-style rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">日本円</button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">米ドル</a>
-              </div>
-            </div>
-          </div>
-          <div class="intoroduction-content1">
-            <div class=" p p-style0">Airbnb<br>
-              <br>
-              <a>会社情報</a><br>
-              <a>採用情報</a><br>
-              <a>プレス</a><br>
-              <a>ポリシー</a><br>
-              <a>ヘルプ</a><br>
-              <a>ダイバーシティ＆ビロンギング</a><br>
-            </div>
-          </div>
-          <div class="intoroduction-content2">
-            <div class="p p-style0">スタッフのおすすめ<br>
-              <br>
-              <a>信頼＆安全</a><br>
-              <a>旅行クーポン</a><br>
-              <a>Airbnb Citizen</a><br>
-              <a>出張</a><br>
-              <a>ガイドブック</a><br>
-              <a>Airbnbmag </a><br>
-            </div>
-          </div>
-          <div class="intoroduction-content3">
-            <div class="p p-style0">ホスティング<br>
-              <br>
-              <a>ホストになる理由</a><br>
-              <a>ホストに招待</a><br>
-              <a>おもてなしの心</a><br>
-              <a>ホストの責任</a><br>
-              <a>コミュニティセンター</a><br>
-            </div>
-          </div>
-        </div>
-        <div class="footer-copyright">
-          <div class="copyright-left">@Airbnb_Team</div>
-          <div class="copyright-right">
-            <a>利用規約</a>
-            <a>プライバシー</a>
-            <a>サイトマップ</a>
-            <i class="fa fa-facebook icon-style1" aria-hidden="true"></i>
-            <i class="fa fa-twitter icon-style1" aria-hidden="true"></i>
-            <i class="fa fa-instagram icon-style1" aria-hidden="true"></i>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-
   </body>
-
 </html>

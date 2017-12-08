@@ -18,6 +18,9 @@
         padding: 0;
       }
     </style>
+    <style type="text/css">
+    a:link { color:#ffffff; text-decoration:none }
+    </style>
   </head>
 
   <body>
@@ -31,7 +34,7 @@
           <a>保存して閉じる</a>
         </div>
         <div class="progress" style="height:5px;">
-        <div class="progress-bar bg-info" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress-bar bg-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
       </div>
 
@@ -39,6 +42,10 @@
         <div class="left-content-list">
           <div class="rooms-title">
             <span class="rooms-title-font">所在地は？</span>
+          </div>
+          <div class="rooms-location-space">
+            <h5>入力された住所がリンク</h5>
+            <%= link_to '住所を編集する', new_room_location_path, class: "rooms-adress-edit" %>
           </div>
 
           <div id="map"></div>
@@ -54,13 +61,14 @@
           <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBni7w26AcUziUF-q9RO0NxsvB9OldANiQ&callback=initMap"
           async defer></script>
 
-          <h5>ピンをドラッグすると場所を変更できます。</h5>
+          <div class="rooms-location-comment">ピンをドラッグすると場所を変更できます。</div>
+
           <div class="main-panel-action-wrapper">
             <div class="main-panel-half-content clearfix">
               <div class="main-panel-half-spacce">
                 <div class="main-panel-half">
-                  <%= link_to '← 戻る', locations_path, method: :post, class: 'h5 rooms-back-font' %>
-                  <%= link_to '次へ', amenities_path, method: :post, class: 'rooms-next-btn' %>
+                  <%= link_to '← 戻る', new_room_location_path, class: 'h5 rooms-back-font' %>
+                  <%= link_to '次へ', new_room_amenity_path, class: 'rooms-next-btn' %>
                 </div>
               </div>
             </div>

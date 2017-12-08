@@ -266,6 +266,8 @@
 	font-weight: bold;
 	float: right;
 	padding: 9px 27px;
+	margin-right: 20px;
+	margin-top: 0;
 	border-radius: 3px;
 	text-align: center;
 }
@@ -277,7 +279,7 @@
 .main-panel-half-content{
 	max-width:912px;
 	height: 102px;
-	margin-right: auto; 
+	margin-right: auto;
 	margin-left: auto;
 }
 
@@ -384,22 +386,58 @@
 	float: left;
 }
 
+.rooms-location-space{
+	margin-bottom: 12px;
+}
+
+.rooms-adress-edit{
+	color: #008489;
+	font-weight: normal;
+	font-size: 16px;
+}
+
+.rooms-location-comment{
+	font-size: 19px;
+	color: #767676;
+	margin-top: 24px;
+	margin-bottom: 15px;
+}
+
 // -- amenity登録関係 --
 .main-amenity-content {
 	width: 100%;
-	height: 180vh;
+	height: 300vh;
 }
 
 .left-amenity-content {
 	display: inline-block;
-	height: 180vh;
+	height: 300vh;
 	width: 55%;
+}
+
+.rooms-amenity-title{
+	border-bottom: 0px;
+  padding-top: 20px;
+}
+
+.rooms-amenity-check_box{
+	font-size: 19px;
+	color: #484848;
+}
+
+.rooms-amenity-label{
+	display: block;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  position: relative;
+  top: 20px;
+  right: 0;
 }
 
 .helper-amenity-content {
 	display: inline-block;
 	background-color: #f7f7f7;
-	height: 180vh;
+	height: 300vh;
 	width: 44.6%;
 }
 
@@ -529,15 +567,17 @@
   display: block;
 }
 
-.landing-btn-style{
-	width: 76px;
-	height: 38px;
+.landing-btn{
 	color: #ffffff;
 	font-weight: bold;
 	vertical-align: middle;
 	background-color: #008489;
-	margin-top: 10px;
+	padding-top: 15px;
 	text-decoration: none;
+	line-height: 3.5;
+  border-radius: 0.25rem;
+  padding: 10px 30px;
+  font-size: 14px;
 }
 
 .hr{
@@ -609,11 +649,21 @@
   height: 400px;
   cursor: pointer;
   padding: 0 30px;
+  position: relative;
 }
 
-.upload-photo-ghost{
-	background-image: url(https://a0.muscache.com/airbnb/static/list_your_space/upload-photos-ghosts@2x-702c0f7….png);
-  background-size: 100% 100%;
+.rooms-upload-btn{
+  background-color: #ff5a5f;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 20px 36px;
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid;
+  position: absolute;
+  margin-right: 230px;
+  margin-top: 140px;
 }
 
 .main-panel-inner-content{
@@ -662,21 +712,57 @@
 
 .photo-btn-style{
 	min-width: 185px;
-	font-size: 16px;
+	font-size: 19px;
 	border-color: #c4c4c4;
   background: white;
   color: #484848;
   float: right;
   font-weight: bold;
   padding: 9px 27px;
+  margin-top: 0;
 }
 
 .photo-back-style {
 	color: #666666;
-	font-size: 1.2em;
 	font-weight: 100;
 	float: left;
-	line-height: 42px;
+	font-size: 19px;
+	text-decoration: none;
+	margin-top: 0;
+}
+
+// -- explanatory --
+.rooms-explanatory-text_field{
+	width: 484px;
+	height: 123px;
+	font-size: 19px;
+  line-height: 24px;
+  color: #484848;
+  background: #ffffff;
+  border: 1px solid #dbdbdb;
+  border-radius: 2px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  line-height: inherit;
+  display: block;
+}
+
+.main-explanatory-content {
+	width: 100%;
+	height: 180vh;
+}
+
+.left-explanatory-content {
+	display: inline-block;
+	height: 180vh;
+	width: 55%;
+}
+
+.helper-explanatory-content {
+	display: inline-block;
+	background-color: #f7f7f7;
+	height: 180vh;
+	width: 44.6%;
 }
 
 .clearfix{

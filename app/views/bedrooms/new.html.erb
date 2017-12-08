@@ -17,7 +17,7 @@
           <a>保存して閉じる</a>
         </div>
         <div class="progress" style="height:5px;">
-        <div class="progress-bar bg-info" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress-bar bg-info" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
       </div>
 
@@ -26,29 +26,28 @@
           <div class="rooms-title">
             <span class="rooms-title-font">最大何人まで宿泊可能ですか?</span>
           </div>
-          <%= form_for @bedroom do |f| %>
+          <%= form_for [@room, @bedroom] do |f| %>
             <div class="rooms-capacity_count">
               <h5>定員</h5>
-              <%= f.select :capacity_count, { １人: '１人', ２人: '２人', ３人: '３人', ４人: '４人', ５人: '５人' } , {}, {class: 'rooms-select-control'}  %>
+              <%= f.select :capacity_count, { １人: '1', ２人: '2', ３人: '3', ４人: '4', ５人: '5' } , {}, {class: 'rooms-select-control'}  %>
             </div>
 
             <div class="rooms-bedrooms_count">
               <h5>ゲストが使用できるベッドルーム数は？</h5>
-              <%= f.select :rooms_count, { １ベッドルーム: '１ベッドルーム', ２ベッドルーム: '２ベッドルーム', ３ベッドルーム: '３ベッドルーム', ４ベッドルーム: '４ベッドルーム', ５ベッドルーム: '５ベッドルーム' } , {}, {class: 'rooms-select-control'}  %>
+              <%= f.select :rooms_count, { １ベッドルーム: '1', ２ベッドルーム: '2', ３ベッドルーム: '3', ４ベッドルーム: '4', ５ベッドルーム: '5' } , {}, {class: 'rooms-select-control'}  %>
             </div>
 
             <div class="rooms-beds_count">
               <h5>ゲスト用のベッド台数は？</h5>
-              <%= f.select :beds_count, { １台: '１台', ２台: '２台', ３台: '３台', ４台: '４台', ５台: '５台' } , {}, {class: 'rooms-select-control'}  %>
+              <%= f.select :beds_count, { １台: '1', ２台: '2', ３台: '3', ４台: '4', ５台: '5' } , {}, {class: 'rooms-select-control'}  %>
             </div>
 
             <div class="main-panel-action-wrapper">
               <div class="main-panel-half-content clearfix">
                 <div class="main-panel-half-spacce">
                   <div class="main-panel-half">
-                    <%= link_to '← 戻る', rooms_path, class: 'h5 rooms-back-font' %>
-                    <%= link_to '次へ', bathrooms_path, method: :post, class: 'rooms-next-btn' %>
-                   <!--  <%= f.submit '保存', class: 'rooms-save-btn' %> -->
+                    <%= link_to '← 戻る', new_room_path, class: 'h5 rooms-back-font' %>
+                    <%= f.submit '次へ', class: 'rooms-save-btn' %>
                   </div>
                 </div>
               </div>
