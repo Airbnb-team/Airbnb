@@ -10,7 +10,7 @@
 
 
  .jumbotron {
-   background:url(travel.jpeg) center no-repeat; background-size: cover;
+   background-image: image-url("travel.jpg");
    height: 680px;
    .container {
      color: white;
@@ -25,7 +25,8 @@
  }
 
  .rooms-jumbotron {
-   background:url(register.jpg) center no-repeat; background-size: cover;
+   background-image: image-url("register.jpg");
+   // center no-repeat; background-size: cover;
    height: 680px;
    position: absolute;
    top: 1600px;
