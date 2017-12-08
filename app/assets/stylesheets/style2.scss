@@ -35,7 +35,7 @@ body {
 }
 
 .jumbotron-show {
-  background:url(brick_house.webp) center no-repeat; background-size: cover;
+  background-image: image-url("brick_house.webp");
   height: 400px;
 }
 
