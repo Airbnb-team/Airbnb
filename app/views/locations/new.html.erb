@@ -17,7 +17,7 @@
           <a>保存して閉じる</a>
         </div>
         <div class="progress" style="height:5px;">
-        <div class="progress-bar bg-info" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress-bar bg-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
       </div>
 
@@ -26,7 +26,7 @@
           <div class="rooms-title">
             <span class="rooms-title-font">所在地は？</span>
           </div>
-          <%= form_for @location do |f| %>
+          <%= form_for [@room, @location] do |f| %>
             <div class="rooms-country">
               <h5>国</h5>
               <%= f.select :country, { 日本: '日本', アメリカ: 'アメリカ', その他: 'その他' } , {prompt: true}, {class: 'rooms-location-select'}  %>
@@ -49,7 +49,7 @@
 
             <div class="rooms-adress">
               <h5>所番地 ※数字は半角</h5>
-              <%= f.text_field :adress, {class: 'rooms-location-text_field_lg'}  %>
+              <%= f.text_field :address, {class: 'rooms-location-text_field_lg'}  %>
             </div>
 
             <div class="rooms-building_name">
@@ -61,9 +61,8 @@
               <div class="main-panel-half-content clearfix">
                 <div class="main-panel-half-spacce">
                   <div class="main-panel-half">
-                    <%= link_to '← 戻る', bathrooms_path, method: :post, class: 'h5 rooms-back-font' %>
-                    <%= link_to '次へ', locationmaps_path, method: :post, class: 'rooms-next-btn' %>
-                   <!--  <%= f.submit '保存', class: 'rooms-save-btn' %> -->
+                    <%= link_to '← 戻る', new_room_bathroom_path, method: :post, class: 'h5 rooms-back-font' %>
+                    <%= f.submit '次へ', class: 'rooms-save-btn' %>
                   </div>
                 </div>
               </div>
