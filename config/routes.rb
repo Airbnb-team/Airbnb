@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users
   resources :messages
   resources :favorites, only: [:index]
+
   resources :rooms, only: [:index, :new, :create, :edit, :show, :update] do
     collection do
       get 'continue'
@@ -13,19 +14,20 @@ Rails.application.routes.draw do
     member do
       get 'edit_price'
     end
-  end
-	resources :bedrooms, only: [:create, :edit, :update]
-	resources :bathrooms, only: [:create, :edit, :update]
-	resources :locations, only: [:create, :edit, :update]
-  resources :locationmaps, only: [:create, :edit, :update]
-  resources :amenities, only: [:create, :edit, :update]
-  resources :spaces, only: [:create, :edit, :update]
-  resources :photos, only: [:create, :edit, :update]
-  resources :reservations do
-    collection do
-      post 'confirm'
-      post 'coming'
+  	resources :bedrooms, only: [:new, :create, :edit, :update]
+  	resources :bathrooms, only: [:new, :create, :edit, :update]
+  	resources :locations, only: [:new, :create, :show, :edit, :update]
+    resources :amenities, only: [:new, :create, :edit, :update]
+    resources :photos, only: [:new, :create, :edit, :update]
+    resources :explanatories, only: [:new, :create, :edit, :update]
+    resources :rules, only: [:new, :create, :edit, :update]
+    resources :reservations do
+      collection do
+        post 'confirm'
+        post 'coming'
+      end
     end
-  end
-  get 'screen' => 'screen#photo'
-end
+    get 'screen' => 'screen#photo'
+    end
+
+  

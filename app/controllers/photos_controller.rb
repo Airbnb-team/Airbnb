@@ -1,7 +1,18 @@
 class PhotosController < ApplicationController
 
+	def new
+		@room = Room.find(params[:room_id])
+		@photo = Photo.new
+	end
+
 	def create
-		@photo = Photo.create(set_room)
+		@room = Room.find(params[:room_id])
+		@photo = @room.photos.new(photo_params)
+		if @photo.save
+			redirect_to new_room_explanatory_path(@room)
+		else
+			render :new
+		end
 	end
 
 	def edit
@@ -12,8 +23,8 @@ class PhotosController < ApplicationController
 
 	private
 
-	def set_room
-		@photo = Photo.find_by(params[:id])
-	end
+	def photo_params
+   params.require(:photo).permit(:image).merge(room_id: params[:room_id], user_id: current_user.id)
+ end
 
 end
