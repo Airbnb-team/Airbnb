@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <title>Airbnb</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="assets/_rooms_new.scss">
+    <script src="assets/style.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="navbar-white bg-white navbar-style message-new-nav">
+        <div class="image-logo" >
+          <%= image_tag('airbnb.png',:size => "100x60", :class => "message-new-logo") %>
+        </div>
+        <div class="message-new-step1">
+         <h5>1.ハウスルールを確認する</h5>
+       </div>
+        <div class="message-new-step2">
+         <h5>2.ご同行のかたは？</h5>
+       </div>
+        <div class="message-new-step3">
+         <h5>3.確定して支払う</h5>
+       </div>
+     </div>
+    </header>
+    <div class=" messages-new-left-contents">
+      <h1>お連れの方は？</h1>
+      <div class="message-new-left1">
+        <h3>ゲスト</h3>
+        <div class="message-new-anyone">
+         <button class="btn btn-lg dropdown-toggle rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ゲスト１人</button>
+         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+           <a class="dropdown-item" href="#">ゲスト２人</a>
+           <a class="dropdown-item" href="#">ゲスト３人</a>
+           <a class="dropdown-item" href="#">ゲスト４人</a>
+           <a class="dropdown-item" href="#">ゲスト５人</a>
+         </div>
+     </div>
+      </div>
+      <%= form_for(@reservation, :url => {:controller => :reservations, :action => :confirm}) do |f| %>
+      <%= f.hidden_field :check_in, class: 'DateInput__input needsclick' %>
+      <%= f.hidden_field :check_out, class: 'DateInput__input needsclick' %>
+      
+      <%= f.submit "続行", class: "reserve1"%>
+      <% end %>
+      <div class="message-new-left2">
+        <%= image_tag('airbnb.png',:size => "100x60", :class => "message-new-host1" ) %>
+        <h3>ホストにひとことご挨拶を</h3>
+        <h6>Takahisaさんに簡単に自己紹介をして旅の目的を伝えましょう</h6>
+        <!-- <textarea name="greeting" rows="5" cols="100" placeholder="Takahisaさん、１泊お世話になります！今から楽しみです！"></textarea> -->
+      </div>
+      <!-- <button class="message-new-dp-btn" type="button" name="aaa" value="aaa">続行</button> -->
+    </div>
+
+    <div class="message-new-right-contents">
+    <div class="message-new-right2">
+      <%= image_tag('airbnb.png',:size => "100x60", :class => "message-new-host2") %>
+      <h4>Center of Tokyo</h4>
+      <span>港区の個室</span>
+      <table class="message-new-table-main">
+        <hr>
+        <span><i class="fa fa-user"></i>ゲスト1人</span><br>
+        <span><i class="fa fa-calendar-o"></i><%= @reservation.check_in %> → <%= @reservation.check_out %></span>
+      </table>
+      <table class="message-new-table-sub1">
+        <tr><hr><td>¥20000✕１泊</td><td align="right">¥20000</td></tr>
+        <tr><td>サービス料</td><td align="right">¥2160</td></tr>
+      </table>
+      <table class="message-new-table-sub2">
+        <tr><hr><td>合計額(JPY)</td><td align="right">¥22160</td></tr>
+      </table>
+      <hr>
+      <%= image_tag('airbnb.png',:size => "100x60", :class => "message-new-logo2") %>
+      <h5>柔軟 - キャンセル無料</h5>
+      <span>予約後48時間以内に解約すれば全額返金されます。<a href="#">詳細はこちら</a></span>
+      </div>
+    </div>
+  </body>
+</html>
