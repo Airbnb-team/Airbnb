@@ -27,16 +27,6 @@ ActiveRecord::Schema.define(version: 20171208080144) do
     t.index ["user_id"], name: "index_explanatories_on_user_id", using: :btree
   end
 
-  create_table "Rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",                     null: false
-    t.string   "property_type", default: "0", null: false
-    t.string   "home_type",     default: "0", null: false
-    t.string   "room_type",     default: "0", null: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.boolean  "guest_only"
-  end
-
   create_table "amenities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.boolean  "pet"
     t.boolean  "elevator"
@@ -180,6 +170,16 @@ ActiveRecord::Schema.define(version: 20171208080144) do
     t.datetime "updated_at",               null: false
   end
 
+  create_table "rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",                     null: false
+    t.string   "property_type", default: "0", null: false
+    t.string   "home_type",     default: "0", null: false
+    t.string   "room_type",     default: "0", null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.boolean  "guest_only"
+  end
+
   create_table "rules", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "children_for_2_12"
     t.integer  "for_infants_under_2"
@@ -197,6 +197,20 @@ ActiveRecord::Schema.define(version: 20171208080144) do
     t.integer  "room_id"
     t.index ["room_id"], name: "index_rules_on_room_id", using: :btree
     t.index ["user_id"], name: "index_rules_on_user_id", using: :btree
+  end
+
+  create_table "spaces", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "room_id",                    null: false
+    t.boolean  "pool"
+    t.boolean  "elevator"
+    t.boolean  "washing_machine"
+    t.boolean  "gym"
+    t.boolean  "kitchen"
+    t.boolean  "parking"
+    t.boolean  "jacuzzi"
+    t.boolean  "washing_and_drying_machine"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

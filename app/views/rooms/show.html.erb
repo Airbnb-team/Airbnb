@@ -669,7 +669,7 @@
             <div class="line"></div>
           </div>
         </div>
-        <%= form_for(@reservation, :url => {:controller => :reservations, :action => :coming}) do |f| %>
+        <%= form_for(@reservation, :url => {:controller => :reservations, :action => :coming, :room_id => :id}) do |f| %>
         <%= f.date_field :check_in, class: 'DateInput__input needsclick' %>
         <%= f.date_field :check_out, class: 'DateInput__input needsclick' %>
         <%= f.submit "予約する", class: "reserve1"%>

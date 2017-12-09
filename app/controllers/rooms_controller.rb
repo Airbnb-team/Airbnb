@@ -25,6 +25,8 @@ class RoomsController < ApplicationController
 
 
 	def show
+		@reservation = Reservation.new
+
 	end
 
 
@@ -34,10 +36,12 @@ class RoomsController < ApplicationController
 
 	private
 
+	def reservation_params
+		params.require(:reservation).permit(:check_in, :check_out).merge(user_id:current_user.id, room_id: ":id")
+	end
 
-    
 
-	
+
 
 	def room_params
 		params.require(:room).permit(:property_type, :home_type, :room_type, :guest_only).merge(user_id: current_user.id)

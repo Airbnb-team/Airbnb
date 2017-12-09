@@ -41,7 +41,7 @@
       <%= form_for(@reservation, :url => {:controller => :reservations, :action => :confirm}) do |f| %>
       <%= f.hidden_field :check_in, class: 'DateInput__input needsclick' %>
       <%= f.hidden_field :check_out, class: 'DateInput__input needsclick' %>
-      
+
       <%= f.submit "続行", class: "reserve1"%>
       <% end %>
       <div class="message-new-left2">
