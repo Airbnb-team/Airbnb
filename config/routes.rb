@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
   root 'screen#index'
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   resources :users
@@ -20,5 +21,13 @@ Rails.application.routes.draw do
     resources :photos, only: [:new, :create, :edit, :update]
     resources :explanatories, only: [:new, :create, :edit, :update]
     resources :rules, only: [:new, :create, :edit, :update]
-  end
-end
+    resources :reservations do
+      collection do
+        post 'confirm'
+        post 'coming'
+      end
+    end
+    get 'screen' => 'screen#photo'
+    end
+
+  

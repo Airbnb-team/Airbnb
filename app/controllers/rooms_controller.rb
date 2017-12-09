@@ -23,13 +23,25 @@ class RoomsController < ApplicationController
 	def edit
 	end
 
+
+	def show
+	end
+
+
+
 	def update
 	end
 
 	private
 
+
+    
+
+	
+
 	def room_params
 		params.require(:room).permit(:property_type, :home_type, :room_type, :guest_only).merge(user_id: current_user.id)
   end
+
 
 end
