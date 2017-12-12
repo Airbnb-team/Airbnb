@@ -13,61 +13,52 @@
         <div class="image-logo" >
           <%= image_tag('airbnb.png',:size => "100x60", :class => "message-new-logo") %>
         </div>
-        <div class="message-new-step1">
-         <h5>1.ハウスルールを確認する</h5>
+
+        <div class="message-new-step4">
+         <h5>　　1.ご同行のかたは？</h5>
        </div>
-        <div class="message-new-step2">
-         <h5>　>　2.ご同行のかたは？</h5>
-       </div>
-        <div class="message-new-step3">
-         <h5>　>　3.確定して支払う</h5>
+        <div class="message-new-step5">
+         <h5>　>　2.送信内容の確認</h5>
        </div>
      </div>
     </header>
-    <div class=" messages-new-left-contents">
-      <h1>お連れの方は？</h1>
-      <div class="message-new-left1">
-        <h3>ゲスト</h3>
-        <div class="message-new-anyone">
-         <button class="btn btn-lg dropdown-toggle rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ゲスト１人</button>
-         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-           <a class="dropdown-item" href="#">ゲスト２人</a>
-           <a class="dropdown-item" href="#">ゲスト３人</a>
-           <a class="dropdown-item" href="#">ゲスト４人</a>
-           <a class="dropdown-item" href="#">ゲスト５人</a>
-         </div>
-     </div>
-      </div>
-      <div class="message-new-left2">
-        <%= image_tag('airbnb.png',:size => "100x60", :class => "message-new-host1" ) %>
-        <h3>ホストにひとことご挨拶を</h3>
-        <h6>Takahisaさんに簡単に自己紹介をして旅の目的を伝えましょう</h6>
-        <textarea name="greeting" rows="5" cols="100" placeholder="Takahisaさん、１泊お世話になります！今から楽しみです！"></textarea>
-      </div>
-      <button class="message-new-dp-btn" type="button" name="aaa" value="aaa">続行</button>
-    </div>
 
-    <div class="message-new-right-contents">
-    <div class="message-new-right2">
-      <%= image_tag('airbnb.png',:size => "100x60", :class => "message-new-host2") %>
-      <h4>Center of Tokyo</h4>
-      <span>港区の個室</span>
-      <table class="message-new-table-main">
+    <div class=" messages-new-left-contents">
+      <h1>この内容でホストに送信してよろしいですか？</h1>
+      <div class="message-new-main-contents">
+      <div class="message-new-right2">
+        <%= image_tag('airbnb.png',:size => "100x60", :class => "message-new-host2") %>
+        <h4>Center of Tokyo</h4>
+        <span>港区の個室</span>
+        <table class="message-new-table-main">
+          <hr>
+          <span><i class="fa fa-user"></i><%= @guestcount %></span><br>
+          <span><i class="fa fa-calendar-o"></i><%= @checkin %> → <%= @checkout %></span>
+        </table>
+        <table class="message-new-table-sub1">
+          <tr><hr><td>¥20000✕１泊</td><td align="right">¥20000</td></tr>
+          <tr><td>サービス料</td><td align="right">¥2160</td></tr>
+        </table>
+        <table class="message-new-table-sub2">
+          <tr><hr><td>合計額(JPY)</td><td align="right">¥22160</td></tr>
+        </table>
         <hr>
-        <span><i class="fa fa-user"></i>ゲスト1人</span><br>
-        <span><i class="fa fa-calendar-o"></i>2017年12月1日 → 2017年12月2日</span>
-      </table>
-      <table class="message-new-table-sub1">
-        <tr><hr><td>¥20000✕１泊</td><td align="right">¥20000</td></tr>
-        <tr><td>サービス料</td><td align="right">¥2160</td></tr>
-      </table>
-      <table class="message-new-table-sub2">
-        <tr><hr><td>合計額(JPY)</td><td align="right">¥22160</td></tr>
-      </table>
-      <hr>
-      <%= image_tag('airbnb.png',:size => "100x60", :class => "message-new-logo2") %>
-      <h5>柔軟 - キャンセル無料</h5>
-      <span>予約後48時間以内に解約すれば全額返金されます。<a href="#">詳細はこちら</a></span>
+        </div>
+      </div>
+      <div class="testtest" id="testid">
+      </div>
+      <div class="reservation-host-message">
+        ホストへのメッセージ
+      </div>
+      <div class="reservation-text-box">
+        <%= @messagebody %>
+      </div>
+      <%= form_for(@message, :url => {:controller => :messages, :action => :create}) do |f| %>
+        <%= f.hidden_field :body %>
+        <%= f.submit "この内容でホストに送信する", class: "messages-continue1"%>
+      <% end %>
+      <div class="aaaaaaa">
+        1
       </div>
     </div>
   </body>

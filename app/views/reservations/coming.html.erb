@@ -14,13 +14,10 @@
           <%= image_tag('airbnb.png',:size => "100x60", :class => "message-new-logo") %>
         </div>
         <div class="message-new-step1">
-         <h5>1.ハウスルールを確認する</h5>
+         <h5>　　1.ご同行のかたは？</h5>
        </div>
         <div class="message-new-step2">
-         <h5>2.ご同行のかたは？</h5>
-       </div>
-        <div class="message-new-step3">
-         <h5>3.確定して支払う</h5>
+         <h5>　>　2.送信内容の確認</h5>
        </div>
      </div>
     </header>
@@ -28,30 +25,22 @@
       <h1>お連れの方は？</h1>
       <div class="message-new-left1">
         <h3>ゲスト</h3>
-        <div class="message-new-anyone">
-         <button class="btn btn-lg dropdown-toggle rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ゲスト１人</button>
-         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-           <a class="dropdown-item" href="#">ゲスト２人</a>
-           <a class="dropdown-item" href="#">ゲスト３人</a>
-           <a class="dropdown-item" href="#">ゲスト４人</a>
-           <a class="dropdown-item" href="#">ゲスト５人</a>
-         </div>
-     </div>
-      </div>
-      <%= form_for(@reservation, :url => {:controller => :reservations, :action => :confirm}) do |f| %>
-      <%= f.hidden_field :check_in, class: 'DateInput__input needsclick' %>
-      <%= f.hidden_field :check_out, class: 'DateInput__input needsclick' %>
-
-      <%= f.submit "続行", class: "reserve1"%>
-      <% end %>
-      <div class="message-new-left2">
-        <%= image_tag('airbnb.png',:size => "100x60", :class => "message-new-host1" ) %>
-        <h3>ホストにひとことご挨拶を</h3>
-        <h6>Takahisaさんに簡単に自己紹介をして旅の目的を伝えましょう</h6>
-        <!-- <textarea name="greeting" rows="5" cols="100" placeholder="Takahisaさん、１泊お世話になります！今から楽しみです！"></textarea> -->
-      </div>
-      <!-- <button class="message-new-dp-btn" type="button" name="aaa" value="aaa">続行</button> -->
-    </div>
+        <%= form_for(@message, :url => {:controller => :messages, :action => :new}) do |f| %>
+          <%= fields_for @reservation do |c| %>
+            <%= c.hidden_field :check_in, class: 'DateInput__input needsclick' %>
+            <%= c.hidden_field :check_out, class: 'DateInput__input needsclick' %>
+            <%= c.hidden_field :guest_count, class: 'DateInput__input needsclick' %>
+          <% end %>
+<!-- <%= debug @reservation %> -->
+        <div class="message-new-left2">
+          <!-- <%= image_tag('airbnb.png',:size => "100x60", :class => "message-new-host1" ) %> -->
+          <h3>ホストにひとことご挨拶を</h3>
+          <h6>Takahisaさんに簡単に自己紹介をして旅の目的を伝えましょう</h6>
+        </div>
+        <%= f.text_area :body, :size => "90x8", :placeholder => "Takahisaさん、１泊お世話になります！今から楽しみです！", :class => 'a' %>
+    <%= f.submit "続行", class: "messages-continue"%>
+    <% end %>
+  </div>
 
     <div class="message-new-right-contents">
     <div class="message-new-right2">
@@ -60,8 +49,13 @@
       <span>港区の個室</span>
       <table class="message-new-table-main">
         <hr>
-        <span><i class="fa fa-user"></i>ゲスト1人</span><br>
-        <span><i class="fa fa-calendar-o"></i><%= @reservation.check_in %> → <%= @reservation.check_out %></span>
+        <span class="message-guest-count">
+          <i class="fa fa-user"></i><%= @reservation.guest_count %>人
+        </span>
+        <br>
+        <span class="message-checkdate">
+          <i class="fa fa-calendar-o"></i><%= @reservation.check_in %> → <%= @reservation.check_out %>
+        </span>
       </table>
       <table class="message-new-table-sub1">
         <tr><hr><td>¥20000✕１泊</td><td align="right">¥20000</td></tr>

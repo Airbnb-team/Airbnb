@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   root 'screen#index'
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   resources :users
-  resources :messages
+  resources :messages do
+    collection do
+      post 'new'
+    end
+  end
   resources :favorites, only: [:index]
 
   resources :rooms, only: [:index, :new, :create, :edit, :show, :update] do
