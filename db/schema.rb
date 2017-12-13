@@ -10,11 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
+
 ActiveRecord::Schema.define(version: 20171212090313) do
-=======
-ActiveRecord::Schema.define(version: 20171212083656) do
->>>>>>> origin/master
+
 
   create_table "Explanatories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title",                              null: false
@@ -227,8 +225,7 @@ ActiveRecord::Schema.define(version: 20171212083656) do
     t.datetime "updated_at",                 null: false
   end
 
-<<<<<<< HEAD
-=======
+
   create_table "user_groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.integer  "group_id"
@@ -238,7 +235,6 @@ ActiveRecord::Schema.define(version: 20171212083656) do
     t.index ["user_id"], name: "index_user_groups_on_user_id", using: :btree
   end
 
->>>>>>> origin/master
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                                default: "", null: false
     t.string   "encrypted_password",                   default: "", null: false
@@ -262,13 +258,10 @@ ActiveRecord::Schema.define(version: 20171212083656) do
     t.string   "image"
     t.string   "provider"
     t.string   "uid"
-<<<<<<< HEAD
     t.string   "phone_number"
     t.string   "description"
-=======
     t.integer  "group_id"
     t.integer  "room_id"
->>>>>>> origin/master
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

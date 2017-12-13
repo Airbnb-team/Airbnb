@@ -334,6 +334,42 @@
 	padding-bottom: 15px;
 }
 
+// -- bathroom --
+.countup-btn {
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 1;
+  position: relative;
+  border: 2px solid transparent;
+  color:#008489;
+  border-color: #008489;
+  background: transparent;
+  width: 32px;
+  height: 32px;
+  border-width: 1px;
+  margin-left: 120px;
+  margin-right: 10px;
+}
+
+.countdown-btn {
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 1;
+  position: relative;
+  border: 2px solid transparent;
+  color:#008489;
+  border-color: #008489;
+  background: transparent;
+  width: 32px;
+  height: 32px;
+  border-width: 1px;
+  margin-left: 10px;
+}
+
 // -- location登録関係 --
 .rooms-location-select{
 	width: 484px;
@@ -431,7 +467,7 @@
   padding-bottom: 5px;
   position: relative;
   top: 20px;
-  right: 0;
+  right: -5px;
 }
 
 .helper-amenity-content {
@@ -641,17 +677,6 @@
 	margin-bottom: 24px;
 }
 
-.photo-flame{
-	border: 2px dashed #bbb;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
-  height: 400px;
-  cursor: pointer;
-  padding: 0 30px;
-  position: relative;
-}
-
 .rooms-upload-btn{
   background-color: #ff5a5f;
   color: #fff;
@@ -661,9 +686,7 @@
   display: inline-block;
   border-radius: 4px;
   border: 1px solid;
-  position: absolute;
-  margin-right: 230px;
-  margin-top: 140px;
+  margin-bottom: 10px;
 }
 
 .main-panel-inner-content{
@@ -731,7 +754,7 @@
 	margin-top: 0;
 }
 
-// -- explanatory --
+// -- explanatory登録関係 --
 .rooms-explanatory-text_field{
 	width: 484px;
 	height: 123px;
@@ -763,6 +786,54 @@
 	background-color: #f7f7f7;
 	height: 180vh;
 	width: 44.6%;
+}
+
+// -- rule登録関係 --
+.rooms-rule-label{
+	font-size: 19px;
+	display: block;
+  position: relative;
+  right: -5px
+}
+
+.rooms-rule-radio{
+	top: 5px;
+	right: 0;
+	bottom: 0;
+	padding-left: 15px;
+	display: inline-block;
+}
+
+.rooms-radio-title{
+	height: 25px;
+	width: 300px;
+	font-weight: bold;
+}
+
+.rooms-rule-sub-title{
+	padding-top: 20px;
+	font-weight: bold;
+	color: #484848;
+}
+
+// --price登録関係 --
+.rooms-price-title{
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+
+.rooms-price-text_field{
+	width: 300px;
+	height: 50px;
+	font-size: 19px;
+  line-height: 24px;
+  color: #484848;
+  background: #ffffff;
+  border: 1px solid #dbdbdb;
+  border-radius: 2px;
+  margin-bottom: 15px;
+  display: block;
 }
 
 .clearfix{

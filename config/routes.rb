@@ -31,14 +31,12 @@ Rails.application.routes.draw do
     resources :rules, only: [:new, :create, :edit, :update]
   end
     get 'screen' => 'screen#photo'
-<<<<<<< HEAD
-=======
-  
+
+
   resources :reservations do
     collection do
       post 'confirm'
       post 'coming'
     end
->>>>>>> origin/master
   end
 end

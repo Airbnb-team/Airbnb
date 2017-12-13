@@ -4,6 +4,12 @@
     <title>お部屋情報登録</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+      .dropzone {
+        border: 2px dashed #b4bcc2;
+        @include border-radius(4px);
+      }
+    </style>
   </head>
 
   <body>
@@ -24,29 +30,52 @@
       <div class="space-content">
         <div class="center-content clearfix">
           <div class="main-panel-content">
-            <%= form_for [@room, @photo] do |f| %>
-              <div class="photo-title">お部屋の様子を写真で旅行者に紹介しよう</div>
+            <div class="photo-title">お部屋の様子を写真で旅行者に紹介しよう</div>
               <div class="photo-card-content">
-                <div class="photo-flame">
-                  <%= f.label :image, "写真をアップロード", class: "rooms-upload-btn" %>
-                  <%= f.file_field :image, class: 'fileInput' ,style: "display:none;" %>
-                </div>
-              </div>
-              <div class="main-panel-inner-content">
-              </div>
-              <div class="main-panel-action-wrapper">
-                <div class="main-panel-action-content clearfix">
-                  <div class="main-panel-action-spacce">
-                    <div class="main-panel-action">
-                      <%= link_to '← 戻る', continue_rooms_path, class: "photo-back-style" %>
-                      <%= f.submit '次へ', class: 'btn photo-btn-style' %>
+
+                <script type="text/javascript">
+                  Dropzone.options.myDropzone = {
+                    parallelUploads: 1,
+                    maxFiles: 10,
+                    addRemoveLinks: true,
+                    removedfile: function(file) {
+                      var _ref;
+                      return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.previewElement) : void 0;
+                    },
+                    dictRemoveFile:'削除',
+                    dictCancelUpload:'キャンセル'
+                  };
+                </script>
+
+                <%= form_for [@room, @photo], html:{multipart: true, class:"dropzone", id:"my-dropzone" } do |f| %>
+                  <%= f.hidden_field :room_id, value: @room.id %>
+                  <div class="dz-message needsclick">
+                    <div class="rooms-upload-btn">
+                      <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                      <span>写真をアップロード</span>
+                    </div>
+                    <div class="h5 text-normal">
+                      <span>あるいは画像をドラッグ</span>
                     </div>
                   </div>
                 </div>
               </div>
-            <% end %>
+            </div>
           </div>
-        </div>
+
+          <div class="main-panel-inner-content">
+          </div>
+          <div class="main-panel-action-wrapper">
+            <div class="main-panel-action-content clearfix">
+              <div class="main-panel-action-spacce">
+                <div class="main-panel-action">
+                  <%= link_to '← 戻る', new_room_path, class: "photo-back-style" %>
+                  <%= link_to '次へ', new_room_explanatory_path, class: 'btn photo-btn-style' %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </body>

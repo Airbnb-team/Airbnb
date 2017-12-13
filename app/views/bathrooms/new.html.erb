@@ -29,7 +29,7 @@
           <%= form_for [@room, @bathroom] do |f| %>
             <div class="rooms-bathrooms_count">
               <h5>バスルーム数</h5>
-              <%= f.select :bathrooms_count, { ０．５: '0.5', １: '1', １．５: '1.5', ２: '2.5', ３: '3', ３．５: '3.5', ４: '4.5', ５: '5', ５．５: '5.5', ６: '6', ６．５: '6.5', ７: '7', ７．５: '7.5', ８: '8', ８．５: '8.5', ９: '9', ９．５: '9.5', １０: '10' } , {prompt: true}, {class: 'rooms-select-control'}  %>
+                <%= f.select :bathrooms_count, { ０．５: '0.5', １: '1', １．５: '1.5', ２: '2', ２．５: '2.5',３: '3', ３．５: '3.5', ４: '4.5', ５: '5', ５．５: '5.5', ６: '6', ６．５: '6.5', ７: '7', ７．５: '7.5', ８: '8', ８．５: '8.5', ９: '9', ９．５: '9.5', １０: '10' } , {prompt: true}, {class: 'rooms-select-control'}  %>
             </div>
 
           <div class="main-panel-action-wrapper">
@@ -58,5 +58,6 @@
         </div>
       </div>
     </div>
+    <<script src="/javascripts/custom.js" type="text/javascript" charset="utf-8" async defer></script>
   </body>
 </html>
