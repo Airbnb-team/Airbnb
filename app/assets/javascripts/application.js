@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require style.js
 //= require popper
 //= require bootstrap
+//= require dropzone
 //= require turbolinks
 //= require_tree .

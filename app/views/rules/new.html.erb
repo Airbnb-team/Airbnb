@@ -11,7 +11,7 @@
       <div class="new-header">
         <button type="button" class="button-style">airbnb</button>
         <div class="comp-left">
-          <span class="h5 text-normal">ステップ３：予約準備を整えてフィニッシュ</span>
+          <span class="h5 text-normal">ステップ３：予約準備を設定しましょう</span>
         </div>
         <div class="comp-right">
           <a>保存して閉じる</a>
@@ -24,16 +24,51 @@
       <div class="left-content">
         <div class="left-content-list">
           <div class="rooms-title">
-            <span class="rooms-title-font"></span>
+            <span class="rooms-title-font">滞在中のハウスルールを設定しましょう</span>
           </div>
           <%= form_for [@room, @rule] do |f| %>
+            <div class="rooms-rule">
+              <div class="rooms-radio-button">
+                <div class="rooms-radio-title">子ども(２〜１２歳)OK</div>
+                <label class="rooms-rule-radio"><%= f.radio_button(:children_for_2_12, "1") %>はい</label>
+                <label class="rooms-rule-radio"><%= f.radio_button(:children_for_2_12, "0") %>いいえ</label>
+              </div>
+              <div class="rooms-radio-button">
+                <div class="rooms-radio-title">乳幼児(２歳未満)OK</div>
+                <label class="rooms-rule-radio"><%= f.radio_button(:for_infants_under_2, "1") %>はい</label>
+                <label class="rooms-rule-radio"><%= f.radio_button(:for_infants_under_2, "0") %>いいえ</label>
+              </div>
+              <div class="rooms-radio-button">
+                <div class="rooms-radio-title">ペットOK</div>
+                <label class="rooms-rule-radio"><%= f.radio_button(:for_pets, "1") %>はい</label>
+                <label class="rooms-rule-radio"><%= f.radio_button(:for_pets, "0") %>いいえ</label>
+              </div>
+              <div class="rooms-radio-button">
+                <div class="rooms-radio-title">喫煙OK</div>
+                <label class="rooms-rule-radio"><%= f.radio_button(:smoking, "1") %>はい</label>
+                <label class="rooms-rule-radio"><%= f.radio_button(:smoking, "0") %>いいえ</label>
+              </div>
+              <div class="rooms-radio-button">
+                <div class="rooms-radio-title">パーティーOK</div>
+                <label class="rooms-rule-radio"><%= f.radio_button(:parties, "1") %>はい</label>
+                <label class="rooms-rule-radio"><%= f.radio_button(:parties, "0") %>いいえ</label>
+              </div>
+            </div>
+            <div class="rooms-rules-check_box">
+              <div class="h5 rooms-rule-sub-title">お家についてゲストが事前に知っておくべきこと</div>
+              <label class="rooms-rule-label"><%= f.check_box 'stairs', {}, "true", "false" %>階段を登らないとたどり着けません</label>
+              <label class="rooms-rule-label"><%= f.check_box 'noises', {}, "true", "false" %>騒音の可能性あり</label>
+              <label class="rooms-rule-label"><%= f.check_box 'pets', {}, "true", "false" %>ペットがいます</label>
+              <label class="rooms-rule-label"><%= f.check_box 'spaces', {}, "true", "false" %>共用スペースあり</label>
+              <label class="rooms-rule-label"><%= f.check_box 'minimum_amenities', {}, "true", "false" %>一部アメニティは最低限のものです（例：ネットが遅い）</label>
+            </div>
 
             <div class="main-panel-action-wrapper">
               <div class="main-panel-half-content clearfix">
                 <div class="main-panel-half-spacce">
                   <div class="main-panel-half">
-                    <%= link_to '← 戻る', new_room_photo_path, method: :post, class: 'h5 rooms-back-font' %>
-                    <%= f.submit '完了', class: 'rooms-save-btn' %>
+                    <%= link_to '← 戻る', new_room_photo_path, class: 'h5 rooms-back-font' %>
+                    <%= f.submit '次へ', class: 'rooms-save-btn' %>
                   </div>
                 </div>
               </div>
@@ -48,7 +83,8 @@
             <img class="card-img-top">
             <div class="card-body">
               <span class="fa fa-lightbulb-o fa-3x text-info" aria-hidden="true"></span><br>
-              <p class="card-text text-muted">具体的な住所は、予約確定後までゲストにも秘密です。</p><br>
+              <p class="card-text text-muted">Airbnbが求める要件に加え、ゲストは予約前にホストの「ハウスルール」にも同意が必要です。</p><br>
+              <p class="card-text text-muted">予約に違和感や不安を感じた場合、ホストは宿泊前でも宿泊中でもペナルティ免除でキャンセルできます。</p>
             </div>
           </div>
         </div>

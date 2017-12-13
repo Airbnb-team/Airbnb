@@ -2,7 +2,7 @@ class Room < ApplicationRecord
   belongs_to :user
   has_many :reservations
   has_many :reviews
-  has_many :photos
+  has_many :photos, dependent: :destroy
   has_many :favorites
   has_many :amenities
   has_many :rules
@@ -10,4 +10,12 @@ class Room < ApplicationRecord
   has_many :bathrooms
   has_many :locations
   has_many :explanatories
+  has_many :prices
+
+  accepts_nested_attributes_for :photos, allow_destroy: true
+
+  def set_main_image
+    photos.main.first.image
+  end
+
 end
