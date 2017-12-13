@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
     @group = Group.new(group_params)
     @group.save
 
-    render "messages/show"
+    redirect_to root_path
   end
 
   def new
