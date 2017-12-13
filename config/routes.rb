@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root 'screen#index'
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+  patch   'users/:id'  => 'users#update'
   resources :users
   resources :messages
   resources :favorites, only: [:index]
@@ -28,6 +29,5 @@ Rails.application.routes.draw do
       end
     end
     get 'screen' => 'screen#photo'
-    end
-
-  
+  end
+end

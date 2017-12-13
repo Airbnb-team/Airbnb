@@ -1,43 +1,129 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<!doctype html>
+<html>
+  <head>
+    <title>Airbnb</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </head>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+<body>
+  <header class="header">
+    <nav class="navbar fixed-top navbar-white bg-white navbar-style">
+      <div class="_iiid5y"><svg viewBox="0 0 1000 1000" role="presentation" aria-hidden="true" focusable="false" style="height:1em;width:1em;display:block;fill:currentColor"><path d="m499.3 736.7c-51-64-81-120.1-91-168.1-10-39-6-70 11-93 18-27 45-40 80-40s62 13 80 40c17 23 21 54 11 93-11 49-41 105-91 168.1zm362.2 43c-7 47-39 86-83 105-85 37-169.1-22-241.1-102 119.1-149.1 141.1-265.1 90-340.2-30-43-73-64-128.1-64-111 0-172.1 94-148.1 203.1 14 59 51 126.1 110 201.1-37 41-72 70-103 88-24 13-47 21-69 23-101 15-180.1-83-144.1-184.1 5-13 15-37 32-74l1-2c55-120.1 122.1-256.1 199.1-407.2l2-5 22-42c17-31 24-45 51-62 13-8 29-12 47-12 36 0 64 21 76 38 6 9 13 21 22 36l21 41 3 6c77 151.1 144.1 287.1 199.1 407.2l1 1 20 46 12 29c9.2 23.1 11.2 46.1 8.2 70.1zm46-90.1c-7-22-19-48-34-79v-1c-71-151.1-137.1-287.1-200.1-409.2l-4-6c-45-92-77-147.1-170.1-147.1-92 0-131.1 64-171.1 147.1l-3 6c-63 122.1-129.1 258.1-200.1 409.2v2l-21 46c-8 19-12 29-13 32-51 140.1 54 263.1 181.1 263.1 1 0 5 0 10-1h14c66-8 134.1-50 203.1-125.1 69 75 137.1 117.1 203.1 125.1h14c5 1 9 1 10 1 127.1.1 232.1-123 181.1-263.1z">
+      </path></svg></div>
+      <ul class="nav justify-content-end">
+        <li class="nav-item nav-item-style">
+          <%= link_to 'ホストをはじめる', new_room_path, method: :get %>
+        </li>
+        <li class="nav-item nav-item-style">
+          <%= link_to 'お気に入り', "/favorites" %>
+        </li>
+        <li class="nav-item nav-item-style">
+          <%= link_to '旅行', "/" %>
+        </li>
+        <li class="nav-item nav-item-style">
+          <%= link_to 'メッセージ', "/" %>
+        </li>
+        <li class="nav-item nav-item-style">
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+  <div class="editleft col-md-3">
+    <div class="edit-profile">
+      <ul class="edit-sidenav">
+        <div>
+          <a href="" class="edit-item">プロフィールを編集</a>
+        </div>
+        <div>
+          <a href="/screen" class="edit-item">写真</a>
+        </div>
+      </ul>
+    </div>
+    <a href="" class="btn btn-block space-top-4">プロフィールを見る</a>
+
   </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
+  <div class="editright col-md-9">
+    <div class="required-item-box">
+      <div class="required-item">
+        <div class="panel-header">
+          <h9>必須項目</h9>
+        </div>
+        <div class="panel-body">
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name), method: :patch ) do |f| %>
+            <table>
+              <tr>
+              <div class="form-group">
+                <td><span>名前：</span></td>
+                <td><%= f.text_field :name, autofocus: true, :placeholder => "名前", :class => 'form-control' %></td>
+              </div>
+            </tr>
+            <tr>
+              <div class="form-group">
+                <td><span>性別：</span></td>
+                <td><%= f.select :sex, [["男", "男"], ["女", "女"], ["その他", "その他"]], class:"form-control" %></td>
+              </div>
+            </tr>
+            <tr>
+              <div class="form_group">
+                <td><span>生年月日：</span></td>
+                <td><%= form_for :birthday do |f| %>
+                <%= f.datetime_select :birthday, :use_month_numbers => true, :start_year => 1900, :end_year => Time.now.year, :discard_hour => true, :discard_minute => true %>
+                <% end %></td>
+              </div>
+                </tr>
+                <tr>
+              <div class="form-group">
+                <td><span>メールアドレス：</span></td>
+                <td><%= f.email_field :email, :placeholder => "Email", :class => 'form-control' %></td>
+              </div>
+            </tr>
+            <tr>
+              <div class="form-group">
+                <td><span>電話番号：</span></td>
+                <td><%= f.text_field :phone_number, :placeholder => "電話番号", :class => 'form-control' %></td>
+              </div>
+            </tr>
+            <tr>
+              <div class="form-group">
+                <td><span>希望の言語：</span></td>
+                <td><%= f.text_field :langage, :placeholder => "日本語", :class => 'form-control' %></td>
+              </div>
+            </tr>
+            <tr>
+              <div class="form-group">
+                <td><span>希望の通貨：</span></td>
+                <td><%= f.text_field :currency, :placeholder => "ご希望の通貨", :class => 'form-control' %></td>
+              </div>
+            </tr>
+            <tr>
+              <div class="form-group">
+                <td><span>自己紹介：</span></td>
+                <td><%= f.text_area :description, rows: 5, cols: 100,  :placeholder => "自己紹介文", :class => 'form-control' %></td>
+              </div>
+            </tr>
+            <tr>
+              <div class="form-group">
+                <td><span>新しいパスワード：</span><i>(変更しない場合は空欄で構いません)</i></td>
+                <td><%= f.password_field :password, autocomplete: "off", :class => 'form-control' %></td>
+              </div>
+            </tr>
+            <tr>
+              <div class="form-group">
+                <td><span>新しいパスワードの確認：</span></td>
+                <td><%= f.password_field :password_confirmation, autocomplete: "off", :class => 'form-control' %></td>
+              </div>
+            </tr>
+          </table>
+              <div class="actions">
+                <%= f.submit "プロフィールを更新", :class => "btn btn-primary" %>
+              </div>
+            <% end %>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</div>
