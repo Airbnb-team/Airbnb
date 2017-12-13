@@ -23,6 +23,11 @@
         <li class="nav-item nav-item-style">
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
         </li>
+        <li>
+          <%= link_to("/users/#{current_user.id}/edit") do %>
+          <%= image_tag("image7.jpeg", :class => "index_user_photo", :size => "23x23", :alt => "写真") %>
+          <% end %>
+        </li>
         <% else %>
         <li class="nav-item nav-item-style">
           <%= link_to "ログイン", new_user_session_path, method: :post %>

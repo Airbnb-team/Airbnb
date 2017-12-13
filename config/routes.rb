@@ -5,7 +5,14 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   patch   'users/:id'  => 'users#update'
   resources :users
-  resources :messages
+  resources :groups do
+    resources :messages
+  end
+  resources :messages do
+    collection do
+      post 'new'
+    end
+  end
   resources :favorites, only: [:index]
 
   resources :rooms, only: [:index, :new, :create, :edit, :show, :update] do
@@ -22,12 +29,16 @@ Rails.application.routes.draw do
     resources :photos, only: [:new, :create, :edit, :update]
     resources :explanatories, only: [:new, :create, :edit, :update]
     resources :rules, only: [:new, :create, :edit, :update]
-    resources :reservations do
-      collection do
-        post 'confirm'
-        post 'coming'
-      end
-    end
+  end
     get 'screen' => 'screen#photo'
+<<<<<<< HEAD
+=======
+  
+  resources :reservations do
+    collection do
+      post 'confirm'
+      post 'coming'
+    end
+>>>>>>> origin/master
   end
 end

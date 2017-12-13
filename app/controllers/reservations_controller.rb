@@ -11,7 +11,12 @@ class ReservationsController < ApplicationController
 
   def coming
     @reservation = Reservation.new(reservation_params)
+    @message = Message.new
+    @group = Group.new
+  end
 
+  def show
+    redirect_to room_path
   end
 
   def create
@@ -26,7 +31,7 @@ class ReservationsController < ApplicationController
   private
 
     def reservation_params
-      params.require(:reservation).permit(:check_in, :check_out, :room_id).merge(user_id:current_user.id)
+      params.require(:reservation).permit(:check_in, :check_out, :room_id, :guest_count).merge(user_id:current_user.id)
     end
 
 end
