@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   root 'screen#index'
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   resources :users
+  resources :groups do
+    resources :messages
+  end
   resources :messages do
     collection do
       post 'new'
@@ -25,12 +28,13 @@ Rails.application.routes.draw do
     resources :photos, only: [:new, :create, :edit, :update]
     resources :explanatories, only: [:new, :create, :edit, :update]
     resources :rules, only: [:new, :create, :edit, :update]
-    resources :reservations do
-      collection do
-        post 'confirm'
-        post 'coming'
-      end
-    end
+  end
     get 'screen' => 'screen#photo'
+  
+  resources :reservations do
+    collection do
+      post 'confirm'
+      post 'coming'
+    end
   end
 end
