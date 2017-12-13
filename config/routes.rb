@@ -31,8 +31,6 @@ Rails.application.routes.draw do
     resources :rules, only: [:new, :create, :edit, :update]
   end
     get 'screen' => 'screen#photo'
-
-
   resources :reservations do
     collection do
       post 'confirm'
