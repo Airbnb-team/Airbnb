@@ -12,7 +12,7 @@ class ReservationsController < ApplicationController
   def coming
     @reservation = Reservation.new(reservation_params)
     @message = Message.new
-    
+    @group = Group.new
   end
 
   def show
