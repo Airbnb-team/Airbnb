@@ -67,9 +67,10 @@ end
 
 gem 'devise'
 
-gem 'fog'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
 gem 'font-awesome-rails'
 gem 'kaminari'
 gem 'carrierwave'
+gem 'mini_magick'
+gem 'dropzonejs-rails'

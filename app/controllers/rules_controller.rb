@@ -9,7 +9,7 @@ class RulesController < ApplicationController
 		@room = Room.find(params[:room_id])
 		@rule = @room.rules.new(rule_params)
 		if @rule.save
-			redirect_to root_path
+			redirect_to new_room_price_path(@room)
 		else
 			render :new
 		end
@@ -30,11 +30,11 @@ class RulesController < ApplicationController
     :for_pets,
     :smoking,
     :parties,
-    :additional_rules,
-    :check_in_start_time,
-    :check_in_end_time,
-    :check_checkout_time,
-    :cancellation_policy,
+    :stairs,
+    :noises,
+    :pets,
+    :spaces,
+    :minimum_amenities,
    	).merge(room_id: params[:room_id], user_id: current_user.id)
  end
 
