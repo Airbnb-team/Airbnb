@@ -25,6 +25,8 @@ class RoomsController < ApplicationController
 
 	def show
 		@reservation = Reservation.new
+	end
+
 
 	end
 

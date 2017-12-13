@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171212083656) do
+ActiveRecord::Schema.define(version: 20171212090313) do
 
   create_table "Explanatories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title",                              null: false
@@ -247,7 +247,7 @@ ActiveRecord::Schema.define(version: 20171212083656) do
     t.datetime "updated_at",                                        null: false
     t.string   "name"
     t.string   "sex"
-    t.string   "birthday"
+    t.datetime "birthday"
     t.string   "langage"
     t.string   "currency"
     t.text     "intro",                  limit: 65535
@@ -255,6 +255,8 @@ ActiveRecord::Schema.define(version: 20171212083656) do
     t.string   "image"
     t.string   "provider"
     t.string   "uid"
+    t.string   "phone_number"
+    t.string   "description"
     t.integer  "group_id"
     t.integer  "room_id"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
