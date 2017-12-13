@@ -79,7 +79,7 @@
                       <div class="messages-sidebar3">
                         <span>チェックイン</span>
                       </div>
-                      <div class="messages-sidebar4">12月4日 月曜日</div>
+                      <div class="messages-reservation_checkin">12月4日 月曜日</div>
                     </div>
                     <div class="col-sm-1">
                       <i class="icon icon-size-1 icon-chevron-right text-medium-gray checkin-details__chevron"></i>
@@ -88,7 +88,7 @@
                       <div class="messages-sidebar3">
                         <span>チェックアウト</span>
                       </div>
-                      <div class="messages-sidebar4">12月5日 火曜日</div>
+                      <div class="messages-reservation_checkout">12月5日 火曜日</div>
                     </div>
                     <hr>
                     <div class="space-2">
@@ -96,7 +96,7 @@
                         <span>人数</span>
                       </div>
                       <div class="messages-sidebar4">
-                        <span>大人1名</span>
+                        <span>大人<span class = reservation_guest_count>1</span>名</span>
                       </div>
                     </div>
                   </div>
@@ -190,7 +190,9 @@
               <span class="messages-chat9">
                 <span>
                   <% @group.messages.each do |message| %>
-                  <%= message.body class = "each_message_show" %>
+                    <p class = "show_each_message">
+                      <%= message.body %>
+                    </p>
                   <% end %>
                 </span>
               </span>
