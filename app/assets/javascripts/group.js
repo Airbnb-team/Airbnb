@@ -31,4 +31,8 @@ $(function() {
          checkout_inputed.attr('value',`${check_out}`);
          var guest_count_inputed = $(".user_inputed_guestcount");
          guest_count_inputed.attr('value',`${guest_count}`);
+         $('.btn-primary_decline').on("click", function(e){e.preventDefault();
+          var after_decline = `<hr><div>この宿泊リクエストは拒否されました。</div>`
+          $(".messages-chat-main1").append(after_decline);
+        });
     });

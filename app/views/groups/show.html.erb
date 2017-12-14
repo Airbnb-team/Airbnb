@@ -204,8 +204,8 @@
             <%= t.hidden_field :guest_count, class: 'user_inputed_guestcount' %>
             <%= t.hidden_field :user_id, value: @group.user_groups.first.user_id  , class: 'pass_the_userid' %>
             <%= t.hidden_field :room_id, value: Room.find_by( user_id:@group.user_groups.last.user_id ).id , class: 'pass_the_roomid' %>
-            <%= t.submit "承認する", class:"btn btn-sm btn-primary_accept"%>
-            <%= t.submit "拒否する", class:"btn btn-sm btn-primary_decline"%>
+            <%= t.submit "承認する", class:"btn btn-sm btn-primary_accept", data: { confirm: "ゲストの宿泊を承認してもいいですか？"} %>
+            <%= t.submit "拒否する", class:"btn btn-sm btn-primary_decline", data: { confirm: "ゲストの宿泊を拒否してもいいですか?"} %>
             <% end %>
           <% end %>
             <div class="messages-chat10">
