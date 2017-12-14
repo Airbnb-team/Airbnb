@@ -1,5 +1,9 @@
 class RoomsController < ApplicationController
 
+	def toppage
+		@rooms = Room.all
+	end
+
 	def index
 	end
 
@@ -19,6 +23,10 @@ class RoomsController < ApplicationController
 	def continue
 		@room = Room.find(params[:format])
 	end
+
+	def search
+    @rooms = Room.where('name LIKE(?)', "%#{params[:keyword]}%")
+  end
 
 	def edit
 	end
@@ -42,6 +50,5 @@ class RoomsController < ApplicationController
 	def room_params
 		params.require(:room).permit(:property_type, :home_type, :room_type, :guest_only).merge(user_id: current_user.id)
   end
-
 
 end

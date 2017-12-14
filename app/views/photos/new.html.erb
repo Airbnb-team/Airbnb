@@ -69,8 +69,8 @@
             <div class="main-panel-action-content clearfix">
               <div class="main-panel-action-spacce">
                 <div class="main-panel-action">
-                  <%= link_to '← 戻る', new_room_path, class: "photo-back-style" %>
-                  <%= link_to '次へ', new_room_explanatory_path, class: 'btn photo-btn-style' %>
+                  <%= link_to '← 戻る', continue_rooms_path(@room), class: "photo-back-style" %>
+                  <%= link_to '次へ', new_room_explanatory_path(@room), class: 'btn photo-btn-style' %>
                 </div>
               </div>
             </div>

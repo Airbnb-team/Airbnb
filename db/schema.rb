@@ -27,6 +27,16 @@ ActiveRecord::Schema.define(version: 20171212090313) do
     t.index ["user_id"], name: "index_explanatories_on_user_id", using: :btree
   end
 
+  create_table "Rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",                     null: false
+    t.string   "property_type", default: "0", null: false
+    t.string   "home_type",     default: "0", null: false
+    t.string   "room_type",     default: "0", null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.boolean  "guest_only"
+  end
+
   create_table "amenities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.boolean  "pet"
     t.boolean  "elevator"
@@ -84,22 +94,24 @@ ActiveRecord::Schema.define(version: 20171212090313) do
   end
 
   create_table "bathrooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "room_id",         null: false
     t.integer  "bathrooms_count", null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "user_id"
+    t.integer  "room_id"
+    t.index ["room_id"], name: "index_bathrooms_on_room_id", using: :btree
     t.index ["user_id"], name: "index_bathrooms_on_user_id", using: :btree
   end
 
   create_table "bedrooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "room_id",        null: false
     t.integer  "capacity_count", null: false
     t.integer  "rooms_count",    null: false
     t.integer  "beds_count",     null: false
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.integer  "user_id"
+    t.integer  "room_id"
+    t.index ["room_id"], name: "index_bedrooms_on_room_id", using: :btree
     t.index ["user_id"], name: "index_bedrooms_on_user_id", using: :btree
   end
 
@@ -117,18 +129,7 @@ ActiveRecord::Schema.define(version: 20171212090313) do
     t.string   "name"
   end
 
-  create_table "locationmaps", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "room_id",     null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "user_id"
-    t.integer  "location_id"
-    t.index ["location_id"], name: "index_locationmaps_on_location_id", using: :btree
-    t.index ["user_id"], name: "index_locationmaps_on_user_id", using: :btree
-  end
-
   create_table "locations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "room_id",       null: false
     t.string   "country"
     t.integer  "postal_code"
     t.string   "prefecture"
@@ -138,6 +139,8 @@ ActiveRecord::Schema.define(version: 20171212090313) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "user_id"
+    t.integer  "room_id"
+    t.index ["room_id"], name: "index_locations_on_room_id", using: :btree
     t.index ["user_id"], name: "index_locations_on_user_id", using: :btree
   end
 
@@ -151,11 +154,28 @@ ActiveRecord::Schema.define(version: 20171212090313) do
   end
 
   create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",    null: false
-    t.integer  "room_id",    null: false
     t.string   "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "room_id"
+    t.integer  "user_id"
+    t.integer  "status"
+    t.index ["room_id"], name: "index_photos_on_room_id", using: :btree
+    t.index ["user_id"], name: "index_photos_on_user_id", using: :btree
+  end
+
+  create_table "prices", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",        null: false
+    t.integer  "room_id",        null: false
+    t.integer  "basic_charge"
+    t.integer  "cleaning_fee"
+    t.integer  "deposit_money"
+    t.integer  "additional_fee"
+    t.integer  "weekend_rates"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["room_id"], name: "index_prices_on_room_id", using: :btree
+    t.index ["user_id"], name: "index_prices_on_user_id", using: :btree
   end
 
   create_table "reservations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -180,47 +200,23 @@ ActiveRecord::Schema.define(version: 20171212090313) do
     t.datetime "updated_at",               null: false
   end
 
-  create_table "rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",                     null: false
-    t.string   "property_type", default: "0", null: false
-    t.string   "home_type",     default: "0", null: false
-    t.string   "room_type",     default: "0", null: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.boolean  "guest_only"
-  end
-
   create_table "rules", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "children_for_2_12"
     t.integer  "for_infants_under_2"
     t.integer  "for_pets"
     t.integer  "smoking"
     t.integer  "parties"
-    t.integer  "additional_rules"
-    t.boolean  "check_in_start_time"
-    t.boolean  "check_in_end_time"
-    t.boolean  "check_checkout_time"
-    t.boolean  "cancellation_policy"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.integer  "user_id"
     t.integer  "room_id"
+    t.boolean  "stairs"
+    t.boolean  "noises"
+    t.boolean  "pets"
+    t.boolean  "spaces"
+    t.boolean  "minimum_amenities"
     t.index ["room_id"], name: "index_rules_on_room_id", using: :btree
     t.index ["user_id"], name: "index_rules_on_user_id", using: :btree
-  end
-
-  create_table "spaces", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "room_id",                    null: false
-    t.boolean  "pool"
-    t.boolean  "elevator"
-    t.boolean  "washing_machine"
-    t.boolean  "gym"
-    t.boolean  "kitchen"
-    t.boolean  "parking"
-    t.boolean  "jacuzzi"
-    t.boolean  "washing_and_drying_machine"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
   end
 
   create_table "user_groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -267,11 +263,16 @@ ActiveRecord::Schema.define(version: 20171212090313) do
   add_foreign_key "Explanatories", "users"
   add_foreign_key "amenities", "rooms"
   add_foreign_key "amenities", "users"
+  add_foreign_key "bathrooms", "rooms"
   add_foreign_key "bathrooms", "users"
+  add_foreign_key "bedrooms", "rooms"
   add_foreign_key "bedrooms", "users"
-  add_foreign_key "locationmaps", "locations"
-  add_foreign_key "locationmaps", "users"
+  add_foreign_key "locations", "rooms"
   add_foreign_key "locations", "users"
+  add_foreign_key "photos", "rooms"
+  add_foreign_key "photos", "users"
+  add_foreign_key "prices", "rooms"
+  add_foreign_key "prices", "users"
   add_foreign_key "rules", "rooms"
   add_foreign_key "rules", "users"
   add_foreign_key "user_groups", "groups"
