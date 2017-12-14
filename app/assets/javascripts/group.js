@@ -10,8 +10,8 @@ $(function() {
           <span>チェックアウト: ${check_out}</span><br>
           <span>ゲストの人数: ${guest_count}</span><br>
           <span>ユーザーのメッセージ: ${guest_message}</span><br>
-          <button>承認</button> <button>拒否</button>
-          ` );
+          `
+          );
          var check_in_sidebar = $(".messages-reservation_checkin")
          var check_out_sidebar = $(".messages-reservation_checkout")
          var guest_count_sidebar = $(".reservation_guest_count")
@@ -21,5 +21,14 @@ $(function() {
           `${check_out}` );
          guest_count_sidebar.replaceWith(
           `${guest_count}` );
-        console.log(first_input_split);
+
+         checkout_inputed = $(".user_inputed_checkout").val();
+         guest_count_inputed = $(".user_inputed_guestcount").val();
+
+         var checkin_inputed = $("#reservation_check_in");
+         checkin_inputed.attr('value',`${check_in}`);
+         var checkout_inputed = $(".user_inputed_checkout");
+         checkout_inputed.attr('value',`${check_out}`);
+         var guest_count_inputed = $(".user_inputed_guestcount");
+         guest_count_inputed.attr('value',`${guest_count}`);
     });
