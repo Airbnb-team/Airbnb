@@ -25,7 +25,7 @@ $(function() {
          checkout_inputed = $(".user_inputed_checkout").val();
          guest_count_inputed = $(".user_inputed_guestcount").val();
 
-         var checkin_inputed = $("#reservation_check_in");
+         var checkin_inputed = $(".user_inputed_checkin");
          checkin_inputed.attr('value',`${check_in}`);
          var checkout_inputed = $(".user_inputed_checkout");
          checkout_inputed.attr('value',`${check_out}`);
