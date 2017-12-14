@@ -14,8 +14,4 @@ class Room < ApplicationRecord
 
   accepts_nested_attributes_for :photos, allow_destroy: true
 
-  def set_main_image
-    photos.main.first.image
-  end
-
 end
