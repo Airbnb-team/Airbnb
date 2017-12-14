@@ -35,9 +35,6 @@ class RoomsController < ApplicationController
 		@reservation = Reservation.new
 	end
 
-
-	end
-
 	def update
 	end
 
