@@ -197,13 +197,17 @@
                 </span>
               </span>
             </div>
-            <%= form_for @reservation do |t| %>
+          <% if current_user.id == @group.user_groups.last.user_id %>
+            <%= form_for( @reservation, :url => {:controller => :reservations, :action => :create}) do |t| %>
             <%= t.hidden_field :check_in, class: 'user_inputed_checkin' %>
             <%= t.hidden_field :check_out, class: 'user_inputed_checkout' %>
             <%= t.hidden_field :guest_count, class: 'user_inputed_guestcount' %>
+            <%= t.hidden_field :user_id, value: @group.user_groups.first.user_id  , class: 'pass_the_userid' %>
+            <%= t.hidden_field :room_id, value: Room.find_by( user_id:@group.user_groups.last.user_id ).id , class: 'pass_the_roomid' %>
             <%= t.submit "承認する", class:"btn btn-sm btn-primary_accept"%>
             <%= t.submit "拒否する", class:"btn btn-sm btn-primary_decline"%>
             <% end %>
+          <% end %>
             <div class="messages-chat10">
               <div class="messages-chat11">
                 <span class="messages-chat12">2017年11月27日</span>
