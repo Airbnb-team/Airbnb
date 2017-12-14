@@ -35,7 +35,6 @@ Rails.application.routes.draw do
   end
 
     get 'screen' => 'screen#photo'
-
   resources :reservations do
     collection do
       post 'confirm'
