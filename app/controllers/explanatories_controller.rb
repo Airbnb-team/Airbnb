@@ -2,7 +2,7 @@ class ExplanatoriesController < ApplicationController
 
 	def new
 		@room = Room.find(params[:room_id])
-		@explanatory = Explanatory.new
+		@explanatories = Explanatory.new
 	end
 
 	def create

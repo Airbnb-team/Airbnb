@@ -1,6 +1,11 @@
 class RoomsController < ApplicationController
 
 	def index
+		@explanatories = Explanatory.where('title LIKE(?)', "%#{params[:keyword]}%")
+		respond_to do |format|
+     format.html
+     format.json
+	  end
 	end
 
 	def new
