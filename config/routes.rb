@@ -34,6 +34,8 @@ Rails.application.routes.draw do
     resources :prices, only: [:new, :create, :edit, :update]
   end
 
+  get 'screen' => 'screen#photo'
+
   resources :reservations do
     collection do
       post 'confirm'
