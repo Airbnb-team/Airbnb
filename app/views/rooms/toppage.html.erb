@@ -4,7 +4,7 @@
     <title>Airbnb</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="/javascripts/toppage.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   </head>
 
   <header class="header">
@@ -17,31 +17,62 @@
           <%= text_field_tag :search, params[:keyword], class: 'toppage-serach-field', placeholder: '「シアトル」などエリアを入力', id: "autolocation2" %>
         </div>
       <% end %>
-
-      <ul class="nav justify-content-end">
-        <li class="nav-item nav-item-style">
-          <%= link_to 'ホストをはじめる', new_room_path, method: :get, style: "color:#484848;" %>
-        <li class="nav-item nav-item-style">
-          <%= link_to 'アカウント作成', "/", style: "color:#484848;"%>
-        </li>
-        <% if user_signed_in? %>
-        <li class="nav-item nav-item-style">
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, style: "color:#484848;" %>
-        </li>
-        <li>
-          <%= link_to("/users/#{current_user.id}/edit") do %>
-          <div class="avator">
-            <img alt="" height="28" src="https://a0.muscache.com/defaults/user_pic-50x50.png?v=3" width="28">
-          </div>
-          <% end %>
-        </li>
-        <% else %>
-        <li class="nav-item nav-item-style">
-          <%= link_to "ログイン", new_user_session_path, method: :post %>
-        </li>
+    </div>
+    <div class="toppage-header-right">
+      <% if user_signed_in? && current_user.rooms %>
+        <%= button_tag type: 'button', onclick: "link_to('#{edit_room_path(current_user.rooms)}')", class:'toppage-become-host-btn' do %>
+          <span>ホスト</span>
         <% end %>
-      </ul>
-    </nav>
+        <div class="toppage-header-content">
+          <%= link_to 'アカウント作成', "/", style: "color:#484848;"%>
+        </div>
+        <%= button_tag type: 'button', onclick: "link_to('#{root_path(current_user)}')", class:'toppage-become-message-btn' do %>
+          <span>メッセージ</span>
+        <% end %>
+        <div class="toppage-header-content">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, style: "color:#484848;" %>
+        </div>
+        <%= link_to("/users/#{current_user.id}/edit") do %>
+          <div class="toppage-header-content">
+            <div class="toppage-avator">
+              <img alt="" height="28" src="https://a0.muscache.com/defaults/user_pic-50x50.png?v=3" width="28">
+            </div>
+          </div>
+        <% end %>
+      <% elsif user_signed_in? %>
+        <%= button_tag type: 'button', onclick: "link_to('#{introduce_rooms_path(current_user)}')", class:'toppage-become-host-btn' do %>
+          <span>ホストをはじめる</span>
+        <% end %>
+        <div class="toppage-header-content">
+          <%= link_to 'アカウント作成', "/", style: "color:#484848;"%>
+        </div>
+        <%= button_tag type: 'button', onclick: "link_to('#{group_message_path(current_user)}')", class:'toppage-become-message-btn' do %>
+          <span>メッセージ</span>
+        <% end %>
+        <div class="toppage-header-content">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, style: "color:#484848;" %>
+        </div>
+        <%= link_to("/users/#{current_user.id}/edit") do %>
+          <div class="toppage-header-content">
+            <div class="toppage-avator">
+              <img alt="" height="28" src="https://a0.muscache.com/defaults/user_pic-50x50.png?v=3" width="28">
+            </div>
+          </div>
+        <% end %>
+        </div>
+      <% else %>
+        <div class="toppage-header-content">
+          <%= button_tag type: 'button', onclick: "link_to('#{introduce_rooms_path(current_user)}')", class:'toppage-become-host-btn' do %>
+            <span>ホストをはじめる</span>
+          <% end %>
+        <div class="toppage-header-content">
+          <%= link_to 'アカウント作成', "introduce_rooms_path", style: "color:#484848;" %>
+        </div>
+        <div class="toppage-header-content">
+          <%= link_to "ログイン", new_user_session_path, method: :post, style: "color:#484848;" %>
+        </div>
+      <% end %>
+    </div>
   </header>
 
   <body>
@@ -79,6 +110,9 @@
 
       </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   </body>
   <%= render partial: 'shared/footer' %>
 </html>

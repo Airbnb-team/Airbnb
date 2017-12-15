@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :reservations
   has_many :messages
   has_many :photos
-  has_many :favarites
+  has_many :favarites, dependent: :destroy
   has_many :reviews
   has_many :user_groups
   has_many :groups, through: :user_groups
