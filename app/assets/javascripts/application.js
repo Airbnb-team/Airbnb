@@ -15,5 +15,4 @@
 //= require popper
 //= require bootstrap
 //= require dropzone
-//= require turbolinks
 //= require_tree .
