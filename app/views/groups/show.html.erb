@@ -79,7 +79,7 @@
                       <div class="messages-sidebar3">
                         <span>チェックイン</span>
                       </div>
-                      <div class="messages-sidebar4">12月4日 月曜日</div>
+                      <div class="messages-reservation_checkin">12月4日 月曜日</div>
                     </div>
                     <div class="col-sm-1">
                       <i class="icon icon-size-1 icon-chevron-right text-medium-gray checkin-details__chevron"></i>
@@ -88,7 +88,7 @@
                       <div class="messages-sidebar3">
                         <span>チェックアウト</span>
                       </div>
-                      <div class="messages-sidebar4">12月5日 火曜日</div>
+                      <div class="messages-reservation_checkout">12月5日 火曜日</div>
                     </div>
                     <hr>
                     <div class="space-2">
@@ -96,7 +96,7 @@
                         <span>人数</span>
                       </div>
                       <div class="messages-sidebar4">
-                        <span>大人1名</span>
+                        <span>大人<span class = reservation_guest_count>1</span>名</span>
                       </div>
                     </div>
                   </div>
@@ -190,11 +190,24 @@
               <span class="messages-chat9">
                 <span>
                   <% @group.messages.each do |message| %>
-                  <%= message.body class = "each_message_show" %>
+                    <p class = "show_each_message">
+                      <%= message.body %>
+                    </p>
                   <% end %>
                 </span>
               </span>
             </div>
+          <% if current_user.id == @group.user_groups.last.user_id %>
+            <%= form_for( @reservation, :url => {:controller => :reservations, :action => :create}) do |t| %>
+            <%= t.hidden_field :check_in, class: 'user_inputed_checkin' %>
+            <%= t.hidden_field :check_out, class: 'user_inputed_checkout' %>
+            <%= t.hidden_field :guest_count, class: 'user_inputed_guestcount' %>
+            <%= t.hidden_field :user_id, value: @group.user_groups.first.user_id  , class: 'pass_the_userid' %>
+            <%= t.hidden_field :room_id, value: Room.find_by( user_id:@group.user_groups.last.user_id ).id , class: 'pass_the_roomid' %>
+            <%= t.submit "承認する", class:"btn btn-sm btn-primary_accept"%>
+            <%= t.submit "拒否する", class:"btn btn-sm btn-primary_decline"%>
+            <% end %>
+          <% end %>
             <div class="messages-chat10">
               <div class="messages-chat11">
                 <span class="messages-chat12">2017年11月27日</span>

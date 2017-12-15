@@ -5,6 +5,8 @@ class GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
     @message = Message.new
-    # @messages = @group.messages.body
+    @reservation = Reservation.new
   end
+
+
 end
