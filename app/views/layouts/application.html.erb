@@ -3,14 +3,9 @@
   <head>
     <title>Airbnb</title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all'%>
+    <%= javascript_include_tag 'application'%>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqv7XMOZuqELHb0OO5ojSqB9RiC5iQbRY&libraries=places"></script>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-
-    <% if content_for?(:head) %>
-      <%= yield(:head) %>
-    <% end %>
   </head>
 
   <body>
