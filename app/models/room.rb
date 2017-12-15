@@ -12,6 +12,7 @@ class Room < ApplicationRecord
   has_many :explanatories
   has_many :prices
 
+  
   accepts_nested_attributes_for :photos, allow_destroy: true
 
 end
