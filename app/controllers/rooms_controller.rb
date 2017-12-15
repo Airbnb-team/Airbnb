@@ -3,19 +3,11 @@ class RoomsController < ApplicationController
 	def toppage
 		@rooms = Room.all
 		@rooms = Room.page(params[:page]).per(8).order("created_at DESC")
-		# @favorites = Favorite.where(room_id: params[:room_id], user_id: current_user.id)
 	end
 
 	def index
 		session[:loc_search] = params[:search]
 		@houses = session[:loc_search]
-		
-		# @room_address = Location.where(active: true).near(session[:loc_search], 5, order:'distance')
-		# @search = @room_address.ransack(params[:q])
-		# @rooms = @search.result
-
-		# @locations = Location.new
-
 	end
 
 	def new
