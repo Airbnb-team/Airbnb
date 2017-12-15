@@ -17,3 +17,4 @@
 //= require dropzone
 //= require turbolinks
 //= require_tree .
+//= require geocomplete

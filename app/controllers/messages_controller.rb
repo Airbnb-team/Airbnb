@@ -30,7 +30,9 @@ class MessagesController < ApplicationController
 
   private
   def message_params
+
     params.require(:message).permit(:body).merge( user_id:current_user.id, group_id: Group.all.length )
+
   end
 
   def group_params

@@ -5,6 +5,15 @@ class RoomsController < ApplicationController
 	end
 
 	def index
+		session[:loc_search] = params[:search]
+		@houses = session[:loc_search]
+		
+		# @room_address = Location.where(active: true).near(session[:loc_search], 5, order:'distance')
+		# @search = @room_address.ransack(params[:q])
+		# @rooms = @search.result
+
+		# @locations = Location.new
+
 	end
 
 	def new
