@@ -11,7 +11,7 @@ class Room < ApplicationRecord
   has_many :locations
   has_many :explanatories
   has_many :prices
-
+  has_one :group
   accepts_nested_attributes_for :photos, allow_destroy: true
 
 end

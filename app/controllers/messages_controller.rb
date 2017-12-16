@@ -8,7 +8,6 @@ class MessagesController < ApplicationController
     @group.save
     @message = Message.new(message_params)
     @message.save
-
     redirect_to root_path
   end
 
@@ -34,7 +33,7 @@ class MessagesController < ApplicationController
   end
 
   def group_params
-     params.require(:group).permit(:name, user_ids: [])
+     params.require(:group).permit(:name, :room_id, user_ids: [])
   end
 
   def reservation_params

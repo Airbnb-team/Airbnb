@@ -1,32 +1,27 @@
 <div class="message-container_group1">
-      <div class="message-container_traveling">
-        <span>トラベリング</span>
-      </div>
-      <div class="message-container_hosting">
-        <span>ホスティング</span>
-      </div>
-      <div class="message-container_change-message">
-          <button class="btn btn-lg dropdown-toggle rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ホスティングの全メッセージ（１）</button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">ホスティング１</a>
-            <a class="dropdown-item" href="#">ホスティング２</a>
-          </div>
-      </div>
+ <p id="tabcontrol"  >
+    <a href="#i_travel">トラベリング</a>
+    <a href="#i_host">ホスティング</a>
+ </p>
+ <div class="message-container_change-message">
+        <button class="btn btn-lg dropdown-toggle rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ホスティングの全メッセージ（１）</button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">ホスティング１</a>
+          <a class="dropdown-item" href="#">ホスティング２</a>
+        </div>
     </div>
-
-    <div class="message-container_group2">
-      <div class="message-container_image">
-        <%= image_tag('airbnb.png',:size => "60x60") %>
-      </div>
-      <div class="message-container_date">
+  </div>
+<div class = tabbody_wrapper>
+  <div id="tabbody">
+    <div id="i_travel">
+         <%= image_tag('airbnb.png',:size => "60x60") %>
         <span>なまえ</span><br>
         <span>12月6日</span>
-      </div>
-      <div class="message-container_latest">
         <span>こんにちわ</span><br>
         <span>Center of Tokyo （2017年12月4日 - 2017年12月5日）</span>
-      </div>
-      <div class="message-container_status">
-        <span>却下</span>
-      </div>
+        <span>ステータス 却下or承認</span>
     </div>
+    <div id="i_host">…… タブ2の中身 ……
+    </div>
+  </div>
+</div>
