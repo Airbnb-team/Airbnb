@@ -3,9 +3,9 @@
  <style>
    /* Always set the map height explicitly to define the size of the div
     * element that contains the map. */
-   #map {
+   /*#map {
      height: 100%;
-   }
+   }*/
    /* Optional: Makes the sample page fill the window. */
    html, body {
      height: 100%;
@@ -16,7 +16,7 @@
 </head>
 <nav class="navbar navbar-white bg-white navbar-style">
   <h1 class="text-danger font-weight-bold">Airbnb</h1>
-  <%= form_for rooms_path, :url => {:controller => :rooms, :action => :index, :room_id => :id}, method: :get do %>
+  <%= form_tag rooms_path, :url => {:controller => :rooms, :action => :index, :room_id => :id}, method: :get do %>
     <div class="input-group input-group-rooms-style resize">
       <div class="icon-search"></div>
       <!-- <input type="text" name="serach" class="rooms-search" placeholder="エリアを入力" id="autolocation"> -->
@@ -59,13 +59,7 @@
   </div>
 </nav>
 
-<!-- <div class="container container-style">
-  <div class="row row-1 ">
-    <div class="col-md-12">
-
-      </div>
-  </div> -->
-  <div class="contents-wrapper">
+<div class="contents-wrapper">
     <div class="row row-5">
       <div class="col-md-4">
         <div class="card" style="width: 20rem;">
@@ -192,69 +186,5 @@
 </div>
 <%# @rooms.each do |room| %>
 <%# end %>
-<div id="map" style="width: 100%; height: 100%"></div>
-
-<!-- <script src="https://maps.googleapis.com/maps/api/js"></script> -->
-<script>
-    function initialize() {
-      var location = {lat: 44.5403, lng: -78.5463}
-
-      var map = new google.maps.Mal(document.getElementById('map'), {
-        center: location,
-        zoom: 12
-      })
-    }
-
-    google.maps.event.addDomListerner(window, 'load', initialize);
-</script>
-<!-- <div class = "row row-4 map_size">
-   <div class = "col-sm"></div>
-   <div class = "col-sm"></div>
-   <div id="map" class ="col-sm-3"></div>
- </div> -->
-<script>
-  // var map;
-  // function initMap() {
-  //   map = new google.maps.Map(document.getElementById('map'), {
-  //     center: {lat: -34.397, lng: 150.644},
-  //     zoom: 8
-  //   });
-  // }
-
-
-  $(function() {
-    $("#autolocation").geocomplete;
-
-  })
-
-
-$("#autolocation").geocomplete();
-// Trigger geocoding request.
-$("#autolocation").click(function(){
-  $("#autolocation-btn").trigger("geocode");
-});
-
-
-</script>
-
-<script>
-  $(function() {
-    $("#q_price_gteq").val('100');
-    $("#q_price_lteq").val('500');
-
-    $("#slider-range").slider({
-      range: true,
-      min: 0,
-      max: 1000
-      values: [100, 500],
-      slide: function(event, ui) {
-        $("#q_price_gteq").val(ui.values[0]);
-        $("#q_price_lteq").val(ui.values[1]);
-      }
-    });
-
-
-  })
-</script>
-<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqv7XMOZuqELHb0OO5ojSqB9RiC5iQbRY&libraries=places"
-async defer></script> -->
+  <div class="display-map" style="width: 440px; height: 100%" id="map">
+  </div>
