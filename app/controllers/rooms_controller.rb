@@ -10,6 +10,7 @@ class RoomsController < ApplicationController
 		@houses = session[:loc_search]
 		 @locations = Location.where('country LIKE(?)', "%#{params[:search]}%").limit(20)
 
+
 		# @room_address = Location.where(active: true).near(session[:loc_search], 5, order:'distance')
 		# @search = @room_address.ransack(params[:q])
 		# @rooms = @search.result
