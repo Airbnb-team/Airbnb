@@ -1,27 +1,46 @@
-<div class="message-container_group1">
- <p id="tabcontrol"  >
-    <a href="#i_travel">トラベリング</a>
-    <a href="#i_host">ホスティング</a>
- </p>
- <div class="message-container_change-message">
-        <button class="btn btn-lg dropdown-toggle rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ホスティングの全メッセージ（１）</button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">ホスティング１</a>
-          <a class="dropdown-item" href="#">ホスティング２</a>
+<html>
+  <div class="message-container_group1">
+     <div class="message-container_change-message">
+            <button class="btn btn-lg dropdown-toggle rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ホスティングの全メッセージ（１）</button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">ホスティングの全メッセージ</a>
+            </div>
         </div>
+   <p id="tabcontrol"  >
+      <a href="#i_travel">トラベリング</a>
+      <a href="#i_host">ホスティング</a>
+   </p>
     </div>
-  </div>
-<div class = tabbody_wrapper>
-  <div id="tabbody">
-    <div id="i_travel">
-         <%= image_tag('airbnb.png',:size => "60x60") %>
-        <span>なまえ</span><br>
-        <span>12月6日</span>
-        <span>こんにちわ</span><br>
-        <span>Center of Tokyo （2017年12月4日 - 2017年12月5日）</span>
-        <span>ステータス 却下or承認</span>
+    <div id="tabbody">
+      <div id="i_travel" class = "index_message_panel">
+        <% @groups_travel.each do |group| %>
+          <%= link_to group_path(group) do %>
+            <span class = "box_message_each">
+               <span class = "box_message_time">
+                 <%= group.messages.first.created_at %>
+               </span>
+              <%= group.messages.first.body %>
+            </span>
+          <% end %>
+        <% end %>
+      </div>
+      <div id="i_host" class = "index_message_panel">
+        <% @groups_hosting.each do |group| %>
+          <%= link_to group_path(group) do %>
+            <span class = "box_message_time">
+              <%= group.messages.first.created_at %>
+            </span>
+            <span class = "box_message_each">
+              <span class = "box_message_time">
+                <%= group.messages.first.created_at %>
+              </span>
+              <%= group.messages.first.body %>
+            </span>
+            <% end %>
+        <% end %>
+      </div>
     </div>
-    <div id="i_host">…… タブ2の中身 ……
-    </div>
-  </div>
-</div>
+      <div class = "detail_footer">
+        <%= render partial: 'shared/footer' %>
+      </div>
+</html>

@@ -1,7 +1,11 @@
 $(function() {
 var tabs = document.getElementById('tabcontrol').getElementsByTagName('a');
+
 var pages = document.getElementById('tabbody').getElementsByTagName('div');
 
+for(var i=0; i<tabs.length; i++) {
+   tabs[i].onclick = changeTab;
+}
 
 function changeTab() {
    var targetid = this.href.substring(this.href.indexOf('#')+1,this.href.length);
@@ -18,10 +22,6 @@ function changeTab() {
    }
    this.style.zIndex = "10";
    return false;
-}
-
-for(var i=0; i<tabs.length; i++) {
-   tabs[i].onclick = changeTab;
 }
 
 tabs[0].onclick();

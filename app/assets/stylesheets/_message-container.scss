@@ -9,7 +9,6 @@
   }
 }
 
-
 .message-container_change-message{
 float:right;
 }
@@ -20,28 +19,48 @@ float:right;
 
 #tabcontrol a {
    display: inline-block;
-   border-width: 1px 1px 0px 1px;
-   border-style: solid;
-   border-color: black;
-   border-radius: 0.75em 0.75em 0 0;
    padding: 0.75em 1em;
    text-decoration: none;
    color: black;
    background-color: white;
    font-weight: bold;
    position: relative;
+   bottom:10px;
+   height:0;
 }
 
 #tabcontrol a:hover {
    text-decoration: underline;
 }
 
-
 #tabbody div {
-   border: 1px solid black;
-   margin-top: -1px;
    padding: 1em;
    background-color: white;
    position: relative;
    z-index: 0;
+   margin-bottom:20px;
+   margin: -1px auto 6px;
+}
+
+.detail_footer{
+  margin-top:20%;
+}
+
+
+.box_message_each{
+display:block;
+border: solid 1px;
+margin-top:8px;
+padding:40px;
+border-color: #dce0e0;
+color:#484848;
+width:70%;
+text-align: left;
+margin:10px 15% 1px;
+}
+
+
+.box_message_time {
+margin-right:100px
+
 }
