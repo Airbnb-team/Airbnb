@@ -3,7 +3,7 @@ class Room < ApplicationRecord
   has_many :reservations
   has_many :reviews
   has_many :photos, dependent: :destroy
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
   has_many :amenities
   has_many :rules
   has_many :bedrooms
@@ -14,5 +14,9 @@ class Room < ApplicationRecord
 
   
   accepts_nested_attributes_for :photos, allow_destroy: true
+
+  def favorite_user(id)
+    favorites.find_by(user_id: id)
+  end
 
 end

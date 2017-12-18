@@ -2,6 +2,7 @@ class RoomsController < ApplicationController
 
 	def toppage
 		@rooms = Room.all
+		@rooms = Room.page(params[:page]).per(8).order("created_at DESC")
 	end
 
 	def index
@@ -38,6 +39,9 @@ class RoomsController < ApplicationController
     @rooms = Room.where('name LIKE(?)', "%#{params[:keyword]}%")
   end
 
+  def introduce
+  end
+
 	def edit
 	end
 
@@ -51,7 +55,7 @@ class RoomsController < ApplicationController
 	private
 
 	def reservation_params
-		params.require(:reservation).permit(:check_in, :check_out).merge(user_id:current_user.id, room_id: ":id")
+		params.require(:reservation).permit(:check_in, :check_out).merge(user_id: current_user.id, room_id: ":id")
 	end
 
 	def room_params
