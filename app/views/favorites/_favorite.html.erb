@@ -1,0 +1,11 @@
+<% if user_signed_in? %>
+	<% if room.favorite_user(current_user.id) %>
+		<%= link_to room_favorite_path(room, room.favorite_user(current_user.id)), method: :delete, class: 'full-heart', remote: true do %>
+			<i class="fa fa-heart fa-2x"></i>
+		<% end %>
+	<% else %>
+		<%= link_to room_favorites_path(room), method: :post, class: 'empty-heart', remote: true do %>
+			<i class="fa fa-heart fa-2x"></i>
+		<% end %>
+	<% end %>
+<% end %>

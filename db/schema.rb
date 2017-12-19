@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171212090313) do
+ActiveRecord::Schema.define(version: 20171218091424) do
 
   create_table "Explanatories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title",                              null: false
@@ -25,16 +25,6 @@ ActiveRecord::Schema.define(version: 20171212090313) do
     t.integer  "user_id"
     t.index ["room_id"], name: "index_explanatories_on_room_id", using: :btree
     t.index ["user_id"], name: "index_explanatories_on_user_id", using: :btree
-  end
-
-  create_table "Rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",                     null: false
-    t.string   "property_type", default: "0", null: false
-    t.string   "home_type",     default: "0", null: false
-    t.string   "room_type",     default: "0", null: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.boolean  "guest_only"
   end
 
   create_table "amenities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -117,7 +107,6 @@ ActiveRecord::Schema.define(version: 20171212090313) do
 
   create_table "favorites", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",    null: false
-    t.integer  "photo_id",   null: false
     t.integer  "room_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -136,10 +125,12 @@ ActiveRecord::Schema.define(version: 20171212090313) do
     t.string   "city"
     t.string   "address"
     t.string   "building_name"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.integer  "user_id"
     t.integer  "room_id"
+    t.float    "latitude",      limit: 24
+    t.float    "longitude",     limit: 24
     t.index ["room_id"], name: "index_locations_on_room_id", using: :btree
     t.index ["user_id"], name: "index_locations_on_user_id", using: :btree
   end
@@ -200,6 +191,16 @@ ActiveRecord::Schema.define(version: 20171212090313) do
     t.datetime "updated_at",               null: false
   end
 
+  create_table "rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",                     null: false
+    t.string   "property_type", default: "0", null: false
+    t.string   "home_type",     default: "0", null: false
+    t.string   "room_type",     default: "0", null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.boolean  "guest_only"
+  end
+
   create_table "rules", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "children_for_2_12"
     t.integer  "for_infants_under_2"
@@ -217,6 +218,20 @@ ActiveRecord::Schema.define(version: 20171212090313) do
     t.boolean  "minimum_amenities"
     t.index ["room_id"], name: "index_rules_on_room_id", using: :btree
     t.index ["user_id"], name: "index_rules_on_user_id", using: :btree
+  end
+
+  create_table "spaces", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "room_id",                    null: false
+    t.boolean  "pool"
+    t.boolean  "elevator"
+    t.boolean  "washing_machine"
+    t.boolean  "gym"
+    t.boolean  "kitchen"
+    t.boolean  "parking"
+    t.boolean  "jacuzzi"
+    t.boolean  "washing_and_drying_machine"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "user_groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -251,10 +266,10 @@ ActiveRecord::Schema.define(version: 20171212090313) do
     t.string   "image"
     t.string   "provider"
     t.string   "uid"
-    t.string   "phone_number"
-    t.string   "description"
     t.integer  "group_id"
     t.integer  "room_id"
+    t.string   "phone_number"
+    t.string   "description"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

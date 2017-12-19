@@ -668,7 +668,8 @@
             <div class="line"></div>
           </div>
         </div>
-        <%= form_for(@reservation, :url => { :controller => :reservations, :action => :coming }) do |f| %>
+
+        <%= form_for(@reservation, :url => {:controller => :reservations, :action => :coming}) do |f| %>
         <%= f.label :check_in, "チェックイン", class: 'message-new-left1' %>
         <%= f.date_field :check_in, class: 'DateInput__input needsclick' %>
         <%= f.label :check_out, "チェックアウト", class: 'message-new-left1' %>

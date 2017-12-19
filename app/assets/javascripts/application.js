@@ -16,4 +16,7 @@
 //= require bootstrap
 //= require dropzone
 //= require turbolinks
+//= require underscore
+//= require gmaps/google
+//= require geocomplete
 //= require_tree .

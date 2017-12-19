@@ -1,0 +1,3 @@
+$("#favorite-icon<%= @room.id %>").html("<%= js(render partial: 'favorite', locals: { room: @room}) %>");
+$("#favorite-icon<%= @room.id %>").addClass('empty-heart');
+$("#favorite-icon<%= @room.id %>").removeClass('full-heart');

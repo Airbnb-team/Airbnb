@@ -3,6 +3,7 @@ class LocationsController < ApplicationController
 	def new
 		@room = Room.find(params[:room_id])
 		@location = Location.new
+
 	end
 
 	def create
@@ -17,6 +18,8 @@ class LocationsController < ApplicationController
 
 	def show
 		@location = Location.find(params[:id])
+		gon.latitude = @location.latitude
+		gon.longitude = @location.longitude
 	end
 
 	def edit

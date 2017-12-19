@@ -2,9 +2,21 @@ class RoomsController < ApplicationController
 
 	def toppage
 		@rooms = Room.all
+		@rooms = Room.page(params[:page]).per(8).order("created_at DESC")
 	end
 
 	def index
+		session[:loc_search] = params[:search]
+		@houses = session[:loc_search]
+		 @locations = Location.where('country LIKE(?)', "%#{params[:search]}%").limit(20)
+
+
+		# @room_address = Location.where(active: true).near(session[:loc_search], 5, order:'distance')
+		# @search = @room_address.ransack(params[:q])
+		# @rooms = @search.result
+
+		# @locations = Location.new
+
 	end
 
 	def new
@@ -28,6 +40,9 @@ class RoomsController < ApplicationController
     @rooms = Room.where('name LIKE(?)', "%#{params[:keyword]}%")
   end
 
+  def introduce
+  end
+
 	def edit
 	end
 
@@ -41,7 +56,7 @@ class RoomsController < ApplicationController
 	private
 
 	def reservation_params
-		params.require(:reservation).permit(:check_in, :check_out).merge(user_id:current_user.id, room_id: ":id")
+		params.require(:reservation).permit(:check_in, :check_out).merge(user_id: current_user.id, room_id: ":id")
 	end
 
 	def room_params
