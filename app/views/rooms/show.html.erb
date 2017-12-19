@@ -668,11 +668,7 @@
             <div class="line"></div>
           </div>
         </div>
-        <!-- <%= form_tag("/rooms/:room_id/reservations/coming", method: "get") do %>
-          <%= date_field :check_in, class: 'DateInput__input needsclick' %>
-          <%= date_field :check_out, class: 'DateInput__input needsclick' %>
-          <%= submit_tag "予約する", class: "reserve1"%>
-        <% end %> -->
+
         <%= form_for(@reservation, :url => {:controller => :reservations, :action => :coming}) do |f| %>
         <%= f.label :check_in, "チェックイン", class: 'message-new-left1' %>
         <%= f.date_field :check_in, class: 'DateInput__input needsclick' %>
@@ -680,6 +676,7 @@
         <%= f.date_field :check_out, class: 'DateInput__input needsclick' %>
         <%= f.label :guest_count, "ゲスト", class: 'message-new-left1' %>
         <%= f.select :guest_count, [["ゲスト1人", "1"],["ゲスト2人","2"],["ゲスト3人","3"],["ゲスト4人","4"]], {}, :class => 'messages-guest-select' %>
+        <%= f.hidden_field :room_id, class: 'show_pass_roomid', :value => params[:id] %>
         <%= f.submit "予約する", class: "reserve1"%>
         <% end %>
 
