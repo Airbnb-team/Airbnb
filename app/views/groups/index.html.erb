@@ -27,9 +27,6 @@
       <div id="i_host" class = "index_message_panel">
         <% @groups_hosting.each do |group| %>
           <%= link_to group_path(group) do %>
-            <span class = "box_message_time">
-              <%= group.messages.first.created_at %>
-            </span>
             <span class = "box_message_each">
               <span class = "box_message_time">
                 <%= group.messages.first.created_at %>
