@@ -14,7 +14,7 @@
     <div id="tabbody">
       <div id="i_travel" class = "index_message_panel">
         <% @groups_travel.each do |group| %>
-          <%= link_to group_path(group) do %>
+          <%= link_to group_messages_path(group) do %>
             <span class = "box_message_each">
                <span class = "box_message_time">
                  <%= group.messages.first.created_at %>
@@ -26,7 +26,7 @@
       </div>
       <div id="i_host" class = "index_message_panel">
         <% @groups_hosting.each do |group| %>
-          <%= link_to group_path(group) do %>
+          <%= link_to group_messages_path(group) do %>
             <span class = "box_message_each">
               <span class = "box_message_time">
                 <%= group.messages.first.created_at %>
