@@ -229,6 +229,35 @@
           </div>
         </div>
 
+
+<div style="margin-top:32px;margin-bottom:24px">
+  <div class="right-box">
+    <div class="reservation">
+      <div>
+        <div>
+          <div>
+            <span>
+              <span class="price">
+                <span>¥ 10,871</span>
+              </span>
+              <span class="stay">
+                <span>/1泊</span>
+              </span>
+            </span>
+          </div>
+          <button type="button" class="right-review" aria-label="すべてのレビューを読む" aria-busy="false">
+            <span class="rating-star">
+              <i class="star-actived rate-100">★★★★★</i>
+            </span>
+            <span class="review-count">
+              <span>150</span>
+            </span>
+          </button>
+          <div class="line-parent">
+            <div class="line"></div>
+          </div>
+        </div>
+
         <%= form_for(@reservation, :url => {:controller => :reservations, :action => :coming}) do |f| %>
         <%= f.label :check_in, "チェックイン", class: 'message-new-left1' %>
         <%= f.date_field :check_in, class: 'DateInput__input needsclick' %>
