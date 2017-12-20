@@ -25,14 +25,6 @@ body {
     border-bottom: 1px solid #DBDBDB !important;
 }
 
-.is-fixed {
-  position: fixed;
-  top: 0;
-  padding-left: 24px;
-  padding-right: 24px;
-  z-index: 2;
-  width: 100%;
-}
 
 .jumbotron-show {
   background-image: image-url("brick_house.webp");
@@ -617,10 +609,6 @@ margin-top: 0em;
   .account1 {
     margin-top: 10px;
   }
-}
-.is-fixed2 {
-  position: fixed;
-  top: 61px;
 }
 
 .footer2 {

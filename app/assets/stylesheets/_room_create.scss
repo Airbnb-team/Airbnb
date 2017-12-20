@@ -42,18 +42,6 @@
   float: left;
 }
 
-.toppage-become-message-btn{
-	height: 80px;
-	line-height: 80px;
-  background: transparent;
-  border: none;
-  color: inherit;
-  display: inline-block;
-  text-decoration: none;
-  padding: 0 16px;
-  float: left;
-}
-
 .toppage-header-content{
 	height: 80px;
 	line-height: 80px;
@@ -75,6 +63,11 @@
     vertical-align: middle;
     width: 28px;
     height: 28px;
+}
+
+.toppage-favorite-title{
+	font-weight: bold;
+	background-color: #DDDDDD;
 }
 
 .toppage-title{
@@ -189,7 +182,7 @@
 
 .toppage-host-left-content{
 	float: left;
-	width: 400px;
+	width: 40%;
 }
 
 .toppage-host-intro{
@@ -214,6 +207,7 @@
   letter-spacing: -0.2px;
   color: #484848;
   font-weight: 300;
+  padding: 10px 0;
 }
 
 .toppage-host-intro-btn{
@@ -223,7 +217,6 @@
 .toppage-host-btn{
   display: inline-block;
   border: 2px solid transparent;
-  border-radius: 4px;
   font-size: 19px;
   line-height: 22px;
   padding-top: 12px;
@@ -233,6 +226,19 @@
   padding-right: 24px;
   padding-left: 24px;
   background: #008489;
+  border-radius: 5px;
+}
+
+.toppage-host{
+  display: inline-block;
+  font-size: 19px;
+  line-height: 22px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  color: #ffffff;
+  font-weight: 700;
+  padding-right: 24px;
+  padding-left: 24px;
 }
 
 .toppage-host-title{
@@ -259,17 +265,13 @@
 	right: 8px;
 	position: absolute;
 	color: red;
+	opacity: 0.7;
 }
 
 .full-heart{
 	top: 8px;
 	right: 8px;
 	position: absolute;
-	color: gray;
-}
-
-.fa {
-	opacity: 0.6;
 }
 
 
