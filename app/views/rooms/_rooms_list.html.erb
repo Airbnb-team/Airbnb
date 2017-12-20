@@ -3,8 +3,8 @@
     <div class="card" style="width: 20rem;">
       <img class="card-img-top" src="<%= asset_path "image0.jpeg" %>" alt="Card image ca">
       <div class="card-body">
-        <p class="card-text font-weight-bold">
-          <%= link_to location.room.explanatories[0].title, '/rooms/:id' %>
+        <p class="card-text font-weight-bold"> 
+          <%= link_to location.room.explanatories[0].title, room_path(location.room.explanatories[0].id) %>
         </p>
       </div>
     </div>

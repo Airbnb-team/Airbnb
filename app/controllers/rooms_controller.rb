@@ -12,7 +12,6 @@ class RoomsController < ApplicationController
 		@search = @locations.ransack(params[:q])
 		@location_results = @search.result
     @arrRooms = @location_results.to_a
-    # binding.pry
 	end
 
 	def new
@@ -43,9 +42,12 @@ class RoomsController < ApplicationController
 	end
 
 	def show
+
 		@room = Room.find(params[:id])
 		@rooms = Room.all
 		@reservation = Reservation.new
+		gon.latitude = @room.locations[0].latitude
+		gon.longitude = @room.locations[0].longitude
 	end
 
 	def update
