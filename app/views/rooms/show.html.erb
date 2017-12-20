@@ -228,6 +228,158 @@
             <div class="room-showppage-location-font">詳しい住所はご予約後にお知らせします。</div>
           </div>
         </div>
+        
+        <%= form_for(@reservation, :url => {:controller => :reservations, :action => :coming}) do |f| %>
+        <%= f.label :check_in, "チェックイン", class: 'message-new-left1' %>
+        <%= f.date_field :check_in, class: 'DateInput__input needsclick' %>
+        <%= f.label :check_out, "チェックアウト", class: 'message-new-left1' %>
+        <%= f.date_field :check_out, class: 'DateInput__input needsclick' %>
+        <%= f.label :guest_count, "ゲスト", class: 'message-new-left1' %>
+        <%= f.select :guest_count, [["ゲスト1人", "1"],["ゲスト2人","2"],["ゲスト3人","3"],["ゲスト4人","4"]], {}, :class => 'messages-guest-select' %>
+        <%= f.hidden_field :room_id, class: 'show_pass_roomid', :value => params[:id] %>
+        <%= f.submit "予約する", class: "reserve1"%>
+        <% end %>
+
+        <!-- <%= form_for('/messages/new/', method: :get) do %>
+          <div class="contents row">
+            <div class="booking-parent">
+              <div class="booking">
+                <div>
+                  <label class="booking_date">
+                    <small class="date_book">
+                      <span>日付</span>
+                    </small>
+                  </label>
+                  <div class="DatePickerContainer">
+                    <div class="DateRangePicker">
+                        <div class="DateRangePickerInput">
+                          <div class="DateInput DateInput--open-down">
+                            <input type="text" aria-label="チェックイン" class="DateInput__input needsclick" id="datepicker" name="checkin" value="" placeholder="チェックイン" autocomplete="off" aria-describedby="DateInput__screen-reader-message-checkin">
+                            <p id="DateInput__screen-reader-message-checkin" class="screen-reader-only">
+                            </p>
+                            <div class="DateInput__display-text"></div>
+                          </div>
+                          <div class="DateInput DateInput--open-down">
+                            <input type="text" aria-label="チェックアウト" class="DateInput__input needsclick" id="datepicker1" name="checkout" value="" placeholder="チェックアウト" autocomplete="off" aria-describedby="DateInput__screen-reader-message-checkout">
+                            <p id="DateInput__screen-reader-message-checkout" class="screen-reader-only">
+                            </p>
+                            <div class="DateInput__display-text"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="guest-parent">
+                <div class="guest">
+                  <div>
+                    <label class="guest_number">
+                      <small class="guest_count">
+                        <span>ゲスト</span>
+                      </small>
+                    </label>
+                    <div class="GuestPickerContainer">
+                      <div class="GuestRangePicker">
+                        <div>
+                          <div class="GuestRangePickerInput">
+                            <div class="GuestInput GuestInput--open-down">
+                              <input type="text" aria-label="ゲスト１人" class="DateInput__input" id="guestnum" name="guestcount" value="" placeholder="ゲスト１人" autocomplete="off" aria-describedby="GuestInput__screen-reader-message-checkin">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="reserve">
+                <button type="submit" class="reserve1" aria-busy="false" data-veloute="book-it-button">
+                  <span class="reserve2">
+                    <span>予約する</span>
+                  </span>
+                </button>
+                <div class="account">
+                  <div class="account1">
+                    <small class="account2">
+                      <span>まだ請求は発生しません</span>
+                    </small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %> -->
+
+
+
+
+
+
+  </div>
+</div>
+</div>
+</div>
+
+
+<footer class="footer-show">
+  <div class="footer-content">
+    <div class="footer-role">
+      <div class="select-content">
+        <div class="dropdown">
+          <button class="btn btn-lg dropdown-toggle laguage-style rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">日本語</button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">English</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="btn btn-lg dropdown-toggle money-style rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">日本円</button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">米ドル</a>
+          </div>
+        </div>
+      </div>
+      <div class="intoroduction-content1">
+        <div class=" p p-style0">Airbnb<br>
+          <br>
+          <a>会社情報</a><br>
+          <a>採用情報</a><br>
+          <a>プレス</a><br>
+          <a>ポリシー</a><br>
+          <a>ヘルプ</a><br>
+          <a>ダイバーシティ＆ビロンギング</a><br>
+        </div>
+      </div>
+      <div class="intoroduction-content2">
+        <div class="p p-style0">スタッフのおすすめ<br>
+          <br>
+          <a>信頼＆安全</a><br>
+          <a>旅行クーポン</a><br>
+          <a>Airbnb Citizen</a><br>
+          <a>出張</a><br>
+          <a>ガイドブック</a><br>
+          <a>Airbnbmag </a><br>
+        </div>
+      </div>
+      <div class="intoroduction-content3">
+        <div class="p p-style0">ホスティング<br>
+          <br>
+          <a>ホストになる理由</a><br>
+          <a>ホストに招待</a><br>
+          <a>おもてなしの心</a><br>
+          <a>ホストの責任</a><br>
+          <a>コミュニティセンター</a><br>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="copyright-left">@Airbnb_Team</div>
+      <div class="copyright-right">
+        <a>利用規約</a>
+        <a>プライバシー</a>
+        <a>サイトマップ</a>
+        <i class="fa fa-facebook icon-style1" aria-hidden="true"></i>
+        <i class="fa fa-twitter icon-style1" aria-hidden="true"></i>
+        <i class="fa fa-instagram icon-style1" aria-hidden="true"></i>
       </div>
     </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
