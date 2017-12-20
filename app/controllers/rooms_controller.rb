@@ -7,16 +7,12 @@ class RoomsController < ApplicationController
 
 	def index
 		session[:loc_search] = params[:search]
-		@houses = session[:loc_search]
-		 @locations = Location.where('country LIKE(?)', "%#{params[:search]}%").limit(20)
+		@locations = Location.all.near(session[:loc_search], 5, order:'distance')
 
-
-		# @room_address = Location.where(active: true).near(session[:loc_search], 5, order:'distance')
-		# @search = @room_address.ransack(params[:q])
-		# @rooms = @search.result
-
-		# @locations = Location.new
-
+		@search = @locations.ransack(params[:q])
+		@location_results = @search.result
+    @arrRooms = @location_results.to_a
+    # binding.pry
 	end
 
 	def new

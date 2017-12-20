@@ -4,7 +4,7 @@ $(function() {
       $nav = $('.navbarfirst'),
       $main1 = $('.right-box'),
       navHeight = $nav.outerHeight(),
-      navPos = $nav.offset().top,
+      navPos = $nav.offset(),
       fixedClass = 'is-fixed';
       fixed2Class = 'is-fixed2';
 
