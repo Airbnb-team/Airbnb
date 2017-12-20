@@ -228,7 +228,6 @@
             <div class="room-showppage-location-font">詳しい住所はご予約後にお知らせします。</div>
           </div>
         </div>
-        
         <%= form_for(@reservation, :url => {:controller => :reservations, :action => :coming}) do |f| %>
         <%= f.label :check_in, "チェックイン", class: 'message-new-left1' %>
         <%= f.date_field :check_in, class: 'DateInput__input needsclick' %>
