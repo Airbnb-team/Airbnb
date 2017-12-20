@@ -15,7 +15,6 @@
 //= require popper
 //= require bootstrap
 //= require dropzone
-//= require turbolinks
 //= require underscore
 //= require gmaps/google
 //= require geocomplete
