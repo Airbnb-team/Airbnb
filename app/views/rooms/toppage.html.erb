@@ -4,78 +4,11 @@
     <title>Airbnb</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="assets/dropdown.js" type="text/javascript"></script>
   </head>
 
-  <header class="toppage-header">
-    <button type="button" class="toppage-header-btn">
-      <%= render partial: 'rooms/airbnb-icon' %>
-    </button>
-    <div class="toppage-header-left">
-      <%= form_tag search_rooms_path, method: :get do %>
-        <div class="input-group">
-          <%= text_field_tag :search, params[:keyword], class: 'toppage-serach-field', placeholder: '「シアトル」などエリアを入力', id: "autolocation2" %>
-        </div>
-      <% end %>
-    </div>
-    <div class="toppage-header-right">
-      <% if user_signed_in? && current_user.rooms %>
-        <%= button_tag type: 'button', onclick: "link_to('#{edit_room_path(current_user.rooms)}')", class:'toppage-become-host-btn' do %>
-          <span>ホスト</span>
-        <% end %>
-        <div class="toppage-header-content">
-          <%= link_to 'アカウント作成', "/", style: "color:#484848;"%>
-        </div>
-        <%= button_tag type: 'button', onclick: "link_to('#{root_path(current_user)}')", class:'toppage-become-message-btn' do %>
-          <span>メッセージ</span>
-        <% end %>
-        <div class="toppage-header-content">
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, style: "color:#484848;" %>
-        </div>
-        <%= link_to("/users/#{current_user.id}/edit") do %>
-          <div class="toppage-header-content">
-            <div class="toppage-avator">
-              <img alt="" height="28" src="https://a0.muscache.com/defaults/user_pic-50x50.png?v=3" width="28">
-            </div>
-          </div>
-        <% end %>
-      <% elsif user_signed_in? %>
-        <%= button_tag type: 'button', onclick: "link_to('#{introduce_rooms_path(current_user)}')", class:'toppage-become-host-btn' do %>
-          <span>ホストをはじめる</span>
-        <% end %>
-        <div class="toppage-header-content">
-          <%= link_to 'アカウント作成', "/", style: "color:#484848;"%>
-        </div>
-        <%= button_tag type: 'button', onclick: "link_to('#{group_message_path(current_user)}')", class:'toppage-become-message-btn' do %>
-          <span>メッセージ</span>
-        <% end %>
-        <div class="toppage-header-content">
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, style: "color:#484848;" %>
-        </div>
-        <%= link_to("/users/#{current_user.id}/edit") do %>
-          <div class="toppage-header-content">
-            <div class="toppage-avator">
-              <img alt="" height="28" src="https://a0.muscache.com/defaults/user_pic-50x50.png?v=3" width="28">
-            </div>
-          </div>
-        <% end %>
-        </div>
-      <% else %>
-        <div class="toppage-header-content">
-          <%= button_tag type: 'button', onclick: "link_to('#{introduce_rooms_path(current_user)}')", class:'toppage-become-host-btn' do %>
-            <span>ホストをはじめる</span>
-          <% end %>
-        <div class="toppage-header-content">
-          <%= link_to 'アカウント作成', "introduce_rooms_path", style: "color:#484848;" %>
-        </div>
-        <div class="toppage-header-content">
-          <%= link_to "ログイン", new_user_session_path, method: :post, style: "color:#484848;" %>
-        </div>
-      <% end %>
-    </div>
-  </header>
-
-   <body>
+  <body>
+    <%= render partial: 'shared/header' %>
     <div class="toppage-main-content">
       <div class="toppage-container">
         <div class="toppage-title">Airbnbで探す</div>
@@ -159,9 +92,6 @@
         </div>
       </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   </body>
   <%= render partial: 'shared/footer' %>
 </html>

@@ -1,18 +1,19 @@
 @import "bootstrap";
 @import "font-awesome";
-@import "style";
-@import "style1";
+@import "dropzone/dropzone";
 @import "style2";
+@import "./room_create";
+@import "./room_show";
 @import "./user";
 @import "./form";
 @import "./rooms";
 @import "./rooms_update";
-@import "font-awesome";
 @import "./styleEdit.scss";
 @import "./editprice.scss";
 @import "./message-container";
 @import "./messages_new";
-@import "dropzone/dropzone";
+@import "./dropdown";
+@import "./modal";
 
 /*
  *= require font-awesome

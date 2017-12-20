@@ -1,0 +1,35 @@
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <%= image_tag @room.photos.first.image, class: "photo-size" %>
+    </div>
+     <div class="carousel-item">
+     	<% if @room.photos.second.image? %>
+      	<%= image_tag @room.photos.second.image, class: "photo-size" %>
+      <% else %>
+        <%= image_tag "" %>
+      <% end %>
+    </div>
+    <div class="carousel-item">
+    	<% if @room.photos.third.image? %>
+      	<%= image_tag @room.photos.third.image, class: "photo-size" %>
+      <% end %>
+    </div>
+    <div class="carousel-item">
+    	<% if @room.photos.fourth.image? %>
+      	<%= image_tag @room.photos.fourth.image, class: "photo-size" %>
+      <% end %>
+    </div>
+    <div class="carousel-item">
+    	<% if @room.photos.fifth.image? %>
+      	<%= image_tag @room.photos.fifth.image, class: "photo-size" %>
+      <% end %>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="fa fa-chevron-circle-left fa-2x"></span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="fa fa-chevron-circle-right fa-2x"></span>
+  </a>
+</div>
