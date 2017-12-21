@@ -621,7 +621,7 @@ textarea {
 }
 
 .display-map {
-  float: right;
+  // float: right;
 }
 
 .rooms-button {
@@ -631,4 +631,18 @@ textarea {
 
 .search-house-name {
   font-size: 20px;
+}
+
+.row-5 {
+    width: 35%;
+    float: left;
+}
+
+.contents-wrapper {
+  width: 1000px;
+}
+
+.right-right {
+  width: 440px;
+  height: 670px;
 }
