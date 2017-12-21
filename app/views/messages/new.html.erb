@@ -53,7 +53,7 @@
       <div class="reservation-text-box">
         <%= @messagebody %>
       </div>
-      <%= form_for(@message, :url => {:controller => :messages, :action => :create}) do |f| %>
+      <%= form_for(@message, :url => {:controller => :messages, :action => :prereserve}) do |f| %>
         <%= f.hidden_field :body %>
         <%= fields_for @group do |t| %>
           <%= t.hidden_field :name, class: 'DateInput__input needsclick' %>

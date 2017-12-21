@@ -1,9 +1,18 @@
 class MessagesController < ApplicationController
 
   def index
+    @group = Group.find(params[:group_id])
+    @message = Message.new
+    @reservation = Reservation.new
   end
 
   def create
+
+
+
+  end
+
+  def prereserve
     @group = Group.new(group_params)
     @group.save
     @message = Message.new(message_params)
