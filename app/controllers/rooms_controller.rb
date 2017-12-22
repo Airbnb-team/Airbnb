@@ -47,8 +47,11 @@ class RoomsController < ApplicationController
   def dashboard
   end
 
-	def show
+  def landing
+  	@room = Room.find(params[:format])
+  end
 
+	def show
 		@room = Room.find(params[:id])
 		@rooms = Room.all
 		@reservation = Reservation.new
