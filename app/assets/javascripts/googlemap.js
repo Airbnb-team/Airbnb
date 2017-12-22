@@ -142,8 +142,8 @@ function markerEvent(i, marker) {
 
 // 表示を行うhtmlの形成
 function buildAddUserInfo(name){
-  var html = `
-    <p>${name}</p>
-  `;
+  var html =
+    '<p>' + name + '</p>'
+  ;
   return html;
 }
