@@ -53,9 +53,10 @@
           <h9>必須項目</h9>
         </div>
         <div class="panel-body">
-            <%= form_for(resource, as: resource_name, url: registration_path(resource_name), method: :patch ) do |f| %>
-            <table>
-              <tr>
+          <%= form_for @user do |f| %>
+
+          <table>
+            <tr>
               <div class="form-group">
                 <td><span>名前：</span></td>
                 <td><%= f.text_field :name, autofocus: true, :placeholder => "名前", :class => 'form-control' %></td>
@@ -70,12 +71,10 @@
             <tr>
               <div class="form_group">
                 <td><span>生年月日：</span></td>
-                <td><%= form_for :birthday do |f| %>
-                <%= f.datetime_select :birthday, :use_month_numbers => true, :start_year => 1900, :end_year => Time.now.year, :discard_hour => true, :discard_minute => true %>
-                <% end %></td>
+                <td><%= f.datetime_select :birthday, :use_month_numbers => true, :start_year => 1900, :end_year => Time.now.year, :discard_hour => true, :discard_minute => true %></td>
               </div>
-                </tr>
-                <tr>
+            </tr>
+            <tr>
               <div class="form-group">
                 <td><span>メールアドレス：</span></td>
                 <td><%= f.email_field :email, :placeholder => "Email", :class => 'form-control' %></td>
@@ -118,10 +117,10 @@
               </div>
             </tr>
           </table>
-              <div class="actions">
-                <%= f.submit "プロフィールを更新", :class => "btn btn-primary" %>
-              </div>
-            <% end %>
+          <div class="actions">
+            <%= f.submit "プロフィールを更新", :class => "btn btn-primary" %>
+          </div>
+          <% end %>
         </div>
       </div>
     </div>
