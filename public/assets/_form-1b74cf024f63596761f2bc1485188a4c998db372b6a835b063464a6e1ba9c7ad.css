@@ -1,0 +1,23 @@
+/* line 1, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_form.scss */
+.form_wrapper {
+  line-height: 50px;
+  display: block;
+  text-align: center;
+}
+
+/* line 6, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_form.scss */
+.original_css {
+  width: 430px;
+  padding: 11px;
+  height: 45px;
+  margin: 0 auto;
+}
+
+/* line 13, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_form.scss */
+.buttoncss_original {
+  background-color: #FF5A5F;
+  border-color: #FF5A5F;
+  width: 430px;
+  padding: 11px;
+  height: 45px;
+}
