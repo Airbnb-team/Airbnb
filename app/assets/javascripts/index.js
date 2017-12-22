@@ -18,13 +18,6 @@ $(function() {
     search_list.append(html);
   }
 
-  // var search_group_field = $("input-group input-group-rooms-style resize");
-  //
-  // function addTitles(titles) {
-  //   var html = `<input type="text" name="serach" class="rooms-search" value="${explanatory.title}">`;
-  //   search_group_field.append(html);
-  // }
-
   $(".rooms-search").on("keyup", function() {
     var input = $(".rooms-search").val();
 
