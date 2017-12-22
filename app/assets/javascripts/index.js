@@ -7,14 +7,14 @@ $(function() {
   function appendLocation(location) {
    var html = '<div class="search-option1">' +
                 '<button class="aaaaa" data-user-id=' + location.id + '>' + location.country + '</div>' +
-                '</div>'
+                '</div>';
    search_list.append(html);
   }
 
   function appendNoLocation(location) {
     var html = '<div class="search-option">' +
                  '<div class="aaa">' + location.city + '</div>' +
-                 '</div>'
+                 '</div>';
     search_list.append(html);
   }
 
