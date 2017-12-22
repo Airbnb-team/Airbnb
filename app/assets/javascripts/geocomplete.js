@@ -6,9 +6,36 @@
  * @license MIT License <http://www.opensource.org/licenses/mit-license.php>
  */
 
-
+// # $.geocomplete()
+// ## jQuery Geocoding and Places Autocomplete Plugin
+//
+// * https://github.com/ubilabs/geocomplete/
+// * by Martin Kleppe <kleppe@ubilabs.net>
 
 (function($, window, document, undefined){
+
+  // ## Options
+  // The default options for this plugin.
+  //
+  // * `map` - Might be a selector, an jQuery object or a DOM element. Default is `false` which shows no map.
+  // * `details` - The container that should be populated with data. Defaults to `false` which ignores the setting.
+  // * 'detailsScope' - Allows you to scope the 'details' container and have multiple geocomplete fields on one page. Must be a parent of the input. Default is 'null'
+  // * `location` - Location to initialize the map on. Might be an address `string` or an `array` with [latitude, longitude] or a `google.maps.LatLng`object. Default is `false` which shows a blank map.
+  // * `bounds` - Whether to snap geocode search to map bounds. Default: `true` if false search globally. Alternatively pass a custom `LatLngBounds object.
+  // * `autoselect` - Automatically selects the highlighted item or the first item from the suggestions list on Enter.
+  // * `detailsAttribute` - The attribute's name to use as an indicator. Default: `"name"`
+  // * `mapOptions` - Options to pass to the `google.maps.Map` constructor. See the full list [here](http://code.google.com/apis/maps/documentation/javascript/reference.html#MapOptions).
+  // * `mapOptions.zoom` - The inital zoom level. Default: `14`
+  // * `mapOptions.scrollwheel` - Whether to enable the scrollwheel to zoom the map. Default: `false`
+  // * `mapOptions.mapTypeId` - The map type. Default: `"roadmap"`
+  // * `markerOptions` - The options to pass to the `google.maps.Marker` constructor. See the full list [here](http://code.google.com/apis/maps/documentation/javascript/reference.html#MarkerOptions).
+  // * `markerOptions.draggable` - If the marker is draggable. Default: `false`. Set to true to enable dragging.
+  // * `markerOptions.disabled` - Do not show marker. Default: `false`. Set to true to disable marker.
+  // * `maxZoom` - The maximum zoom level too zoom in after a geocoding response. Default: `16`
+  // * `types` - An array containing one or more of the supported types for the places request. Default: `['geocode']` See the full list [here](http://code.google.com/apis/maps/documentation/javascript/places.html#place_search_requests).
+  // * `blur` - Trigger geocode when input loses focus.
+  // * `geocodeAfterResult` - If blur is set to true, choose whether to geocode if user has explicitly selected a result before blur.
+  // * `restoreValueAfterBlur` - Restores the input's value upon blurring. Default is `false` which ignores the setting.
 
   var defaults = {
     bounds: true,
@@ -38,7 +65,8 @@
     restoreValueAfterBlur: false
   };
 
-
+  // See: [Geocoding Types](https://developers.google.com/maps/documentation/geocoding/#Types)
+  // on Google Developers.
   var componentTypes = ("street_address route intersection political " +
     "country administrative_area_level_1 administrative_area_level_2 " +
     "administrative_area_level_3 colloquial_area locality sublocality " +
@@ -47,7 +75,8 @@
     "lat lng viewport location " +
     "formatted_address location_type bounds").split(" ");
 
-  
+  // See: [Places Details Responses](https://developers.google.com/maps/documentation/javascript/places#place_details_responses)
+  // on Google Developers.
   var placesDetails = ("id place_id url website vicinity reference name rating " +
     "international_phone_number icon formatted_phone_number").split(" ");
 
@@ -81,7 +110,9 @@
       this.initLocation();
     },
 
-
+    // Initialize the map but only if the option `map` was set.
+    // This will create a `map` within the given container
+    // using the provided `mapOptions` or link to the existing map instance.
     initMap: function(){
       if (!this.options.map){ return; }
 
@@ -123,7 +154,9 @@
       );
     },
 
-
+    // Add a marker with the provided `markerOptions` but only
+    // if the option was set. Additionally it listens for the `dragend` event
+    // to notify the plugin about changes.
     initMarker: function(){
       if (!this.map){ return; }
       var options = $.extend(this.options.markerOptions, { map: this.map });
@@ -163,12 +196,13 @@
 
       this.geocoder = new google.maps.Geocoder();
 
-
+      // Bind autocomplete to map bounds but only if there is a map
+      // and `options.bindToMap` is set to true.
       if (this.map && this.options.bounds === true){
         this.autocomplete.bindTo('bounds', this.map);
       }
 
-
+      // Watch `place_changed` events on the autocomplete input field.
       google.maps.event.addListener(
         this.autocomplete,
         'place_changed',
@@ -249,7 +283,8 @@
       this.details = details;
     },
 
-
+    // Set the initial location of the plugin if the `location` options was set.
+    // This method will care about converting the value into the right format.
     initLocation: function() {
 
       var location = this.options.location, latLng;
@@ -289,7 +324,8 @@
       this.$input.unbind('.' + this._name);
     },
 
-
+    // Look up a given address. If no `address` was specified it uses
+    // the current value of the input.
     find: function(address){
       this.geocode({
         address: address || this.$input.val()
@@ -367,11 +403,14 @@
       }
     },
 
-
+    // Triggers a given `event` with optional `arguments` on the input.
     trigger: function(event, argument){
       this.$input.trigger(event, [argument]);
     },
 
+    // Set the map to a new center by passing a `geometry`.
+    // If the geometry has a viewport, the map zooms out to fit the bounds.
+    // Additionally it updates the marker position.
     center: function(geometry){
       if (geometry.viewport){
         this.map.fitBounds(geometry.viewport);
@@ -404,7 +443,9 @@
       this.trigger("geocode:result", result);
     },
 
-
+    // Populate the provided elements with new `result` data.
+    // This will lookup all elements that has an attribute with the given
+    // component type.
     fillDetails: function(result){
 
       var data = {},
@@ -447,7 +488,9 @@
       this.data = data;
     },
 
-
+    // Assign a given `value` to a single `$element`.
+    // If the element is an input, the value is set, otherwise it updates
+    // the text content.
     setDetail: function($element, value){
 
       if (value === undefined){
@@ -513,12 +556,16 @@
     }
   });
 
-
+  // A plugin wrapper around the constructor.
+  // Pass `options` with all settings that are different from the default.
+  // The attribute is used to prevent multiple instantiations of the plugin.
   $.fn.geocomplete = function(options) {
 
     var attribute = 'plugin_geocomplete';
 
-
+    // If you call `.geocomplete()` with a string as the first parameter
+    // it returns the corresponding property or calls the method with the
+    // following arguments.
     if (typeof options == "string"){
 
       var instance = $(this).data(attribute) || $(this).geocomplete().data(attribute),
