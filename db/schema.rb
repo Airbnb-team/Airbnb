@@ -12,21 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20171218091424) do
 
-  create_table "Explanatories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "title",                              null: false
-    t.text     "overview",             limit: 65535, null: false
-    t.text     "space",                limit: 65535, null: false
-    t.text     "guest_access",         limit: 65535, null: false
-    t.text     "guest_interraction",   limit: 65535, null: false
-    t.text     "other_things_to_note", limit: 65535, null: false
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
-    t.integer  "room_id"
-    t.integer  "user_id"
-    t.index ["room_id"], name: "index_explanatories_on_room_id", using: :btree
-    t.index ["user_id"], name: "index_explanatories_on_user_id", using: :btree
-  end
-
   create_table "amenities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.boolean  "pet"
     t.boolean  "elevator"
@@ -103,6 +88,21 @@ ActiveRecord::Schema.define(version: 20171218091424) do
     t.integer  "room_id"
     t.index ["room_id"], name: "index_bedrooms_on_room_id", using: :btree
     t.index ["user_id"], name: "index_bedrooms_on_user_id", using: :btree
+  end
+
+  create_table "explanatories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "title",                              null: false
+    t.text     "overview",             limit: 65535, null: false
+    t.text     "space",                limit: 65535, null: false
+    t.text     "guest_access",         limit: 65535, null: false
+    t.text     "guest_interraction",   limit: 65535, null: false
+    t.text     "other_things_to_note", limit: 65535, null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.integer  "room_id"
+    t.integer  "user_id"
+    t.index ["room_id"], name: "index_explanatories_on_room_id", using: :btree
+    t.index ["user_id"], name: "index_explanatories_on_user_id", using: :btree
   end
 
   create_table "favorites", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -261,14 +261,14 @@ ActiveRecord::Schema.define(version: 20171218091424) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "Explanatories", "rooms"
-  add_foreign_key "Explanatories", "users"
   add_foreign_key "amenities", "rooms"
   add_foreign_key "amenities", "users"
   add_foreign_key "bathrooms", "rooms"
   add_foreign_key "bathrooms", "users"
   add_foreign_key "bedrooms", "rooms"
   add_foreign_key "bedrooms", "users"
+  add_foreign_key "explanatories", "rooms"
+  add_foreign_key "explanatories", "users"
   add_foreign_key "locations", "rooms"
   add_foreign_key "locations", "users"
   add_foreign_key "photos", "rooms"
