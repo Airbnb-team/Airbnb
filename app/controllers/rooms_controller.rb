@@ -34,7 +34,7 @@ class RoomsController < ApplicationController
 	end
 
 	def continue
-		@room = Room.find(params[:id])
+		@room = Room.find(params[:format])
 	end
 
 	def search

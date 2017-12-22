@@ -10,25 +10,8 @@
   </head>
 
   <body>
-  	<div class="landing-header">
-  		<div class="landing-header-left">
-        <div clacc="continue-icon">
-  			 <%= render partial: 'shared/airbnb-icon' %>
-        </div>
-  		</div>
-  		<div class="landing-header-right">
-  			<a class="landing-style" href="#">ホスティングのヘルプを頼もう</a>
-  			<a class="landing-style" href="#">ホスト</a>
-  			<a class="landing-style" href="#">お気にいり</a>
-  			<a class="landing-style" href="#">旅行</a>
-  			<a class="landing-style" href="#">メッセージ</a>
-  			<a class="landing-style" href="#">ヘルプ</a>
-  			<div class="avator">
-  				<img alt="" height="28" src="https://a0.muscache.com/defaults/user_pic-50x50.png?v=3" width="28">
-  			</div>
-  		</div>
-  	</div>
-
+  	<%= render partial: 'shared/header' %>
+    <div class="continuepage-space"></div>
   	<div class="landing-content">
   		<div class="landing-left-content">
   			<div class="space">
@@ -54,7 +37,7 @@
   				</h3>
   				<div class="landing-text-style1">写真、概要、タイトル</div>
   			</div>
-				<%= link_to '続行', new_room_photo_path(@room), class: 'landing-btn' %>
+				<%= link_to '続行', new_room_photo_path(@room), class: 'landing-btn', style: "color:white;" %>
   			<hr>
   			<div class="landing-step-collection">
   				<strong class="landing-text-style3">ステップ３</strong>
