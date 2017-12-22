@@ -8,15 +8,7 @@ class RoomsController < ApplicationController
 	def index
 		session[:loc_search] = params[:search]
 		@houses = session[:loc_search]
-		 @locations = Location.where('country LIKE(?)', "%#{params[:search]}%").limit(20)
-
-
-		# @room_address = Location.where(active: true).near(session[:loc_search], 5, order:'distance')
-		# @search = @room_address.ransack(params[:q])
-		# @rooms = @search.result
-
-		# @locations = Location.new
-
+		@locations = Location.where('country LIKE(?)', "%#{params[:search]}%").limit(20)
 	end
 
 	def new
@@ -32,6 +24,12 @@ class RoomsController < ApplicationController
 		end
 	end
 
+	def show
+		@room = Room.find(params[:id])
+		@rooms = Room.all
+		@reservation = Reservation.new
+	end
+
 	def continue
 		@room = Room.find(params[:format])
 	end
@@ -43,16 +41,22 @@ class RoomsController < ApplicationController
   def introduce
   end
 
-	def edit
-	end
+  def dashboard
+  end
 
-	def show
+  def landing
+  	@room = Room.find(params[:format])
+  end
+
+	def edit
 		@room = Room.find(params[:id])
-		@rooms = Room.all
-		@reservation = Reservation.new
 	end
 
 	def update
+		@room = Room.find(params[:id])
+		if @room.update(room_params)
+			redirect_to edit_room_bedroom_path(@room)
+		end
 	end
 
 	private

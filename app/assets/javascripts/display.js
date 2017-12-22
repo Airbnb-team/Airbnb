@@ -15,3 +15,12 @@ $(function(){
 		$('.room-amenity-area').hide();
 	});
 });
+
+$(function(){
+	$('.listing-amenity-display').click(function(){
+		$('.room-amenity-area').show();
+	});
+	$('.listing-amenity-hidden').click(function(){
+		$('.room-amenity-area').hide();
+	});
+});

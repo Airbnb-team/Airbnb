@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <title>Airbnb</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </head>
+
+  <body>
+    <%= render partial: 'shared/host_header' %>
+    <div class="container room-edit-space">
+      <%= form_for [@room, @bedroom] do |f| %>
+        <div class="row">
+          <div class="listing-edit-title">ベッドルームの情報</div>
+          <div class="col-md-12">
+            <h5>定員</h5>
+            <%= f.select :capacity_count, { １人: '1', ２人: '2', ３人: '3', ４人: '4', ５人: '5' } , {}, {class: 'rooms-select-control'}  %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <h5>ゲストが使用できるベッドルーム数は？</h5>
+            <%= f.select :rooms_count, { １ベッドルーム: '1', ２ベッドルーム: '2', ３ベッドルーム: '3', ４ベッドルーム: '4', ５ベッドルーム: '5' } , {}, {class: 'rooms-select-control'}  %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <h5>ゲスト用のベッド台数は？</h5>
+            <%= f.select :beds_count, { １台: '1', ２台: '2', ３台: '3', ４台: '4', ５台: '5' } , {}, {class: 'rooms-select-control'}  %>
+          </div>
+        </div>
+      </div>
+      <div class="main-panel-action-wrapper">
+        <div class="container room-edit-bottom-space">
+          <%= link_to '← 戻る', edit_room_path(current_user), class: 'h5 rooms-back-font' %>
+          <%= f.submit '次へ', class: 'rooms-update-btn' %>
+        </div>
+      </div>
+    <% end %>
+  </body>
+
+</html>

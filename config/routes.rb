@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   end
   resources :favorites, only: [:index]
 
-  resources :rooms, only: [:index, :new, :create, :edit, :show, :update] do
+  resources :rooms, only: [:index, :new, :create, :show, :edit, :update] do
     collection do
       get 'continue'
     end
@@ -28,6 +28,12 @@ Rails.application.routes.draw do
     collection do
       get 'introduce'
     end
+    collection do
+      get 'dashboard'
+    end
+    collection do
+      get 'landing'
+    end
   	resources :bedrooms, only: [:new, :create, :edit, :update]
   	resources :bathrooms, only: [:new, :create, :edit, :update]
   	resources :locations, only: [:new, :create, :show, :edit, :update]
@@ -36,7 +42,7 @@ Rails.application.routes.draw do
     resources :explanatories, only: [:new, :create, :edit, :update]
     resources :rules, only: [:new, :create, :edit, :update]
     resources :prices, only: [:new, :create, :edit, :update]
-    resources :favorites, only: [:create, :destroy]
+    resources :favorites, only: [:index, :create]
   end
 
   resources :reservations do

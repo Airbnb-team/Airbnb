@@ -16,9 +16,16 @@ class RulesController < ApplicationController
 	end
 
 	def edit
+		@room = Room.find(params[:room_id])
+	  @rule = @room.rules.find(params[:id])
 	end
 
 	def update
+		@room = Room.find(params[:id])
+    @rule = @room.rules.find(params[:id])
+    if @rule.update(rule_params)
+      redirect_to landing_rooms_path(@room)
+    end
 	end
 
 	private

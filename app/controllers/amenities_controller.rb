@@ -16,10 +16,17 @@ class AmenitiesController < ApplicationController
 	end
 
 	def edit
+    @room = Room.find(params[:room_id])
+    @amenity = @room.amenities.find(params[:id])
 	end
 
 	def update
-	end 
+    @room = Room.find(params[:id])
+    @amenity = @room.amenities.find(params[:id])
+      if @amenity.update(amenity_params)
+        redirect_to landing_rooms_path(@room)
+      end
+	end
 
 	private
 

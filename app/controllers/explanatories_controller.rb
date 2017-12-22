@@ -16,9 +16,16 @@ class ExplanatoriesController < ApplicationController
 	end
 
 	def edit
+		@room = Room.find(params[:room_id])
+	  @explanatory = @room.explanatories.find(params[:id])
 	end
 
 	def update
+		@room = Room.find(params[:id])
+    @explanatory = @room.explanatories.find(params[:id])
+    if @explanatory.update(explanatory_params)
+      redirect_to landing_rooms_path(@room)
+    end
 	end
 
 	private
