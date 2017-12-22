@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <title>Airbnb</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </head>
+
+  <body>
+    <%= render partial: 'shared/host_header' %>
+    <div class="dashboard-content-space"></div>
+      <div class="container">
+        <div class="row">
+          <div class="dashboard-title-space">
+              <span class="dashboard-title">ホスティング用ダッシュボード</span>
+              <div class="dashboard-btn-space">
+                <%= link_to landing_rooms_path(current_user) do %>
+                  <span class="dashboard-btn", style="color:#ffffff;">リスティングを編集</span>
+                <% end %>
+                <%= link_to edit_room_path(current_user) do %>
+                  <span class="dashboard-btn", style="color:#ffffff;">すべての予約を表示</span>
+                <% end %>
+              </div>
+            </div>
+          <div class="col-md-8">
+            <div class="dashboard-message-space">
+              <div class="dashboard-message-title">保留中リクエスト</div>
+                <span class="dashboard-message-count">新着<%= %>件</span>
+              <div class="dashboard-message-box">
+                <%# if @room.groups.messages.body? %>
+                  <div class="dashboard-message-content">新着の問い合わせやリクエストはありません。</div>
+                  <%#= link_to '「すべてのメッセージ」'  group_message_path %>を見る。
+                <% else %>
+                  <div class="dashboard-message-content">新着の問い合わせやリクエストはありません。</div>
+                  <%#= link_to '「すべてのメッセージ」'  group_message_path %>を見る。
+                <%# end %>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="dashboard-hosting-space">
+              <div class="dashboard-hosting-title">ホスティング概要</div>
+              <div class="dashboard-hosting-exp">最初の予約が入ると、ここにホスティング実績データが出ます。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= render partial: 'shared/footer' %>
+  </body>
+
+</html>

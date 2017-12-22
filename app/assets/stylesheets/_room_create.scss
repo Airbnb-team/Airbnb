@@ -26,7 +26,7 @@
   font-size: 14px;
   color: inherit;
   list-style: none;
-  display: table-cell;;
+  display: table-cell;
   float: right;
 }
 
@@ -53,16 +53,16 @@
 }
 
 .toppage-avator{
-    line-height: 1;
-    border-bottom-color: transparent;
-    background-color: #F2F2F2;
-    box-shadow: 0 0 0 2px #DBDBDB;
-    border-radius: 50%;
-    display: inline-block;
-    overflow: hidden;
-    vertical-align: middle;
-    width: 28px;
-    height: 28px;
+  line-height: 1;
+  border-bottom-color: transparent;
+  background-color: #F2F2F2;
+  box-shadow: 0 0 0 2px #DBDBDB;
+  border-radius: 50%;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: middle;
+  width: 28px;
+  height: 28px;
 }
 
 .toppage-favorite-title{
@@ -522,6 +522,7 @@
 	float: right;
 	padding: 9px 27px;
 	margin-right: 20px;
+	border-radius: 3px;
 }
 
 .rooms-next-btn{

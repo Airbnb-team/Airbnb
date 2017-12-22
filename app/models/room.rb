@@ -12,10 +12,19 @@ class Room < ApplicationRecord
   has_many :explanatories
   has_many :prices
   has_one :group
+
   accepts_nested_attributes_for :photos, allow_destroy: true
 
   def favorite_user(id)
     favorites.find_by(user_id: id)
+  end
+
+  def reject_sub_images(attributed)
+    attributed['image'].blank?
+  end
+
+  def set_main_thumbnail
+    photos.main.first.image
   end
 
 end

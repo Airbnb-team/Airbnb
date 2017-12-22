@@ -16,9 +16,16 @@ class BedroomsController < ApplicationController
 	end
 
 	def edit
+		@room = Room.find(params[:room_id])
+		@bedroom = @room.bedrooms.find(params[:id])
 	end
 
 	def update
+		@room = Room.find(params[:id])
+		@bedroom = @room.bedrooms.find(params[:id])
+		if @bedroom.update(bedroom_params)
+			redirect_to edit_room_bathroom_path(@room)
+		end
 	end
 
 	private
@@ -29,6 +36,6 @@ class BedroomsController < ApplicationController
    	:rooms_count,
    	:beds_count,
    	).merge(room_id: params[:room_id], user_id: current_user.id)
- end
+  end
 
 end

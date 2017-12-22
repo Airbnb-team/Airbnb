@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <title>Airbnb</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </head>
+
+  <body>
+    <%= render partial: 'shared/host_header' %>
+    <div class="container room-edit-space">
+    <%= form_for [@room, @amenity] do |f| %>
+      <div class="row">
+        <div class="listing-edit-title">アメニティ・設備の情報</div>
+        <div class="col-md-12">
+          <div class="listing-amenity-check_box">
+            <label class="rooms-amenity-label"><%= f.check_box 'pet', {}, "true", "false" %>ペット可</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'elevator', {}, "true", "false" %>エレベーター</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'gym', {}, "true", "false" %>ジム</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'doorman', {}, "true", "false" %>ドアマン</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'breakfast', {}, "true", "false" %>朝食</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'suitable_for_events', {}, "true", "false" %>イベントに最適</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'free_parking', {}, "true", "false" %>専用駐車場</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'smoking_allowed', {}, "true", "false" %>喫煙可</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'wheelchair_accessible', {}, "true", "false" %>車椅子可</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'wireless_internet', {}, "true", "false" %>ワイヤレスインターネット</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'hot_tub', {}, "true", "false" %>ジャグジー</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'air_conditioning', {}, "true", "false" %>エアコン</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'kitchen', {}, "true", "false" %>キッチン</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'cable_tv', {}, "true", "false" %>ケーブルテレビ</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'baby_bath', {}, "true", "false" %>ベビーバス</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'baby_monitor', {}, "true", "false" %>ベビーモニター</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'babysitter', {}, "true", "false" %>ベビーシッター</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'bathtub', {}, "true", "false" %>バスタブ</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'changing_table', {}, "true", "false" %>おむつ交換台</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'childrend_books_and_toys', {}, "true", "false" %>絵本＆おもちゃ</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'childrens_dinnerware', {}, "true", "false" %>子供用まえかけ</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'crib', {}, "true", "false" %>ベビーベッド</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'fireplace_guards', {}, "true", "false" %>ストーブガード</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'indoor_fireplace', {}, "true", "false" %>室内暖炉・薪ストーブ・囲炉裏</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'pool', {}, "true", "false" %>プール</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'shampoo', {}, "true", "false" %>シャンプー</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'hangers', {}, "true", "false" %>ハンガー</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'iron', {}, "true", "false" %>アイロン</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'dryer', {}, "true", "false" %>乾燥機</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'hair_dryer', {}, "true", "false" %>ヘアドライヤー</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'Laptop', {}, "true", "false" %>ノートパソコン</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'tv', {}, "true", "false" %>テレビ</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'washer', {}, "true", "false" %>洗濯機</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'heating', {}, "true", "false" %>暖房</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'free_parking_on_street', {}, "true", "false" %>周辺駐車場</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'private_entrance', {}, "true", "false" %>専用玄関</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'ethernet_connection', {}, "true", "false" %>LAN接続</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'game_console', {}, "true", "false" %>ゲーム機</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'high_chair', {}, "true", "false" %>ハイチェア</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'outlet_covers', {}, "true", "false" %>コンセントカバー</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'travel_crib', {}, "true", "false" %>お出かけクリブ</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'room_darkening_shades', {}, "true", "false" %>遮光カーテン</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'stair_gates', {}, "true", "false" %>階段用ベビーゲート</label>
+            <label class="rooms-amenity-label"><%= f.check_box 'table_corner_guards', {}, "true", "false" %>テーブルのコーナーガード</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-panel-action-wrapper">
+      <div class="container room-edit-bottom-space">
+        <%= link_to '← 戻る', landing_rooms_path(current_user), class: 'h5 rooms-back-font' %>
+        <%= f.submit '更新', class: 'rooms-update-btn' %>
+      </div>
+    </div>
+  <% end %>
+  </body>
+
+</html>

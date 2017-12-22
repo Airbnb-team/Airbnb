@@ -23,9 +23,16 @@ class LocationsController < ApplicationController
 	end
 
 	def edit
+		@room = Room.find(params[:room_id])
+    @location = @room.locations.find(params[:id])
 	end
 
 	def update
+		@room = Room.find(params[:id])
+    @location = @room.locations.find(params[:id])
+    if @location.update(location_params)
+      redirect_to landing_rooms_path(@room)
+    end
 	end
 
 	private

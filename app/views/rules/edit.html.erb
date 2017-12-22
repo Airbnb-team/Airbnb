@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <title>Airbnb</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style type="text/css">
+      .container{
+        height: 140vh;
+      }
+    </style>
+  </head>
+
+  <body>
+    <%= render partial: 'shared/host_header' %>
+    <div class="container listing-rule-edit-space">
+      <div class="listing-edit-title">説明文の情報</div>
+    <%= form_for [@room, @rule] do |f| %>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="rooms-rule">
+            <div class="rooms-radio-button">
+              <div class="rooms-radio-title">子ども(２〜１２歳)OK</div>
+              <label class="rooms-rule-radio"><%= f.radio_button(:children_for_2_12, "1") %>はい</label>
+              <label class="rooms-rule-radio"><%= f.radio_button(:children_for_2_12, "0") %>いいえ</label>
+            </div>
+            <div class="rooms-radio-button">
+              <div class="rooms-radio-title">乳幼児(２歳未満)OK</div>
+              <label class="rooms-rule-radio"><%= f.radio_button(:for_infants_under_2, "1") %>はい</label>
+              <label class="rooms-rule-radio"><%= f.radio_button(:for_infants_under_2, "0") %>いいえ</label>
+            </div>
+            <div class="rooms-radio-button">
+              <div class="rooms-radio-title">ペットOK</div>
+              <label class="rooms-rule-radio"><%= f.radio_button(:for_pets, "1") %>はい</label>
+              <label class="rooms-rule-radio"><%= f.radio_button(:for_pets, "0") %>いいえ</label>
+            </div>
+            <div class="rooms-radio-button">
+              <div class="rooms-radio-title">喫煙OK</div>
+              <label class="rooms-rule-radio"><%= f.radio_button(:smoking, "1") %>はい</label>
+              <label class="rooms-rule-radio"><%= f.radio_button(:smoking, "0") %>いいえ</label>
+            </div>
+            <div class="rooms-radio-button">
+              <div class="rooms-radio-title">パーティーOK</div>
+              <label class="rooms-rule-radio"><%= f.radio_button(:parties, "1") %>はい</label>
+              <label class="rooms-rule-radio"><%= f.radio_button(:parties, "0") %>いいえ</label>
+            </div>
+          </div>
+          <div class="rooms-rules-check_box">
+            <div class="h5 rooms-rule-sub-title">お家についてゲストが事前に知っておくべきこと</div>
+            <label class="rooms-rule-label"><%= f.check_box 'stairs', {}, "true", "false" %>階段を登らないとたどり着けません</label>
+            <label class="rooms-rule-label"><%= f.check_box 'noises', {}, "true", "false" %>騒音の可能性あり</label>
+            <label class="rooms-rule-label"><%= f.check_box 'pets', {}, "true", "false" %>ペットがいます</label>
+            <label class="rooms-rule-label"><%= f.check_box 'spaces', {}, "true", "false" %>共用スペースあり</label>
+            <label class="rooms-rule-label"><%= f.check_box 'minimum_amenities', {}, "true", "false" %>一部アメニティは最低限のものです（例：ネットが遅い）</label>
+          </div>
+        </div>
+      </div>
+    <div class="main-panel-action-wrapper">
+      <div class="container room-edit-bottom-space">
+        <%= link_to '← 戻る', landing_rooms_path(current_user), class: 'h5 rooms-back-font' %>
+        <%= f.submit '更新', class: 'rooms-update-btn' %>
+      </div>
+    </div>
+  <% end %>
+  </body>
+
+</html>

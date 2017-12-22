@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <title>Airbnb</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </head>
+
+  <body>
+    <%= render partial: 'shared/host_header' %>
+    <div class="container room-edit-space">
+    <%= form_for [@room, @bathroom] do |f| %>
+      <div class="row">
+        <div class="listing-edit-title">バスルームの情報</div>
+        <div class="col-md-12">
+          <h5>バスルーム数</h5>
+            <%= f.select :bathrooms_count, { ０．５: '0.5', １: '1', １．５: '1.5', ２: '2', ２．５: '2.5',３: '3', ３．５: '3.5', ４: '4.5', ５: '5' } , {prompt: true}, {class: 'rooms-select-control'}  %>
+        </div>
+      </div>
+    </div>
+    <div class="main-panel-action-wrapper">
+      <div class="container room-edit-bottom-space">
+        <%= link_to '← 戻る', edit_room_bedroom_path(current_user), class: 'h5 rooms-back-font' %>
+        <%= f.submit '更新', class: 'rooms-update-btn' %>
+      </div>
+    </div>
+  <% end %>
+  </body>
+
+</html>

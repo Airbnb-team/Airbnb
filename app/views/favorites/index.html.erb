@@ -1,125 +1,101 @@
 <!doctype html>
 <html>
   <head>
-    <title>Airbnb</title>
-    <!-- Required meta tags -->
+    <title>Airbnb</title> 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="assets/style.scss">
-    <script src="assets/style.js"></script>
   </head>
 
-<body>
-  <header class="header">
-    <nav class="navbar fixed-top navbar-white bg-white navbar-style">
-      <div class="_iiid5y"><svg viewBox="0 0 1000 1000" role="presentation" aria-hidden="true" focusable="false" style="height:1em;width:1em;display:block;fill:currentColor"><path d="m499.3 736.7c-51-64-81-120.1-91-168.1-10-39-6-70 11-93 18-27 45-40 80-40s62 13 80 40c17 23 21 54 11 93-11 49-41 105-91 168.1zm362.2 43c-7 47-39 86-83 105-85 37-169.1-22-241.1-102 119.1-149.1 141.1-265.1 90-340.2-30-43-73-64-128.1-64-111 0-172.1 94-148.1 203.1 14 59 51 126.1 110 201.1-37 41-72 70-103 88-24 13-47 21-69 23-101 15-180.1-83-144.1-184.1 5-13 15-37 32-74l1-2c55-120.1 122.1-256.1 199.1-407.2l2-5 22-42c17-31 24-45 51-62 13-8 29-12 47-12 36 0 64 21 76 38 6 9 13 21 22 36l21 41 3 6c77 151.1 144.1 287.1 199.1 407.2l1 1 20 46 12 29c9.2 23.1 11.2 46.1 8.2 70.1zm46-90.1c-7-22-19-48-34-79v-1c-71-151.1-137.1-287.1-200.1-409.2l-4-6c-45-92-77-147.1-170.1-147.1-92 0-131.1 64-171.1 147.1l-3 6c-63 122.1-129.1 258.1-200.1 409.2v2l-21 46c-8 19-12 29-13 32-51 140.1 54 263.1 181.1 263.1 1 0 5 0 10-1h14c66-8 134.1-50 203.1-125.1 69 75 137.1 117.1 203.1 125.1h14c5 1 9 1 10 1 127.1.1 232.1-123 181.1-263.1z">
-      </path></svg></div>
-      <ul class="nav justify-content-end">
-        <li class="nav-item nav-item-style">
-          <%= link_to 'ホストをはじめる', new_room_path, method: :get %>
-        </li>
-        <li class="nav-item nav-item-style">
-          <%= link_to '旅行', "/" %>
-        </li>
-        <li class="nav-item nav-item-style">
-          <%= link_to 'メッセージ', "/" %>
-        </li>
-        <li class="nav-item nav-item-style">
-          <%= link_to 'プロフィールを編集', "/users/:id/edit", method: :get %>
-        </li>
-        <li class="nav-item nav-item-style">
-          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <div class="favorites-title1">
-    <div class="favorites-title2">
-      <div class="favorites-title3">
-        <span>お気にいり</span>
-      </div>
-    </div>
-  </div>
-  <div class="favorites-button1">
-    <button type="button" class="favorites-button2" aria-busy="false">
-      <span class="favorites-button3">
-        <span>お気にいりを作成</span>
-      </span>
-    </button>
-  </div>
-  <div class="favorites-content">
-    <div class="my-favorites1">
-      <div class="my-favorites2">
-        <div class="my-favorites3">
-          <span class="my-favorites4">
-            <span>マイコレクション</span>
-          </span>
-          <span class="my-favorites5">
-            <span>1件のコレクション</span>
-          </span>
+  <%= render partial: 'shared/header' %>
+  <body>
+    <div class="favorites-title1">
+      <div class="favorites-title2">
+        <div class="favorites-title3">
+          <span>お気にいり</span>
         </div>
       </div>
     </div>
-    <div class="favorites-photo1">
-      <div class="favorites-photo2">
-        <div class="favorites-photo3">
-          <img class="image0" src="<%= asset_path "image0.jpeg" %>" style="width: 20rem;">
+    <div class="favorites-button1">
+      <button type="button" class="favorites-button2" aria-busy="false">
+        <span class="favorites-button3">
+          <span>お気にいりを作成</span>
+        </span>
+      </button>
+    </div>
+    <div class="favorites-content">
+      <div class="my-favorites1">
+        <div class="my-favorites2">
+          <div class="my-favorites3">
+            <span class="my-favorites4">
+              <span>マイコレクション</span>
+            </span>
+            <span class="my-favorites5">
+              <span><%= @favorites.count(current_user.id) %>件のコレクション</span>
+            </span>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="popular-favorites1">
-      <div class="popular-favorites2">
-        <div class="popular-favorites3">
-          <span class="my-favorites4">
-            <span>人気のコレクション</span>
-          </span>
+      <div class="favorites-photo1">
+        <div class="favorites-photo2">
+          <div class="favorites-photo3">
+            <% @favorites.each do |favorite| %>
+              <% room = Room.find(favorite.room_id) %>
+              <%= image_tag(room.photos.image) %>
+            <% end %>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="favorites-photo4">
-      <div class="favorites-photo5">
-        <div class="favorites-photo6">
-          <img class="image0" src="<%= asset_path "image1.jpeg" %>" style="width: 20rem;">
+      <div class="popular-favorites1">
+        <div class="popular-favorites2">
+          <div class="popular-favorites3">
+            <span class="my-favorites4">
+              <span>人気のコレクション</span>
+            </span>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="favorites-photo7">
-      <div class="favorites-photo8">
-        <div class="favorites-photo9">
-          <img class="image0" src="<%= asset_path "image2.jpeg" %>" style="width: 20rem;">
+      <div class="favorites-photo4">
+        <div class="favorites-photo5">
+          <div class="favorites-photo6">
+            <img class="image0" src="<%= asset_path "image1.jpeg" %>" style="width: 20rem;">
+          </div>
         </div>
       </div>
-    </div>
-    <div class="favorites-photo10">
-      <div class="favorites-photo11">
-        <div class="favorites-photo12">
-          <img class="image0" src="<%= asset_path "image3.jpeg" %>" style="width: 20rem;">
+      <div class="favorites-photo7">
+        <div class="favorites-photo8">
+          <div class="favorites-photo9">
+            <img class="image0" src="<%= asset_path "image2.jpeg" %>" style="width: 20rem;">
+          </div>
         </div>
       </div>
-    </div>
-    <div class="favorites-photo13">
-      <div class="favorites-photo14">
-        <div class="favorites-photo15">
-          <img class="image0" src="<%= asset_path "image4.jpeg" %>" style="width: 20rem;">
+      <div class="favorites-photo10">
+        <div class="favorites-photo11">
+          <div class="favorites-photo12">
+            <img class="image0" src="<%= asset_path "image3.jpeg" %>" style="width: 20rem;">
+          </div>
         </div>
       </div>
-    </div>
-    <div class="favorites-photo16">
-      <div class="favorites-photo17">
-        <div class="favorites-photo18">
-          <img class="image0" src="<%= asset_path "image5.jpeg" %>" style="width: 20rem;">
+      <div class="favorites-photo13">
+        <div class="favorites-photo14">
+          <div class="favorites-photo15">
+            <img class="image0" src="<%= asset_path "image4.jpeg" %>" style="width: 20rem;">
+          </div>
         </div>
       </div>
-    </div>
-    <div class="favorites-photo19">
-      <div class="favorites-photo20">
-        <div class="favorites-photo21">
-          <img class="image0" src="<%= asset_path "image6.jpeg" %>" style="width: 20rem;">
+      <div class="favorites-photo16">
+        <div class="favorites-photo17">
+          <div class="favorites-photo18">
+            <img class="image0" src="<%= asset_path "image5.jpeg" %>" style="width: 20rem;">
+          </div>
         </div>
       </div>
+      <div class="favorites-photo19">
+        <div class="favorites-photo20">
+          <div class="favorites-photo21">
+            <img class="image0" src="<%= asset_path "image6.jpeg" %>" style="width: 20rem;">
+          </div>
+       </div>
+      </div>
     </div>
-  </div>
-  <footer class="favorites-footer">
-    <p>1</p>
-  </footer>
-</body>
+  </body>
+</html>

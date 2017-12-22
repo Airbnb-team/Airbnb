@@ -27,6 +27,12 @@ class RoomsController < ApplicationController
 		end
 	end
 
+	def show
+		@room = Room.find(params[:id])
+		@rooms = Room.all
+		@reservation = Reservation.new
+	end
+
 	def continue
 		@room = Room.find(params[:format])
 	end
@@ -38,8 +44,8 @@ class RoomsController < ApplicationController
   def introduce
   end
 
-	def edit
-	end
+  def dashboard
+  end
 
 	def show
 
@@ -51,6 +57,10 @@ class RoomsController < ApplicationController
 	end
 
 	def update
+		@room = Room.find(params[:id])
+		if @room.update(room_params)
+			redirect_to edit_room_bedroom_path(@room)
+		end
 	end
 
 	private
