@@ -1,10 +1,7 @@
 class GroupsController < ApplicationController
   def index
-  end
-
-  def show
-    @group = Group.find(params[:id])
-    @message = Message.new
-    # @messages = @group.messages.body
+    @groups = Group.all
+    @groups_travel = @groups.where.not(room_id: current_user.rooms.ids)
+    @groups_hosting = @groups.where(room_id: current_user.rooms.ids)
   end
 end

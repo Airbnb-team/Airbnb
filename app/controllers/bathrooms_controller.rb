@@ -16,9 +16,16 @@ class BathroomsController < ApplicationController
 	end
 
 	def edit
+		@room = Room.find(params[:room_id])
+		@bathroom = @room.bathrooms.find(params[:id])
 	end
 
 	def update
+		@room = Room.find(params[:id])
+		@bathroom = @room.bathrooms.find(params[:id])
+		if @bathroom.update(bathroom_params)
+			redirect_to landing_rooms_path(@room)
+		end
 	end
 
 	private

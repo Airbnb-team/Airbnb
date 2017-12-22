@@ -1,0 +1,7 @@
+$("#favorite-icon<%= @room.id %>").html("<%= j(render partial: 'favorite', locals: { room: @room}) %>");
+$("<%= @id_heart %>").removeClass('empty-heart');
+$("<%= @id_heart %>").addClass('full-heart');
+
+$("#showpage-favorite-icon<%= @room.id %>").html("<%= j(render partial: 'favorite', locals: {room: @room}) %>");
+$("<%= @id_heart %>").removeClass('empty-heart');
+$("<%= @id_heart %>").addClass('full-heart');

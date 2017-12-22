@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root 'screen#index'
+  root 'rooms#toppage'
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   patch   'users/:id'  => 'users#update'
   resources :users
@@ -11,26 +11,41 @@ Rails.application.routes.draw do
   resources :messages do
     collection do
       post 'new'
+      post 'prereserve'
     end
   end
   resources :favorites, only: [:index]
 
-  resources :rooms, only: [:index, :new, :create, :edit, :show, :update] do
+  resources :rooms, only: [:index, :new, :create, :show, :edit, :update] do
     collection do
       get 'continue'
     end
-    member do
-      get 'edit_price'
+    collection do
+      get 'toppage'
+    end
+    collection do
+      get 'search'
+    end
+    collection do
+      get 'introduce'
+    end
+    collection do
+      get 'dashboard'
+    end
+    collection do
+      get 'landing'
     end
   	resources :bedrooms, only: [:new, :create, :edit, :update]
   	resources :bathrooms, only: [:new, :create, :edit, :update]
   	resources :locations, only: [:new, :create, :show, :edit, :update]
     resources :amenities, only: [:new, :create, :edit, :update]
-    resources :photos, only: [:new, :create, :edit, :update]
+    resources :photos, only: [:new, :create, :edit, :update, :destroy]
     resources :explanatories, only: [:new, :create, :edit, :update]
     resources :rules, only: [:new, :create, :edit, :update]
+    resources :prices, only: [:new, :create, :edit, :update]
+    resources :favorites, only: [:index, :create]
   end
-    get 'screen' => 'screen#photo'
+
   resources :reservations do
     collection do
       post 'confirm'

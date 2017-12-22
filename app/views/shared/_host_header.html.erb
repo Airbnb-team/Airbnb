@@ -1,0 +1,27 @@
+<%= javascript_include_tag "button_action.js" %>
+<%= javascript_include_tag "dropdown.js" %>
+<header class="dashboard-header">
+  <%= button_tag type: 'button', onclick: "link_to('#{root_path(current_user)}')", class:'dashboard-header-btn' do %>
+    <%= render partial: 'shared/airbnb-dashboard-icon' %>
+    <span class="dashboard-header-title">ホスティング</span>
+  <% end %>
+
+  <div class="dashboard-header-right">
+    <div class="js_dropmenu">
+      <span class="parent dashboard-avator">
+        <img alt="" height="28" src="https://a0.muscache.com/defaults/user_pic-50x50.png?v=3" width="28">
+        <div class="js_dropmenu_child">
+          <div class="js_dropdown_item">
+            <%= link_to '受信トレイ', class:'js_dropdown_item_content' %>
+          </div>
+          <div class="js_dropdown_item">
+            <%= link_to 'プロフィールを編集', class:'js_dropdown_item_content' %>
+          </div>
+          <div class="js_dropdown_item">
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'js_dropdown_item_content' %>
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
+</header>

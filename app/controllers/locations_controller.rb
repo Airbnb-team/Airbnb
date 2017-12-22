@@ -3,6 +3,7 @@ class LocationsController < ApplicationController
 	def new
 		@room = Room.find(params[:room_id])
 		@location = Location.new
+
 	end
 
 	def create
@@ -17,12 +18,21 @@ class LocationsController < ApplicationController
 
 	def show
 		@location = Location.find(params[:id])
+		gon.latitude = @location.latitude
+		gon.longitude = @location.longitude
 	end
 
 	def edit
+		@room = Room.find(params[:room_id])
+    @location = @room.locations.find(params[:id])
 	end
 
 	def update
+		@room = Room.find(params[:id])
+    @location = @room.locations.find(params[:id])
+    if @location.update(location_params)
+      redirect_to landing_rooms_path(@room)
+    end
 	end
 
 	private

@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+  <head>
+    <title>部屋、家、アパートをAirbnbで貸し出そう</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= javascript_include_tag "button_action.js" %>
+  </head>
+
+  <body>
+    <%= render partial: 'shared/header' %>
+    <div class="jumbotron room-intro-image">
+      <%= image_tag('travel.jpg', height: '100%', width: '100%') %>
+      <span class="room-intro-cacth">AIRBNBでホスト</span>
+      <div class="h1 room-intro-cacthcopy">空き部屋で世界をつなごう</div>
+    </div>
+    <div class="container">
+      <div class="row room-intro-exp-space">
+        <div class="col-md-4">
+          <div class="h2 room-intro-exp-title">なぜAirbnbでホスト？</div>
+          <span class="room-intro-exp">どんなお家やお部屋でも、Airbnbに登録すれば簡単かつ安全な方法で収益を得ることができます。世界の何百万人もの旅行者が、あなたのお家のようなユニークなお部屋を探しています。</span>
+        </div>
+        <div class="col-md-4">
+          <div class="h2 room-intro-exp-title">決めるのは自分</div>
+          <span class="room-intro-exp">Airbnbでは予約可能日から料金、ハウスルール、ゲストとの交流頻度まで、すべて自分で決めることができます。チェックインの時間帯と入室方法もお好みで選べます。</span>
+        </div>
+        <div class="col-md-4">
+          <div class="h2 room-intro-exp-title">一貫サポート</div>
+          <span class="room-intro-exp">便利なツール、おもてなしのヒント、24時間365日のサポートも完備。オンラインコミュニティでは先輩に質問したり、成功のコツを教え合ったりできます。</span>
+        </div>
+      </div>
+
+      <span class="room-intro-content-main-title">Airbnbホストになる方法</span>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="room-intro-content-num">1</div>
+          <div class="room-intro-content-title">リスティングを作成</div>
+            <span class="room-intro-content-text">Airbnbのリスティング作成は簡単＆無料です。お部屋の説明を書いて、泊められる人数を選び、写真と詳細を加えるだけでおしまい。料金設定では競争力ある推奨料金が表示されますが、料金を決めるのは常にホストです。</span>
+        </div>
+        <div class="col-md-6">
+          <%= image_tag('listing.jpg', height: '100%', width: '100%', class: 'room-intro-sub-image') %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <%= image_tag('charge.jpg', height: '100%', width: '100%', class: 'room-intro-sub-image') %>
+        </div>
+        <div class="col-md-6">
+          <div class="room-intro-content-num">2</div>
+          <div class="room-intro-content-title">ゲストがきます!</div>
+            <span class="room-intro-content-text">ゲストとは到着前にAirbnb経由でメッセージ交換し、詳しく知ることができます。ほとんどのホストはゲスト用の室内を清掃し、清潔なシーツとタオル、トイレットペーパーなどの必需品をご用意しています。鍵の受け渡しは当日直接手渡しでも、暗証番号を送るだけでもOKです。</span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="room-intro-content-num">3</div>
+          <div class="room-intro-content-title">料金の受け取り</div>
+            <span class="room-intro-content-text">Airbnbの料金はセキュアな支払いシステムで自動処理です。お金のことには一切触れなくて済みます。ゲストは到着前に料金を支払済みです。ホストにはそこから3%のサービス料を差し引いた金額がチェックイン後、自動送金されます。料金はPayPal、直接振込、国際送金など、さまざまな方法で受け取ることができます。</span>
+        </div>
+        <div class="col-md-6">
+          <%= image_tag('guest.jpg', height: '100%', width: '100%', class: 'room-intro-sub-image') %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 room-intro-space">
+        <div  class="room-intro-listing-title">まずはリスティング作成から</div>
+        <%= button_tag type: 'button', onclick: "link_to('#{new_room_path(current_user)}')", class:'room-intro-listing-start-btn' do %>
+          <span>始める</span>
+        <% end %>
+      </div>
+    </div>
+    <%= render partial: 'shared/footer' %>
+  </body>
+</html>

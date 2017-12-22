@@ -15,10 +15,10 @@
         </div>
 
         <div class="message-new-step4">
-         <h5>　　1.ご同行のかたは？</h5>
+         <h5>1.ご同行のかたは？</h5>
        </div>
         <div class="message-new-step5">
-         <h5>　>　2.送信内容の確認</h5>
+         <h5>2.送信内容の確認</h5>
        </div>
      </div>
     </header>
@@ -53,20 +53,17 @@
       <div class="reservation-text-box">
         <%= @messagebody %>
       </div>
-      <%= form_for(@message, :url => {:controller => :messages, :action => :create}) do |f| %>
+      <%= form_for(@message, :url => {:controller => :messages, :action => :prereserve}) do |f| %>
         <%= f.hidden_field :body %>
         <%= fields_for @group do |t| %>
           <%= t.hidden_field :name, class: 'DateInput__input needsclick' %>
-          <!-- <input type="hidden" name="group[user_id][]" value=current_user.id > -->
+          <%= t.hidden_field :room_id, class: 'message_new_pass_roomid', value:  params[:group][:room_id] %>
           <%= hidden_field_tag "group[user_ids][]", current_user.id %>
           <%= hidden_field_tag "group[user_ids][]", @reservation.room.user.id %>
-          <!-- <%= t.hidden_field :user_ids, value: @reservation.room.user.id %> -->
         <% end %>
 
         <%= f.submit "この内容でホストに送信する", class: "messages-continue1"%>
       <% end %>
-
-      <!-- <%= hidden_field_tag :user_ids, @reservation.room.user.id %> -->
       <div class="aaaaaaa">
         1
       </div>

@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <title>Airbnb</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= javascript_include_tag "display.js" %>
+  </head>
+
+  <body>
+    <%= render partial: 'shared/host_header' %>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="listing-edit-top-space"></div>
+          <div class="listing-edit-title">リスティング</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="listing-edit-subtitle-space">
+            <div class="listing-edit-subtitle">編集画面：リスティング記載の情報はここで変更できます</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <%= image_tag @room.photos.first.image, class:"landing-photo-size" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="listing-edit-content-space">
+            <div class="room-overview-title">
+              <%= @room.explanatories.first.title %>
+            </div>
+            <div class="room-overview-form">
+              <%= @room.home_type %>・<%= @room.room_type%>・<%= @room.locations.first.prefecture %><%= @room.locations.first.city %>
+            </div>
+            <div class="room-overview-amenity">
+              <i class="fa fa-users room-show-icon-space">
+                ゲスト<%= @room.bedrooms.first.capacity_count %>人
+              </i>
+              <i class="fa fa-bed room-show-icon-space">
+                <%= @room.bedrooms.first.rooms_count %>寝室・ベッド<%= @room.bedrooms.first.beds_count %>台
+              </i>
+              <i class="fa fa-bath room-show-icon-space">
+                バスルーム<%= @room.bathrooms.first.bathrooms_count %>
+              </i>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="listing-edit-content-space">
+            <div class="listing-edit-item-title-space">
+              <span class="listing-edit-item-title">お部屋</span>
+              <%= link_to edit_room_path(@room) do %>
+                <span class="listing-edit-btn", style="color:#008489;">編集</span>
+              <% end %>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class=" listing-edit-content-font">
+                  最大定員：<%= @room.bedrooms.first.capacity_count %>人
+                </div>
+                <div class=" listing-edit-content-font">
+                  バスルーム：<%= @room.bathrooms.first.bathrooms_count %>室
+                </div>
+                <div class=" listing-edit-content-font">
+                  寝室：<%= @room.bedrooms.first.rooms_count %>室
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class=" listing-edit-content-font">
+                  ベッド：<%= @room.bedrooms.first.beds_count %>台
+                </div>
+                <div class=" listing-edit-content-font">
+                  建物タイプ：<%= @room.home_type %>
+                </div>
+                <div class=" listing-edit-content-font">
+                  部屋：<%= @room.room_type %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="listing-edit-content-space">
+            <div class="listing-edit-item-title-space">
+              <span class="listing-edit-item-title">アメニティ・設備</span>
+              <%= link_to edit_room_amenity_path(@room, params[:format]) do %>
+                <span class="listing-edit-btn", style="color:#008489;">編集</span>
+              <% end %>
+              <div class="listing-amenity-display fa fa-angle-double-down">すべて表示する</div>
+              <% if @room.amenities.first.cable_tv == true %>
+                <p class="fa fa-television listing-edit-content-font">ケーブルテレビ</p>
+              <% else %>
+                <p class="fa fa-television listing-edit-content-font"><s>ケーブルテレビ</s></p>
+              <% end %>
+              <% if @room.amenities.first.air_conditioning == true %>
+                <p class="listing-edit-content-font">エアコン</p>
+              <% else %>
+                <p class="listing-edit-content-font"><s>エアコン</s></p>
+              <% end %>
+              <% if @room.amenities.first.wireless_internet == true %>
+                <p class="fa fa-wifi listing-edit-content-font">ワイヤレスインターネット</p>
+              <% else %>
+                <p class="fa fa-wifi listing-edit-content-font"><s>ワイヤレスインターネット</s></p>
+              <% end %>
+              <div class="room-amenity-area">
+                <% if @room.amenities.first.kitchen == true %>
+                  <p class="listing-edit-content-font">キッチン</p>
+                <% else %>
+                  <p class="listing-edit-content-font"><s>キッチン</s></p>
+                <% end %>
+                <% if @room.amenities.first.elevator == true %>
+                  <p class="listing-edit-content-font">エレベーター</p>
+                <% else %>
+                  <p class="listing-edit-content-font"><s>エレベーター</s></p>
+                <% end %>
+                <% if @room.amenities.first.gym == true %>
+                  <p class="listing-edit-content-font">ジム</p>
+                <% else %>
+                  <p class="listing-edit-content-font"><s>ジム</s></p>
+                <% end %>
+                 <% if @room.amenities.first.doorman == true %>
+                  <p class="listing-edit-content-font">ドアマン</p>
+                <% else %>
+                  <p class="listing-edit-content-font"><s>ドアマン</s></p>
+                <% end %>
+                <% if @room.amenities.first.breakfast == true %>
+                  <p class="listing-edit-content-font">朝食</p>
+                <% else %>
+                  <p class="listing-edit-content-font"><s>朝食</s></p>
+                <% end %>
+                <% if @room.amenities.first.suitable_for_events == true %>
+                  <p class="listing-edit-content-font">イベントに最適</p>
+                <% else %>
+                  <p class="listing-edit-content-font"><s>イベントに最適</s></p>
+                <% end %>
+                <% if @room.amenities.first.free_parking == true %>
+                  <p class="listing-edit-content-font">専用駐車場</p>
+                <% else %>
+                  <p class="listing-edit-content-font"><s>専用駐車場</s></p>
+                <% end %>
+                <% if @room.amenities.first.wheelchair_accessible == true %>
+                  <p class="listing-edit-content-font">車椅子可</p>
+                <% else %>
+                  <p class="listing-edit-content-font"><s>車椅子可</s></p>
+                <% end %>
+                <% if @room.amenities.first.hot_tub == true %>
+                  <p class="listing-edit-content-font">ジャグジー</p>
+                <% else %>
+                  <p class="listing-edit-content-font"><s>ジャグジー</s></p>
+                <% end %>
+                <% if @room.amenities.first.baby_bath == true %>
+                  <p class="listing-edit-content-font">ベビーバス</p>
+                <% else %>
+                  <p class="listing-edit-content-font"><s>ベビーバス</s></p>
+                <% end %>
+                <% if @room.amenities.first.baby_monitor == true %>
+                  <p class="listing-edit-content-font">ベビーモニター</p>
+                <% else %>
+                  <p class="listing-edit-content-font"><s>ベビーモニター</s></p>
+                <% end %>
+                <% if @room.amenities.first.babysitter == true %>
+                  <p class="listing-edit-content-font">ベビーシッター</p>
+                <% else %>
+                  <p class="listing-edit-content-font"><s>ベビーシッター</s></p>
+                <% end %>
+                <% if @room.amenities.first.bathtub == true %>
+                  <p class="listing-edit-content-font">バスタブ</p>
+                <% else %>
+                  <p class="listing-edit-content-font"><s>バスタブ</s></p>
+                <% end %>
+                <% if @room.amenities.first.changing_table == true %>
+                  <p class="listing-edit-content-font">おむつ交換台</p>
+                <% else %>
+                  <p class="listing-edit-content-font"><s>おむつ交換台</s></p>
+                <% end %>
+                <% if @room.amenities.first.childrend_books_and_toys == true %>
+                  <p class="listing-edit-content-font">絵本＆おもちゃ</p>
+                <% else %>
+                  <p class="listing-edit-content-font"><s>絵本＆おもちゃ</s></p>
+                <% end %>
+                <% if @room.amenities.first.childrens_dinnerware == true %>
+                  <p class="listing-edit-content-font">子供用まえかけ</p>
+                <% else %>
+                  <p class="listing-edit-content-font"><s>子供用まえかけ</s></p>
+                <% end %>
+                <% if @room.amenities.first.crib == true %>
+                  <p class="listing-edit-content-font">ベビーベッド</p>
+                <% else %>
+                  <p class="listing-edit-content-font"><s>ベビーベッド</s></p>
+                <% end %>
+                <div class="listing-amenity-hidden fa fa-angle-double-up">隠す</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="listing-edit-content-space">
+            <span class="listing-edit-item-title">説明文</span>
+            <%= link_to edit_room_explanatory_path(@room, params[:format]) do %>
+              <span class="listing-edit-btn", style="color:#008489;">編集</span>
+            <% end %>
+            <div class="listing-edit-item-content-title">概要</div>
+              <p class="listing-edit-content-font"><%= @room.explanatories.first.overview %></p>
+            <div class="listing-edit-item-content-title">スペース</div>
+              <p class="listing-edit-content-font"><%= @room.explanatories.first.space %></p>
+            <div class="listing-edit-item-content-title">ゲストの立ち入り範囲</div>
+              <p class="listing-edit-content-font"><%= @room.explanatories.first.guest_access %></p>
+            <div class="listing-edit-item-content-title">ゲストとの交流</div>
+              <p class="listing-edit-content-font"><%= @room.explanatories.first.guest_interraction %></p>
+            <div class="listing-edit-item-content-title">その他の特記事項</div>
+              <p class="listing-edit-content-font"><%= @room.explanatories.first.other_things_to_note %></p>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="listing-edit-content-space">
+            <span class="listing-edit-item-title">所在地</span>
+            <%= link_to edit_room_location_path(@room, params[:format]) do %>
+              <span class="listing-edit-btn", style="color:#008489;">編集</span>
+            <% end %>
+            <div class="listing-edit-item-title">
+              〒<%= @room.locations.first.postal_code %> <%= @room.locations.first.prefecture %><%= @room.locations.first.city %><%= @room.locations.first.address %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="listing-edit-content-space">
+            <span class="listing-edit-item-title">ハウスルール</span>
+            <%= link_to edit_room_rule_path(@room, params[:format]) do %>
+              <span class="listing-edit-btn", style="color:#008489;">編集</span>
+            <% end %>
+            <% if @room.rules.first.children_for_2_12 == true %>
+              <p class="listing-edit-content-font">子ども（２- １２歳）OK</p>
+            <% end %>
+            <% if @room.rules.first.for_infants_under_2 == true %>
+              <p class="listing-edit-content-font">乳幼児（２歳未満）OK</p>
+            <% end %>
+            <% if @room.rules.first.for_pets == true %>
+              <p class="listing-edit-content-font">ペットOK</p>
+            <% end %>
+            <% if @room.rules.first.smoking == true %>
+              <p class="listing-edit-content-font">喫煙OK</p>
+            <% end %>
+            <% if @room.rules.first.parties == true %>
+              <p class="listing-edit-content-font">イベント＆パーティOK</p>
+            <% end %>
+            <% if @room.rules.first.stairs == true %>
+              <p class="listing-edit-content-font">階段を登らないとたどり着けません</p>
+            <% end %>
+            <% if @room.rules.first.noises == true %>
+              <p class="listing-edit-content-font">騒音の可能性あり</p>
+            <% end %>
+            <% if @room.rules.first.pets == true %>
+              <p class="listing-edit-content-font">ペットがいます</p>
+            <% end %>
+            <% if @room.rules.first.spaces == true %>
+              <p class="listing-edit-content-font">共用スペースあり</p>
+            <% end %>
+            <% if @room.rules.first.minimum_amenities == true %>
+              <p class="listing-edit-content-font">一部アメニティは最低限のものです（例：ネットが遅い）</p>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="listing-edit-photo-space">
+            <span class="listing-edit-item-title">写真</span>
+            <%= link_to edit_room_photo_path(@room, params[:format]) do %>
+              <span class="listing-edit-btn", style="color:#008489;">編集</span>
+            <% end %>
+          </div>
+          <%= image_tag @room.photos.first.image, height: '200px', width: '300px' %>
+          <div class="listing-edit-bottom-space"></div>
+        </div>
+      </div>
+    </div>
+    <%= render partial: 'shared/host_footer' %>
+  </body>
+
+</html>

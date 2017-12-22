@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Airbnb</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= javascript_include_tag "button_action.js" %>
+  </head>
+
+  <body>
+    <%= render partial: 'shared/header' %>
+    <div class="toppage-main-content">
+      <div class="toppage-container">
+        <div class="toppage-title">Airbnbで探す</div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="toppage-room-search">
+              <%= button_tag type: 'button', onclick: "link_to('#{rooms_path(current_user)}')", class:'toppage-serach-btn' do %>
+                <%= image_tag('home.jpg', height: '72px', width: '96px', class:'toppage-image') %>
+                <span class="toppage-room-search-title">宿泊先</span>
+              <% end %>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="toppage-experience">
+              <%= button_tag :type, class:'toppage-serach-btn' do %>
+                <%= image_tag('experience.jpg', height: '72px', width: '96px', class:'toppage-image') %>
+                <span class="toppage-room-search-title">体験</span>
+              <% end %>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="toppage-restaurant">
+              <%= button_tag :type, class:'toppage-serach-btn' do %>
+                <%= image_tag('restaurant.jpg', height: '72px', width: '96px', class:'toppage-image') %>
+                <span class="toppage-room-search-title">レストラン</span>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+        <div class="toppage-title-content">
+          <span class="toppage-room-title">お住いの国の宿泊先</span>
+          <%= button_tag type: 'button', onclick: "link_to('#{rooms_path(current_user)}')", class:'toppage-title-btn' do %>
+            <span class="toppage-all-room">すべて見る
+              <i class="fa fa-angle-right"></i>
+            </span>
+          <% end %>
+        </div>
+        <div class="row toppage-room-collection">
+          <% @rooms.each do |room| %>
+            <div class="col-md-3 room-collection">
+              <div class="room-collection-main-image">
+                <%= link_to room_path(room) do %>
+                  <%= image_tag room.photos.first.image, height: '200px', width: '300px' %>
+                <% end %>
+                <span id="favorite-icon<%= room.id %>">
+                  <%= render partial: 'favorites/favorite', locals: { room: room, favorites: @favorites } %>
+                </span>
+              </div>
+              <div class="room-collection-introduction">
+                <div class="top-text-room">
+                  <%= room.room_type %>・ベッド<%= room.bedrooms.first.beds_count %>台
+                </div>
+                <div class="top-text-title">
+                  <%= room.explanatories.first.title %>
+                </div>
+                <div class="top-text-price">
+                  ¥<%= number_to_currency(room.prices.first.basic_charge) %> /泊
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <div class="row toppage-host-intro">
+          <div class="col-md-8 toppage-host-into-content">
+            <div class="toppage-host-left-content">
+              <div class="toppage-host-title">
+                <span>ホスティングで得られる収入をチェック</span>
+              </div>
+              <div class="h4 toppage-host-explanation">
+                <span>空いているお部屋を活用して収入を得よう。</span>
+              </div>
+              <%= button_tag type: 'button', onclick: "link_to('#{introduce_rooms_path(current_user)}')", class:'toppage-host-intro-btn' do %>
+                <span class="toppage-host-btn">詳しく読む</span>
+              <% end %>
+            </div>
+            <div class="toppage-host-right-content">
+              <%= image_tag('image7.jpeg', height: '208px', width: '400px', class:'toppage-host-image')%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <%= render partial: 'shared/footer' %>
+</html>
+
+<script>
+$(function() {
+  $("#autolocation2").geocomplete;
+})
+$("#autolocation2").geocomplete();
+$("#autolocation2").click(function(){
+$("input").trigger("geocode");
+});
+</script>

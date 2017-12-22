@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <title>Airbnb</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style type="text/css">
+      .container{
+        height: 160vh;
+      }
+    </style>
+  </head>
+
+  <body>
+    <%= render partial: 'shared/host_header' %>
+    <div class="container listing-location-edit-space">
+      <div class="listing-edit-title">説明文の情報</div>
+    <%= form_for [@room, @explanatory] do |f| %>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="rooms-overview">
+            <h5>概要</h5>
+            <%= f.text_area :overview, {class: 'rooms-explanatory-text_field'}  %>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="rooms-space">
+            <h5>お家について（任意）</h5>
+            <%= f.text_area :space, {class: 'rooms-explanatory-text_field'}  %>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="rooms-guest_interraction">
+            <h5>ゲストが利用可能なエリア（任意）</h5>
+            <%= f.text_area :guest_interraction, {class: 'rooms-explanatory-text_field'}  %>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="rooms-guest-access">
+            <h5>ゲストとの交流頻度（任意）</h5>
+            <%= f.text_area :guest_access, {class: 'rooms-explanatory-text_field'}  %>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="rooms-other_things_to_note">
+            <h5>その他の特記事項（任意）</h5>
+            <%= f.text_area :other_things_to_note, {class: 'rooms-explanatory-text_field'}  %>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <span class="rooms-title-font">物件に名前をつける</span>
+          <%= f.text_field :title, {class: 'rooms-location-text_field_lg'}  %>
+        </div>
+      </div>
+    <div class="main-panel-action-wrapper">
+      <div class="container room-edit-bottom-space">
+        <%= link_to '← 戻る', landing_rooms_path(current_user), class: 'h5 rooms-back-font' %>
+        <%= f.submit '更新', class: 'rooms-update-btn' %>
+      </div>
+    </div>
+  <% end %>
+  </body>
+
+</html>

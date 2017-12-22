@@ -3,9 +3,9 @@
  <style>
    /* Always set the map height explicitly to define the size of the div
     * element that contains the map. */
-   #map {
+   /*#map {
      height: 100%;
-   }
+   }*/
    /* Optional: Makes the sample page fill the window. */
    html, body {
      height: 100%;
@@ -14,15 +14,15 @@
    }
  </style>
 </head>
-<nav class="navbar fixed-top navbar-white bg-white navbar-style">
+<nav class="navbar navbar-white bg-white navbar-style">
   <h1 class="text-danger font-weight-bold">Airbnb</h1>
-  <div class="input-group input-group-rooms-style resize">
-    <div class="icon-search"></div>
-    <input type="text" name="serach" class="form-control form-control-lg rounded-0" placeholder="エリアを入力">
-    <span class="input-group-btn">
-      <button class="btn btn-default btn-danger" type="submit">Search</button>
-    </span>
-  </div>
+  <%= form_tag rooms_path, method: :get do %>
+    <div class="input-group input-group-rooms-style resize">
+      <div class="icon-search"></div>
+      <%= text_field_tag :search, params[:search], placeholder:"エリアを入力", class:"rooms-search", id:"autolocation"%>
+    </div>
+    <%= submit_tag "近くの部屋を表示", class:"rooms-button" %>
+  <% end %>
   <ul class="nav justify-content-end">
     <li class="nav-item nav-item-style">
       <%= link_to 'ルーム登録', "/rooms", method: :post %>
@@ -48,156 +48,19 @@
       <button class="op-btn" type="button" name="aaa" value="aaa">ゲスト</button>
       <button class="op-btn" type="button" name="aaa" value="aaa">住宅タイプ</button>
       <button class="op-btn" type="button" name="aaa" value="aaa">料金</button>
+      <!-- <div id="slider-range"></div> -->
       <button class="op-btn" type="button" name="aaa" value="aaa">今すぐ予約</button>
       <button class="op-btn" type="button" name="aaa" value="aaa">フィルター</button>
     </div>
   </div>
 </nav>
 
-<!-- <div class="container container-style">
-  <div class="row row-1 ">
-    <div class="col-md-12">
+<div class="contents-wrapper">
 
-      </div>
-  </div> -->
-  <div class="contents-wrapper">
-    <div class="row row-5">
-      <div class="col-md-4">
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="<%= asset_path "image0.jpeg" %>" alt="Card image ca">
-          <!-- <i class="fa fa-heart-o" aria-hidden="true"></i> -->
-          <div class="card-body">
-            <p class="card-text font-weight-bold">宿泊先</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="<%= asset_path "image4.jpeg" %>" alt="Card image cp">
-          <div class="card-body">
-            <p class="card-text font-weight-bold">宿泊先</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="<%= asset_path "image5.jpeg" %>" alt="Card image">
-          <div class="card-body">
-            <p class="card-text font-weight-bold">宿泊先</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="<%= asset_path "image0.jpeg" %>" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text font-weight-bold">宿泊先</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="<%= asset_path "image4.jpeg" %>" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text font-weight-bold">宿泊先</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="<%= asset_path "image5.jpeg" %>" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text font-weight-bold">宿泊先</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="<%= asset_path "image0.jpeg" %>" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text font-weight-bold">宿泊先</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="<%= asset_path "image4.jpeg" %>" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text font-weight-bold">宿泊先</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="<%= asset_path "image5.jpeg" %>" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text font-weight-bold">宿泊先</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="<%= asset_path "image0.jpeg" %>" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text font-weight-bold">宿泊先</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="<%= asset_path "image4.jpeg" %>" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text font-weight-bold">宿泊先</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="<%= asset_path "image5.jpeg" %>" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text font-weight-bold">宿泊先</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="<%= asset_path "image0.jpeg" %>" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text font-weight-bold">宿泊先</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="<%= asset_path "image4.jpeg" %>" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text font-weight-bold">宿泊先</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="<%= asset_path "image5.jpeg" %>" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text font-weight-bold">宿泊先</p>
-          </div>
-        </div>
-      </div>
-    </div>
+  <%= render partial: "rooms/rooms_list", collection: @arrRooms, as: :location %>
+
 </div>
-<div class = "row row-4 map_size">
-   <div class = "col-sm"></div>
-   <div class = "col-sm"></div>
-   <div id="map" class ="col-sm-3"></div>
- </div>
-<script>
-  var map;
-  function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: -34.397, lng: 150.644},
-      zoom: 8
-    });
-  }
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsKpjFVIbEQdDhASCyo50vhFZ-PVpFHks&callback=initMap"
-async defer></script>
+
+
+  <div class="display-map" style="width: 440px; height: 100%" id="map">
+  </div>

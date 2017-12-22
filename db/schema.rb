@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171213024643) do
+
+ActiveRecord::Schema.define(version: 20171218091424) do
 
   create_table "Explanatories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title",                              null: false
@@ -107,7 +108,6 @@ ActiveRecord::Schema.define(version: 20171213024643) do
 
   create_table "favorites", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",    null: false
-    t.integer  "photo_id",   null: false
     t.integer  "room_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -126,10 +126,14 @@ ActiveRecord::Schema.define(version: 20171213024643) do
     t.string   "city"
     t.string   "address"
     t.string   "building_name"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.integer  "user_id"
     t.integer  "room_id"
+
+    
+    t.float    "latitude",      limit: 24
+    t.float    "longitude",     limit: 24
     t.index ["room_id"], name: "index_locations_on_room_id", using: :btree
     t.index ["user_id"], name: "index_locations_on_user_id", using: :btree
   end
@@ -265,10 +269,10 @@ ActiveRecord::Schema.define(version: 20171213024643) do
     t.string   "image"
     t.string   "provider"
     t.string   "uid"
-    t.string   "phone_number"
-    t.string   "description"
     t.integer  "group_id"
     t.integer  "room_id"
+    t.string   "phone_number"
+    t.string   "description"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

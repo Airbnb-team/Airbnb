@@ -14,10 +14,10 @@
           <%= image_tag('airbnb.png',:size => "100x60", :class => "message-new-logo") %>
         </div>
         <div class="message-new-step1">
-         <h5>　　1.ご同行のかたは？</h5>
+         <h5>1.ご同行のかたは？</h5>
        </div>
         <div class="message-new-step2">
-         <h5>　>　2.送信内容の確認</h5>
+         <h5>>2.送信内容の確認</h5>
        </div>
      </div>
     </header>
@@ -33,8 +33,8 @@
           <% end %>
           <%= fields_for @group do |t| %>
             <%= t.hidden_field :name, class: 'DateInput__input needsclick' %>
+            <%= t.hidden_field :room_id, class: 'new_pass_roomid', value: params[:reservation][:room_id] %>
           <% end %>
-
 
         <div class="message-new-left2">
 

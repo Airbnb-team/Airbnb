@@ -20,18 +20,19 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = Reservation.new
+    @reservation = Reservation.new(reservation_params_from_groups_show)
+    @reservation.save
 
-    if @reservation.save
-      redirect_to message_path
-    else
-    end
   end
 
   private
 
     def reservation_params
       params.require(:reservation).permit(:check_in, :check_out, :room_id, :guest_count).merge(user_id:current_user.id)
+    end
+
+    def reservation_params_from_groups_show
+    params.require(:reservation).permit(:check_in, :check_out, :room_id, :guest_count, :user_id)
     end
 
 end

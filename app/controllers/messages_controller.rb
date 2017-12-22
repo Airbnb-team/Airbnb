@@ -1,14 +1,28 @@
 class MessagesController < ApplicationController
 
   def index
+    @group = Group.find(params[:group_id])
+    @message = Message.new
+    @reservation = Reservation.new
   end
 
   def create
-    @message = Message.new(message_params)
-    @message.save
+    @new_message = current_user.messages.new(message_params)
+    respond_to do |format|
+        if @new_message.save
+            format.json{render 'create'}
+          else
+          flash.now[:alert] =  'メッセージ送信に失敗しました。'
+          render :index
+        end
+     end
+  end
+
+  def prereserve
     @group = Group.new(group_params)
     @group.save
-
+    @message = Message.new(prereserve_params)
+    @message.save
     redirect_to root_path
   end
 
@@ -19,7 +33,6 @@ class MessagesController < ApplicationController
     @guestcount = params[:reservation][:guest_count]
     @messagebody = params[:message][:body]
     @group = Group.new(group_params)
-
     @message_body = @checkin.to_s+"/"+@checkout.to_s+"/"+@guestcount.to_s+"/"+@messagebody
     @message = Message.new(body: @message_body )
     @message.save
@@ -30,16 +43,22 @@ class MessagesController < ApplicationController
   end
 
   private
-  def message_params
-    params.require(:message).permit(:body).merge(user_id:current_user.id)
+  def prereserve_params
+
+    params.require(:message).permit(:body).merge( user_id:current_user.id, group_id: Group.all.length )
+
   end
 
   def group_params
-     params.require(:group).permit(:name, user_ids: [])
+     params.require(:group).permit(:name, :room_id, user_ids: [])
   end
 
   def reservation_params
     params.require(:reservation).permit(:check_in, :check_out).merge(room_id: 1, user_id:current_user.id)
+  end
+
+  def message_params
+  params.require(:message).permit(:image, :body).merge(group_id: params[:group_id])
   end
 
 end

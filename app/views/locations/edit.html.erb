@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <title>Airbnb</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style type="text/css">
+      .container{
+        height: 130vh;
+      }
+    </style>
+  </head>
+
+  <body>
+    <%= render partial: 'shared/host_header' %>
+    <div class="container room-edit-space">
+      <div class="listing-edit-title">所在地の情報</div>
+    <%= form_for [@room, @location] do |f| %>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="rooms-country">
+            <h5>国</h5>
+            <%= f.select :country, { 日本: '日本', アメリカ: 'アメリカ', その他: 'その他' } , {prompt: true}, {class: 'rooms-location-select'}  %>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="rooms-postal_code">
+            <h5>郵便番号</h5>
+            <%= f.text_field :postal_code, {class: 'rooms-location-text_field'}  %>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="rooms-prefecture">
+            <h5>都道府県</h5>
+            <%= f.text_field :prefecture, {class: 'rooms-location-text_field'}  %>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="rooms-city">
+            <h5>市区町村</h5>
+            <%= f.text_field :city, {class: 'rooms-location-text_field'}  %>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="rooms-adress">
+            <h5>所番地 ※数字は半角</h5>
+            <%= f.text_field :address, {class: 'rooms-location-text_field_lg'}  %>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="rooms-building_name">
+            <h5>建物名・部屋番号（任意）</h5>
+            <%= f.text_field :building_name, {class: 'rooms-location-text_field_lg'}  %>
+          </div>
+        </div>
+      </div>
+    <div class="main-panel-action-wrapper">
+      <div class="container room-edit-bottom-space">
+        <%= link_to '← 戻る', landing_rooms_path(current_user), class: 'h5 rooms-back-font' %>
+        <%= f.submit '更新', class: 'rooms-update-btn' %>
+      </div>
+    </div>
+  <% end %>
+  </body>
+
+</html>

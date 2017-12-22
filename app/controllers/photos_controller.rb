@@ -16,9 +16,16 @@ class PhotosController < ApplicationController
 	end
 
 	def edit
+		@room = Room.find(params[:room_id])
+    @photo = Photo.find(params[:id])
 	end
 
 	def update
+		@room = Room.find(params[:id])
+    @photo = Photo.find(params[:id])
+    if @photo.update(set_photo)
+      redirect_to landing_rooms_path(@room)
+    end
 	end
 
 	private

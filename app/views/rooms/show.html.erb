@@ -1,834 +1,250 @@
 <!doctype html>
 <html>
   <head>
-    <title>部屋、家、アパートをAirbnbで貸し出そう (2017)</title>
-    <!-- Required meta tags -->
+    <title>部屋、家、アパートをAirbnbで貸し出そう</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- <script type="text/javascript" src="jkl-calendar.js" charset="Shift_JIS"></script> -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
-    <script>
-      $(function() {
-      $("#datepicker").datepicker();
-      });
-    </script>
-    <script>
-  $(function() {
-    $("#datepicker1").datepicker();
-  });
-</script>
-    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/redmond/jquery-ui.css" >
-
-    <!-- <link rel="stylesheet" href="assets/style2.scss"> -->
-    <!-- <script src="assets/room.js"></script> -->
+    <%= javascript_include_tag "display.js" %>
+    <%= javascript_include_tag "room_show.js" %>
   </head>
 
-  <header class="header">
-    <nav class="navbar navbar-white bg-white navbar-style">
-      <div class="_iiid5y"><svg viewBox="0 0 1000 1000" role="presentation" aria-hidden="true" focusable="false" style="height:1em;width:1em;display:block;fill:currentColor"><path d="m499.3 736.7c-51-64-81-120.1-91-168.1-10-39-6-70 11-93 18-27 45-40 80-40s62 13 80 40c17 23 21 54 11 93-11 49-41 105-91 168.1zm362.2 43c-7 47-39 86-83 105-85 37-169.1-22-241.1-102 119.1-149.1 141.1-265.1 90-340.2-30-43-73-64-128.1-64-111 0-172.1 94-148.1 203.1 14 59 51 126.1 110 201.1-37 41-72 70-103 88-24 13-47 21-69 23-101 15-180.1-83-144.1-184.1 5-13 15-37 32-74l1-2c55-120.1 122.1-256.1 199.1-407.2l2-5 22-42c17-31 24-45 51-62 13-8 29-12 47-12 36 0 64 21 76 38 6 9 13 21 22 36l21 41 3 6c77 151.1 144.1 287.1 199.1 407.2l1 1 20 46 12 29c9.2 23.1 11.2 46.1 8.2 70.1zm46-90.1c-7-22-19-48-34-79v-1c-71-151.1-137.1-287.1-200.1-409.2l-4-6c-45-92-77-147.1-170.1-147.1-92 0-131.1 64-171.1 147.1l-3 6c-63 122.1-129.1 258.1-200.1 409.2v2l-21 46c-8 19-12 29-13 32-51 140.1 54 263.1 181.1 263.1 1 0 5 0 10-1h14c66-8 134.1-50 203.1-125.1 69 75 137.1 117.1 203.1 125.1h14c5 1 9 1 10 1 127.1.1 232.1-123 181.1-263.1z">
-      </path></svg></div>
-      <h1 class="text-danger font-weight-bold"></h1>
-      <ul class="nav justify-content-end">
-        <li class="nav-item nav-item-style">
-          <%= link_to 'ホストをはじめる', new_room_path, method: :get %>
-        </li>
-        <li class="nav-item nav-item-style">
-          <%= link_to 'お気に入り', "/favorites" %>
-        <li class="nav-item nav-item-style">
-          <%= link_to '旅行', "/" %>
-        </li>
-        <li class="nav-item nav-item-style">
-          <%= link_to 'メッセージ', "/" %>
-        </li>
-        <li class="nav-item nav-item-style">
-          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-        </li>
-      </ul>
-    </nav>
-    <div class="row row-1">
-      <div class="col-md-12">
-        <div class="jumbotron-show">
+  <%= render partial: 'shared/header' %>
+  <body>
+    <div class="jumbotron showpage-room-photo">
+      <%= image_tag @room.photos.first.image, height: '100%', width: '100%'  %>
+      <div class="showpage-room-photo-btn">
+        <%= render partial: 'rooms/photo_modal' %>
+      </div>
+       <span id="showpage-favorite-icon<%= @room.id %>">
+        <%= render partial: 'favorites/roomshow_favorite', locals: { room: @room, favorites: @favorites }  %>
+      </span>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="room-nav-space">
+            <a href="#0" style="text-decoration:none; color:#484848; font-weight:bold;">概要</a> ・ <a href="#1" style="text-decoration:none; color:#008489;">アメニティ・設備</a> ・ <a href="#2" style="text-decoration:none; color:#008489;">ハウスルール</a> ・ <a href="#3" style="text-decoration:none; color:#008489;">所在地</a>
+          </div>
+          <div class="room-overview-space">
+            <div class="room-overview-title">
+              <%= @room.explanatories.first.title %>
+            </div>
+            <div class="room-overview-form">
+              <%= @room.home_type %>・<%= @room.room_type%>・<%= @room.locations.first.prefecture %><%= @room.locations.first.city %>
+            </div>
+            <div class="room-overview-amenity">
+              <i class="fa fa-users room-show-icon-space">
+                ゲスト<%= @room.bedrooms.first.capacity_count %>人
+              </i>
+              <i class="fa fa-bed room-show-icon-space">
+                <%= @room.bedrooms.first.rooms_count %>寝室・ベッド<%= @room.bedrooms.first.beds_count %>台
+              </i>
+              <i class="fa fa-bath room-show-icon-space">
+                バスルーム<%= @room.bathrooms.first.bathrooms_count %>
+              </i>
+            </div>
+            <div class="room-overview-explanatory">
+              <div id="0", class="room-explanatory-text"><%= @room.explanatories.first.overview %></div>
+              <div class="room-show-overview fa fa-angle-double-down">このお部屋の続きを読む</div>
+              <div class="room-explanatory-area">
+                <span class="room-explanatory-font-style">スペース</span>
+                  <p class="room-explanatory-text"><%= @room.explanatories.first.space %></p>
+                <span class="room-explanatory-font-style">ゲストの立ち入り範囲</span>
+                  <p class="room-explanatory-text"><%= @room.explanatories.first.guest_access %></p>
+                <span class="room-explanatory-font-style">ゲストとの交流</span>
+                  <p class="room-explanatory-text"><%= @room.explanatories.first.guest_interraction %></p>
+                <span class="room-explanatory-font-style">その他の特記事項</span>
+                  <p class="room-explanatory-text"><%= @room.explanatories.first.other_things_to_note %></p>
+                <div class="room-show-overview-hidden fa fa-angle-double-up">隠す</div>
+                <div class="room-show-host-access">ホストに連絡</div>
+              </div>
+            </div>
+          </div>
+          <div class="room-amenity-content">
+            <div id="1", class="room-amenity-title">アメニティ・設備</div>
+            <div class="room-show-amenity-display fa fa-angle-double-down">すべて表示する</div>
+              <% if @room.amenities.first.cable_tv == true %>
+                <p class="fa fa-television room-amenity-font-style">ケーブルテレビ</p>
+              <% else %>
+                <p class="fa fa-television room-amenity-font-style"><s>ケーブルテレビ</s></p>
+              <% end %>
+              <% if @room.amenities.first.air_conditioning == true %>
+                <p class="room-amenity-font-style">エアコン</p>
+              <% else %>
+                <p class="room-amenity-font-style"><s>エアコン</s></p>
+              <% end %>
+              <% if @room.amenities.first.wireless_internet == true %>
+                <p class="fa fa-wifi room-amenity-font-style">ワイヤレスインターネット</p>
+              <% else %>
+                <p class="fa fa-wifi room-amenity-font-style"><s>ワイヤレスインターネット</s></p>
+              <% end %>
+              <div class="room-amenity-area">
+                <% if @room.amenities.first.kitchen == true %>
+                  <p class="room-amenity-font-style">キッチン</p>
+                <% else %>
+                  <p class="room-amenity-font-style"><s>キッチン</s></p>
+                <% end %>
+                <% if @room.amenities.first.elevator == true %>
+                  <p class="room-amenity-font-style">エレベーター</p>
+                <% else %>
+                  <p class="room-amenity-font-style"><s>エレベーター</s></p>
+                <% end %>
+                <% if @room.amenities.first.gym == true %>
+                  <p class="room-amenity-font-style">ジム</p>
+                <% else %>
+                  <p class="room-amenity-font-style"><s>ジム</s></p>
+                <% end %>
+                 <% if @room.amenities.first.doorman == true %>
+                  <p class="room-amenity-font-style">ドアマン</p>
+                <% else %>
+                  <p class="room-amenity-font-style"><s>ドアマン</s></p>
+                <% end %>
+                <% if @room.amenities.first.breakfast == true %>
+                  <p class="room-amenity-font-style">朝食</p>
+                <% else %>
+                  <p class="room-amenity-font-style"><s>朝食</s></p>
+                <% end %>
+                <% if @room.amenities.first.suitable_for_events == true %>
+                  <p class="room-amenity-font-style">イベントに最適</p>
+                <% else %>
+                  <p class="room-amenity-font-style"><s>イベントに最適</s></p>
+                <% end %>
+                <% if @room.amenities.first.free_parking == true %>
+                  <p class="room-amenity-font-style">専用駐車場</p>
+                <% else %>
+                  <p class="room-amenity-font-style"><s>専用駐車場</s></p>
+                <% end %>
+                <% if @room.amenities.first.wheelchair_accessible == true %>
+                  <p class="room-amenity-font-style">車椅子可</p>
+                <% else %>
+                  <p class="room-amenity-font-style"><s>車椅子可</s></p>
+                <% end %>
+                <% if @room.amenities.first.hot_tub == true %>
+                  <p class="room-amenity-font-style">ジャグジー</p>
+                <% else %>
+                  <p class="room-amenity-font-style"><s>ジャグジー</s></p>
+                <% end %>
+                <% if @room.amenities.first.baby_bath == true %>
+                  <p class="room-amenity-font-style">ベビーバス</p>
+                <% else %>
+                  <p class="room-amenity-font-style"><s>ベビーバス</s></p>
+                <% end %>
+                <% if @room.amenities.first.baby_monitor == true %>
+                  <p class="room-amenity-font-style">ベビーモニター</p>
+                <% else %>
+                  <p class="room-amenity-font-style"><s>ベビーモニター</s></p>
+                <% end %>
+                <% if @room.amenities.first.babysitter == true %>
+                  <p class="room-amenity-font-style">ベビーシッター</p>
+                <% else %>
+                  <p class="room-amenity-font-style"><s>ベビーシッター</s></p>
+                <% end %>
+                <% if @room.amenities.first.bathtub == true %>
+                  <p class="room-amenity-font-style">バスタブ</p>
+                <% else %>
+                  <p class="room-amenity-font-style"><s>バスタブ</s></p>
+                <% end %>
+                <% if @room.amenities.first.changing_table == true %>
+                  <p class="room-amenity-font-style">おむつ交換台</p>
+                <% else %>
+                  <p class="room-amenity-font-style"><s>おむつ交換台</s></p>
+                <% end %>
+                <% if @room.amenities.first.childrend_books_and_toys == true %>
+                  <p class="room-amenity-font-style">絵本＆おもちゃ</p>
+                <% else %>
+                  <p class="room-amenity-font-style"><s>絵本＆おもちゃ</s></p>
+                <% end %>
+                <% if @room.amenities.first.childrens_dinnerware == true %>
+                  <p class="room-amenity-font-style">子供用まえかけ</p>
+                <% else %>
+                  <p class="room-amenity-font-style"><s>子供用まえかけ</s></p>
+                <% end %>
+                <% if @room.amenities.first.crib == true %>
+                  <p class="room-amenity-font-style">ベビーベッド</p>
+                <% else %>
+                  <p class="room-amenity-font-style"><s>ベビーベッド</s></p>
+                <% end %>
+                <div class="room-show-amenity-hidden fa fa-angle-double-up">隠す</div>
+              </div>
+            </div>
+          <div class="room-rule-content">
+            <div id="2", class="room-rule-title">ハウスルール</div>
+            <% if @room.rules.first.children_for_2_12 == true %>
+              <p class="room-rule-font">子ども（２- １２歳）OK</p>
+            <% end %>
+            <% if @room.rules.first.for_infants_under_2 == true %>
+              <p class="room-rule-font">乳幼児（２歳未満）OK</p>
+            <% end %>
+            <% if @room.rules.first.for_pets == true %>
+              <p class="room-rule-font">ペットOK</p>
+            <% end %>
+            <% if @room.rules.first.smoking == true %>
+              <p class="room-rule-font">喫煙OK</p>
+            <% end %>
+            <% if @room.rules.first.parties == true %>
+              <p class="room-rule-font">イベント＆パーティOK</p>
+            <% end %>
+            <% if @room.rules.first.stairs == true %>
+              <p class="room-rule-font">階段を登らないとたどり着けません</p>
+            <% end %>
+            <% if @room.rules.first.noises == true %>
+              <p class="room-rule-font">騒音の可能性あり</p>
+            <% end %>
+            <% if @room.rules.first.pets == true %>
+              <p class="room-rule-font">ペットがいます</p>
+            <% end %>
+            <% if @room.rules.first.spaces == true %>
+              <p class="room-rule-font">共用スペースあり</p>
+            <% end %>
+            <% if @room.rules.first.minimum_amenities == true %>
+              <p class="room-rule-font">一部アメニティは最低限のものです（例：ネットが遅い）</p>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-md-6 room-showpage-reservation-col">
+          <div class="room-showpage-reservation">
+            <div class="room-showpage-reserve-space">
+              <span class="room-showpage-price">
+                ¥<%= number_to_currency(@room.prices.first.basic_charge) %> /泊
+              </span>
+            </div>
+            <%= form_for(@reservation, url: { controller: :reservations, action: :coming, room_id: :id }) do |f| %>
+            <%= f.label :check_in, "チェックイン", class: 'room-showpage-checkin' %>
+            <%= f.date_field :check_in, class: 'DateInput__input room-showpage-input' %>
+            <%= f.label :check_out, "チェックアウト", class: 'room-showpage-checkout' %>
+            <%= f.date_field :check_out, class: 'DateInput__input room-showpage-input' %>
+            <%= f.label :guest_count, "ゲスト", class: 'room-showpage-guest' %>
+            <%= f.select :guest_count, [["ゲスト1人", "1"],["ゲスト2人","2"],["ゲスト3人","3"],["ゲスト4人","4"]], {}, class: 'room-showpage-select-guest' %>
+            <%= f.submit "予約する", class: "room-showpage-reserve-btn"%>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div id="3", class="room-location-title">エリア</div>
+        <div class="room-showppage-location-font"><%= @room.user.name %>さん宅の所在地は<%= @room.locations.first.prefecture %><%= @room.locations.first.city %>です</div>
+          <div class="room-location", id="map">
+
+            <div class="room-showppage-location-font">詳しい住所はご予約後にお知らせします。</div>
+          </div>
         </div>
       </div>
     </div>
-  </header>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+    <div id="mapa" style="width: 900px; height:800px; margin-left:200px;"></div>
+    <script>
+      var mapa;
+      function initMap() {
+        mapa = new google.maps.Map(document.getElementById('mapa'), {
+          center: {lat: gon.latitude, lng: gon.longitude},
+          zoom: 15
+        });
+      }
+    </script>
 
-<body>
-  <div class="left-box">
-    <div class="nav-overview">
-      <nav class="navbarfirst">
-        <nav class="navbarleft">
-          <nav class="navbarsecond">
-            <span class="overview">
-              <button type="button" class="overview_btn" aria-disabled="false" aria-busy="false">
-                <span>概要</span>
-              </button>
-            </span>
-            <span class="dot">
-              <span aria-hidden="true"> · </span>
-            </span>
-            <span class="overview">
-              <button type="button" class="overview_btn" aria-disabled="false" aria-busy="false">
-                <span>レビュー</span>
-              </button>
-            </span>
-            <span class="dot">
-              <span aria-hidden="true"> · </span>
-            </span>
-            <span class="overview">
-              <button type="button" class="overview_btn" aria-disabled="false" aria-busy="false">
-                <span>ホストについて</span>
-              </button>
-            </span>
-            <span class="dot">
-              <span aria-hidden="true"> · </span>
-            </span>
-            <span class="overview">
-              <button type="button" class="overview_btn" aria-disabled="false" aria-busy="false">
-                <span>所在地</span>
-              </button>
-            </span>
-          </nav>
-        </nav>
-        <nav  class="navbarright">
-          <nav class="navbarthird">
-            <span class="overview1">
-              <button type="button" class="overview_btn1" aria-disabled="false" aria-busy="false">
-                <span>シェアする</span>
-              </button>
-            </span>
-            <span class="overview1">
-              <button type="button" class="overview_btn1" aria-disabled="false" aria-busy="false">
-                <span>保存</span>
-              </button>
-            </span>
-          </nav>
-        </nav>
-      </nav>
-    </div>
-  <div class="primarycontent">
-    <div class="Maincontent">
-      <div style="margin-top:24px;margin-bottom:24px">
-        <div class="house_name1">
-          <div style="margin-bottom:6px">
-            <div itemprop="name">
-              <span class="house_name2">I SETTE CONI - TRULLO EDERA </span>
-            </div>
-          </div>
-          <div style="margin-bottom:16px">
-            <div class="text-muted" data-location="オストゥーニ">
-              <div>
-                <span>
-                  <a href="" class="link-reset">一軒家貸切</a>
-                  <span aria-hidden="true"> · </span>
-                  <a href="#neighborhood" class="link-reset">オストゥーニ</a>
-                </span>
-              </div>
-            </div>
-          </div>
-            <div class="profile">
-              <div style="margin-top:12px">
-                <div class="text-center text-muted">
-                  <div style="margin-bottom:6px">
-                    <div style="height:64px;width:64px;display:block" class="profile1">
-                      <a href="#host-profile" class="_110nrr2" aria-label="Annaさんのプロフィール" aria-busy="false">
-                        <img class="_12r18es" src="" height="64" width="64" alt="Annaさんのプロフィール" title="Annaさんのプロフィール">
-                      </a>
-                    </div>
-                  </div>
-                  <a aria-hidden="true" class="link-reset text-wrap text-small" href="#host-profile" tabindex="-1">Anna</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div>
-          <div class="conditions">
-            <div class="_inlineStyles_9ijic4">
-              <span class="_1mszfa7p">
-                <span class="mark" aria-hidden="true">󰄂</span>
-              </span>
-            </div>
-          </div>
-          <div class="conditions">
-            <span class="conditions_text">ゲスト4人</span>
-          </div>
-          <div class="conditions">
-            <div class="_inlineStyles_9ijic4">
-              <span class="_1mszfa7p">
-                <span class="mark" aria-hidden="true">󰄄</span>
-              </span>
-            </div>
-          </div>
-          <div class="conditions">
-            <span class="conditions_text">1寝室</span>
-          </div>
-          <div class="conditions">
-            <div class="_inlineStyles_9ijic4">
-              <span class="_1mszfa7p">
-                <span class="mark" aria-hidden="true">󰄃</span>
-              </span>
-            </div>
-          </div>
-          <div class="conditions">
-            <span class="conditions_text">ベッド2台</span>
-          </div>
-          <div class="conditions">
-            <div class="_inlineStyles_9ijic4">
-              <span class="_1mszfa7p">
-                <span class="mark" aria-hidden="true">󰄁</span>
-              </span>
-            </div>
-          </div>
-            <div class="conditions">
-              <span class="conditions_text">バスルーム1</span>
-            </div>
-          </div>
-        </div>
-        <div id="details">
-          <div>
-            <div style="margin-bottom:12px">
-              <div style="margin-bottom:12px">
-                <button type="button" class="btn btn-block">
-                  <span>
-                    <span>日本語で読む</span>
-                  </span>
-                </button>
-              </div>
-            </div>
-          </div>
-            <div>
-              <p>
-                <strong>
-                  <span>スペース</span>
-                </strong>
-              </p>
-            </div>
-          <div>
-            <div class="house_text">
-              <p>
-                <span>Spend a unforgettable holiday in the enchanting surroundings of the town of Cisternino (reachable from the near airports of Bari and Brindisi).</span>
-                <span>Prices vary on period and are to be considered included: in-outcoming cleanings, towels, sheets, water,
-                     gas, electricity.</span>
-              </p>
-            </div>
-          </div>
-        </div>
-
-
-      <div style="margin-bottom:40px clearfix">
-        <div class="amenities">
-          <div style="margin-bottom:16px">
-            <span class="amenity">
-              <span>アメニティ・設備</span>
-            </span>
-          </div>
-        </div>
-        <div style="margin-bottom:-4px">
-          <div class="amenities1">
-            <div style="margin-bottom:16px">
-              <div class="text-muted">エレベーターあり</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">ペットOK</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted"><del aria-hidden="true">敷地内無料駐車場</del></div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">喫煙OK</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">ドアマン</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">プール</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">ジム</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">ジャクージ&高級風呂</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">車いすOK</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">キッチン</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">イベントに最適</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">室内暖炉・薪ストーブ・囲炉裏</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">エアコン</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">ワイヤレスインターネット</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">朝食</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="family-amenity">ファミリー用アメニティ</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">ベビーバス</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">ベビーモニター</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">おすすめのベビーシッター</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">バスタブ</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">おむつ交換台</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">絵本&おもちゃ</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">子ども用食器</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">ベビーベッド</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">ストーブガード</div>
-            </div>
-
-          </div>
-          <div class="amenities2">
-            <div style="margin-bottom:16px">
-              <div class="text-muted">ワイヤレスインターホン</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">乾燥機</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">ケーブルテレビ</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">ヘアドライヤー</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">アイロン</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">洗濯機</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">シャンプー</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">ハンガー</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">テレビ</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">暖房</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">必需品</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted"></div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">専用のリビングルーム</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">専用の玄関</div>
-            </div>
-            <div style="margin-bottom:101px">
-              <div class="text-muted">LAN接続</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">ゲーム機</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">ハイチェア</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">プレイヤード/お出かけクリブ</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">遮光カーテン</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">階段用ベビーゲート</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">テーブルのコーナーガード</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">窓転落防止柵</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">その他１</div>
-            </div>
-            <div style="margin-bottom:16px">
-              <div class="text-muted">その他２</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <div>
-          <div class="reviews col-md-6">
-            <div style="margin-bottom:40px">
-              <div>
-                <div style="margin-bottom:12px">
-                  <div class="review-title">
-                    <span class="review-title1">
-                      <span>レビュー150件</span>
-                    </span>
-                    <span class="rating-star1">
-                      <i class="star-actived rate-100">★★★★★</i>
-                    </span>
-                  </div>
-                </div>
-                <div class>
-                  <div class="review-list">
-                    <div class="review-left">
-                      <div style="margin-bottom:12px">
-                        <div class="accuracy">
-                          <span class="accuracy1">正確さ</span>
-                        </div>
-                        <span class="rating-star1">
-                          <i class="star-actived rate-100">★★★★★</i>
-                        </span>
-                      </div>
-                      <div style="margin-bottom:12px">
-                        <div class="accuracy">
-                          <span class="accuracy1">コミュニケーション</span>
-                        </div>
-                        <span class="rating-star1">
-                          <i class="star-actived rate-100">★★★★★</i>
-                        </span>
-                      </div>
-                      <div style="margin-bottom:12px">
-                        <div class="accuracy">
-                          <span class="accuracy1">清潔さ</span>
-                        </div>
-                        <span class="rating-star1">
-                          <i class="star-actived rate-100">★★★★★</i>
-                        </span>
-                      </div>
-                    </div>
-                    <div class="review-right">
-                      <div style="margin-bottom:12px">
-                        <div class="accuracy">
-                          <span class="accuracy1">ロケーション</span>
-                        </div>
-                        <span class="rating-star1">
-                          <i class="star-actived rate-100">★★★★★</i>
-                        </span>
-                      </div>
-                      <div style="margin-bottom:12px">
-                        <div class="accuracy">
-                          <span class="accuracy1">チェックイン</span>
-                        </div>
-                        <span class="rating-star1">
-                          <i class="star-actived rate-100">★★★★★</i>
-                        </span>
-                      </div>
-                      <div style="margin-bottom:12px">
-                        <div class="accuracy">
-                          <span class="accuracy1">コスパ</span>
-                        </div>
-                        <span class="rating-star1">
-                          <i class="star-actived rate-100">★★★★★</i>
-                        </span>
-                      </div>
-                    </div>
-                    <div style="margin-top:8px;margin-bottom:16px">
-                      <button type="button" class="btn btn-block">
-                        <span>
-                          <span>日本語にレビューを翻訳する</span>
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="review-content">
-                    <div class="review-content1">
-                      <div class="reviewer">
-                        <div class="reviewer1">
-                          <div class="reviewer-photo">
-                          </div>
-                          <div class="reviewer-name">
-                            <div class="reviewer-name1">
-                              <span class="reviewer-name2">Rachel</span>
-                            </div>
-                            <div class="date">
-                              <div class="date1">2017年4月</div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="review-text">
-                        <div class="review-text1">
-                          I have NEVER had a better experience than what I had with Thenya and Marco! I cannot express enough how amazing they are. It felt like I was staying with a family friend; they are such kind and welcoming people.
-                        </div>
-                      </div>
-                    </div>
-                    <div class="review-content1">
-                      <div class="reviewer">
-                        <div class="reviewer1">
-                          <div class="reviewer-photo">
-                          </div>
-                          <div class="reviewer-name">
-                            <div class="reviewer-name1">
-                              <span class="reviewer-name2">Asuka</span>
-                            </div>
-                            <div class="date">
-                              <div class="date1">2016年2月</div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="review-text">
-                        <div class="review-text1">
-                          It was wonderful experience to stay this place! Thenya and Marco are so nice and helpful. Even though I was staying for only two days, I could feel a one of the family. Thanks so much, and I'll definitely come back!
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="host-introduction col-md-6">
-        <div style="margin-bottom:8px">
-          <div class="host-intro">
-            <span>ホストはMarcya & Marcyaさん</span>
-          </div>
-        </div>
-        <div style="margin-bottom:16px">
-          <div class="attribute">
-            <span>アムステルダム, オランダ<span aria-hidden="true"> · </span></span>
-            <span>10月 2015からメンバー</span>
-          </div>
-        </div>
-        <div class="host-review">
-          <div class="host-review1">
-            <div id="null_count" class="host-review2">
-              <span class="_e296pg">193</span>
-            </div>
-            <div class="host-review3">
-              <span class="host-review4">
-                <span class="host-review5">レビュー</span>
-              </span>
-            </div>
-          </div>
-        </div>
-        <div style="margin-bottom:16px">
-          <span class="host-text">
-            "Our guests tell us we are friendly, helpful, enthusiastic and hospitable.
-             It's amazing to meet people from all over the world and welcome them in our 1878 built Canal House.
-             Airbnb makes that happen :)"
-          </span>
-        </div>
-        <div style="margin-top:8px;margin-bottom:16px">
-          <span>
-            <button type="button" class="host-contact1" aria-busy="false">
-              <span class="host-contact2">
-                <span>ホストに連絡</span>
-              </span>
-            </button>
-          </span>
-        </div>
-        <span class="language">
-          <span>言語：</span>
-          <span class="language1">Dansk、Deutsch、English、Français、Italiano、Nederlands</span>
-        </span>
-        <div class="row row-condensed space-2">
-          <div class="col-md-8">
-            <span class="response">
-              <span>返答率：</span>
-              <span class="response1">100%</span>
-            </span>
-            <div>
-              <span class="response">
-                <span>返答時間：</span>
-              </span>
-              <span class="response">1時間以内</span>
-            </div>
-          </div>
-        </div>
-        <div class="space-top-8" velouteid="about-the-host-cohosts-section" data-veloute="about-the-host-cohosts-section">
-          <div>
-            <h4 class="space-2 text-center-sm">
-              <span>お家について</span>
-            </h4>
-          </div>
-          <div>
-            <p>
-              <span>Airbnbの宿泊先は、一般の方のお宅です。</span>
-            </p>
-            <hr class="space-4 space-top-2">
-          </div>
-          <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-4 space-3">
-              <div>
-                <div class="space-1">
-                  <span class="text-muted">
-                    <span>こちらはMarcya &amp; Marcyaさんのお家です。</span>
-                  </span>
-                </div>
-                <div class="profile-photo">
-                  <span data-behavior="tooltip" data-position="bottom" aria-label="Marcya &amp; Marcya">
-                    <div style="height:48px;width:48px;display:block" class="profile-photo1">
-                      <a href="/users/show/45928436" target="_blank" rel="noopener noreferrer" class="profile-photo2" aria-label="Marcya &amp; Marcya" aria-busy="false">
-                        <img class="profile-photo3" src="" height="48" width="48" alt="Marcya &amp; Marcya" title="Marcya &amp; Marcya">
-                      </a>
-                    </div>
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 space-3">
-              <div>
-                <div class="space-1">
-                  <span class="text-muted">
-                    <span>補助ホストはMarcoさん。</span>
-                  </span>
-                </div>
-                <div class="profile-photo">
-                  <span data-behavior="tooltip" data-position="bottom" aria-label="Marco">
-                    <div style="height:48px;width:48px;display:block" class="profile-photo1">
-                      <a href="/users/show/54367601" target="_blank" rel="noopener noreferrer" class="profile-photo2" aria-label="Marco" aria-busy="false">
-                        <img class="profile-photo3" src="" height="48" width="48" alt="Marco" title="Marco">
-                      </a>
-                    </div>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <iframe
-          width="600"
-          height="450"
-          frameborder="0" style="border:0"
-          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCKb6VZsMpwGrlBuuv8J6pSrXKHAZTw5-k
-          &q=Space+Needle,Seattle+WA" allowfullscreen>
-        </iframe>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div style="margin-top:32px;margin-bottom:24px">
-  <div class="right-box">
-    <div class="reservation">
-      <div>
-        <div>
-          <div>
-            <span>
-              <span class="price">
-                <span>¥ 10,871</span>
-              </span>
-              <span class="stay">
-                <span>/1泊</span>
-              </span>
-            </span>
-          </div>
-          <button type="button" class="right-review" aria-label="すべてのレビューを読む" aria-busy="false">
-            <span class="rating-star">
-              <i class="star-actived rate-100">★★★★★</i>
-            </span>
-            <span class="review-count">
-              <span>150</span>
-            </span>
-          </button>
-          <div class="line-parent">
-            <div class="line"></div>
-          </div>
-        </div>
-        <!-- <%= form_tag("/rooms/:room_id/reservations/coming", method: "get") do %>
-          <%= date_field :check_in, class: 'DateInput__input needsclick' %>
-          <%= date_field :check_out, class: 'DateInput__input needsclick' %>
-          <%= submit_tag "予約する", class: "reserve1"%>
-        <% end %> -->
-        <%= form_for(@reservation, :url => {:controller => :reservations, :action => :coming, :room_id => :id}) do |f| %>
-        <%= f.label :check_in, "チェックイン", class: 'message-new-left1' %>
-        <%= f.date_field :check_in, class: 'DateInput__input needsclick' %>
-        <%= f.label :check_out, "チェックアウト", class: 'message-new-left1' %>
-        <%= f.date_field :check_out, class: 'DateInput__input needsclick' %>
-        <%= f.label :guest_count, "ゲスト", class: 'message-new-left1' %>
-        <%= f.select :guest_count, [["ゲスト1人", "1"],["ゲスト2人","2"],["ゲスト3人","3"],["ゲスト4人","4"]], {}, :class => 'messages-guest-select' %>
-        <%= f.submit "予約する", class: "reserve1"%>
-        <% end %>
-
-        <!-- <%= form_for('/messages/new/', method: :get) do %>
-          <div class="contents row">
-            <div class="booking-parent">
-              <div class="booking">
-                <div>
-                  <label class="booking_date">
-                    <small class="date_book">
-                      <span>日付</span>
-                    </small>
-                  </label>
-                  <div class="DatePickerContainer">
-                    <div class="DateRangePicker">
-                        <div class="DateRangePickerInput">
-                          <div class="DateInput DateInput--open-down">
-                            <input type="text" aria-label="チェックイン" class="DateInput__input needsclick" id="datepicker" name="checkin" value="" placeholder="チェックイン" autocomplete="off" aria-describedby="DateInput__screen-reader-message-checkin">
-                            <p id="DateInput__screen-reader-message-checkin" class="screen-reader-only">
-                            </p>
-                            <div class="DateInput__display-text"></div>
-                          </div>
-                          <div class="DateInput DateInput--open-down">
-                            <input type="text" aria-label="チェックアウト" class="DateInput__input needsclick" id="datepicker1" name="checkout" value="" placeholder="チェックアウト" autocomplete="off" aria-describedby="DateInput__screen-reader-message-checkout">
-                            <p id="DateInput__screen-reader-message-checkout" class="screen-reader-only">
-                            </p>
-                            <div class="DateInput__display-text"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="guest-parent">
-                <div class="guest">
-                  <div>
-                    <label class="guest_number">
-                      <small class="guest_count">
-                        <span>ゲスト</span>
-                      </small>
-                    </label>
-                    <div class="GuestPickerContainer">
-                      <div class="GuestRangePicker">
-                        <div>
-                          <div class="GuestRangePickerInput">
-                            <div class="GuestInput GuestInput--open-down">
-                              <input type="text" aria-label="ゲスト１人" class="DateInput__input" id="guestnum" name="guestcount" value="" placeholder="ゲスト１人" autocomplete="off" aria-describedby="GuestInput__screen-reader-message-checkin">
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="reserve">
-                <button type="submit" class="reserve1" aria-busy="false" data-veloute="book-it-button">
-                  <span class="reserve2">
-                    <span>予約する</span>
-                  </span>
-                </button>
-                <div class="account">
-                  <div class="account1">
-                    <small class="account2">
-                      <span>まだ請求は発生しません</span>
-                    </small>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <% end %> -->
-
-
-
-
-
-
-  </div>
-</div>
-</div>
-</div>
-
-
-<footer class="footer-show">
-  <div class="footer-content">
-    <div class="footer-role">
-      <div class="select-content">
-        <div class="dropdown">
-          <button class="btn btn-lg dropdown-toggle laguage-style rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">日本語</button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">English</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="btn btn-lg dropdown-toggle money-style rounded-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">日本円</button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">米ドル</a>
-          </div>
-        </div>
-      </div>
-      <div class="intoroduction-content1">
-        <div class=" p p-style0">Airbnb<br>
-          <br>
-          <a>会社情報</a><br>
-          <a>採用情報</a><br>
-          <a>プレス</a><br>
-          <a>ポリシー</a><br>
-          <a>ヘルプ</a><br>
-          <a>ダイバーシティ＆ビロンギング</a><br>
-        </div>
-      </div>
-      <div class="intoroduction-content2">
-        <div class="p p-style0">スタッフのおすすめ<br>
-          <br>
-          <a>信頼＆安全</a><br>
-          <a>旅行クーポン</a><br>
-          <a>Airbnb Citizen</a><br>
-          <a>出張</a><br>
-          <a>ガイドブック</a><br>
-          <a>Airbnbmag </a><br>
-        </div>
-      </div>
-      <div class="intoroduction-content3">
-        <div class="p p-style0">ホスティング<br>
-          <br>
-          <a>ホストになる理由</a><br>
-          <a>ホストに招待</a><br>
-          <a>おもてなしの心</a><br>
-          <a>ホストの責任</a><br>
-          <a>コミュニティセンター</a><br>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="copyright-left">@Airbnb_Team</div>
-      <div class="copyright-right">
-        <a>利用規約</a>
-        <a>プライバシー</a>
-        <a>サイトマップ</a>
-        <i class="fa fa-facebook icon-style1" aria-hidden="true"></i>
-        <i class="fa fa-twitter icon-style1" aria-hidden="true"></i>
-        <i class="fa fa-instagram icon-style1" aria-hidden="true"></i>
-      </div>
-    </div>
-  </div>
-</footer>
-
-</body>
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBni7w26AcUziUF-q9RO0NxsvB9OldANiQ&callback=initMap"
+    async defer></script>
+  </body>
+  <%= render partial: 'shared/footer' %>
 </html>

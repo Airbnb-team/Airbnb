@@ -1,0 +1,16 @@
+<div class="row row-5">
+  <div class="col-md-4">
+    <div class="card" style="width: 20rem;">
+      <%= image_tag location.room.photos.first.image, height: '200px', width: '300px' %>
+      <div class="card-body">
+        <p class="card-text font-weight-bold">
+          <div class="search-house-name">
+            <%= link_to location.room.explanatories[0].title, room_path(location.room.explanatories[0].id) %>
+          </div>
+          <%= location.room.room_type %>・ベッド<%= location.room.bedrooms.first.beds_count %>台
+          ¥<%= number_to_currency(location.room.prices.first.basic_charge) %> /泊
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
