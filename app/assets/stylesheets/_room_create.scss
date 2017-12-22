@@ -101,11 +101,6 @@
   float: right;
 }
 
-.toppage-room-search{
-	width: 306px;
-	height: 72px;
-}
-
 .toppage-image{
 	float:left;
 }
@@ -158,13 +153,6 @@
 
 .toppage-main-content{
 	padding-top: 100px;
-	position: relative;
-}
-
-.toppage-container {
-	margin: 0 auto;
-	padding-left: 80px;
-	padding-right: 80px;
 }
 
 .toppage-serach {
@@ -182,7 +170,6 @@
 
 .toppage-host-left-content{
 	float: left;
-	width: 40%;
 }
 
 .toppage-host-intro{
@@ -197,7 +184,6 @@
 
 .toppage-host-into-content{
 	max-width: 800px;
-	width: 85%;
   margin: 0 auto;
 }
 
@@ -262,7 +248,7 @@
 
 .empty-heart{
 	top: 8px;
-	right: 8px;
+	right: 60px;
 	position: absolute;
 	color: red;
 	opacity: 0.7;
@@ -270,7 +256,7 @@
 
 .full-heart{
 	top: 8px;
-	right: 8px;
+	right: 60px;
 	position: absolute;
 }
 
@@ -281,7 +267,6 @@
 }
 
 .footer-content {
-	width: 1100px;
 	height: 300px;
 	margin: 0 auto;
 	display: block;
@@ -305,7 +290,7 @@
 
 .laguage-style {
 	height: 48px;
-	width: 250px;
+	width: 100%;
 	color: #666666;
 	font-weight: 100;
 	font-size: 1.2em;
@@ -317,7 +302,7 @@
 
 .money-style {
 	height: 48px;
-	width: 250px;
+	width: 100%;
 	color: #666666;
 	font-weight: 100;
 	font-size: 1.2em;
@@ -328,28 +313,24 @@
 }
 
 .intoroduction-content1 {
-	width: 250px;
 	height: 250px;
 	margin-left: 15px;
 	display: inline-block;
 }
 
 .intoroduction-content2 {
-	width: 250px;
 	height: 250px;
 	margin-left: 15px;
 	display: inline-block;
 }
 
 .intoroduction-content3 {
-	width: 250px;
 	height: 250px;
 	margin-left: 15px;
 	display: inline-block;
 }
 
 .footer-copyright {
-	width: 1100px;
   height: 100px;
   border-top: 0.1px solid #dddddd;
   margin-right: auto;

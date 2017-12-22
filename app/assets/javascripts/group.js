@@ -5,8 +5,8 @@ $(function() {
          check_out = first_input_split[1]
          guest_count = first_input_split[2]
          guest_message = first_input_split[3]
-        $( ".show_each_message:eq(0)" ).replaceWith( '
-          <span>チェックイン:' + check_in + '</span>' + '<br>' +
+        $( ".show_each_message:eq(0)" ).replaceWith(
+          '<span>チェックイン:' + check_in + '</span>' + '<br>' +
           '<span>チェックアウト:' + check_out+ '</span>' + '<br>' +
           '<span>ゲストの人数:' + guest_count + '</span>' + '<br>' +
           '<span>ユーザーのメッセージ:' + guest_message + '</span>' + '<br>'
