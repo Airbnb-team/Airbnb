@@ -18,7 +18,7 @@ function initMap() {
 
  // 地図の作成
   var mapLatLng = new google.maps.LatLng({lat: gon.markerData[0]['lat'], lng: gon.markerData[0]['lng']}); // 緯度経度のデータ作成
-  var map = new google.maps.Map( document.getElementById('map'), { // #mapに地図を埋め込む
+  var map = new google.maps.Map( document.getElementById('map'), {
     center: mapLatLng, // 地図の中心を指定
     zoom: 15 // 地図のズームを指定
   });

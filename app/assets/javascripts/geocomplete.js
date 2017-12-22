@@ -6,11 +6,7 @@
  * @license MIT License <http://www.opensource.org/licenses/mit-license.php>
  */
 
-// # $.geocomplete()
-// ## jQuery Geocoding and Places Autocomplete Plugin
-//
-// * https://github.com/ubilabs/geocomplete/
-// * by Martin Kleppe <kleppe@ubilabs.net>
+
 
 (function($, window, document, undefined){
 
@@ -42,8 +38,7 @@
     restoreValueAfterBlur: false
   };
 
-  // See: [Geocoding Types](https://developers.google.com/maps/documentation/geocoding/#Types)
-  // on Google Developers.
+
   var componentTypes = ("street_address route intersection political " +
     "country administrative_area_level_1 administrative_area_level_2 " +
     "administrative_area_level_3 colloquial_area locality sublocality " +
@@ -52,8 +47,7 @@
     "lat lng viewport location " +
     "formatted_address location_type bounds").split(" ");
 
-  // See: [Places Details Responses](https://developers.google.com/maps/documentation/javascript/places#place_details_responses)
-  // on Google Developers.
+  
   var placesDetails = ("id place_id url website vicinity reference name rating " +
     "international_phone_number icon formatted_phone_number").split(" ");
 
@@ -524,7 +518,7 @@
 
     var attribute = 'plugin_geocomplete';
 
-    
+
     if (typeof options == "string"){
 
       var instance = $(this).data(attribute) || $(this).geocomplete().data(attribute),
