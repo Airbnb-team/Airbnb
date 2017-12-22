@@ -288,7 +288,7 @@ label {
   border-style: ridge;
   height: 1100px;
   position: absolute;
-  top: 80px;
+  top: 130px;
   left: 200px;
 }
 
@@ -338,6 +338,8 @@ label {
 }
 
 .messages-chat-main {
+  position: relative;
+  top: 50px;
 }
 
 .screen-reader-only {
@@ -399,7 +401,6 @@ textarea {
 }
 
 .messages-chat-main1 {
-  height:94px;
   width: 489px;
   background-color: #edefed;
   position: relative;
@@ -413,9 +414,15 @@ textarea {
 
 .messages-chat7 {
   padding: 20px;
+  margin-top: 50px;
 }
 
 .messages-chat9 {
+}
+
+.messages-chat15 {
+  position: relative;
+  top: 50px;
 }
 
 .messages-chat13 {
@@ -441,7 +448,7 @@ textarea {
 
 .messages-chat18 {
   position: relative;
-  top: 195px;
+  top: 413px;
 }
 
 .messages-google {
@@ -449,12 +456,12 @@ textarea {
   padding-top: 20px;
   position: absolute;
     left: 800px;
-    top: 250px;
+    top: 290px;
 }
 
 .footer-messages {
   position: absolute;
-  top:1200px;
+  top:1280px;
 }
 
 .messagesnew-left {
@@ -617,7 +624,19 @@ textarea {
 
 .rooms-search {
   width: 500px;
-  height: 36px;
+  height: 50px;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+      -ms-border-radius: 6px;
+       -o-border-radius: 6px;
+          border-radius: 6px;
+          -webkit-transition: all .1s ease-in-out;
+             -moz-transition: all .1s ease-in-out;
+                  transition: all .1s ease-in-out;
+
+  outline:none;
+
+  display:block;
 }
 
 .display-map {
@@ -625,8 +644,20 @@ textarea {
 }
 
 .rooms-button {
-  height: 36px;
+  height: 50px;
   background-color: #FF5A5F;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+      -ms-border-radius: 6px;
+       -o-border-radius: 6px;
+          border-radius: 6px;
+          -webkit-transition: all .1s ease-in-out;
+             -moz-transition: all .1s ease-in-out;
+                  transition: all .1s ease-in-out;
+
+  outline:none;
+
+  display:block;
 }
 
 .search-house-name {
