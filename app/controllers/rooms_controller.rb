@@ -63,7 +63,7 @@ class RoomsController < ApplicationController
 	def edit
 		@room = Room.find(params[:id])
 	end
-
+  
 	def update
 		@room = Room.find(params[:id])
 		if @room.update(room_params)
@@ -80,5 +80,4 @@ class RoomsController < ApplicationController
 	def room_params
 		params.require(:room).permit(:property_type, :home_type, :room_type, :guest_only).merge(user_id: current_user.id)
   end
-
 end
