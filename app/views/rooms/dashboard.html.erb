@@ -14,7 +14,7 @@
           <div class="dashboard-title-space">
               <span class="dashboard-title">ホスティング用ダッシュボード</span>
               <div class="dashboard-btn-space">
-                <%= link_to landing_rooms_path(current_user) do %>
+                <%= link_to landing_rooms_path(@room) do %>
                   <span class="dashboard-btn", style="color:#ffffff;">リスティングを編集</span>
                 <% end %>
                 <%= link_to edit_room_path(current_user) do %>
@@ -30,10 +30,6 @@
                 <%# if @room.groups.messages.body? %>
                   <div class="dashboard-message-content">新着の問い合わせやリクエストはありません。</div>
                   <%#= link_to '「すべてのメッセージ」'  group_message_path %>を見る。
-                <% else %>
-                  <div class="dashboard-message-content">新着の問い合わせやリクエストはありません。</div>
-                  <%#= link_to '「すべてのメッセージ」'  group_message_path %>を見る。
-                <%# end %>
               </div>
             </div>
           </div>

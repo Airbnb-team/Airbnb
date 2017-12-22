@@ -1,3 +1,5 @@
+<%= javascript_include_tag "button_action.js" %>
+<%= javascript_include_tag "dropdown.js" %>
 <header class="dashboard-header">
   <%= button_tag type: 'button', onclick: "link_to('#{root_path(current_user)}')", class:'dashboard-header-btn' do %>
     <%= render partial: 'shared/airbnb-dashboard-icon' %>

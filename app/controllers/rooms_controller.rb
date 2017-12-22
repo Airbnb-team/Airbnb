@@ -34,7 +34,7 @@ class RoomsController < ApplicationController
 	end
 
 	def continue
-		@room = Room.find(params[:format])
+		@room = Room.find(params[:id])
 	end
 
 	def search
@@ -45,6 +45,7 @@ class RoomsController < ApplicationController
   end
 
   def dashboard
+  	@room = Room.find(params[:format])
   end
 
   def landing
@@ -57,6 +58,10 @@ class RoomsController < ApplicationController
 		@reservation = Reservation.new
 		gon.latitude = @room.locations[0].latitude
 		gon.longitude = @room.locations[0].longitude
+	end
+
+	def edit
+		@room = Room.find(params[:id])
 	end
 
 	def update

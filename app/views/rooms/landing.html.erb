@@ -4,6 +4,7 @@
     <title>Airbnb</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= javascript_include_tag "display.js" %>
   </head>
 
   <body>
@@ -24,7 +25,7 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <%= image_tag @room.photos.first.image, height: '100%', width: '100%'  %>
+          <%= image_tag @room.photos.first.image, class:"landing-photo-size" %>
         </div>
       </div>
       <div class="row">
