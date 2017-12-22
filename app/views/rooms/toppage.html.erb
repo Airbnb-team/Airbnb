@@ -96,3 +96,13 @@
   </body>
   <%= render partial: 'shared/footer' %>
 </html>
+
+<script>
+$(function() {
+  $("#autolocation2").geocomplete;
+})
+$("#autolocation2").geocomplete();
+$("#autolocation2").click(function(){
+$("input").trigger("geocode");
+});
+</script>
