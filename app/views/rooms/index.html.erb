@@ -16,11 +16,12 @@
 </head>
 <nav class="navbar navbar-white bg-white navbar-style">
   <h1 class="text-danger font-weight-bold">Airbnb</h1>
-  <%= form_tag rooms_path, :url => {:controller => :rooms, :action => :index, :room_id => :id}, method: :get do %>
+  <%= form_tag rooms_path, method: :get do %>
     <div class="input-group input-group-rooms-style resize">
       <div class="icon-search"></div>
       <%= text_field_tag :search, params[:search], placeholder:"エリアを入力", class:"rooms-search", id:"autolocation"%>
     </div>
+    <%= submit_tag "近くの部屋を表示", class:"rooms-button" %>
   <% end %>
   <ul class="nav justify-content-end">
     <li class="nav-item nav-item-style">
@@ -55,130 +56,11 @@
 </nav>
 
 <div class="contents-wrapper">
-    <div class="row row-5">
-      <div class="col-md-4">
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="<%= asset_path "image0.jpeg" %>" alt="Card image ca">
-          <!-- <i class="fa fa-heart-o" aria-hidden="true"></i> -->
-          <div class="card-body">
-            <p class="card-text font-weight-bold">宿泊先</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="<%= asset_path "image4.jpeg" %>" alt="Card image cp">
-          <div class="card-body">
-            <p class="card-text font-weight-bold">宿泊先</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="<%= asset_path "image5.jpeg" %>" alt="Card image">
-          <div class="card-body">
-            <p class="card-text font-weight-bold">宿泊先</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="<%= asset_path "image0.jpeg" %>" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text font-weight-bold">宿泊先</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="<%= asset_path "image4.jpeg" %>" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text font-weight-bold">宿泊先</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="<%= asset_path "image5.jpeg" %>" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text font-weight-bold">宿泊先</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="<%= asset_path "image0.jpeg" %>" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text font-weight-bold">宿泊先</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="<%= asset_path "image4.jpeg" %>" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text font-weight-bold">宿泊先</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="<%= asset_path "image5.jpeg" %>" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text font-weight-bold">宿泊先</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="<%= asset_path "image0.jpeg" %>" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text font-weight-bold">宿泊先</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="<%= asset_path "image4.jpeg" %>" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text font-weight-bold">宿泊先</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="<%= asset_path "image5.jpeg" %>" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text font-weight-bold">宿泊先</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="<%= asset_path "image0.jpeg" %>" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text font-weight-bold">宿泊先</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="<%= asset_path "image4.jpeg" %>" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text font-weight-bold">宿泊先</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="<%= asset_path "image5.jpeg" %>" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text font-weight-bold">宿泊先</p>
-          </div>
-        </div>
-      </div>
-    </div>
+
+  <%= render partial: "rooms/rooms_list", collection: @arrRooms, as: :location %>
+
 </div>
+
 
   <div class="display-map" style="width: 440px; height: 100%" id="map">
   </div>

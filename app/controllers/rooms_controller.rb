@@ -7,8 +7,11 @@ class RoomsController < ApplicationController
 
 	def index
 		session[:loc_search] = params[:search]
-		@houses = session[:loc_search]
-		@locations = Location.where('country LIKE(?)', "%#{params[:search]}%").limit(20)
+		@locations = Location.all.near(session[:loc_search], 5, order:'distance')
+
+		@search = @locations.ransack(params[:q])
+		@location_results = @search.result
+    @arrRooms = @location_results.to_a
 	end
 
 	def new
@@ -44,12 +47,13 @@ class RoomsController < ApplicationController
   def dashboard
   end
 
-  def landing
-  	@room = Room.find(params[:format])
-  end
+	def show
 
-	def edit
 		@room = Room.find(params[:id])
+		@rooms = Room.all
+		@reservation = Reservation.new
+		gon.latitude = @room.locations[0].latitude
+		gon.longitude = @room.locations[0].longitude
 	end
 
 	def update

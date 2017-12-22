@@ -221,14 +221,28 @@
       <div class="row">
         <div id="3", class="room-location-title">エリア</div>
         <div class="room-showppage-location-font"><%= @room.user.name %>さん宅の所在地は<%= @room.locations.first.prefecture %><%= @room.locations.first.city %>です</div>
-          <div class="room-location">
-            <iframe class="room-showpage-locationmap" , src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCKb6VZsMpwGrlBuuv8J6pSrXKHAZTw5-k&q=Space+Needle,Seattle+WA">
-            </iframe>
+          <div class="room-location", id="map">
+
             <div class="room-showppage-location-font">詳しい住所はご予約後にお知らせします。</div>
           </div>
         </div>
       </div>
     </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+    <div id="mapa" style="width: 900px; height:800px; margin-left:200px;"></div>
+    <script>
+      var mapa;
+      function initMap() {
+        mapa = new google.maps.Map(document.getElementById('mapa'), {
+          center: {lat: gon.latitude, lng: gon.longitude},
+          zoom: 15
+        });
+      }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBni7w26AcUziUF-q9RO0NxsvB9OldANiQ&callback=initMap"
+    async defer></script>
   </body>
   <%= render partial: 'shared/footer' %>
 </html>

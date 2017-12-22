@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :messages do
     collection do
       post 'new'
+      post 'prereserve'
     end
   end
   resources :favorites, only: [:index]

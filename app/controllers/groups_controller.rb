@@ -4,10 +4,4 @@ class GroupsController < ApplicationController
     @groups_travel = @groups.where.not(room_id: current_user.rooms.ids)
     @groups_hosting = @groups.where(room_id: current_user.rooms.ids)
   end
-
-  def show
-    @group = Group.find(params[:id])
-    @message = Message.new
-    @reservation = Reservation.new
-  end
 end
