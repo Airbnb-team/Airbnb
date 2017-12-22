@@ -14,29 +14,6 @@
 
 (function($, window, document, undefined){
 
-  // ## Options
-  // The default options for this plugin.
-  //
-  // * `map` - Might be a selector, an jQuery object or a DOM element. Default is `false` which shows no map.
-  // * `details` - The container that should be populated with data. Defaults to `false` which ignores the setting.
-  // * 'detailsScope' - Allows you to scope the 'details' container and have multiple geocomplete fields on one page. Must be a parent of the input. Default is 'null'
-  // * `location` - Location to initialize the map on. Might be an address `string` or an `array` with [latitude, longitude] or a `google.maps.LatLng`object. Default is `false` which shows a blank map.
-  // * `bounds` - Whether to snap geocode search to map bounds. Default: `true` if false search globally. Alternatively pass a custom `LatLngBounds object.
-  // * `autoselect` - Automatically selects the highlighted item or the first item from the suggestions list on Enter.
-  // * `detailsAttribute` - The attribute's name to use as an indicator. Default: `"name"`
-  // * `mapOptions` - Options to pass to the `google.maps.Map` constructor. See the full list [here](http://code.google.com/apis/maps/documentation/javascript/reference.html#MapOptions).
-  // * `mapOptions.zoom` - The inital zoom level. Default: `14`
-  // * `mapOptions.scrollwheel` - Whether to enable the scrollwheel to zoom the map. Default: `false`
-  // * `mapOptions.mapTypeId` - The map type. Default: `"roadmap"`
-  // * `markerOptions` - The options to pass to the `google.maps.Marker` constructor. See the full list [here](http://code.google.com/apis/maps/documentation/javascript/reference.html#MarkerOptions).
-  // * `markerOptions.draggable` - If the marker is draggable. Default: `false`. Set to true to enable dragging.
-  // * `markerOptions.disabled` - Do not show marker. Default: `false`. Set to true to disable marker.
-  // * `maxZoom` - The maximum zoom level too zoom in after a geocoding response. Default: `16`
-  // * `types` - An array containing one or more of the supported types for the places request. Default: `['geocode']` See the full list [here](http://code.google.com/apis/maps/documentation/javascript/places.html#place_search_requests).
-  // * `blur` - Trigger geocode when input loses focus.
-  // * `geocodeAfterResult` - If blur is set to true, choose whether to geocode if user has explicitly selected a result before blur.
-  // * `restoreValueAfterBlur` - Restores the input's value upon blurring. Default is `false` which ignores the setting.
-
   var defaults = {
     bounds: true,
     strictBounds: false,
