@@ -4,6 +4,7 @@
     <title>部屋、家、アパートをAirbnbで貸し出そう</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= javascript_include_tag "room_show.js" %>
   </head>
 
   <%= render partial: 'shared/header' %>
@@ -203,16 +204,19 @@
           <div class="room-showpage-reservation">
             <div class="room-showpage-reserve-space">
               <span class="room-showpage-price">
-                ¥<%= number_to_currency(@room.prices.first.basic_charge) %> /泊
+                ¥<%= number_to_currency(@room.price.basic_charge) %> /泊
               </span>
             </div>
-            <%= form_for(@reservation, url: { controller: :reservations, action: :coming, room_id: :id }) do |f| %>
+            <%= form_for(@reservation, url: { controller: :reservations, action: :coming }) do |f| %>
             <%= f.label :check_in, "チェックイン", class: 'room-showpage-checkin' %>
             <%= f.date_field :check_in, class: 'DateInput__input room-showpage-input' %>
             <%= f.label :check_out, "チェックアウト", class: 'room-showpage-checkout' %>
             <%= f.date_field :check_out, class: 'DateInput__input room-showpage-input' %>
             <%= f.label :guest_count, "ゲスト", class: 'room-showpage-guest' %>
             <%= f.select :guest_count, [["ゲスト1人", "1"],["ゲスト2人","2"],["ゲスト3人","3"],["ゲスト4人","4"]], {}, class: 'room-showpage-select-guest' %>
+             <%= f.hidden_field :room_id, class: 'show_pass_roomid', :value => params[:id] %>
+             <%= hidden_field_tag :price, @room.price.basic_charge %>
+             <%= hidden_field_tag :weekend_rates,@room.price.weekend_rates-@room.price.basic_charge %>
             <%= f.submit "予約する", class: "room-showpage-reserve-btn"%>
             <% end %>
           </div>

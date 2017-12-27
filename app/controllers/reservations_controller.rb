@@ -13,6 +13,17 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     @message = Message.new
     @group = Group.new
+    @dates_to_stay = @reservation.check_out - @reservation.check_in
+
+    check_in_user_input = @reservation.check_in
+    dates = []
+    dates << check_in_user_input.strftime('%a')
+    @dates_to_stay.to_i.times{
+    each_dates = check_in_user_input+=1
+    dates << each_dates.strftime('%a')
+    match_dates = dates.map{ |a| a.match(/Sat|Sun/) }
+    @day_count = match_dates.compact.count
+    }
   end
 
   def show

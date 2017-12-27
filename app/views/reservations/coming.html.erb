@@ -1,4 +1,5 @@
 <!doctype html>
+<%= javascript_include_tag "coming.js" %>
 <html lang="ja">
   <head>
     <title>Airbnb</title>
@@ -63,11 +64,11 @@
         </span>
       </table>
       <table class="message-new-table-sub1">
-        <tr><hr><td>¥20000✕１泊</td><td align="right">¥20000</td></tr>
-        <tr><td>サービス料</td><td align="right">¥2160</td></tr>
+        <tr><hr><td class = "coming_price_with_mark">宿泊料 ¥<%=params[:price] %></td><td>✕<%= @dates_to_stay.to_i %>泊</td><td align="right">¥<%=params[:price].to_i*@dates_to_stay.to_i%></td></tr>
+        <tr><td>週末料金</td><td align="right">¥<%=params[:weekend_rates].to_i*@day_count.to_i%></td></tr>
       </table>
       <table class="message-new-table-sub2">
-        <tr><hr><td>合計額(JPY)</td><td align="right">¥22160</td></tr>
+        <tr><hr><td>合計額(JPY)</td><td align="right">¥<%=params[:price].to_i*@dates_to_stay.to_i+params[:weekend_rates].to_i*@day_count.to_i%></td></tr>
       </table>
       <hr>
       <%= image_tag('airbnb.png',:size => "100x60", :class => "message-new-logo2") %>
