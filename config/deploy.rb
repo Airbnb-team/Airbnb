@@ -2,7 +2,7 @@
 lock "~> 3.10.0"
 
 set :application, 'Airbnb'
-set :repo_url,  'git@github.com:Airbnb-team/Airbnb.git'
+set :repo_url,  'git@github.com:Airbnb-team/airbnb.git'
 
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 

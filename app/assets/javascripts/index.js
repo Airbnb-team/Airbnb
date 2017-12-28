@@ -5,25 +5,18 @@ $(function() {
 
 
   function appendLocation(location) {
-   var html = `<div class="search-option1">
-                <button class="aaaaa" data-user-id=${location.id}>${location.country}</div>
-                </div>`
+   var html = '<div class="search-option1">' +
+                '<button class="aaaaa" data-user-id=' + location.id + '>' + location.country + '</div>' +
+                '</div>';
    search_list.append(html);
   }
 
   function appendNoLocation(location) {
-    var html = `<div class="search-option">
-                 <div class="aaa">${location.city}</div>
-                 </div>`
+    var html = '<div class="search-option">' +
+                 '<div class="aaa">' + location.city + '</div>' +
+                 '</div>';
     search_list.append(html);
   }
-
-  // var search_group_field = $("input-group input-group-rooms-style resize");
-  //
-  // function addTitles(titles) {
-  //   var html = `<input type="text" name="serach" class="rooms-search" value="${explanatory.title}">`;
-  //   search_group_field.append(html);
-  // }
 
   $(".rooms-search").on("keyup", function() {
     var input = $(".rooms-search").val();

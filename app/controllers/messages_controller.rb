@@ -7,15 +7,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @new_message = current_user.messages.new(message_params)
-    respond_to do |format|
-        if @new_message.save
-            format.json{render 'create'}
-          else
-          flash.now[:alert] =  'メッセージ送信に失敗しました。'
-          render :index
-        end
-     end
+    @new_message = current_user.messages.create(message_params)
   end
 
   def prereserve

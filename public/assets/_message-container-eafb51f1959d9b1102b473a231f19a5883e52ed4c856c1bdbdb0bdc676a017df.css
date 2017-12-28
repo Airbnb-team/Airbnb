@@ -1,0 +1,73 @@
+/* line 1, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_message-container.scss */
+.message-container_group1 {
+  margin: 0 auto;
+  padding: 10px 10px 10px 0;
+  width: 70%;
+  height: 50px;
+}
+/* line 6, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_message-container.scss */
+.message-container_group1 span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* line 12, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_message-container.scss */
+.message-container_change-message {
+  float: right;
+}
+
+/* line 16, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_message-container.scss */
+.tabbody_wrapper {
+  float: right;
+}
+
+/* line 20, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_message-container.scss */
+#tabcontrol a {
+  display: inline-block;
+  padding: 0.75em 1em;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  font-weight: bold;
+  position: relative;
+  bottom: 10px;
+  height: 0;
+}
+
+/* line 32, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_message-container.scss */
+#tabcontrol a:hover {
+  text-decoration: underline;
+}
+
+/* line 36, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_message-container.scss */
+#tabbody div {
+  padding: 1em;
+  background-color: white;
+  position: relative;
+  z-index: 0;
+  margin-bottom: 20px;
+  margin: -1px auto 6px;
+}
+
+/* line 45, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_message-container.scss */
+.detail_footer {
+  margin-top: 20%;
+}
+
+/* line 50, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_message-container.scss */
+.box_message_each {
+  display: block;
+  border: solid 1px;
+  margin-top: 8px;
+  padding: 40px;
+  border-color: #dce0e0;
+  color: #484848;
+  width: 70%;
+  text-align: left;
+  margin: 10px 15% 1px;
+}
+
+/* line 63, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_message-container.scss */
+.box_message_time {
+  margin-right: 100px;
+}

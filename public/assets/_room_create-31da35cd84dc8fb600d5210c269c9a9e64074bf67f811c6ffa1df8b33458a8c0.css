@@ -1,0 +1,1246 @@
+/* line 1, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-header {
+  width: 100%;
+  height: 82px;
+  position: fixed;
+  background-color: #ffffff;
+  border-bottom: 1px solid #dce0e0;
+  z-index: 111;
+}
+
+/* line 10, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-header-btn {
+  height: 80px;
+  padding: 24px;
+  vertical-align: middle;
+  border: none;
+  float: left;
+}
+
+/* line 18, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-header-left {
+  border-color: #ffffff;
+  padding-top: 20px;
+  float: left;
+}
+
+/* line 24, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-header-right {
+  height: 80px;
+  font-size: 14px;
+  color: inherit;
+  list-style: none;
+  display: table-cell;
+  float: right;
+}
+
+/* line 33, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-become-host-btn {
+  height: 80px;
+  line-height: 80px;
+  background: transparent;
+  border: none;
+  color: inherit;
+  display: inline-block;
+  text-decoration: none;
+  padding: 0 16px;
+  float: left;
+}
+
+/* line 45, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-header-content {
+  height: 80px;
+  line-height: 80px;
+  background: transparent;
+  color: inherit;
+  display: inline-block;
+  text-decoration: none;
+  padding: 0 16px;
+}
+
+/* line 55, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-avator {
+  line-height: 1;
+  border-bottom-color: transparent;
+  background-color: #F2F2F2;
+  -webkit-box-shadow: 0 0 0 2px #DBDBDB;
+          box-shadow: 0 0 0 2px #DBDBDB;
+  border-radius: 50%;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: middle;
+  width: 28px;
+  height: 28px;
+}
+
+/* line 68, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-favorite-title {
+  font-weight: bold;
+  background-color: #DDDDDD;
+}
+
+/* line 73, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-title {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 32px;
+  padding-top: 2px;
+}
+
+/* line 80, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-title-content {
+  width: 100%;
+}
+
+/* line 84, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-title-btn {
+  float: right;
+  border: none;
+}
+
+/* line 89, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-room-title {
+  width: 100px;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 32px;
+  padding-top: 2px;
+}
+
+/* line 97, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-all-room {
+  font-size: 14px;
+  color: #484848;
+  line-height: 32px;
+  float: right;
+}
+
+/* line 104, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-room-search {
+  width: 306px;
+  height: 72px;
+}
+
+/* line 109, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-image {
+  float: left;
+}
+
+/* line 113, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-room-search-title {
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 18px;
+  line-height: 72px;
+  letter-spacing: 0.2px;
+  color: #484848;
+  font-weight: 700;
+  float: left;
+  padding-left: 15px;
+}
+
+/* line 124, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-icon {
+  height: 64px;
+  text-decoration: none;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding: 15px;
+}
+
+/* line 132, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-serach-field {
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 19px;
+  line-height: 24px;
+  color: #484848;
+  background-color: #ffffff;
+  border-radius: 4px;
+  border: 1px solid #DBDBDB;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 46px;
+  width: 560px;
+}
+
+/* line 145, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-serach-btn {
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.06);
+          box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.06);
+  margin-bottom: 4px;
+  padding: 0px;
+  overflow: hidden;
+  text-align: left;
+  width: 100%;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+/* line 159, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-main-content {
+  padding-top: 100px;
+  position: relative;
+}
+
+/* line 164, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-container {
+  margin: 0 auto;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+/* line 170, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-serach {
+  margin-bottom: 30px;
+}
+
+/* line 174, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-room-collection {
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+
+/* line 179, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.room-collection {
+  padding-top: 5px;
+}
+
+/* line 183, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-host-left-content {
+  float: left;
+  width: 40%;
+}
+
+/* line 188, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-host-intro {
+  min-width: 744px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 48px;
+  padding-bottom: 48px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+/* line 198, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-host-into-content {
+  max-width: 800px;
+  width: 85%;
+  margin: 0 auto;
+}
+
+/* line 204, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-host-explanation {
+  font-size: 22px;
+  line-height: 28px;
+  letter-spacing: -0.2px;
+  color: #484848;
+  font-weight: 300;
+  padding: 10px 0;
+}
+
+/* line 213, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-host-intro-btn {
+  border: none;
+}
+
+/* line 217, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-host-btn {
+  display: inline-block;
+  border: 2px solid transparent;
+  font-size: 19px;
+  line-height: 22px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  color: #ffffff;
+  font-weight: 700;
+  padding-right: 24px;
+  padding-left: 24px;
+  background: #008489;
+  border-radius: 5px;
+}
+
+/* line 232, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-host {
+  display: inline-block;
+  font-size: 19px;
+  line-height: 22px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  color: #ffffff;
+  font-weight: 700;
+  padding-right: 24px;
+  padding-left: 24px;
+}
+
+/* line 244, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-host-title {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 32px;
+  letter-spacing: -0.6px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  color: #484848;
+}
+
+/* line 254, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.toppage-host-right-content {
+  float: right;
+}
+
+/* line 259, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.room-collection-main-image {
+  position: relative;
+}
+
+/* line 263, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.empty-heart {
+  top: 8px;
+  right: 8px;
+  position: absolute;
+  color: red;
+  opacity: 0.7;
+}
+
+/* line 271, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.full-heart {
+  top: 8px;
+  right: 8px;
+  position: absolute;
+}
+
+/* line 279, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.footer {
+  border-top: 0.1px solid #dddddd;
+}
+
+/* line 283, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.footer-content {
+  width: 1100px;
+  height: 300px;
+  margin: 0 auto;
+  display: block;
+  margin-top: 30px;
+  position: relative;
+}
+
+/* line 292, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.footer-role {
+  height: 350px;
+  position: absolute;
+}
+
+/* line 297, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.select-content {
+  width: 250px;
+  height: 250px;
+  display: inline-block;
+  margin-top: 15px;
+  margin-left: 15px;
+  float: left;
+}
+
+/* line 306, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.laguage-style {
+  height: 48px;
+  width: 250px;
+  color: #666666;
+  font-weight: 100;
+  font-size: 1.2em;
+  background-color: #ffffff;
+  border-color: #f5f5f5;
+  margin-bottom: 10px;
+  border: 1px solid #dce0e0;
+}
+
+/* line 318, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.money-style {
+  height: 48px;
+  width: 250px;
+  color: #666666;
+  font-weight: 100;
+  font-size: 1.2em;
+  background-color: #ffffff;
+  border-color: #f5f5f5;
+  margin-bottom: 10px;
+  border: 1px solid #dce0e0;
+}
+
+/* line 330, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.intoroduction-content1 {
+  width: 250px;
+  height: 250px;
+  margin-left: 15px;
+  display: inline-block;
+}
+
+/* line 337, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.intoroduction-content2 {
+  width: 250px;
+  height: 250px;
+  margin-left: 15px;
+  display: inline-block;
+}
+
+/* line 344, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.intoroduction-content3 {
+  width: 250px;
+  height: 250px;
+  margin-left: 15px;
+  display: inline-block;
+}
+
+/* line 351, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.footer-copyright {
+  width: 1100px;
+  height: 100px;
+  border-top: 0.1px solid #dddddd;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* line 359, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.p-style0 {
+  width: 220px;
+  height: 280px;
+  padding-top: 15px;
+  padding-left: 50px;
+  float: left;
+  font-size: 1em;
+  color: #666666;
+}
+
+/* line 369, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.copyright-left {
+  float: left;
+  color: #999999;
+  padding-top: 15px;
+}
+
+/* line 375, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.copyright-right {
+  float: right;
+  color: #999999;
+  padding-top: 15px;
+}
+
+/* line 381, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.room-collection-main {
+  display: inline-block;
+  vertical-align: top;
+  white-space: normal;
+}
+
+/* line 387, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.top-text-room {
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  font-weight: 700;
+  display: inline;
+}
+
+/* line 395, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.top-text-title {
+  margin-top: 2px;
+  max-height: 44px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* line 404, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.top-text-price {
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.2px;
+  color: #484848;
+  font-weight: 300;
+}
+
+/* line 415, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.new-header {
+  width: 100%;
+  height: 66px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  background-color: #ffffff;
+}
+
+/* line 425, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.button-style {
+  color: #FF5A5F;
+  width: 130px;
+  height: 64px;
+  display: inline-block;
+  font-size: 24px;
+  font-weight: bold;
+  border-style: none;
+}
+
+/* line 435, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.comp-left {
+  display: inline-block;
+  line-height: 64px;
+  height: 64px;
+  font-size: 19px;
+  font-weight: normal;
+  color: #666666;
+  padding: 0 19px;
+  border-left: 0.1px solid #dddddd;
+  background-color: #ffffff;
+}
+
+/* line 447, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.comp-right {
+  float: right;
+  line-height: 64px;
+  height: 64px;
+  font-size: 19px;
+  font-weight: normal;
+  color: #009999;
+  padding: 0 19px;
+  background-color: #ffffff;
+}
+
+/* line 458, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.main-content {
+  width: 100%;
+  height: 140vh;
+}
+
+/* line 463, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.left-content {
+  display: inline-block;
+  height: 140vh;
+  width: 55%;
+}
+
+/* line 469, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.left-content-list {
+  width: 65%;
+  height: 100%;
+  float: right;
+  padding-top: 112px;
+}
+
+/* line 476, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.rooms-title {
+  border-bottom: 0px;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+/* line 482, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.rooms-title-font {
+  font-weight: 700;
+  margin: 0px;
+  word-wrap: break-word;
+  font-size: 28px;
+  line-height: 32px;
+  letter-spacing: -0.6px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  color: #484848;
+}
+
+/* line 494, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.rooms-select-control {
+  height: 63px;
+  width: 320px;
+  font-size: 19px;
+  line-height: 24px;
+  color: #484848;
+  background: #ffffff;
+  border: 1px solid #DBDBDB;
+  border-radius: 0.1px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+/* line 507, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.rooms-radio-button {
+  width: 484px;
+  font-size: 19px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+/* line 514, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.rooms-save-btn {
+  width: 185px;
+  height: 42px;
+  font-size: 16px;
+  border-color: #ff5a5f;
+  background-color: #ff5a5f;
+  color: #ffffff;
+  font-weight: bold;
+  float: right;
+  padding: 9px 27px;
+  margin-right: 20px;
+  border-radius: 3px;
+}
+
+/* line 528, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.rooms-next-btn {
+  width: 185px;
+  height: 42px;
+  font-size: 16px;
+  border-color: #ff5a5f;
+  background-color: #ff5a5f;
+  color: #ffffff;
+  font-weight: bold;
+  float: right;
+  padding: 9px 27px;
+  margin-right: 20px;
+  margin-top: 0;
+  border-radius: 3px;
+  text-align: center;
+}
+
+/* line 544, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.rooms-back-font {
+  line-height: 42px;
+}
+
+/* line 548, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.main-panel-half-content {
+  max-width: 912px;
+  height: 102px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* line 555, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.main-panel-half-spacce {
+  width: 58.3%;
+  height: 102px;
+  padding: 30px;
+  float: none;
+  border-top: 0.1px solid #dddddd;
+  background-color: #ffffff;
+}
+
+/* line 564, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.main-panel-half {
+  height: 42px;
+  position: relative;
+  min-height: 1px;
+}
+
+/* line 570, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.dropdown-slect {
+  font-size: 19px;
+  line-height: 24px;
+  color: #484848;
+  background: #ffffff;
+  border: 1px solid #dbdbdb;
+  border-radius: 2px;
+  margin-bottom: 8px;
+  display: block;
+  width: 100%;
+}
+
+/* line 582, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.helper-content {
+  display: inline-block;
+  background-color: #f7f7f7;
+  height: 140vh;
+  width: 44.6%;
+}
+
+/* line 589, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.helper-content-list {
+  width: 350px;
+  height: 100%;
+  padding-top: 112px;
+  position: fixed;
+}
+
+/* line 596, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.card-style {
+  margin-top: 70px;
+  margin-left: 30px;
+  font-size: 16px;
+}
+
+/* line 602, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.text-info {
+  padding-bottom: 15px;
+}
+
+/* line 607, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.countup-btn {
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 1;
+  position: relative;
+  border: 2px solid transparent;
+  color: #008489;
+  border-color: #008489;
+  background: transparent;
+  width: 32px;
+  height: 32px;
+  border-width: 1px;
+  margin-left: 120px;
+  margin-right: 10px;
+}
+
+/* line 625, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.countdown-btn {
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 1;
+  position: relative;
+  border: 2px solid transparent;
+  color: #008489;
+  border-color: #008489;
+  background: transparent;
+  width: 32px;
+  height: 32px;
+  border-width: 1px;
+  margin-left: 10px;
+}
+
+/* line 643, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.rooms-location-select {
+  width: 484px;
+  height: 63px;
+  font-size: 19px;
+  line-height: 24px;
+  color: #484848;
+  background: #ffffff;
+  border: 1px solid #dbdbdb;
+  border-radius: 2px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* line 656, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.rooms-location-text_field {
+  width: 230px;
+  height: 63px;
+  font-size: 19px;
+  line-height: 24px;
+  color: #484848;
+  background: #ffffff;
+  border: 1px solid #dbdbdb;
+  border-radius: 2px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* line 669, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.rooms-location-text_field_lg {
+  width: 484px;
+  height: 63px;
+  font-size: 19px;
+  line-height: 24px;
+  color: #484848;
+  background: #ffffff;
+  border: 1px solid #dbdbdb;
+  border-radius: 2px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* line 682, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.rooms-postal_code {
+  width: 50%;
+  margin-top: 12px;
+  float: left;
+}
+
+/* line 688, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.rooms-prefecture {
+  width: 50%;
+  margin-top: 12px;
+  float: left;
+}
+
+/* line 694, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.rooms-location-space {
+  margin-bottom: 12px;
+}
+
+/* line 698, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.rooms-adress-edit {
+  color: #008489;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+/* line 704, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.rooms-location-comment {
+  font-size: 19px;
+  color: #767676;
+  margin-top: 24px;
+  margin-bottom: 15px;
+}
+
+/* line 712, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.main-amenity-content {
+  width: 100%;
+  height: 300vh;
+}
+
+/* line 717, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.left-amenity-content {
+  display: inline-block;
+  height: 300vh;
+  width: 55%;
+}
+
+/* line 724, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.rooms-amenity-title {
+  border-bottom: 0px;
+  padding-top: 20px;
+}
+
+/* line 729, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.rooms-amenity-check_box {
+  font-size: 19px;
+  color: #484848;
+}
+
+/* line 734, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.rooms-amenity-label {
+  display: block;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  position: relative;
+  top: 20px;
+  right: -5px;
+}
+
+/* line 743, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.helper-amenity-content {
+  display: inline-block;
+  background-color: #f7f7f7;
+  height: 300vh;
+  width: 44.6%;
+}
+
+/* line 750, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.check-style {
+  font-size: 19px;
+  font-weight: 300;
+  color: #484848;
+  padding-top: 20px;
+}
+
+/* line 757, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.comments-style {
+  font-size: 15px;
+  font-weight: 300;
+  color: #484848;
+  padding-top: 4px;
+  padding-bottom: 0px;
+  padding-left: 20px;
+  display: block;
+}
+
+/* line 767, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.h6-style {
+  font-size: 18px;
+  font-weight: bold;
+  color: #666666;
+  padding-top: 30px;
+  margin-bottom: 0px;
+}
+
+/* line 779, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.landing-header {
+  width: 100%;
+  height: 80px;
+  border-bottom: 1px solid #dce0e0;
+}
+
+/* line 785, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.landing-header-left {
+  width: 82px;
+  height: 79px;
+  float: left;
+}
+
+/* line 791, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.continue-icon {
+  height: 64px;
+  text-decoration: none;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding: 15px;
+}
+
+/* line 799, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.icon-style0 {
+  color: #FF5A5F;
+}
+
+/* line 803, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.landing-header-right {
+  width: 708px;
+  height: 79px;
+  float: right;
+}
+
+/* line 809, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.landing-style {
+  line-height: 79px;
+  padding: 0 16px;
+  text-decoration: none;
+  color: #484848;
+}
+
+/* line 816, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.avator {
+  background-color: #f2f2f2;
+  -webkit-box-shadow: 0 0 0 2px #dbdbdb;
+          box-shadow: 0 0 0 2px #dbdbdb;
+  border-radius: 50%;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: middle;
+  width: 28px;
+  height: 28px;
+}
+
+/* line 827, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.landing-content {
+  max-width: 1310px;
+  height: 724px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+/* line 835, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.landing-left-content {
+  width: 470px;
+  height: 556px;
+  margin: 58px 93.5px 100px 100px;
+  position: absolute;
+}
+
+/* line 842, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.landing-text-style0 {
+  font-size: 16px;
+  color: gray;
+}
+
+/* line 847, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.landing-text-style1 {
+  font-size: 16px;
+  padding-bottom: 5px;
+  color: #2d2d2d;
+}
+
+/* line 853, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.landing-text-style2 {
+  font-size: 16px;
+  color: #00a699;
+}
+
+/* line 858, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.space {
+  margin-bottom: 30px;
+}
+
+/* line 862, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.landing-step-collection {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* line 866, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.landing-icon-position {
+  float: right;
+}
+
+/* line 870, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.fa-check-circle {
+  color: #008489;
+}
+
+/* line 874, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.landing-text-style3 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #bbbbbb;
+  display: block;
+}
+
+/* line 881, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.landing-btn {
+  color: #ffffff;
+  font-weight: bold;
+  vertical-align: middle;
+  background-color: #008489;
+  padding-top: 15px;
+  text-decoration: none;
+  line-height: 3.5;
+  border-radius: 0.25rem;
+  padding: 10px 30px;
+  font-size: 14px;
+}
+
+/* line 894, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.hr {
+  border: 0;
+  border-top: 1px solid #dce0e0;
+  border-color: #f5f5f5;
+  margin: 30px 0px;
+}
+
+/* line 901, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.landing-right-content {
+  min-height: 100vh;
+  width: 41.66667%;
+  float: right;
+  position: relative;
+  display: block;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+/* line 911, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.landing-helper-content-list {
+  width: 350px;
+  height: 100%;
+}
+
+/* line 917, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.space-content {
+  padding-top: 71px;
+  width: 100%;
+}
+
+/* line 922, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.center-content {
+  max-width: 912px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 928, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.main-panel-content {
+  width: 100%;
+  padding: 30px 30px 102px 30px;
+  float: left;
+  position: relative;
+}
+
+/* line 935, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.photo-title {
+  font-weight: 700;
+  margin: 0px;
+  word-wrap: break-word;
+  font-size: 28px;
+  line-height: 32px;
+  letter-spacing: -0.6px;
+  padding-top: 32px;
+  padding-bottom: 24px;
+  padding-left: 32px;
+  color: #484848;
+}
+
+/* line 948, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.photo-card-content {
+  padding: 0 45px;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: 24px;
+}
+
+/* line 955, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.rooms-upload-btn {
+  background-color: #ff5a5f;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 20px 36px;
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid;
+  margin-bottom: 10px;
+}
+
+/* line 967, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.main-panel-inner-content {
+  width: 100%;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+}
+
+/* line 975, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.main-panel-action-wrapper {
+  position: fixed;
+  z-index: 111;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 102px;
+}
+
+/* line 984, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.main-panel-action-content {
+  max-width: 912px;
+  height: 102px;
+  margin-right: auto;
+  margin-left: auto;
+  border-top: 0.1px solid #dddddd;
+  background-color: #ffffff;
+}
+
+/* line 993, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.main-panel-action-spacce {
+  width: 100%;
+  height: 102px;
+  padding: 30px;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 1002, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.main-panel-action {
+  width: 100%;
+  height: 42px;
+  position: relative;
+  min-height: 1px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+/* line 1011, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.photo-btn-style {
+  min-width: 185px;
+  font-size: 19px;
+  border-color: #c4c4c4;
+  background: white;
+  color: #484848;
+  float: right;
+  font-weight: bold;
+  padding: 9px 27px;
+  margin-top: 0;
+}
+
+/* line 1023, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.photo-back-style {
+  color: #666666;
+  font-weight: 100;
+  float: left;
+  font-size: 19px;
+  text-decoration: none;
+  margin-top: 0;
+}
+
+/* line 1033, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.rooms-explanatory-text_field {
+  width: 484px;
+  height: 123px;
+  font-size: 19px;
+  line-height: 24px;
+  color: #484848;
+  background: #ffffff;
+  border: 1px solid #dbdbdb;
+  border-radius: 2px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  line-height: inherit;
+  display: block;
+}
+
+/* line 1048, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.main-explanatory-content {
+  width: 100%;
+  height: 180vh;
+}
+
+/* line 1053, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.left-explanatory-content {
+  display: inline-block;
+  height: 180vh;
+  width: 55%;
+}
+
+/* line 1059, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.helper-explanatory-content {
+  display: inline-block;
+  background-color: #f7f7f7;
+  height: 180vh;
+  width: 44.6%;
+}
+
+/* line 1067, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.rooms-rule-label {
+  font-size: 19px;
+  display: block;
+  position: relative;
+  right: -5px;
+}
+
+/* line 1074, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.rooms-rule-radio {
+  top: 5px;
+  right: 0;
+  bottom: 0;
+  padding-left: 15px;
+  display: inline-block;
+}
+
+/* line 1082, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.rooms-radio-title {
+  height: 25px;
+  width: 300px;
+  font-weight: bold;
+}
+
+/* line 1088, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.rooms-rule-sub-title {
+  padding-top: 20px;
+  font-weight: bold;
+  color: #484848;
+}
+
+/* line 1095, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.rooms-price-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* line 1101, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.rooms-price-text_field {
+  width: 300px;
+  height: 50px;
+  font-size: 19px;
+  line-height: 24px;
+  color: #484848;
+  background: #ffffff;
+  border: 1px solid #dbdbdb;
+  border-radius: 2px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+/* line 1114, /Users/yamazakihiroki/Airbnb/app/assets/stylesheets/_room_create.scss */
+.clearfix {
+  content: "";
+  clear: both;
+  display: block;
+}

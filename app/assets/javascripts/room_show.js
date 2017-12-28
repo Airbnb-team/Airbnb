@@ -3,7 +3,7 @@ $(function() {
       $main = $('.col-md-6 .room-showpage-reservation-col'),
       $nav = $('.room-showpage-reservation'),
       navHeight = $nav.outerHeight(),
-      footerHeight = $('.room-location').outerHeight(),
+      footerHeight = $('.row').outerHeight(),
       documentHeight = $(document).height(),
       navPos = $nav.offset().top,
       fixedClass = 'is-fixed',
@@ -50,3 +50,4 @@ $(function(){
     return false;
   });
 });
+

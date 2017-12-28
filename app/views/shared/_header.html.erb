@@ -1,3 +1,5 @@
+<%= javascript_include_tag "button_action.js" %>
+<%= javascript_include_tag "dropdown.js" %>
 <header class="toppage-header">
   <button type="button" class="toppage-header-btn">
     <%= render partial: 'shared/airbnb-icon' %>
@@ -33,7 +35,7 @@
         <span class="parent">メッセージ
           <div class="js_dropmenu_child">
             <div class="js_dropdown_item">
-              <%= link_to 'メッセージ', '/', class:'js_dropdown_item_content' %>
+              <%= link_to 'メッセージ', groups_path, class:'js_dropdown_item_content' %>
             </div>
             <div class="js_dropdown_item">
               <%= link_to '通知', '/', class:'js_dropdown_item_content' %>
