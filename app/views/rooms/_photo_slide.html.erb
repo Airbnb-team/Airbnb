@@ -1,27 +1,29 @@
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <%= image_tag @room.photos.first.image, class: "photo-size" %>
+      <% if @room.photos.first.present? %>
+        <%= image_tag @room.photos.first.image, class: "photo-size" %>
+      <% end %>
     </div>
      <div class="carousel-item">
-     	<% if @room.photos.second.image? %>
+      <% if @room.photos.second.present? %>
       	<%= image_tag @room.photos.second.image, class: "photo-size" %>
       <% else %>
         <%= image_tag "" %>
       <% end %>
     </div>
     <div class="carousel-item">
-    	<% if @room.photos.third.image? %>
+    	<% if @room.photos.third.present? %>
       	<%= image_tag @room.photos.third.image, class: "photo-size" %>
       <% end %>
     </div>
     <div class="carousel-item">
-    	<% if @room.photos.fourth.image? %>
+    	<% if @room.photos.fourth.present? %>
       	<%= image_tag @room.photos.fourth.image, class: "photo-size" %>
       <% end %>
     </div>
     <div class="carousel-item">
-    	<% if @room.photos.fifth.image? %>
+    	<% if @room.photos.fifth.present? %>
       	<%= image_tag @room.photos.fifth.image, class: "photo-size" %>
       <% end %>
     </div>
