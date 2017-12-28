@@ -16,4 +16,21 @@ module ApplicationHelper
     end
   end
 
+  # def weekend_price()
+  # check_in_user_input = @reservation.check_in
+  # dates = []
+  # dates << check_in_user_input.strftime('%a')
+  # @dates_to_stay.to_i.times{
+  # each_dates = check_in_user_input+=1
+  # dates << each_dates.strftime('%a')
+  # match_dates = dates.map{ |a| a.match(/Sat|Sun/) }
+  # @day_count = match_dates.compact.count
+  # }
+    # if number_of_dates.to_i > 0
+    # number_of_dates*params[:weekend_rates]
+    # else
+    # return 0
+    # end
+  # end
+
 end
